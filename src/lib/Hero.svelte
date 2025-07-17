@@ -1,10 +1,12 @@
-<section class="bg-white py-20">
-  <div class="container mx-auto text-center">
-    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 tracking-tight">
-      Software engineer by trade,
-    </h1>
-    <p class="mt-4 text-2xl md:text-3xl text-gray-600">
-      AI enthusiast by obsession.
-    </p>
+<section class="w-[1440px] h-[360px] flex justify-start items-center flex-col gap-2.5 py-[90px] px-[180px] bg-[#FFFFFF]">
+  <div class="flex justify-center items-center flex-row gap-2.5 p-2.5">
+    <span class="text-[#2D2D2D]">
+      <span class="text-[56px] font-['Inter'] font-bold tracking-[-1.12px]">
+        Software engineer by trade,<br />
+      </span>
+      <span class="text-[40px] font-['Inter']">
+        AI enthusiast by obsession.
+      </span>
+    </span>
   </div>
 </section>

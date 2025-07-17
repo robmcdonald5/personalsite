@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.gradient-divider {
+  background: linear-gradient(180deg, #E0E0E0 0%, #F5F5F5 100%);
+}
+
+.card-image {
+  background: linear-gradient(0deg, rgba(245,247,251,0.25) 0%, rgba(245,247,251,0.25) 100%);
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+}

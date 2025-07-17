@@ -1,29 +1,28 @@
-<section class="py-20">
-  <div class="container mx-auto">
-    <div class="flex items-center justify-center mb-12">
-      <div class="flex-grow border-t border-gray-300"></div>
-      <h2 class="mx-4 text-lg font-medium text-gray-800 uppercase">Code Samples</h2>
-      <div class="flex-grow border-t border-gray-300"></div>
+<section class="w-[1440px] h-[660px] flex justify-start items-center flex-col gap-[90px] px-[180px]">
+  <div class="w-[1440px] h-[4px] gradient-divider"></div>
+  <div class="flex justify-start items-center flex-row gap-[49px]">
+    <div class="w-[541px] h-0 border-solid border-[#E0E0E0] border-b"></div>
+    <span class="text-[#000000] text-xl font-['Montserrat'] font-medium">CODE SAMPLES</span>
+    <div class="w-[541px] h-0 border-solid border-[#E0E0E0] border-b"></div>
+  </div>
+  <div class="flex justify-start items-center flex-row gap-[120px]">
+    <div class="w-[280px] h-[240px] bg-[#FFFFFF] border-solid border-[#E0F7FA] border rounded-lg shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] relative">
+      <div class="text-[#000000] text-xl font-['Roboto'] font-light absolute left-[24px] top-[193px]">
+        Model Training
+      </div>
+      <div class="w-[264px] h-[160px] rounded-tl-md rounded-tr-md absolute left-[8px] top-[8px] card-image" style="background-image: url(/work-section__grid-showcase1-frame.png)"></div>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-      <div class="bg-white rounded-lg shadow-md overflow-hidden">
-        <div class="h-48 bg-cover bg-center" style="background-image: url(/work-section__grid-showcase1-frame.png)"></div>
-        <div class="p-6">
-          <h3 class="text-xl font-light text-gray-800">Model Training</h3>
-        </div>
+    <div class="w-[280px] h-[240px] bg-[#FFFFFF] border-solid border-[#E0F7FA] border rounded-lg shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] relative">
+      <div class="text-[#000000] text-xl font-['Roboto'] font-light absolute left-[24px] top-[193px]">
+        API & Web Integration
       </div>
-      <div class="bg-white rounded-lg shadow-md overflow-hidden">
-        <div class="h-48 bg-cover bg-center" style="background-image: url(/work-section__grid-showcase2-frame.png)"></div>
-        <div class="p-6">
-          <h3 class="text-xl font-light text-gray-800">API & Web Integration</h3>
-        </div>
+      <div class="w-[264px] h-[160px] rounded-tl-md rounded-tr-md absolute left-[8px] top-[8px] card-image" style="background-image: url(/work-section__grid-showcase2-frame.png)"></div>
+    </div>
+    <div class="w-[280px] h-[240px] bg-[#FFFFFF] border-solid border-[#E0F7FA] border rounded-lg shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] relative">
+      <div class="text-[#000000] text-xl font-['Roboto'] font-light absolute left-[24px] top-[193px]">
+        NLP & Preprocessing
       </div>
-      <div class="bg-white rounded-lg shadow-md overflow-hidden">
-        <div class="h-48 bg-cover bg-center" style="background-image: url(/work-section__grid-showcase3-frame.png)"></div>
-        <div class="p-6">
-          <h3 class="text-xl font-light text-gray-800">NLP & Preprocessing</h3>
-        </div>
-      </div>
+      <div class="w-[264px] h-[160px] rounded-tl-md rounded-tr-md absolute left-[8px] top-[8px] card-image" style="background-image: url(/work-section__grid-showcase3-frame.png)"></div>
     </div>
   </div>
 </section>

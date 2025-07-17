@@ -1,12 +1,19 @@
-<footer class="bg-gray-100 border-t border-gray-200">
-  <div class="container mx-auto flex items-center justify-between p-4">
-    <div class="text-sm text-gray-600">
-      &copy; 2025 Joshua McDonald
-    </div>
-    <div class="hidden md:flex items-center space-x-8">
-      <a href="/about" class="text-lg text-gray-700 hover:text-gray-900">about</a>
-      <a href="/work" class="text-lg text-gray-700 hover:text-gray-900">work</a>
-      <a href="/contact" class="text-lg text-gray-700 hover:text-gray-900">contact</a>
-    </div>
+<footer class="w-[1440px] h-[71px] bg-[#F5F5F5] relative">
+  <div class="w-[287px] h-[30px] flex justify-start items-center flex-row gap-8 absolute left-[973px] top-[20px]">
+    <div class="text-[#000000] text-[26px] font-['Inter'] font-light">about</div>
+    <div class="text-[#000000] text-[26px] font-['Inter'] font-light">work</div>
+    <div class="text-[#000000] text-[26px] font-['Inter'] font-light">contact</div>
   </div>
+  <div class="w-[223px] h-[46px] flex justify-center items-center flex-row gap-2.5 p-2.5 absolute left-[180px] top-[12px]">
+    <span class="text-[#000000] font-['Roboto_Mono'] font-thin">
+      <span class="text-xl">&copy;</span>
+      <span class="text-[10px]"></span>
+      <span>2025</span>
+      <span class="text-[10px]"></span>
+      <span>Joshua</span>
+      <span class="text-[10px]"></span>
+      <span>McDonald</span>
+    </span>
+  </div>
+  <div class="w-[1440px] h-[4px] absolute left-[0px] top-[0px] gradient-divider"></div>
 </footer>

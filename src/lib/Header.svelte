@@ -1,29 +1,18 @@
-<header class="bg-[#111111] text-white">
-  <nav class="container mx-auto flex items-center justify-between p-4">
-    <div class="flex items-center">
-      <a href="/">
-        <img src="/header__logo-icon.svg" alt="header__logo placeholder" class="h-14" />
-      </a>
+<header class="w-[1440px] h-[90px] bg-[#111111] relative">
+  <div class="w-[96px] h-[40px] flex justify-start items-center flex-row gap-4 absolute left-[1164px] top-[25px]">
+    <div>
+      <img src="/header__external-icon-github.svg" alt="header__external-link placeholder" />
     </div>
-    <div class="hidden md:flex items-center space-x-8">
-      <a href="/about" class="text-lg hover:text-gray-400">about</a>
-      <a href="/work" class="text-lg hover:text-gray-400">work</a>
-      <a href="/contact" class="text-lg hover:text-gray-400">contact</a>
+    <div>
+      <img src="/header__external-icon-linkedin.svg" alt="header__external-link placeholder" />
     </div>
-    <div class="flex items-center space-x-4">
-      <a href="javascript:void(0);" aria-label="GitHub Profile">
-        <img src="/header__external-icon-github.svg" alt="GitHub icon" class="h-10 w-10" />
-      </a>
-      <a href="javascript:void(0);" aria-label="LinkedIn Profile">
-        <img src="/header__external-icon-linkedin.svg" alt="LinkedIn icon" class="h-10 w-10" />
-      </a>
-    </div>
-    <div class="md:hidden">
-      <button class="text-white focus:outline-none" aria-label="Toggle navigation">
-        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-        </svg>
-      </button>
-    </div>
-  </nav>
+  </div>
+  <div class="w-[287px] h-[30px] flex justify-start items-start flex-row gap-8 absolute left-[807px] top-[30px]">
+    <div class="text-[#FFFFFF] text-[26px] font-['Inter'] font-light">about</div>
+    <div class="text-[#FFFFFF] text-[26px] font-['Inter'] font-light">work</div>
+    <div class="text-[#FFFFFF] text-[26px] font-['Inter'] font-light">contact</div>
+  </div>
+  <div class="absolute left-[180px] top-[16px]">
+    <img src="/header__logo-icon.svg" alt="header__logo placeholder" />
+  </div>
 </header>
