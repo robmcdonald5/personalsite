@@ -1,2 +1,13 @@
-<h1 class="text-3xl font-bold underline">Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script>
+  import Header from '$lib/Header.svelte';
+  import Hero from '$lib/Hero.svelte';
+  import CodeSamples from '$lib/CodeSamples.svelte';
+  import Footer from '$lib/Footer.svelte';
+</script>
+
+<Header />
+<main>
+  <Hero />
+  <CodeSamples />
+</main>
+<Footer />
