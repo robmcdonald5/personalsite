@@ -1,4 +1,4 @@
-<header class="w-[1440px] h-[90px] bg-[#111111] relative">
+<header class="w-[1440px] h-[90px] relative">
   <div class="w-[96px] h-[40px] flex justify-start items-center flex-row gap-4 absolute left-[1164px] top-[25px]">
     <div>
       <img src="/header__external-icon-github.svg" alt="header__external-link placeholder" />

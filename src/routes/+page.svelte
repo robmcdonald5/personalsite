@@ -5,13 +5,21 @@
   import Footer from '$lib/Footer.svelte';
 </script>
 
-<div class="flex justify-center items-center flex-col px-[180px] bg-[#FFFFFF]">
-  <div class="w-[1440px] flex justify-center items-center flex-col gap-2.5 px-[180px]">
-    <Header />
+<div class="flex justify-center items-center flex-col bg-[#FFFFFF]">
+  <div class="w-full bg-[#111111] flex justify-center">
+    <div class="w-[1440px] flex justify-center items-center flex-col gap-2.5 px-[180px]">
+      <Header />
+    </div>
   </div>
-  <Hero />
-  <CodeSamples />
-  <div class="w-[1440px] flex justify-center items-center flex-col gap-2.5 px-[180px]">
-    <Footer />
+  <div class="w-full bg-[#FFFFFF] flex justify-center">
+    <Hero />
+  </div>
+  <div class="w-full bg-[#FFFFFF] flex justify-center">
+    <CodeSamples />
+  </div>
+  <div class="w-full bg-[#F5F5F5] flex justify-center">
+    <div class="w-[1440px] flex justify-center items-center flex-col gap-2.5 px-[180px]">
+      <Footer />
+    </div>
   </div>
 </div>

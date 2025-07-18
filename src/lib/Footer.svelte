@@ -1,4 +1,4 @@
-<footer class="w-[1440px] h-[71px] bg-[#F5F5F5] relative">
+<footer class="w-[1440px] h-[71px] relative">
   <div class="w-[287px] h-[30px] flex justify-start items-center flex-row gap-8 absolute left-[973px] top-[20px]">
     <div class="text-[#000000] text-[26px] font-['Inter'] font-light">about</div>
     <div class="text-[#000000] text-[26px] font-['Inter'] font-light">work</div>
