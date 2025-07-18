@@ -15,5 +15,4 @@
       <span>McDonald</span>
     </span>
   </div>
-  <div class="w-[1440px] h-[4px] absolute left-[0px] top-[0px] gradient-divider"></div>
 </footer>

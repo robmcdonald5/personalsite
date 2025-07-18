@@ -1,5 +1,5 @@
 <header class="w-[1440px] h-[90px] relative">
-  <div class="w-[96px] h-[40px] flex justify-start items-center flex-row gap-4 absolute left-[1164px] top-[25px]">
+  <div class="h-[40px] flex justify-start items-center flex-row gap-4 absolute left-[1164px] top-[25px]">
     <div>
       <img src="/header__external-icon-github.svg" alt="header__external-link placeholder" />
     </div>
@@ -7,7 +7,7 @@
       <img src="/header__external-icon-linkedin.svg" alt="header__external-link placeholder" />
     </div>
   </div>
-  <div class="w-[287px] h-[30px] flex justify-start items-start flex-row gap-8 absolute left-[807px] top-[30px]">
+  <div class="h-[30px] flex justify-start items-start flex-row gap-8 absolute left-[807px] top-[30px]">
     <div class="text-[#FFFFFF] text-[26px] font-['Inter'] font-light">about</div>
     <div class="text-[#FFFFFF] text-[26px] font-['Inter'] font-light">work</div>
     <div class="text-[#FFFFFF] text-[26px] font-['Inter'] font-light">contact</div>
