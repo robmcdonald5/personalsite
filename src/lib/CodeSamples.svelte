@@ -1,5 +1,5 @@
 <section class="w-full max-w-[1440px] h-[656px] flex justify-start items-center flex-col gap-[90px] px-[5%] md:px-[180px] pt-[90px]">
-  <div class="flex justify-start items-center flex-row gap-[49px]">
+  <div class="flex justify-center items-center flex-row gap-[49px] w-full max-w-[1080px]">
     <div class="flex-1 h-0 border-solid border-[#E0E0E0] border-b"></div>
     <span class="text-[#000000] text-xl font-montserrat font-medium whitespace-nowrap">CODE SAMPLES</span>
     <div class="flex-1 h-0 border-solid border-[#E0E0E0] border-b"></div>

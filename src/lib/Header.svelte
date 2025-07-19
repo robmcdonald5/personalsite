@@ -6,7 +6,7 @@
   
   <!-- Navigation - responsive positioning -->
   <nav class="flex items-center gap-[24px] md:gap-[48px] absolute left-[75%] md:left-[80%] transform -translate-x-1/2">
-    <div class="text-[#FFFFFF] text-[20px] font-inter font-light">about</div>
+    <a href="/about" class="text-[#FFFFFF] text-[20px] font-inter font-light hover:text-[#4A90E2] transition-colors">about</a>
     <div class="text-[#FFFFFF] text-[20px] font-inter font-light">work</div>
     <div class="text-[#FFFFFF] text-[20px] font-inter font-light">contact</div>
   </nav>

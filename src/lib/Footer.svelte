@@ -10,8 +10,8 @@
       <span>McDonald</span>
     </span>
   </div>
-  <div class="flex justify-start items-center flex-row gap-4 md:gap-8">
-    <div class="text-[#000000] text-[20px] md:text-[26px] font-inter font-light">about</div>
+  <div class="flex justify-start items-center flex-row gap-[24px] md:gap-[48px]">
+    <a href="/about" class="text-[#000000] text-[20px] md:text-[26px] font-inter font-light hover:text-[#4A90E2] transition-colors">about</a>
     <div class="text-[#000000] text-[20px] md:text-[26px] font-inter font-light">work</div>
     <div class="text-[#000000] text-[20px] md:text-[26px] font-inter font-light">contact</div>
   </div>
