@@ -5,7 +5,7 @@
   import Footer from '$lib/Footer.svelte';
 </script>
 
-<div class="flex flex-col min-h-screen w-full bg-[#FFFFFF]">
+<div class="flex flex-col min-h-screen w-full bg-[#FFFFFF] overflow-x-hidden">
   <header class="w-full bg-[#111111] flex justify-center">
     <Header />
   </header>

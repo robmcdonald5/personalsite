@@ -1,10 +1,17 @@
-### REQUIREMENTS
-**Web Framework: SvelteKit5**
-**CSS Framework: Tailwind CSS**
-**Java Framework: TypeScript**
+### Core Technologies
+1. Framework: SvelteKit
+2. UI Library: Svelte 5
+3. Language: TypeScript
+4. CSS Framework: Tailwind CSS
 
-**Node.js: use latest compatable with SvelteKit5**
-**Package Manager: Initialize with pnpm, but you can also use npm**
+### Build Tools & Dependencies
+1. Node.js: Latest LTS (Long-Term Support) version
+2. Package Manager: pnpm (or npm)
+3. CSS Processor: PostCSS with the following plugins:
+    - @tailwindcss/postcss (Required for Tailwind CSS v4+)
+    - autoprefixer
 
-### DEPLOYMENT
-Until this instruction changes all deployments of site should be done locally and can be run locally on windows. Eventual deployment will be done on Vercel.
+### Key Configuration Files
+1. svelte.config.js
+2. tailwind.config.js
+3. postcss.config.js
