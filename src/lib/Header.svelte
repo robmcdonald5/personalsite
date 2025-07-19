@@ -6,9 +6,9 @@
   
   <!-- Navigation - responsive positioning -->
   <nav class="flex items-center gap-[24px] md:gap-[48px] absolute left-[75%] md:left-[80%] transform -translate-x-1/2">
-    <div class="text-[#FFFFFF] text-[20px] font-['Inter'] font-light">about</div>
-    <div class="text-[#FFFFFF] text-[20px] font-['Inter'] font-light">work</div>
-    <div class="text-[#FFFFFF] text-[20px] font-['Inter'] font-light">contact</div>
+    <div class="text-[#FFFFFF] text-[20px] font-inter font-light">about</div>
+    <div class="text-[#FFFFFF] text-[20px] font-inter font-light">work</div>
+    <div class="text-[#FFFFFF] text-[20px] font-inter font-light">contact</div>
   </nav>
   
   <!-- Social Icons -->
