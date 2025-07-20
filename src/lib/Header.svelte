@@ -42,13 +42,13 @@
 
   <!-- Social Icons -->
   <div class="flex items-center gap-[16px]">
-    <a href="https://github.com/yourusername" target="_blank" rel="noopener">
+    <a href="https://github.com/robmcdonald5" target="_blank" rel="noopener">
       <img
         src="/header__external-icon-github.svg"
         alt="GitHub"
       />
     </a>
-    <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">
+    <a href="https://www.linkedin.com/in/joshua-mcdonald-45a39a215/" target="_blank" rel="noopener">
       <img
         src="/header__external-icon-linkedin.svg"
         alt="LinkedIn"
