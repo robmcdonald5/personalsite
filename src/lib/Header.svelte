@@ -1,7 +1,9 @@
 <header class="w-full max-w-[1440px] h-[90px] flex items-center px-[5%] md:px-[180px] relative mx-auto">
   <!-- Logo -->
   <div class="flex items-center">
-    <img src="/header__logo-icon.svg" alt="header__logo placeholder" />
+    <a href="/">
+      <img src="/header__logo-icon.svg" alt="header__logo placeholder" class="cursor-pointer" />
+    </a>
   </div>
   
   <!-- Navigation - responsive positioning -->
