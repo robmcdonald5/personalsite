@@ -33,25 +33,25 @@
 
   <main class="flex-grow flex flex-col">
     <!-- Hero Section -->
-    <div class="w-full bg-[#FFFFFF] flex justify-center py-[100px] flex-grow">
+    <div class="w-full bg-[#FFFFFF] flex justify-center py-[80px] flex-grow">
       <section class="w-full max-w-[1440px] px-[5%] md:px-[180px]">
         <!-- Title and Description -->
-        <div class="flex flex-col items-center gap-6 mb-[75px]">
-          <h1 class="text-[#2D2D2D] text-[64px] font-inter font-bold tracking-[-1.28px] text-center">
+        <div class="flex flex-col items-center gap-4 mb-[60px]">
+          <h1 class="text-[#2D2D2D] text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
             My Work
           </h1>
-          <p class="text-[#2D2D2D] text-lg font-inter text-center">
+          <p class="text-[#2D2D2D] text-lg font-inter text-center max-w-[600px]">
             Explore snippets of the work I've done over my development career.
           </p>
         </div>
 
         <!-- Navigate Projects Button -->
-        <div class="flex justify-center mb-[75px]">
+        <div class="flex justify-center mb-[80px]">
           <button 
-            class="flex items-center gap-1 py-3 px-7 bg-[#4A90E2] rounded-2xl hover:bg-[#3A7BC8] transition-colors"
+            class="flex items-center gap-2 py-3 px-6 bg-[#4A90E2] rounded-2xl hover:bg-[#3A7BC8] transition-colors"
             onclick={() => toggleDropdown('navigate')}
           >
-            <span class="text-[#FFFFFF] text-lg font-inter font-semibold">
+            <span class="text-[#FFFFFF] text-base font-inter font-semibold">
               Navigate Projects
             </span>
             <img src="/dropdown__icon.png" alt="dropdown icon" class="w-4 h-4" />
@@ -59,24 +59,22 @@
         </div>
 
         <!-- Project Categories Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-x-[27px] md:gap-x-[75px] gap-y-[75px] max-w-[1080px] mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1080px] mx-auto">
           {#each categories as category}
-            <div class="w-full max-w-[300px] mx-auto">
-              <button 
-                class="w-full h-[120px] flex items-center p-6 bg-[#FAFAFA] border border-[#EAEAEA] rounded-2xl hover:bg-[#F0F0F0] transition-colors"
+            <div class="w-full">
+              <button
+                class="w-full h-[100px] flex items-center justify-between p-6 bg-[#FAFAFA] border border-[#EAEAEA] rounded-2xl hover:bg-[#F0F0F0] transition-colors"
                 onclick={() => toggleDropdown(category.name)}
               >
-                <div class="flex flex-col items-start w-full">
-                  <div class="flex items-center justify-between w-full mb-2">
-                    <h3 class="text-[#000000] text-2xl font-inter font-bold">
-                      {category.name}
-                    </h3>
-                    <img src="/dropdown__icon.png" alt="dropdown icon" class="w-4 h-4" />
-                  </div>
+                <div class="flex flex-col items-start">
+                  <h3 class="text-[#000000] text-xl font-inter font-semibold mb-1">
+                    {category.name}
+                  </h3>
                   <p class="text-[#666666] font-inter text-sm">
                     {category.count} Project{category.count !== 1 ? 's' : ''}
                   </p>
                 </div>
+                <img src="/dropdown__icon.png" alt="dropdown icon" class="w-4 h-4 flex-shrink-0" />
               </button>
               
               <!-- Dropdown Content (placeholder for now) -->
