@@ -61,7 +61,7 @@
             </div>
           </div>
           <!-- Expertise Column -->
-          <div class="flex flex-col gap-6">
+          <div class="flex flex-col gap-6 justify-self-center">
             <h2 class="text-[#4B4B4B] text-[28px] font-inter font-bold tracking-[-0.56px]">
               Expertise
             </h2>
@@ -82,7 +82,7 @@
             <h2 class="text-[#4B4B4B] text-[28px] font-inter font-bold tracking-[-0.56px]">
               Recent Projects
             </h2>
-            <div class="text-[#2D2D2D] space-y-4">
+            <div class="text-[#2D2D2D] flex flex-col gap-8">
               <div>
                 <h3 class="text-lg font-inter font-semibold mb-1">
                   Chipotle AI Ordering System
