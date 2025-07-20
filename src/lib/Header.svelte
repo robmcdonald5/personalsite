@@ -1,6 +1,6 @@
 <!-- src/lib/Header.svelte -->
 <script>
-  // any script you had here (none needed for static header)
+  import { page } from '$app/stores';
 </script>
 
 <header class="w-full max-w-[1440px] h-[90px]
@@ -20,22 +20,20 @@
   <nav class="flex items-center gap-[16px] md:gap-[48px]">
     <a
       href="/about"
-      class="text-[#FFFFFF] text-[20px] md:text-[26px]
-             font-inter font-light
-             hover:text-[#4A90E2] transition-colors"
+      class="text-[20px] md:text-[26px] font-inter font-light transition-colors
+             {$page.url.pathname === '/about' ? 'text-[#4A90E2]' : 'text-[#FFFFFF] hover:text-[#4A90E2]'}"
       >about</a
     >
     <a
       href="/work"
-      class="text-[#FFFFFF] text-[20px] md:text-[26px]
-             font-inter font-light
-             hover:text-[#4A90E2] transition-colors"
+      class="text-[20px] md:text-[26px] font-inter font-light transition-colors
+             {$page.url.pathname === '/work' ? 'text-[#4A90E2]' : 'text-[#FFFFFF] hover:text-[#4A90E2]'}"
       >work</a
     >
     <a
       href="/contact"
-      class="text-[#FFFFFF] text-[20px] md:text-[26px]
-             font-inter font-light"
+      class="text-[20px] md:text-[26px] font-inter font-light transition-colors
+             {$page.url.pathname === '/contact' ? 'text-[#4A90E2]' : 'text-[#FFFFFF] hover:text-[#4A90E2]'}"
       >contact</a
     >
   </nav>
