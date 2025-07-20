@@ -44,9 +44,9 @@
             Explore snippets of the work I've done over my development career.
           </p>
         </div>
-
+        
         <!-- Navigate Projects Button -->
-        <div class="flex justify-center mb-[60px]">
+        <div class="flex justify-center mb-[80px]">
           <button 
             class="flex items-center gap-2 py-3 px-6 bg-[#4A90E2] rounded-2xl hover:bg-[#3A7BC8] transition-colors"
             onclick={() => toggleDropdown('navigate')}
@@ -57,12 +57,12 @@
             <img src="/dropdown__icon.svg" alt="dropdown icon" class="w-4 h-4" />
           </button>
         </div>
-
+        
         <!-- Project Categories Grid -->
-        <div class="flex justify-center items-center min-h-[400px] mt-[60px]">
+        <div class="flex justify-center items-center min-h-[400px]">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-x-[27px] gap-y-[75px] max-w-[981px]">
           {#each categories as category}
-            <div class="w-[300px]">
+            <div class="w-[300px] relative">
               <button
                 class="w-[300px] h-[120px] flex items-center justify-between p-6 bg-[#FAFAFA] border border-[#EAEAEA] rounded-2xl hover:bg-[#F0F0F0] transition-colors"
                 onclick={() => toggleDropdown(category.name)}
@@ -78,13 +78,13 @@
                 <img 
                   src="/dropdown__icon.svg" 
                   alt="dropdown icon" 
-                  class="w-4 h-4 flex-shrink-0 transition-transform {openDropdown === category.name ? 'rotate-180' : ''}" 
+                  class="w-4 h-4 flex-shrink-0 transition-transform {openDropdown === category.name ? 'rotate-180' : ''}"
                 />
               </button>
-              
+                          
               <!-- Dropdown Content (placeholder for now) -->
               {#if openDropdown === category.name}
-                <div class="w-[300px] mt-2 p-4 bg-white border border-[#EAEAEA] rounded-xl shadow-lg">
+                <div class="absolute top-[122px] left-0 w-[300px] p-4 bg-white border border-[#EAEAEA] rounded-xl shadow-lg z-10">
                   <p class="text-sm text-[#666666]">
                     Projects for {category.name} will be listed here.
                   </p>
