@@ -46,7 +46,7 @@
         </div>
 
         <!-- Navigate Projects Button -->
-        <div class="flex justify-center mb-[80px]">
+        <div class="flex justify-center mb-[60px]">
           <button 
             class="flex items-center gap-2 py-3 px-6 bg-[#4A90E2] rounded-2xl hover:bg-[#3A7BC8] transition-colors"
             onclick={() => toggleDropdown('navigate')}
@@ -54,16 +54,17 @@
             <span class="text-[#FFFFFF] text-base font-inter font-semibold">
               Navigate Projects
             </span>
-            <img src="/dropdown__icon.png" alt="dropdown icon" class="w-4 h-4" />
+            <img src="/dropdown__icon.svg" alt="dropdown icon" class="w-4 h-4" />
           </button>
         </div>
 
         <!-- Project Categories Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1080px] mx-auto">
+        <div class="flex justify-center items-center min-h-[400px] mt-[60px]">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-x-[27px] gap-y-[75px] max-w-[981px]">
           {#each categories as category}
-            <div class="w-full">
+            <div class="w-[300px]">
               <button
-                class="w-full h-[100px] flex items-center justify-between p-6 bg-[#FAFAFA] border border-[#EAEAEA] rounded-2xl hover:bg-[#F0F0F0] transition-colors"
+                class="w-[300px] h-[120px] flex items-center justify-between p-6 bg-[#FAFAFA] border border-[#EAEAEA] rounded-2xl hover:bg-[#F0F0F0] transition-colors"
                 onclick={() => toggleDropdown(category.name)}
               >
                 <div class="flex flex-col items-start">
@@ -74,12 +75,16 @@
                     {category.count} Project{category.count !== 1 ? 's' : ''}
                   </p>
                 </div>
-                <img src="/dropdown__icon.png" alt="dropdown icon" class="w-4 h-4 flex-shrink-0" />
+                <img 
+                  src="/dropdown__icon.svg" 
+                  alt="dropdown icon" 
+                  class="w-4 h-4 flex-shrink-0 transition-transform {openDropdown === category.name ? 'rotate-180' : ''}" 
+                />
               </button>
               
               <!-- Dropdown Content (placeholder for now) -->
               {#if openDropdown === category.name}
-                <div class="mt-2 p-4 bg-white border border-[#EAEAEA] rounded-xl shadow-lg">
+                <div class="w-[300px] mt-2 p-4 bg-white border border-[#EAEAEA] rounded-xl shadow-lg">
                   <p class="text-sm text-[#666666]">
                     Projects for {category.name} will be listed here.
                   </p>
@@ -87,6 +92,7 @@
               {/if}
             </div>
           {/each}
+          </div>
         </div>
       </section>
     </div>
