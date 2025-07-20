@@ -66,17 +66,17 @@
             <h2 class="text-[#4B4B4B] text-[28px] font-inter font-bold tracking-[-0.56px]">
               Expertise
             </h2>
-            <div class="text-[#2D2D2D] font-inter space-y-4">
-              <div>Machine Learning & Deep Learning</div>
-              <div>NLP Processing & Training</div>
-              <div>Scientific Stack Python Libraries</div>
-              <div>Intent Training & Chatbot Design</div>
-              <div>Docker + Containerized Deployments</div>
-              <div>REST API Integration</div>
-              <div>Git & CI/CD Pipelines</div>
-              <div>MongoDB, Postgres, supabase</div>
-              <div>Server Deployment & Virtualization</div>
-            </div>
+            <ul class="text-[#2D2D2D] font-inter flex flex-col gap-6 list-disc list-inside">
+              <li>Machine Learning & Deep Learning</li>
+              <li>NLP Processing & Training</li>
+              <li>Scientific Stack Python Libraries</li>
+              <li>Intent Training & Chatbot Design</li>
+              <li>Docker + Containerized Deployments</li>
+              <li>REST API Integration</li>
+              <li>Git & CI/CD Pipelines</li>
+              <li>MongoDB, Postgres, supabase</li>
+              <li>Server Deployment & Virtualization</li>
+            </ul>
           </div>
 
           <!-- Recent Projects Column -->
