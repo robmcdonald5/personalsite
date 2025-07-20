@@ -50,7 +50,7 @@
             <h2 class="text-[#4B4B4B] text-[28px] font-inter font-bold tracking-[-0.56px]">
               Experience
             </h2>
-            <div class="text-[#2D2D2D] font-inter">
+            <div class="text-[#2D2D2D] font-inter leading-relaxed">
               I'm a software engineer with a focus on AI and intelligent systems.
               My background blends a strong foundation in computer science with
               hands-on experience in full-stack development, web-API integration,
@@ -60,13 +60,12 @@
               models, and deploying them with modern web architectures.
             </div>
           </div>
-
           <!-- Expertise Column -->
           <div class="flex flex-col gap-6">
             <h2 class="text-[#4B4B4B] text-[28px] font-inter font-bold tracking-[-0.56px]">
               Expertise
             </h2>
-            <ul class="text-[#2D2D2D] font-inter flex flex-col gap-6 list-disc list-inside">
+            <ul class="text-[#2D2D2D] font-inter flex flex-col gap-3 list-disc list-inside">
               <li>Machine Learning & Deep Learning</li>
               <li>NLP Processing & Training</li>
               <li>Scientific Stack Python Libraries</li>
@@ -78,15 +77,14 @@
               <li>Server Deployment & Virtualization</li>
             </ul>
           </div>
-
           <!-- Recent Projects Column -->
           <div class="flex flex-col gap-6">
             <h2 class="text-[#4B4B4B] text-[28px] font-inter font-bold tracking-[-0.56px]">
               Recent Projects
             </h2>
-            <div class="text-[#2D2D2D] space-y-6">
+            <div class="text-[#2D2D2D] space-y-4">
               <div>
-                <h3 class="text-lg font-inter font-semibold mb-2">
+                <h3 class="text-lg font-inter font-semibold mb-1">
                   Chipotle AI Ordering System
                 </h3>
                 <p class="font-inter">
@@ -94,9 +92,9 @@
                   turns Chipotle ordering fully autonomous.
                 </p>
               </div>
-              
+                        
               <div>
-                <h3 class="text-lg font-inter font-semibold mb-2">
+                <h3 class="text-lg font-inter font-semibold mb-1">
                   Path of Exile Market Analyzer
                 </h3>
                 <p class="font-inter">
@@ -104,9 +102,9 @@
                   API backend to do market trend analysis and reports for users.
                 </p>
               </div>
-              
+                        
               <div>
-                <h3 class="text-lg font-inter font-semibold mb-2">
+                <h3 class="text-lg font-inter font-semibold mb-1">
                   E-Commerce Price Tracker + Scraper
                 </h3>
                 <p class="font-inter">
