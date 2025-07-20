@@ -26,7 +26,7 @@
               I'm a software engineer and AI<br />
               enthusiast based in Texas.
             </p>
-            <p class="text-[#000000] text-sm font-inter font-extralight max-w-[450px]">
+            <p class="text-[#000000] text-sm font-inter font-extralight max-w-[280px]">
               I've been working with and building software systems for most of my
               life. Currently I am focused on making AI applications — blending
               creativity, efficiency, and elegance.

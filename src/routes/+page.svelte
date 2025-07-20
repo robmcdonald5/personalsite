@@ -10,12 +10,12 @@
     <Header />
   </header>
 
-  <main class="flex-grow">
+  <main class="flex-grow flex flex-col">
     <div class="w-full bg-[#FFFFFF] flex justify-center">
       <Hero />
     </div>
     <div class="w-full h-[4px] gradient-divider"></div>
-    <div class="w-full bg-[#FFFFFF] flex justify-center">
+    <div class="w-full bg-[#FFFFFF] flex justify-center flex-grow">
       <CodeSamples />
     </div>
     <div class="w-full h-[4px] gradient-divider"></div>
