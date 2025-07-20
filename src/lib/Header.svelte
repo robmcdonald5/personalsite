@@ -12,7 +12,7 @@
   </nav>
   
   <!-- Social Icons -->
-  <div class="flex items-center gap-[16px] ml-auto">
+  <div class="flex items-center gap-[16px] absolute right-[5%] md:right-[20px] top-[25px]">
     <img src="/header__external-icon-github.svg" alt="header__external-link placeholder" />
     <img src="/header__external-icon-linkedin.svg" alt="header__external-link placeholder" />
   </div>
