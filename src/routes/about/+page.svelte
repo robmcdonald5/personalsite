@@ -42,7 +42,7 @@
     <div class="w-full h-[4px] gradient-divider"></div>
 
     <!-- Content Section -->
-    <div class="w-full bg-[#FAFAFA] flex justify-center pt-[90px] pb-[90px] flex-grow">
+    <div class="w-full bg-[#FAFAFA] flex justify-center items-center flex-grow">
       <section class="w-full max-w-[1440px] px-[5%] md:px-[180px]">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-x-[27px] gap-y-[76px]">
           <!-- Experience Column -->
