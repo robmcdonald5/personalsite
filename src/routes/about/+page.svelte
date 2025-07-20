@@ -16,8 +16,8 @@
     <!-- About Hero Section -->
     <div class="w-full bg-[#FFFFFF] flex justify-center py-[90px]">
       <section class="w-full max-w-[1440px] px-[5%] md:px-[180px]">
-        <div class="flex flex-col md:flex-row md:justify-between md:items-end min-h-[315px]">
-          <!-- About Text Content - Left Side, Centered Vertically -->
+        <div class="grid md:grid-cols-2 gap-[90px] md:h-[315px]">
+          <!-- About Text Content - Left Side -->
           <div class="flex flex-col gap-[29px] max-w-[500px] md:self-center">
             <h1 class="text-[#2D2D2D] text-[56px] font-inter font-bold tracking-[-1.12px]">
               about
@@ -34,7 +34,7 @@
           </div>
           
           <!-- Profile Image - Right Side, Bottom Aligned -->
-          <div class="w-[228px] h-[315px] bg-cover bg-center flex-shrink-0 mt-[29px] md:mt-0" style="background-image: url(/hero__headshot.png)"></div>
+          <div class="w-[228px] h-[315px] bg-cover bg-center justify-self-end md:self-end" style="background-image: url(/hero__headshot.png)"></div>
         </div>
       </section>
     </div>
