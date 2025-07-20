@@ -5,7 +5,7 @@ import sveltePreprocess from 'svelte-preprocess';
 const config = {
 	// Consult https://svelte.dev/docs/kit/integrations
 	// for more information about preprocessors
-	preprocess: sveltePreprocess({ postcss: true }),
+	preprocess: sveltePreprocess(),
 
 	kit: {
 		// adapter-auto only supports some environments, see https://svelte.dev/docs/kit/adapter-auto for a list.
