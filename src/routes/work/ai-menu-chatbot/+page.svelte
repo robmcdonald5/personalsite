@@ -14,10 +14,12 @@
     { name: 'Backend API & Data Persistence', icon: 'backend_nav_icon.svg' }
   ];
   
+  // @ts-ignore
   function setActiveSection(section) {
     activeSection = section;
   }
   
+  // @ts-ignore
   function setActiveLanguage(language) {
     activeLanguage = language;
   }
@@ -59,7 +61,7 @@
                   {section.name}
                 </div>
                 <div>
-                  <img src="/{section.icon}" alt="{section.name} icon" class="w-[18px] h-[18px]" />
+                  <img src="/{section.icon}" alt="{section.name}" class="w-[18px] h-[18px]" />
                 </div>
               </button>
             {/each}
@@ -70,16 +72,16 @@
             <div class="w-[580px] h-[411px] flex justify-center items-center flex-row pb-[18px] px-[18px] bg-[#FFFFFF] border-solid border-[#EEEEEE] border-b border-x rounded-br-lg rounded-bl-lg">
               <div class="w-[544px] h-[393px] flex justify-center items-center flex-row pt-[71px] pb-[247px] pr-[49px] pl-[50px] bg-[#FAFAFA] rounded-lg">
                 <div>
-                  <img src="/pipeline-image.png" alt="pipeline image" class="w-[75px] h-[75px]" />
+                  <img src="/pipeline-image.png" alt="NLP pipeline visualization" class="w-[75px] h-[75px]" />
                 </div>
               </div>
             </div>
             <div class="w-[580px] h-[65px] flex justify-center items-center flex-row bg-[#FFFFFF] border-solid border-[#EEEEEE] border-t border-x rounded-tl-lg rounded-tr-lg">
               <button class="mr-2" style="transform: rotate(-180deg)">
-                <img src="/nav-button-prev.svg" alt="previous" class="w-[16px] h-[16px]" />
+                <img src="/nav-button-prev.svg" alt="Previous" class="w-[16px] h-[16px]" />
               </button>
               <button class="mr-4">
-                <img src="/nav-button-next.svg" alt="next" class="w-[16px] h-[16px]" />
+                <img src="/nav-button-next.svg" alt="Next" class="w-[16px] h-[16px]" />
               </button>
               <div class="text-[#2D2D2D] text-sm font-inter font-medium">
                 NLP Pipeline
@@ -119,7 +121,7 @@
             <!-- Code Display Area -->
             <div class="w-[480px] h-[375px] flex self-stretch justify-center items-center flex-row pt-[47px] pb-[48px] px-[25px] bg-[#FFFFFF] rounded-br-xl rounded-bl-xl">
               <div class="w-[430px] h-[280px] flex justify-center items-center flex-row rounded-xl bg-gradient-to-b from-[rgba(37,37,37,0.05)] to-[rgba(37,37,37,0.05)] bg-cover bg-center">
-                <img src="/code-display-placeholder.png" alt="code display" class="w-[430px] h-[280px] object-cover rounded-xl" />
+                <img src="/code-display-placeholder.png" alt="Code snippet" class="w-[430px] h-[280px] object-cover rounded-xl" />
               </div>
             </div>
           </div>
