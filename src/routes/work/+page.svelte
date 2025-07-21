@@ -83,13 +83,55 @@
                 />
               </button>
                           
-              <!-- Dropdown Content (placeholder for now) -->
+              <!-- Dropdown Content -->
               {#if openDropdown === category.name}
-                <div class="absolute top-[122px] left-0 w-[300px] p-4 bg-white border border-[#EAEAEA] rounded-xl shadow-lg z-10">
-                  <p class="text-sm text-[#666666]">
-                    Projects for {category.name} will be listed here.
-                  </p>
-                </div>
+                {#if category.name === 'Chatbots'}
+                  <!-- Chatbots Dropdown -->
+                  <div 
+                    class="absolute top-0 left-0 w-[300px] h-[239px] bg-[#FAFAFA] border border-[#EAEAEA] rounded-2xl shadow-lg z-10"
+                    onclick={() => toggleDropdown(category.name)}
+                  >
+                    <!-- Header section with title and icon -->
+                    <div class="relative h-[119px] bg-[#FFFFFF] rounded-t-2xl flex items-center justify-between p-6">
+                      <div class="flex flex-col items-start">
+                        <h3 class="text-[#000000] text-xl font-inter font-semibold mb-1">
+                          Chatbots
+                        </h3>
+                        <p class="text-[#666666] font-inter text-sm">
+                          2 Projects
+                        </p>
+                      </div>
+                      <img 
+                        src="/dropdown__icon.svg" 
+                        alt="dropdown icon" 
+                        class="w-4 h-4 flex-shrink-0 transform rotate-180" 
+                      />
+                    </div>
+                    
+                    <!-- Project items -->
+                    <div class="flex flex-col">
+                      <button 
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] px-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
+                      >
+                        <span class="text-[#666666] font-inter">Chipotle AI Menu</span>
+                      </button>
+                      <button 
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] px-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
+                        onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
+                      >
+                        <span class="text-[#666666] font-inter">AI Creative Writing Assistant</span>
+                      </button>
+                    </div>
+                  </div>
+                {:else}
+                  <!-- Placeholder for other dropdowns -->
+                  <div class="absolute top-[122px] left-0 w-[300px] p-4 bg-white border border-[#EAEAEA] rounded-xl shadow-lg z-10">
+                    <p class="text-sm text-[#666666]">
+                      Projects for {category.name} will be listed here.
+                    </p>
+                  </div>
+                {/if}
               {/if}
             </div>
           {/each}
