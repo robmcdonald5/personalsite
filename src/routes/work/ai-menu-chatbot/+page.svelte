@@ -54,7 +54,7 @@
             {#each sections as section}
               <button
                 class="flex items-center gap-2 px-4 py-2 rounded-full border transition-all duration-200 {activeSection === section.name ? 'bg-[#4A90E2] text-white border-[#4A90E2]' : 'bg-white text-[#6B7280] border-[#E5E7EB] hover:border-[#4A90E2]'}"
-                on:click={() => setActiveSection(section.name)}
+                onclick={() => setActiveSection(section.name)}
               >
                 <div class="w-4 h-4 rounded-full {activeSection === section.name ? 'bg-white' : 'bg-[#4A90E2]'}"></div>
                 <span class="text-sm font-medium">{section.name}</span>
@@ -78,13 +78,13 @@
               
               <!-- Navigation Footer -->
               <div class="h-[60px] bg-white border-t border-[#E5E7EB] flex items-center justify-center gap-4">
-                <button class="p-2 hover:bg-gray-50 rounded">
+                <button class="p-2 hover:bg-gray-50 rounded" aria-label="Previous pipeline step">
                   <svg class="w-4 h-4 text-gray-600 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                   </svg>
                 </button>
                 <span class="text-sm font-medium text-[#2D2D2D]">NLP Pipeline</span>
-                <button class="p-2 hover:bg-gray-50 rounded">
+                <button class="p-2 hover:bg-gray-50 rounded" aria-label="Next pipeline step">
                   <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                   </svg>
@@ -106,13 +106,13 @@
                 <div class="flex gap-1">
                   <button
                     class="px-6 py-2 text-sm font-medium rounded-t-md transition-all {activeLanguage === 'Python' ? 'bg-white text-[#1F2937] border-b-2 border-[#4A90E2]' : 'text-[#6B7280] hover:text-[#1F2937]'}"
-                    on:click={() => setActiveLanguage('Python')}
+                    onclick={() => setActiveLanguage('Python')}
                   >
                     Python
                   </button>
                   <button
                     class="px-6 py-2 text-sm font-medium rounded-t-md transition-all {activeLanguage === 'JSON' ? 'bg-white text-[#1F2937] border-b-2 border-[#4A90E2]' : 'text-[#6B7280] hover:text-[#1F2937]'}"
-                    on:click={() => setActiveLanguage('JSON')}
+                    onclick={() => setActiveLanguage('JSON')}
                   >
                     JSON
                   </button>
