@@ -22,13 +22,3 @@
 1. svelte.config.js
 2. tailwind.config.js
 3. postcss.config.js
-
-### CSS Important Override Rule
-**CRITICAL**: This project has a global CSS reset in `src/app.css` that sets `* { margin: 0; padding: 0; }`. This overrides Tailwind CSS utilities with custom values in square brackets.
-
-**Required Solution**: ALWAYS use the `!important` modifier (!) when using Tailwind spacing utilities with custom values:
-- ✅ Correct: `!px-[40px]`, `!mb-[200px]`, `!pl-[40px]`
-- ❌ Wrong: `px-[40px]`, `mb-[200px]`, `pl-[40px]` (will be overridden by CSS reset)
-
-**Applies to**: All padding (`p*`), margin (`m*`) utilities with arbitrary values `[...]`
-**Examples**: `!px-[5%]`, `!md:px-[180px]`, `!pl-[40px]`, `!mb-[200px]`, `!gap-[27px]`

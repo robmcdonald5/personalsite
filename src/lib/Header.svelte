@@ -5,7 +5,7 @@
 
 <header class="w-full max-w-[1440px] h-[90px]
                flex items-center justify-between
-               !px-[5%] md:!px-[180px]
+               px-[5%] md:px-[180px]
                mx-auto">
   <!-- Logo -->
   <a href="/" class="flex items-center">

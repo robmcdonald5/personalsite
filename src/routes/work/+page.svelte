@@ -35,7 +35,7 @@
   <main class="flex-grow flex flex-col">
     <!-- Hero Section -->
     <div class="w-full bg-[#FFFFFF] flex justify-center py-[80px] flex-grow">
-      <section class="w-full max-w-[1440px] !px-[5%] md:!px-[180px]">
+      <section class="w-full max-w-[1440px] px-[5%] md:px-[180px]">
         <!-- Title and Description -->
         <div class="flex flex-col items-center gap-4 mb-[60px]">
           <h1 class="text-[#2D2D2D] text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
@@ -47,7 +47,7 @@
         </div>
         
         <!-- Navigate Projects Button -->
-        <div class="flex justify-center !mb-[200px]">
+        <div class="flex justify-center mb-[200px]">
           <button 
             class="flex items-center gap-2 py-3 px-6 bg-[#4A90E2] rounded-2xl hover:bg-[#3A7BC8] transition-colors"
             onclick={() => toggleDropdown('navigate')}
@@ -60,12 +60,12 @@
         </div>
         
         <!-- Project Categories Grid -->
-        <div class="flex justify-center items-center min-h-[400px] !mb-[200px]">
+        <div class="flex justify-center items-center min-h-[400px] mb-[200px]">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-x-[27px] gap-y-[75px] max-w-[981px] w-full px-4 md:px-0">
           {#each categories as category}
             <div class="w-full max-w-[300px] mx-auto relative">
               <button
-                class="w-full max-w-[300px] h-[120px] flex items-center justify-between !pl-[40px] pr-6 py-6 bg-[#FAFAFA] border border-[#EAEAEA] rounded-2xl hover:bg-[#F0F0F0] transition-colors"
+                class="w-full max-w-[300px] h-[120px] flex items-center justify-between pl-[40px] pr-6 py-6 bg-[#FAFAFA] border border-[#EAEAEA] rounded-2xl hover:bg-[#F0F0F0] transition-colors"
                 onclick={() => toggleDropdown(category.name)}
               >
                 <div class="flex flex-col items-start">
@@ -98,7 +98,7 @@
                     aria-label={`Close ${category.name} dropdown`}
                   >
                     <!-- Header section with title and icon -->
-                    <div class="relative h-[119px] bg-[#FFFFFF] rounded-t-2xl flex items-center justify-between !pl-[40px] pr-6">
+                    <div class="relative h-[119px] bg-[#FFFFFF] rounded-t-2xl flex items-center justify-between pl-[40px] pr-6">
                       <div class="flex flex-col items-start">
                         <div class="flex items-baseline gap-2">
                           <h3 class="text-[#000000] text-xl font-inter font-semibold">
@@ -119,13 +119,13 @@
                     <!-- Project items -->
                     <div class="flex flex-col">
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] !pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
                       >
                         <span class="text-[#666666] font-inter">Chipotle AI Menu</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] !pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
                         onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
                       >
                         <span class="text-[#666666] font-inter">AI Creative Writing Assistant</span>
@@ -143,7 +143,7 @@
                     aria-label={`Close ${category.name} dropdown`}
                   >
                     <!-- Header section with title and icon -->
-                    <div class="relative h-[119px] bg-[#FFFFFF] rounded-t-2xl flex items-center justify-between !pl-[40px] pr-6">
+                    <div class="relative h-[119px] bg-[#FFFFFF] rounded-t-2xl flex items-center justify-between pl-[40px] pr-6">
                       <div class="flex flex-col items-start">
                         <div class="flex items-baseline gap-2">
                           <h3 class="text-[#000000] text-xl font-inter font-semibold">
@@ -164,31 +164,31 @@
                     <!-- Project items -->
                     <div class="flex flex-col">
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] !pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
                       >
                         <span class="text-[#666666] font-inter">My Portfolio Site</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] !pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
                       >
                         <span class="text-[#666666] font-inter">Path of Exile Market Analyzer</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] !pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
                       >
                         <span class="text-[#666666] font-inter">AI Creative Writing Assistant</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] !pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
                       >
                         <span class="text-[#666666] font-inter">Dune Spice Wars Wiki</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] !pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
                         onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
                       >
                         <span class="text-[#666666] font-inter">Chipotle AI Menu</span>
@@ -206,7 +206,7 @@
                     aria-label={`Close ${category.name} dropdown`}
                   >
                     <!-- Header section with title and icon -->
-                    <div class="relative h-[119px] bg-[#FFFFFF] rounded-t-2xl flex items-center justify-between !pl-[40px] pr-6">
+                    <div class="relative h-[119px] bg-[#FFFFFF] rounded-t-2xl flex items-center justify-between pl-[40px] pr-6">
                       <div class="flex flex-col items-start">
                         <div class="flex items-baseline gap-2">
                           <h3 class="text-[#000000] text-xl font-inter font-semibold">
@@ -227,25 +227,25 @@
                     <!-- Project items -->
                     <div class="flex flex-col">
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] !pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
                       >
                         <span class="text-[#666666] font-inter">Chipotle AI Menu</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] !pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
                       >
                         <span class="text-[#666666] font-inter">AI Creative Writing Assistant</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] !pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
                       >
                         <span class="text-[#666666] font-inter">Path of Exile Market Analyzer</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] !pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
                         onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
                       >
                         <span class="text-[#666666] font-inter">E-Commerce Price Tracker</span>
@@ -263,7 +263,7 @@
                     aria-label={`Close ${category.name} dropdown`}
                   >
                     <!-- Header section with title and icon -->
-                    <div class="relative h-[119px] bg-[#FFFFFF] rounded-t-2xl flex items-center justify-between !pl-[40px] pr-6">
+                    <div class="relative h-[119px] bg-[#FFFFFF] rounded-t-2xl flex items-center justify-between pl-[40px] pr-6">
                       <div class="flex flex-col items-start">
                         <div class="flex items-baseline gap-2">
                           <h3 class="text-[#000000] text-xl font-inter font-semibold">
@@ -284,19 +284,19 @@
                     <!-- Project items -->
                     <div class="flex flex-col">
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] !pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
                       >
                         <span class="text-[#666666] font-inter">AI Creative Writing Assistant</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] !pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
                       >
                         <span class="text-[#666666] font-inter">E-Commerce Price Tracker</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] !pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
                         onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
                       >
                         <span class="text-[#666666] font-inter">Path of Exile Market Analyzer</span>
@@ -314,7 +314,7 @@
                     aria-label={`Close ${category.name} dropdown`}
                   >
                     <!-- Header section with title and icon -->
-                    <div class="relative h-[119px] bg-[#FFFFFF] rounded-t-2xl flex items-center justify-between !pl-[40px] pr-6">
+                    <div class="relative h-[119px] bg-[#FFFFFF] rounded-t-2xl flex items-center justify-between pl-[40px] pr-6">
                       <div class="flex flex-col items-start">
                         <div class="flex items-baseline gap-2">
                           <h3 class="text-[#000000] text-xl font-inter font-semibold">
@@ -335,25 +335,25 @@
                     <!-- Project items -->
                     <div class="flex flex-col">
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] !pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
                       >
                         <span class="text-[#666666] font-inter">Chipotle AI Menu</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] !pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
                       >
                         <span class="text-[#666666] font-inter">AI Creative Writing Assistant</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] !pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
                       >
                         <span class="text-[#666666] font-inter">E-Commerce Price Tracker</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] !pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
                         onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
                       >
                         <span class="text-[#666666] font-inter">Path of Exile Market Analyzer</span>
@@ -371,7 +371,7 @@
                     aria-label={`Close ${category.name} dropdown`}
                   >
                     <!-- Header section with title and icon -->
-                    <div class="relative h-[119px] bg-[#FFFFFF] rounded-t-2xl flex items-center justify-between !pl-[40px] pr-6">
+                    <div class="relative h-[119px] bg-[#FFFFFF] rounded-t-2xl flex items-center justify-between pl-[40px] pr-6">
                       <div class="flex flex-col items-start">
                         <div class="flex items-baseline gap-2">
                           <h3 class="text-[#000000] text-xl font-inter font-semibold">
@@ -392,13 +392,13 @@
                     <!-- Project items -->
                     <div class="flex flex-col">
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] !pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
                       >
                         <span class="text-[#666666] font-inter">Chipotle AI Menu</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] !pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
                         onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
                       >
                         <span class="text-[#666666] font-inter">AI Creative Writing Assistant</span>
@@ -416,7 +416,7 @@
                     aria-label={`Close ${category.name} dropdown`}
                   >
                     <!-- Header section with title and icon -->
-                    <div class="relative h-[119px] bg-[#FFFFFF] rounded-t-2xl flex items-center justify-between !pl-[40px] pr-6">
+                    <div class="relative h-[119px] bg-[#FFFFFF] rounded-t-2xl flex items-center justify-between pl-[40px] pr-6">
                       <div class="flex flex-col items-start">
                         <div class="flex items-baseline gap-2">
                           <h3 class="text-[#000000] text-xl font-inter font-semibold">
@@ -437,13 +437,13 @@
                     <!-- Project items -->
                     <div class="flex flex-col">
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] !pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
                       >
                         <span class="text-[#666666] font-inter">E-Commerce Price Tracker</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] !pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
                         onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
                       >
                         <span class="text-[#666666] font-inter">Path of Exile Market Analyzer</span>
@@ -461,7 +461,7 @@
                     aria-label={`Close ${category.name} dropdown`}
                   >
                     <!-- Header section with title and icon -->
-                    <div class="relative h-[119px] bg-[#FFFFFF] rounded-t-2xl flex items-center justify-between !pl-[40px] pr-6">
+                    <div class="relative h-[119px] bg-[#FFFFFF] rounded-t-2xl flex items-center justify-between pl-[40px] pr-6">
                       <div class="flex flex-col items-start">
                         <div class="flex items-baseline gap-2">
                           <h3 class="text-[#000000] text-xl font-inter font-semibold">
@@ -482,19 +482,19 @@
                     <!-- Project items -->
                     <div class="flex flex-col">
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] !pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
                       >
                         <span class="text-[#666666] font-inter">Chipotle AI Menu</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] !pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
                       >
                         <span class="text-[#666666] font-inter">E-Commerce Price Tracker</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] !pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
                         onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
                       >
                         <span class="text-[#666666] font-inter">Path of Exile Market Analyzer</span>
