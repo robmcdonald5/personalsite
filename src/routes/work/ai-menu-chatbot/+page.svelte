@@ -51,20 +51,22 @@
         <!-- Showcase Display -->
         <div class="w-full max-w-[1440px] h-[611px] relative mx-auto mb-[60px]">
           <!-- Navigation Bar -->
-          <div class="w-full h-[55px] flex justify-center items-center flex-row px-[167px] bg-[#FFFFFF] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] absolute top-0 left-0">
-            {#each sections as section}
-              <button
-                class="flex justify-center items-start flex-row gap-1.5 pt-[17px] pb-[20px] px-3 {activeSection === section.name ? 'border-solid border-[#4A90E2] border-b-2' : ''}"
-                onclick={() => setActiveSection(section.name)}
-              >
-                <div class="text-sm font-inter text-center font-medium {activeSection === section.name ? 'text-[#4A90E2]' : 'text-[#4B5563]'}">
-                  {section.name}
-                </div>
-                <div>
-                  <img src="/{section.icon}" alt="{section.name}" class="w-[18px] h-[18px]" />
-                </div>
-              </button>
-            {/each}
+          <div class="w-screen h-[55px] bg-[#FFFFFF] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] absolute top-0 left-1/2 transform -translate-x-1/2">
+            <div class="w-full h-full flex justify-center items-center flex-row px-[167px]">
+              {#each sections as section}
+                <button
+                  class="flex justify-center items-center flex-row gap-1.5 pt-[17px] pb-[20px] px-3 {activeSection === section.name ? 'border-solid border-[#4A90E2] border-b-2' : ''}"
+                  onclick={() => setActiveSection(section.name)}
+                >
+                  <div>
+                    <img src="/{section.icon}" alt="{section.name}" class="w-[18px] h-[18px]" />
+                  </div>
+                  <div class="text-sm font-inter text-center font-medium {activeSection === section.name ? 'text-[#4A90E2]' : 'text-[#4B5563]'}">
+                    {section.name}
+                  </div>
+                </button>
+              {/each}
+            </div>
           </div>
           
           <!-- Left Side - Image Showcase -->
