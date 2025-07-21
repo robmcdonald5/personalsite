@@ -65,7 +65,7 @@
           {#each categories as category}
             <div class="w-[300px] relative">
               <button
-                class="w-[300px] h-[120px] flex items-center justify-between p-6 bg-[#FAFAFA] border border-[#EAEAEA] rounded-2xl hover:bg-[#F0F0F0] transition-colors"
+                class="w-[300px] h-[120px] flex items-center justify-between !pl-[40px] pr-6 py-6 bg-[#FAFAFA] border border-[#EAEAEA] rounded-2xl hover:bg-[#F0F0F0] transition-colors"
                 onclick={() => toggleDropdown(category.name)}
               >
                 <div class="flex flex-col items-start">
@@ -92,7 +92,7 @@
                     onclick={() => toggleDropdown(category.name)}
                   >
                     <!-- Header section with title and icon -->
-                    <div class="relative h-[119px] bg-[#FFFFFF] rounded-t-2xl flex items-center justify-between p-6">
+                    <div class="relative h-[119px] bg-[#FFFFFF] rounded-t-2xl flex items-center justify-between !pl-[40px] pr-6">
                       <div class="flex flex-col items-start">
                         <h3 class="text-[#000000] text-xl font-inter font-semibold mb-1">
                           Chatbots
@@ -111,13 +111,13 @@
                     <!-- Project items -->
                     <div class="flex flex-col">
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] px-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] !pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
                       >
                         <span class="text-[#666666] font-inter">Chipotle AI Menu</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] px-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] !pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
                         onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
                       >
                         <span class="text-[#666666] font-inter">AI Creative Writing Assistant</span>
