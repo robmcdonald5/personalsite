@@ -17,6 +17,7 @@
     { name: 'Chatbots', count: 2, position: { row: 5, col: 1 } }
   ];
   
+  // @ts-ignore
   function toggleDropdown(categoryName) {
     openDropdown = openDropdown === categoryName ? null : categoryName;
   }
