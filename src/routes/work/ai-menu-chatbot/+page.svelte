@@ -29,14 +29,14 @@
       { title: 'Intent Heatmap', image: 'test_intent_matrix.png' }
     ],
     'Interactive Chat Interface': [
-      { title: 'Chat UI', image: 'chat__image' },
-      { title: 'Message Flow', image: 'flow__image' },
-      { title: 'Response Generation', image: 'response__image' }
+      { title: 'Intent Recognition', image: 'intent_recognition.png' },
+      { title: 'Live Order Tracking', image: 'live_tracking.png' },
+      { title: 'Dynamic Menu', image: 'dynamic.png' }
     ],
     'Backend API & Data Persistence': [
-      { title: 'API Architecture', image: 'api__image' },
-      { title: 'Database Schema', image: 'database__image' },
-      { title: 'Data Flow', image: 'dataflow__image' }
+      { title: 'MongoDB Clustering', image: 'mongodb_cluster.png' },
+      { title: 'Embedding Framework', image: 'embedding_model.png' },
+      { title: 'Data Persistence', image: 'persistence__image.png' }
     ]
   };
 
@@ -54,32 +54,32 @@
     },
     'Intent Fine-Tuning': {
       'Python': {
-        images: ['training__code.png'],
-        titles: ['Model Training Process']
-      },
-      'JSON': {
-        images: ['training_config.png'],
-        titles: ['Training Configuration']
+        images: ['intent_pattern.png', 'loss__code.png', 'training__code.png'],
+        titles: ['Loading & Mapping Intent Patterns', 'Loss Function Setup', 'Training Regiment']
       }
     },
     'Interactive Chat Interface': {
-      'Python': {
-        images: ['chat_handler.png'],
-        titles: ['Chat Message Handler']
+      'JS': {
+        images: ['intentjs__code.png', 'livejs__code.png', 'menujs__code.png', 'scrolljs__code.png'],
+        titles: ['Intent Endpoint Piping', 'Live Order Tracking', 'Dynamic Menu Loading & Rendering', 'Dynamic Scroll & Interactive Bar']
       },
-      'JSON': {
-        images: ['chat_response.png'],
-        titles: ['Response Format']
+      'Python': {
+        images: ['endpointpython__code.png', 'sessionpython__code.png'],
+        titles: ['Chat Endpoint Integration', 'Real-time Session Management']
+      },
+      'MongoDB': {
+        images: ['menumongo__code.png', 'ordermongo__code.png', 'sessionmongo__code.png'],
+        titles: ['Menu Collection', 'Order Collection', 'Session Tracking Collection']
       }
     },
     'Backend API & Data Persistence': {
       'Python': {
-        images: ['api_endpoints.png'],
-        titles: ['API Endpoint Implementation']
+        images: ['databasepython__code.png', 'fetchingpython__code.png', 'sessionpython__code.png'],
+        titles: ['Database Connection With Proxy', 'Fetching Current Order', 'Session Management Endpoint']
       },
-      'JSON': {
-        images: ['database_schema.png'],
-        titles: ['Database Schema']
+      'Docker': {
+        images: ['composedocker__code.png'],
+        titles: ['Docker Compose Deployment']
       }
     }
   };
@@ -88,6 +88,16 @@
     activeSection = section;
     activeImageStep = 0; // Reset to first image when switching sections
     activeCodeStep = 0; // Reset to first code image when switching sections
+    
+    // Define preferred language order (left to right)
+    const preferredOrder = ['JS', 'Python', 'JSON', 'MongoDB', 'Docker'];
+    const availableLangs = Object.keys(codeConfiguration[section] || {});
+    
+    if (availableLangs.length > 0 && !availableLangs.includes(activeLanguage)) {
+      // Find the first language from preferred order that's available in this section
+      const defaultLang = preferredOrder.find(lang => availableLangs.includes(lang)) || availableLangs[0];
+      activeLanguage = defaultLang;
+    }
   }
   
   function setActiveLanguage(language: string) {
@@ -125,6 +135,7 @@
 
   // Derived reactive values
   const currentImageStep = $derived(imageSteps[activeSection]?.[activeImageStep]);
+  const availableLanguages = $derived(Object.keys(codeConfiguration[activeSection] || {}));
   const currentCodeConfig = $derived(codeConfiguration[activeSection]?.[activeLanguage]);
   const currentCodeImage = $derived(currentCodeConfig?.images[activeCodeStep]);
   const currentCodeTitle = $derived(currentCodeConfig?.titles[activeCodeStep]);
@@ -238,18 +249,14 @@
               <!-- Language Tabs -->
               <div class="bg-[#F3F4F6] border-b border-[#E5E7EB] px-6 pt-4">
                 <div class="flex gap-1">
-                  <button
-                    class="px-6 py-2 text-sm font-medium rounded-t-md transition-all {activeLanguage === 'Python' ? 'bg-white text-[#1F2937] border-b-2 border-[#4A90E2]' : 'text-[#6B7280] hover:text-[#1F2937]'}"
-                    onclick={() => setActiveLanguage('Python')}
-                  >
-                    Python
-                  </button>
-                  <button
-                    class="px-6 py-2 text-sm font-medium rounded-t-md transition-all {activeLanguage === 'JSON' ? 'bg-white text-[#1F2937] border-b-2 border-[#4A90E2]' : 'text-[#6B7280] hover:text-[#1F2937]'}"
-                    onclick={() => setActiveLanguage('JSON')}
-                  >
-                    JSON
-                  </button>
+                  {#each availableLanguages as language}
+                    <button
+                      class="px-6 py-2 text-sm font-medium rounded-t-md transition-all {activeLanguage === language ? 'bg-white text-[#1F2937] border-b-2 border-[#4A90E2]' : 'text-[#6B7280] hover:text-[#1F2937]'}"
+                      onclick={() => setActiveLanguage(language)}
+                    >
+                      {language}
+                    </button>
+                  {/each}
                 </div>
               </div>
 
