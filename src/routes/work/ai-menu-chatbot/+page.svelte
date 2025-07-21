@@ -6,6 +6,7 @@
   let activeSection = $state('Natural Language Intent Parsing');
   let activeLanguage = $state('Python');
   let activeImageStep = $state(0); // For cycling through images within each section
+  let activeCodeStep = $state(0); // For cycling through code images within each language
   
   // Navigation sections with their corresponding icons
   const sections = [
@@ -18,9 +19,9 @@
   // Image steps configuration for each section
   const imageSteps: Record<string, { title: string; image: string }[]> = {
     'Natural Language Intent Parsing': [
-      { title: 'NLP Pipeline', image: 'pipeline__image' },
-      { title: 'Data Training', image: 'data__image' },
-      { title: 'Sentence Clustering', image: 'clustering__image' }
+      { title: 'NLP Pipeline', image: 'pipeline__image.png' },
+      { title: 'Data Training', image: 'data__image.png' },
+      { title: 'Sentence Clustering', image: 'clustering__image.png' }
     ],
     'Intent Fine-Tuning': [
       { title: 'Model Training', image: 'training__image' },
@@ -39,6 +40,30 @@
     ]
   };
 
+  // Code images configuration for each language
+  const codeImages: Record<string, string[]> = {
+    'Python': [
+      'embedding__code.png'
+    ],
+    'JSON': [
+      'pattern__code.png',
+      'pattern1__code.png',
+      'pattern2__code.png'
+    ]
+  };
+
+  // Code titles configuration for each language and image
+  const codeTitles: Record<string, string[]> = {
+    'Python': [
+      'Precomputing Intent Embeddings'
+    ],
+    'JSON': [
+      'Intent Pattern Alignment',
+      'Intent Pattern Alignment',
+      'Intent Pattern Alignment'
+    ]
+  };
+
   function setActiveSection(section: string) {
     activeSection = section;
     activeImageStep = 0; // Reset to first image when switching sections
@@ -46,6 +71,21 @@
   
   function setActiveLanguage(language: string) {
     activeLanguage = language;
+    activeCodeStep = 0; // Reset to first code image when switching languages
+  }
+
+  function previousCode() {
+    const images = codeImages[activeLanguage];
+    if (images && activeCodeStep > 0) {
+      activeCodeStep = activeCodeStep - 1;
+    }
+  }
+
+  function nextCode() {
+    const images = codeImages[activeLanguage];
+    if (images && activeCodeStep < images.length - 1) {
+      activeCodeStep = activeCodeStep + 1;
+    }
   }
 
   function previousImage() {
@@ -62,8 +102,13 @@
     }
   }
 
-  // Derived reactive value for current image step
+  // Derived reactive values
   const currentImageStep = $derived(imageSteps[activeSection]?.[activeImageStep]);
+  const currentCodeImage = $derived(codeImages[activeLanguage]?.[activeCodeStep]);
+  const currentCodeTitle = $derived(codeTitles[activeLanguage]?.[activeCodeStep]);
+  const hasMultipleCodeImages = $derived(codeImages[activeLanguage]?.length > 1);
+  const canGoPrevious = $derived(activeCodeStep > 0);
+  const canGoNext = $derived(codeImages[activeLanguage] && activeCodeStep < codeImages[activeLanguage].length - 1);
 </script>
 
 <svelte:head>
@@ -112,21 +157,21 @@
             <div class="bg-white border border-[#E5E7EB] rounded-lg overflow-hidden shadow-sm">
               <div class="h-[400px] bg-[#FAFAFA] flex items-center justify-center">
                 {#if currentImageStep}
-                  <img src="/{currentImageStep.image}.svg" alt="{currentImageStep.title}" class="max-w-full max-h-full object-contain" />
+                  <img src="/{currentImageStep.image}" alt="{currentImageStep.title}" class="max-w-full max-h-full object-contain" />
                 {:else}
                   <div class="text-gray-400 text-sm">Image Loading...</div>
                 {/if}
               </div>
               
               <!-- Navigation Footer -->
-              <div class="h-[60px] bg-white border-t border-[#E5E7EB] flex items-center justify-center gap-4">
-                <button class="p-2 hover:bg-gray-50 rounded" onclick={previousImage} aria-label="Previous step">
+              <div class="h-[60px] bg-white border-t border-[#E5E7EB] flex items-center justify-between px-4">
+                <button class="p-2 hover:bg-gray-50 rounded flex-shrink-0" onclick={previousImage} aria-label="Previous step">
                   <svg class="w-4 h-4 text-gray-600 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                   </svg>
                 </button>
-                <span class="text-sm font-medium text-[#2D2D2D]">{currentImageStep?.title || 'Loading...'}</span>
-                <button class="p-2 hover:bg-gray-50 rounded" onclick={nextImage} aria-label="Next step">
+                <span class="text-sm font-medium text-[#2D2D2D] text-center flex-1 px-4">{currentImageStep?.title || 'Loading...'}</span>
+                <button class="p-2 hover:bg-gray-50 rounded flex-shrink-0" onclick={nextImage} aria-label="Next step">
                   <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                   </svg>
@@ -139,8 +184,33 @@
           <div class="flex-1 max-w-[480px]">
             <div class="bg-white border border-[#E5E7EB] rounded-lg overflow-hidden shadow-sm">
               <!-- Code Title Bar -->
-              <div class="h-[50px] bg-[#F9FAFB] border-b border-[#E5E7EB] flex items-center px-6">
-                <span class="text-sm font-medium text-[#2D2D2D]">Precomputing Intent Embeddings</span>
+              <div class="h-[50px] bg-[#F9FAFB] border-b border-[#E5E7EB] flex items-center justify-between px-6">
+                <span class="text-sm font-medium text-[#2D2D2D]">{currentCodeTitle || 'Loading...'}</span>
+                {#if hasMultipleCodeImages}
+                  <div class="flex items-center gap-2">
+                    <button 
+                      class="p-1 hover:bg-gray-200 rounded {!canGoPrevious ? 'opacity-50 cursor-not-allowed' : ''}" 
+                      onclick={previousCode} 
+                      disabled={!canGoPrevious}
+                      aria-label="Previous code"
+                    >
+                      <svg class="w-3 h-3 text-gray-600 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </button>
+                    <span class="text-xs text-gray-500">{activeCodeStep + 1}/{codeImages[activeLanguage]?.length}</span>
+                    <button 
+                      class="p-1 hover:bg-gray-200 rounded {!canGoNext ? 'opacity-50 cursor-not-allowed' : ''}" 
+                      onclick={nextCode} 
+                      disabled={!canGoNext}
+                      aria-label="Next code"
+                    >
+                      <svg class="w-3 h-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </button>
+                  </div>
+                {/if}
               </div>
 
               <!-- Language Tabs -->
@@ -164,8 +234,11 @@
               <!-- Code Display Area -->
               <div class="h-[350px] bg-white p-6">
                 <div class="w-full h-full bg-[#1E1E1E] rounded-lg flex items-center justify-center">
-                  <!-- Placeholder for code display -->
-                  <div class="text-gray-400 text-sm">Code Display Area</div>
+                  {#if currentCodeImage}
+                    <img src="/{currentCodeImage}" alt="Code sample" class="max-w-full max-h-full object-contain rounded" />
+                  {:else}
+                    <div class="text-gray-400 text-sm">Code Loading...</div>
+                  {/if}
                 </div>
               </div>
             </div>
