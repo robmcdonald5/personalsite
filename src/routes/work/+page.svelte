@@ -90,7 +90,7 @@
                 </button>
                 <button 
                   class="w-full h-[48px] flex items-center py-3 px-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
-                  onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
+                  onclick={(e) => { e.stopPropagation(); window.location.href = '/work/poe-market-analyzer'; }}
                 >
                   <span class="text-[#666666] font-inter">PoE Market Analyzer</span>
                 </button>
@@ -235,7 +235,7 @@
                       </button>
                       <button 
                         class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
-                        onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
+                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/poe-market-analyzer'; }}
                       >
                         <span class="text-[#666666] font-inter">Path of Exile Market Analyzer</span>
                       </button>
@@ -304,7 +304,7 @@
                       </button>
                       <button 
                         class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
-                        onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
+                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/poe-market-analyzer'; }}
                       >
                         <span class="text-[#666666] font-inter">Path of Exile Market Analyzer</span>
                       </button>
@@ -361,7 +361,7 @@
                       </button>
                       <button 
                         class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
-                        onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
+                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/poe-market-analyzer'; }}
                       >
                         <span class="text-[#666666] font-inter">Path of Exile Market Analyzer</span>
                       </button>
@@ -418,7 +418,7 @@
                       </button>
                       <button 
                         class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
-                        onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
+                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/poe-market-analyzer'; }}
                       >
                         <span class="text-[#666666] font-inter">Path of Exile Market Analyzer</span>
                       </button>
@@ -508,7 +508,7 @@
                       </button>
                       <button 
                         class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
-                        onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
+                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/poe-market-analyzer'; }}
                       >
                         <span class="text-[#666666] font-inter">Path of Exile Market Analyzer</span>
                       </button>
@@ -559,7 +559,7 @@
                       </button>
                       <button 
                         class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
-                        onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
+                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/poe-market-analyzer'; }}
                       >
                         <span class="text-[#666666] font-inter">Path of Exile Market Analyzer</span>
                       </button>
