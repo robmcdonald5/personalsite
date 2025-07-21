@@ -47,9 +47,9 @@
         </div>
         
         <!-- Navigate Projects Button -->
-        <div class="flex justify-center mb-[200px]">
+        <div class="flex justify-center mb-[200px] relative">
           <button 
-            class="flex items-center gap-2 py-3 px-6 bg-[#4A90E2] rounded-2xl hover:bg-[#3A7BC8] transition-colors"
+            class="flex items-center gap-2 py-3 px-6 bg-[#4A90E2] rounded-2xl hover:bg-[#3A7BC8] transition-colors min-w-[200px]"
             onclick={() => toggleDropdown('navigate')}
           >
             <span class="text-[#FFFFFF] text-base font-inter font-semibold">
@@ -57,6 +57,70 @@
             </span>
             <img src="/dropdown__icon.svg" alt="dropdown icon" class="w-4 h-4" />
           </button>
+          
+          {#if openDropdown === 'navigate'}
+            <!-- Navigate Projects Dropdown -->
+            <div
+              class="absolute top-0 left-1/2 transform -translate-x-1/2 min-w-[200px] bg-[#FAFAFA] border border-[#EAEAEA] rounded-2xl shadow-lg z-10"
+              role="button"
+              tabindex="0"
+              onclick={() => toggleDropdown('navigate')}
+              onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleDropdown('navigate'); } }}
+              aria-label="Close Navigate Projects dropdown"
+            >
+              <!-- Header section with title and icon - same size as button -->
+              <div class="flex items-center gap-2 py-3 px-6 bg-[#E0FFFF] rounded-t-2xl min-w-[200px]">
+                <span class="text-[#000000] text-base font-inter font-semibold">
+                  Navigate Projects
+                </span>
+                <img 
+                  src="/dropdown__icon.svg" 
+                  alt="dropdown icon" 
+                  class="w-4 h-4 flex-shrink-0 transform rotate-180" 
+                />
+              </div>
+              
+              <!-- Project items -->
+              <div class="flex flex-col">
+                <button 
+                  class="w-full h-[48px] flex items-center py-3 px-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                  onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}"
+                >
+                  <span class="text-[#666666] font-inter">Chipotle AI Menu</span>
+                </button>
+                <button 
+                  class="w-full h-[48px] flex items-center py-3 px-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                  onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}"
+                >
+                  <span class="text-[#666666] font-inter">PoE Market Analyzer</span>
+                </button>
+                <button 
+                  class="w-full h-[48px] flex items-center py-3 px-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                  onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}"
+                >
+                  <span class="text-[#666666] font-inter">E-Commerce Tracking Tool</span>
+                </button>
+                <button 
+                  class="w-full h-[48px] flex items-center py-3 px-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                  onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}"
+                >
+                  <span class="text-[#666666] font-inter">Creative Writing AI Assistant</span>
+                </button>
+                <button 
+                  class="w-full h-[48px] flex items-center py-3 px-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                  onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}"
+                >
+                  <span class="text-[#666666] font-inter">Personal Site</span>
+                </button>
+                <button 
+                  class="w-full h-[48px] flex items-center py-3 px-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
+                  onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}"
+                >
+                  <span class="text-[#666666] font-inter">Dune Spice Wars Interactive Wiki</span>
+                </button>
+              </div>
+            </div>
+          {/if}
         </div>
         
         <!-- Project Categories Grid -->
