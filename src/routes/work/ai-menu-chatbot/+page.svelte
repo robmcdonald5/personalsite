@@ -129,6 +129,79 @@
             </div>
           </div>
         </div>
+        
+        <!-- Tech Stack Showcase -->
+        <div class="w-full flex justify-center mt-16">
+          <div class="grid py-[25px] px-[57px] bg-[#F3F4F6] rounded-lg shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] grid-cols-4 grid-rows-3 gap-x-4 gap-y-3">
+            <!-- Title - positioned in grid -->
+            <div class="text-[#2D2D2D] text-[26px] font-inter text-center font-semibold col-span-1 row-span-1">
+              Technology Stack
+            </div>
+            
+            <!-- spaCy - between Flask and PyTorch (col 3, row 3) -->
+            <div class="w-[230px] h-[56px] flex justify-start items-center pl-[17px] bg-[#F9FAFB] rounded-lg col-start-3 row-start-3">
+              <img src="/tech-stack__spacy-icon+title.svg" alt="spaCy" class="w-[120px] h-[30px]" />
+            </div>
+            
+            <!-- Row 2 Tech Cards -->
+            <!-- React -->
+            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 pt-[13px] pb-[14.5px] pr-[139px] pl-[15px] bg-[#F9FAFB] rounded-lg col-start-1 row-start-2">
+              <div>
+                <img src="/tech-stack__react-icon.svg" alt="React" class="w-[29px] h-[29px]" />
+              </div>
+              <div class="text-[#000000] font-inter font-medium">React</div>
+            </div>
+            
+            <!-- Next.js -->
+            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 pt-[13px] pb-[13px] pr-[130px] pl-[13px] bg-[#F9FAFB] rounded-lg col-start-2 row-start-2">
+              <div>
+                <img src="/tech-stack__nextjs-icon.svg" alt="Next.js" class="w-[30px] h-[30px]" />
+              </div>
+              <div class="text-[#000000] font-inter font-medium">Next.js</div>
+            </div>
+            
+            <!-- Heroku -->
+            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-[13px] pr-[127px] pl-4 bg-[#F9FAFB] rounded-lg col-start-3 row-start-2">
+              <div>
+                <img src="/tech-stack__heroku-icon.svg" alt="Heroku" class="w-[30px] h-[30px]" />
+              </div>
+              <div class="text-[#000000] font-inter font-medium">Heroku</div>
+            </div>
+            
+            <!-- Python -->
+            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-[14px] pr-[128px] pl-[15px] bg-[#F9FAFB] rounded-lg col-start-4 row-start-2">
+              <div>
+                <img src="/tech-stack__python-icon.svg" alt="Python" class="w-[28px] h-[28px]" />
+              </div>
+              <div class="text-[#000000] font-inter font-medium">Python</div>
+            </div>
+            
+            <!-- Row 3 Tech Cards -->
+            <!-- MongoDB -->
+            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-[13px] pr-[120px] pl-[17px] bg-[#F9FAFB] rounded-lg col-start-1 row-start-3">
+              <div>
+                <img src="/tech-stack__mongodb-icon.svg" alt="MongoDB" class="w-[29px] h-[29px]" />
+              </div>
+              <div class="text-[#000000] font-inter font-medium">MongoDB</div>
+            </div>
+            
+            <!-- Flask -->
+            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-[14px] pr-[143px] pl-[17px] bg-[#F9FAFB] rounded-lg col-start-2 row-start-3">
+              <div>
+                <img src="/tech-stack__flask-icon.svg" alt="Flask" class="w-[28px] h-[28px]" />
+              </div>
+              <div class="text-[#000000] font-inter font-medium">Flask</div>
+            </div>
+            
+            <!-- PyTorch -->
+            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-[13px] pr-[120px] pl-[17px] bg-[#F9FAFB] rounded-lg col-start-4 row-start-3">
+              <div>
+                <img src="/tech-stack__pytorch-icon.svg" alt="PyTorch" class="w-[30px] h-[30px]" />
+              </div>
+              <div class="text-[#000000] font-inter font-medium">PyTorch</div>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
 

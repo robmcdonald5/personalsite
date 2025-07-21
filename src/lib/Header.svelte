@@ -4,7 +4,7 @@
 </script>
 
 <header class="w-full max-w-[1440px] h-[90px]
-               flex items-center justify-between
+               flex items-center
                px-[5%] md:px-[180px]
                mx-auto">
   <!-- Logo -->
@@ -16,8 +16,11 @@
     />
   </a>
 
+  <!-- Spacer to push content right -->
+  <div class="flex-1"></div>
+
   <!-- Navigation -->
-  <nav class="flex items-center gap-[16px] md:gap-[48px]">
+  <nav class="flex items-center gap-[16px] md:gap-[48px] mr-[24px] md:mr-[64px]">
     <a
       href="/about"
       class="text-[20px] md:text-[26px] font-inter font-light transition-colors
