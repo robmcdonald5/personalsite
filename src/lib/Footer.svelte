@@ -1,4 +1,4 @@
-<footer class="w-full max-w-[1440px] h-[71px] flex items-center justify-between px-[5%] md:px-[180px]">
+<footer class="w-full max-w-[1440px] h-[71px] flex items-center justify-between !px-[5%] md:!px-[180px]">
   <div class="flex justify-center items-center flex-row gap-2.5 p-2.5">
     <span class="text-[#000000] font-roboto-mono font-thin">
       <span class="text-xl">&copy;</span>

@@ -15,7 +15,7 @@
   <main class="flex-grow flex flex-col">
     <!-- Hero Section -->
     <div class="w-full bg-[#FFFFFF] flex justify-center py-[90px]">
-      <section class="w-full max-w-[1440px] px-[5%] md:px-[180px]">
+      <section class="w-full max-w-[1440px] !px-[5%] md:!px-[180px]">
         <div class="flex flex-col md:flex-row items-center justify-between gap-[60px] md:gap-[120px]">
           <!-- Hero Text Content -->
           <div class="flex flex-col gap-6 max-w-[500px]">
@@ -48,7 +48,7 @@
 
     <!-- Contact Form Section -->
     <div class="w-full bg-[#FAFAFA] flex justify-center py-[90px] flex-grow">
-      <section class="w-full max-w-[1440px] px-[5%] md:px-[180px]">
+      <section class="w-full max-w-[1440px] !px-[5%] md:!px-[180px]">
         <div class="w-full max-w-[1080px] mx-auto">
           <!-- Section Title -->
           <div class="mb-[60px]">
@@ -69,7 +69,7 @@
                 id="name"
                 name="name"
                 placeholder="Enter your name"
-                class="h-[48px] px-4 py-3.5 bg-[#FFFFFF] border border-[#E5E5E5] rounded-lg text-[#333333] font-inter placeholder:text-[#9CA3AF] focus:outline-none focus:border-[#4A90E2] transition-colors"
+                class="h-[48px] !px-4 py-3.5 bg-[#FFFFFF] border border-[#E5E5E5] rounded-lg text-[#333333] font-inter placeholder:text-[#9CA3AF] focus:outline-none focus:border-[#4A90E2] transition-colors"
               />
             </div>
 
@@ -83,7 +83,7 @@
                 id="email"
                 name="email"
                 placeholder="Enter your email"
-                class="h-[48px] px-4 py-3.5 bg-[#FFFFFF] border border-[#E5E5E5] rounded-lg text-[#333333] font-inter placeholder:text-[#9CA3AF] focus:outline-none focus:border-[#4A90E2] transition-colors"
+                class="h-[48px] !px-4 py-3.5 bg-[#FFFFFF] border border-[#E5E5E5] rounded-lg text-[#333333] font-inter placeholder:text-[#9CA3AF] focus:outline-none focus:border-[#4A90E2] transition-colors"
               />
             </div>
 
@@ -97,7 +97,7 @@
                 name="message"
                 rows="6"
                 placeholder="Enter your message"
-                class="px-4 py-3.5 bg-[#FFFFFF] border border-[#E5E5E5] rounded-lg text-[#333333] font-inter placeholder:text-[#9CA3AF] focus:outline-none focus:border-[#4A90E2] transition-colors resize-vertical"
+                class="!px-4 py-3.5 bg-[#FFFFFF] border border-[#E5E5E5] rounded-lg text-[#333333] font-inter placeholder:text-[#9CA3AF] focus:outline-none focus:border-[#4A90E2] transition-colors resize-vertical"
               ></textarea>
             </div>
           </form>
@@ -106,7 +106,7 @@
           <div class="flex justify-start">
             <button
               type="submit"
-              class="flex items-center justify-center py-[15px] px-[37px] bg-[#2D2D2D] rounded-lg text-[#FFFFFF] font-inter font-medium hover:bg-[#1A1A1A] transition-colors"
+              class="flex items-center justify-center !py-[15px] !px-[37px] bg-[#2D2D2D] rounded-lg text-[#FFFFFF] font-inter font-medium hover:bg-[#1A1A1A] transition-colors"
             >
               Send email
             </button>

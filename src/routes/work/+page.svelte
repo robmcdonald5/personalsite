@@ -35,7 +35,7 @@
   <main class="flex-grow flex flex-col">
     <!-- Hero Section -->
     <div class="w-full bg-[#FFFFFF] flex justify-center py-[80px] flex-grow">
-      <section class="w-full max-w-[1440px] px-[5%] md:px-[180px]">
+      <section class="w-full max-w-[1440px] !px-[5%] md:!px-[180px]">
         <!-- Title and Description -->
         <div class="flex flex-col items-center gap-4 mb-[60px]">
           <h1 class="text-[#2D2D2D] text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">

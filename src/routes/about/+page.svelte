@@ -15,7 +15,7 @@
   <main class="flex-grow flex flex-col">
     <!-- About Hero Section -->
     <div class="w-full bg-[#FFFFFF] flex justify-center py-[90px]">
-      <section class="w-full max-w-[1440px] px-[5%] md:px-[180px]">
+      <section class="w-full max-w-[1440px] !px-[5%] md:!px-[180px]">
         <div class="grid md:grid-cols-2 gap-[90px] md:h-[315px]">
           <!-- About Text Content - Left Side -->
           <div class="flex flex-col gap-[29px] max-w-[500px] md:self-center">
@@ -43,7 +43,7 @@
 
     <!-- Content Section -->
     <div class="w-full bg-[#FAFAFA] flex justify-center items-center flex-grow">
-      <section class="w-full max-w-[1440px] px-[5%] md:px-[180px]">
+      <section class="w-full max-w-[1440px] !px-[5%] md:!px-[180px]">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-x-[27px] gap-y-[76px]">
           <!-- Experience Column -->
           <div class="flex flex-col gap-6">

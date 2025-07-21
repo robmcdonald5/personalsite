@@ -1,4 +1,4 @@
-<section class="w-full max-w-[1440px] h-[656px] flex justify-center items-center flex-col px-[5%] md:px-[180px]">
+<section class="w-full max-w-[1440px] h-[656px] flex justify-center items-center flex-col !px-[5%] md:!px-[180px]">
   <div class="flex flex-col items-center gap-[90px] h-full justify-center">
     <div class="flex justify-center items-center flex-row gap-[49px] w-full max-w-[1080px]">
       <div class="flex-1 h-0 border-solid border-[#E0E0E0] border-b"></div>
