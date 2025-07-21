@@ -48,10 +48,34 @@
 
         <!-- Single Image Display -->
         <div class="w-full flex justify-center mb-16">
-          <div class="w-full max-w-[580px]">
+          <div class="w-[850px] flex flex-col">
+            <!-- Title Card Header -->
+            <div class="w-[850px] h-[20px] bg-[#2D2D2D] rounded-tl-md rounded-tr-md relative">
+              <!-- Previous Button -->
+              <button onclick={previousImage} aria-label="Previous step" class="absolute top-[2px] right-[56px] w-[16px] h-[16px] flex items-center justify-center">
+                <svg class="w-3 h-3 text-white rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+              
+              <!-- Next Button -->
+              <button onclick={nextImage} aria-label="Next step" class="absolute top-[2px] right-[24px] w-[16px] h-[16px] flex items-center justify-center">
+                <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+              
+              <!-- URL Display -->
+              <div class="w-[318px] h-[10px] flex justify-center items-center flex-row bg-[#1E1E1E] absolute top-[25%] bottom-[25%] left-[31.25%] right-[31.25%]">
+                <div class="text-[#9CA3AF] text-[8px] font-inter text-center">
+                  {currentImageStep?.title || 'Loading...'}
+                </div>
+              </div>
+            </div>
+            
             <!-- Image Container -->
-            <div class="bg-white border border-[#E5E7EB] rounded-lg overflow-hidden shadow-sm">
-              <div class="h-[400px] bg-[#FAFAFA] flex items-center justify-center">
+            <div class="w-[850px] h-[500px] flex justify-center items-center bg-[#1E1E1E] border-solid border-[#2D2D2D] border-b-[6px] border-x-[6px] rounded-br-md rounded-bl-md shadow-[0px_2px_4px_0px_rgba(0,0,0,0.05)]">
+              <div class="w-[838px] h-[494px] flex justify-center items-center">
                 {#if currentImageStep}
                   <img 
                     src="/{currentImageStep.image}" 
@@ -69,21 +93,6 @@
                 {:else}
                   <div class="text-gray-400 text-sm">Image Loading...</div>
                 {/if}
-              </div>
-              
-              <!-- Navigation Footer -->
-              <div class="h-[60px] bg-white border-t border-[#E5E7EB] flex items-center justify-between px-4">
-                <button class="p-2 hover:bg-gray-50 rounded flex-shrink-0" onclick={previousImage} aria-label="Previous step">
-                  <svg class="w-4 h-4 text-gray-600 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                  </svg>
-                </button>
-                <span class="text-sm font-medium text-[#2D2D2D] text-center flex-1 px-4">{currentImageStep?.title || 'Loading...'}</span>
-                <button class="p-2 hover:bg-gray-50 rounded flex-shrink-0" onclick={nextImage} aria-label="Next step">
-                  <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                  </svg>
-                </button>
               </div>
             </div>
           </div>
