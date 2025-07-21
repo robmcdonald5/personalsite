@@ -56,7 +56,7 @@
                 class="flex items-center gap-2 px-4 py-2 rounded-full border transition-all duration-200 {activeSection === section.name ? 'bg-[#4A90E2] text-white border-[#4A90E2]' : 'bg-white text-[#6B7280] border-[#E5E7EB] hover:border-[#4A90E2]'}"
                 onclick={() => setActiveSection(section.name)}
               >
-                <div class="w-4 h-4 rounded-full {activeSection === section.name ? 'bg-white' : 'bg-[#4A90E2]'}"></div>
+                <img src="/{section.icon}" alt="{section.name}" class="w-4 h-4" />
                 <span class="text-sm font-medium">{section.name}</span>
               </button>
             {/each}
