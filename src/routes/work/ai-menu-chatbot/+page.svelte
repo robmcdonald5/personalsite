@@ -47,90 +47,91 @@
             Conversational AI chatbot that lets users place Chipotle orders using natural language — built with React, MongoDB, Flask, spaCy, NLTK, PyTorch.
           </p>
         </div>
-        
-        <!-- Showcase Display -->
-        <div class="w-full max-w-[1440px] h-[611px] relative mx-auto mb-[60px]">
-          <!-- Navigation Bar -->
-          <div class="w-screen h-[55px] bg-[#FFFFFF] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] absolute top-0 left-1/2 transform -translate-x-1/2">
-            <div class="w-full h-full flex justify-center items-center flex-row px-[167px]">
-              {#each sections as section}
-                <button
-                  class="flex justify-center items-center flex-row gap-1.5 pt-[17px] pb-[20px] px-3 {activeSection === section.name ? 'border-solid border-[#4A90E2] border-b-2' : ''}"
-                  onclick={() => setActiveSection(section.name)}
-                >
-                  <div>
-                    <img src="/{section.icon}" alt="{section.name}" class="w-[18px] h-[18px]" />
-                  </div>
-                  <div class="text-sm font-inter text-center font-medium {activeSection === section.name ? 'text-[#4A90E2]' : 'text-[#4B5563]'}">
-                    {section.name}
-                  </div>
-                </button>
-              {/each}
-            </div>
+
+        <!-- Navigation Tabs -->
+        <div class="w-full flex justify-center mb-8">
+          <div class="flex gap-8">
+            {#each sections as section}
+              <button
+                class="flex items-center gap-2 px-4 py-2 rounded-full border transition-all duration-200 {activeSection === section.name ? 'bg-[#4A90E2] text-white border-[#4A90E2]' : 'bg-white text-[#6B7280] border-[#E5E7EB] hover:border-[#4A90E2]'}"
+                on:click={() => setActiveSection(section.name)}
+              >
+                <div class="w-4 h-4 rounded-full {activeSection === section.name ? 'bg-white' : 'bg-[#4A90E2]'}"></div>
+                <span class="text-sm font-medium">{section.name}</span>
+              </button>
+            {/each}
           </div>
-          
+        </div>
+
+        <!-- Main Display Area -->
+        <div class="w-full max-w-[1200px] mx-auto flex gap-8 items-start">
           <!-- Left Side - Image Showcase -->
-          <div class="w-[580px] h-[458px] flex justify-center items-center flex-col absolute top-[135px] left-1/2 transform -translate-x-[640px]">
-            <div class="w-[580px] h-[411px] flex justify-center items-center flex-row pb-[18px] px-[18px] bg-[#FFFFFF] border-solid border-[#EEEEEE] border-b border-x rounded-br-lg rounded-bl-lg">
-              <div class="w-[544px] h-[393px] flex justify-center items-center flex-row pt-[71px] pb-[247px] pr-[49px] pl-[50px] bg-[#FAFAFA] rounded-lg">
-                <div>
-                  <img src="/pipeline-image.png" alt="NLP pipeline visualization" class="w-[75px] h-[75px]" />
+          <div class="flex-1 max-w-[580px]">
+            <!-- Image Container -->
+            <div class="bg-white border border-[#E5E7EB] rounded-lg overflow-hidden shadow-sm">
+              <div class="h-[400px] bg-[#FAFAFA] flex items-center justify-center">
+                <!-- Placeholder for pipeline image -->
+                <div class="w-full h-full bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+                  <div class="text-gray-400 text-sm">Pipeline Visualization</div>
                 </div>
               </div>
-            </div>
-            <div class="w-[580px] h-[65px] flex justify-center items-center flex-row bg-[#FFFFFF] border-solid border-[#EEEEEE] border-t border-x rounded-tl-lg rounded-tr-lg">
-              <button class="mr-2" style="transform: rotate(-180deg)">
-                <img src="/nav-button-prev.svg" alt="Previous" class="w-[16px] h-[16px]" />
-              </button>
-              <button class="mr-4">
-                <img src="/nav-button-next.svg" alt="Next" class="w-[16px] h-[16px]" />
-              </button>
-              <div class="text-[#2D2D2D] text-sm font-inter font-medium">
-                NLP Pipeline
+              
+              <!-- Navigation Footer -->
+              <div class="h-[60px] bg-white border-t border-[#E5E7EB] flex items-center justify-center gap-4">
+                <button class="p-2 hover:bg-gray-50 rounded">
+                  <svg class="w-4 h-4 text-gray-600 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </button>
+                <span class="text-sm font-medium text-[#2D2D2D]">NLP Pipeline</span>
+                <button class="p-2 hover:bg-gray-50 rounded">
+                  <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </button>
               </div>
             </div>
           </div>
-          
+
           <!-- Right Side - Code Showcase -->
-          <div class="w-[480px] h-[440px] flex justify-start items-start flex-col absolute top-[171px] left-1/2 transform translate-x-[60px]">
-            <!-- Code Title Bar -->
-            <div class="w-[480px] h-[36px] flex justify-start items-center flex-row py-[9px] pr-[236px] pl-[20px] bg-[#F9FAFB] border-solid border-[#E5E7EB] border-b rounded-tl-xl rounded-tr-xl absolute left-0 top-[-36px]">
-              <div class="text-[#2D2D2D] text-sm font-inter font-medium">
-                Precomputing Intent Embeddings
+          <div class="flex-1 max-w-[480px]">
+            <div class="bg-white border border-[#E5E7EB] rounded-lg overflow-hidden shadow-sm">
+              <!-- Code Title Bar -->
+              <div class="h-[50px] bg-[#F9FAFB] border-b border-[#E5E7EB] flex items-center px-6">
+                <span class="text-sm font-medium text-[#2D2D2D]">Precomputing Intent Embeddings</span>
               </div>
-            </div>
-            
-            <!-- Language Tabs -->
-            <div class="w-[480px] h-[65px] flex self-stretch justify-start items-start flex-row pt-[18px] pb-[17px] pr-[266px] pl-[24px] bg-[#F3F4F6]">
-              <button
-                class="w-[95px] h-[30px] flex justify-center items-center flex-row py-[7px] pr-[23px] pl-[24px] rounded-tl-md rounded-tr-md {activeLanguage === 'JSON' ? 'bg-[#FFFFFF] border-solid border-[#4A90E2] border-b-2' : ''}"
-                onclick={() => setActiveLanguage('JSON')}
-              >
-                <div class="text-[#1F2937] text-sm font-inter text-center font-medium">
-                  JSON
+
+              <!-- Language Tabs -->
+              <div class="bg-[#F3F4F6] border-b border-[#E5E7EB] px-6 pt-4">
+                <div class="flex gap-1">
+                  <button
+                    class="px-6 py-2 text-sm font-medium rounded-t-md transition-all {activeLanguage === 'Python' ? 'bg-white text-[#1F2937] border-b-2 border-[#4A90E2]' : 'text-[#6B7280] hover:text-[#1F2937]'}"
+                    on:click={() => setActiveLanguage('Python')}
+                  >
+                    Python
+                  </button>
+                  <button
+                    class="px-6 py-2 text-sm font-medium rounded-t-md transition-all {activeLanguage === 'JSON' ? 'bg-white text-[#1F2937] border-b-2 border-[#4A90E2]' : 'text-[#6B7280] hover:text-[#1F2937]'}"
+                    on:click={() => setActiveLanguage('JSON')}
+                  >
+                    JSON
+                  </button>
                 </div>
-              </button>
-              <button
-                class="w-[95px] h-[30px] flex justify-center items-center flex-row py-[7px] pr-[23px] pl-[24px] rounded-tl-md rounded-tr-md {activeLanguage === 'Python' ? 'bg-[#FFFFFF] border-solid border-[#4A90E2] border-b-2' : ''}"
-                onclick={() => setActiveLanguage('Python')}
-              >
-                <div class="text-[#1F2937] text-sm font-inter text-center font-medium">
-                  Python
+              </div>
+
+              <!-- Code Display Area -->
+              <div class="h-[350px] bg-white p-6">
+                <div class="w-full h-full bg-[#1E1E1E] rounded-lg flex items-center justify-center">
+                  <!-- Placeholder for code display -->
+                  <div class="text-gray-400 text-sm">Code Display Area</div>
                 </div>
-              </button>
-            </div>
-            
-            <!-- Code Display Area -->
-            <div class="w-[480px] h-[375px] flex self-stretch justify-center items-center flex-row pt-[47px] pb-[48px] px-[25px] bg-[#FFFFFF] rounded-br-xl rounded-bl-xl">
-              <div class="w-[430px] h-[280px] flex justify-center items-center flex-row rounded-xl bg-gradient-to-b from-[rgba(37,37,37,0.05)] to-[rgba(37,37,37,0.05)] bg-cover bg-center">
-                <img src="/code-display-placeholder.png" alt="Code snippet" class="w-[430px] h-[280px] object-cover rounded-xl" />
               </div>
             </div>
           </div>
         </div>
       </section>
     </div>
-    
+
     <div class="w-full h-[4px] gradient-divider"></div>
   </main>
 
