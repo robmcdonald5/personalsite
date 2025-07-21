@@ -40,33 +40,54 @@
     ]
   };
 
-  // Code images configuration for each language
-  const codeImages: Record<string, string[]> = {
-    'Python': [
-      'embedding__code.png'
-    ],
-    'JSON': [
-      'pattern__code.png',
-      'pattern1__code.png',
-      'pattern2__code.png'
-    ]
-  };
-
-  // Code titles configuration for each language and image
-  const codeTitles: Record<string, string[]> = {
-    'Python': [
-      'Precomputing Intent Embeddings'
-    ],
-    'JSON': [
-      'Intent Pattern Alignment',
-      'Intent Pattern Alignment',
-      'Intent Pattern Alignment'
-    ]
+  // Code configuration for each section and language
+  const codeConfiguration: Record<string, Record<string, { images: string[], titles: string[] }>> = {
+    'Natural Language Intent Parsing': {
+      'Python': {
+        images: ['embedding__code.png'],
+        titles: ['Precomputing Intent Embeddings']
+      },
+      'JSON': {
+        images: ['pattern__code.png', 'pattern1__code.png', 'pattern2__code.png'],
+        titles: ['Intent Pattern Alignment', 'Intent Pattern Alignment', 'Intent Pattern Alignment']
+      }
+    },
+    'Intent Fine-Tuning': {
+      'Python': {
+        images: ['training__code.png'],
+        titles: ['Model Training Process']
+      },
+      'JSON': {
+        images: ['training_config.png'],
+        titles: ['Training Configuration']
+      }
+    },
+    'Interactive Chat Interface': {
+      'Python': {
+        images: ['chat_handler.png'],
+        titles: ['Chat Message Handler']
+      },
+      'JSON': {
+        images: ['chat_response.png'],
+        titles: ['Response Format']
+      }
+    },
+    'Backend API & Data Persistence': {
+      'Python': {
+        images: ['api_endpoints.png'],
+        titles: ['API Endpoint Implementation']
+      },
+      'JSON': {
+        images: ['database_schema.png'],
+        titles: ['Database Schema']
+      }
+    }
   };
 
   function setActiveSection(section: string) {
     activeSection = section;
     activeImageStep = 0; // Reset to first image when switching sections
+    activeCodeStep = 0; // Reset to first code image when switching sections
   }
   
   function setActiveLanguage(language: string) {
@@ -75,15 +96,15 @@
   }
 
   function previousCode() {
-    const images = codeImages[activeLanguage];
-    if (images && activeCodeStep > 0) {
+    const config = codeConfiguration[activeSection]?.[activeLanguage];
+    if (config && activeCodeStep > 0) {
       activeCodeStep = activeCodeStep - 1;
     }
   }
 
   function nextCode() {
-    const images = codeImages[activeLanguage];
-    if (images && activeCodeStep < images.length - 1) {
+    const config = codeConfiguration[activeSection]?.[activeLanguage];
+    if (config && activeCodeStep < config.images.length - 1) {
       activeCodeStep = activeCodeStep + 1;
     }
   }
@@ -104,11 +125,12 @@
 
   // Derived reactive values
   const currentImageStep = $derived(imageSteps[activeSection]?.[activeImageStep]);
-  const currentCodeImage = $derived(codeImages[activeLanguage]?.[activeCodeStep]);
-  const currentCodeTitle = $derived(codeTitles[activeLanguage]?.[activeCodeStep]);
-  const hasMultipleCodeImages = $derived(codeImages[activeLanguage]?.length > 1);
+  const currentCodeConfig = $derived(codeConfiguration[activeSection]?.[activeLanguage]);
+  const currentCodeImage = $derived(currentCodeConfig?.images[activeCodeStep]);
+  const currentCodeTitle = $derived(currentCodeConfig?.titles[activeCodeStep]);
+  const hasMultipleCodeImages = $derived((currentCodeConfig?.images.length || 0) > 1);
   const canGoPrevious = $derived(activeCodeStep > 0);
-  const canGoNext = $derived(codeImages[activeLanguage] && activeCodeStep < codeImages[activeLanguage].length - 1);
+  const canGoNext = $derived(currentCodeConfig && activeCodeStep < currentCodeConfig.images.length - 1);
 </script>
 
 <svelte:head>
@@ -198,7 +220,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                       </svg>
                     </button>
-                    <span class="text-xs text-gray-500">{activeCodeStep + 1}/{codeImages[activeLanguage]?.length}</span>
+                    <span class="text-xs text-gray-500">{activeCodeStep + 1}/{currentCodeConfig?.images.length}</span>
                     <button 
                       class="p-1 hover:bg-gray-200 rounded {!canGoNext ? 'opacity-50 cursor-not-allowed' : ''}" 
                       onclick={nextCode} 
