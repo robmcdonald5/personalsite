@@ -5,11 +5,10 @@
   // State management for showcase display (placeholder for future implementation)
   let activeImageStep = $state(0);
   
-  // Placeholder image steps (to be filled in later)
+  // Image steps for PoE Market Analyzer showcase
   const imageSteps = [
-    { title: 'Market Analysis', image: 'placeholder__image.png' },
-    { title: 'Data Processing', image: 'placeholder__image2.png' },
-    { title: 'Report Generation', image: 'placeholder__image3.png' }
+    { title: 'poe-digest.com/market', image: 'landingpage__image.png' },
+    { title: 'poe-digest.com/track', image: 'trackingpage__image.png' }
   ];
   
   function previousImage() {
@@ -120,12 +119,12 @@
             </div>
             
             <!-- Row 3 Tech Cards -->
-            <!-- TypeScript -->
-            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-3 pr-[120px] pl-[17px] bg-[#F9FAFB] rounded-lg col-start-1 row-start-3">
+            <!-- Rust -->
+            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-3 pr-[148px] pl-[17px] bg-[#F9FAFB] rounded-lg col-start-1 row-start-3">
               <div>
-                <img src="/tech-stack__typescript-icon.svg" alt="TypeScript" class="w-[29px] h-[29px]" />
+                <img src="/tech-stack__rust-icon.svg" alt="Rust" class="w-[29px] h-[29px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">TypeScript</div>
+              <div class="text-[#000000] font-inter font-medium">Rust</div>
             </div>
             
             <!-- FastAPI -->
@@ -134,14 +133,6 @@
                 <img src="/tech-stack__fastapi-icon.svg" alt="FastAPI" class="w-[30px] h-[30px]" />
               </div>
               <div class="text-[#000000] font-inter font-medium">FastAPI</div>
-            </div>
-            
-            <!-- Tauri -->
-            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-3 pr-[148px] pl-[11px] bg-[#F9FAFB] rounded-lg col-start-4 row-start-3">
-              <div>
-                <img src="/tech-stack__tauri-icon.svg" alt="Tauri" class="w-[32px] h-[32px]" />
-              </div>
-              <div class="text-[#000000] font-inter font-medium">Tauri</div>
             </div>
           </div>
         </div>
