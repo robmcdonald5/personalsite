@@ -24,9 +24,9 @@
       { title: 'Sentence Clustering', image: 'clustering__image.png' }
     ],
     'Intent Fine-Tuning': [
-      { title: 'Model Training', image: 'training__image' },
-      { title: 'Fine-Tuning Process', image: 'finetuning__image' },
-      { title: 'Validation', image: 'validation__image' }
+      { title: 'Word Patterns', image: 'patterns_word_cloud_transparent.png' },
+      { title: 'Embedding Distribution', image: 'tsne_pattern_embeddings.png' },
+      { title: 'Intent Heatmap', image: 'test_intent_matrix.png' }
     ],
     'Interactive Chat Interface': [
       { title: 'Chat UI', image: 'chat__image' },
