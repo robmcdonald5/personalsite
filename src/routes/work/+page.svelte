@@ -47,7 +47,7 @@
         </div>
         
         <!-- Navigate Projects Button -->
-        <div class="flex justify-center mb-[80px]">
+        <div class="flex justify-center !mb-[200px]">
           <button 
             class="flex items-center gap-2 py-3 px-6 bg-[#4A90E2] rounded-2xl hover:bg-[#3A7BC8] transition-colors"
             onclick={() => toggleDropdown('navigate')}
@@ -60,7 +60,7 @@
         </div>
         
         <!-- Project Categories Grid -->
-        <div class="flex justify-center items-center min-h-[400px]">
+        <div class="flex justify-center items-center min-h-[400px] !mb-[200px]">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-x-[27px] gap-y-[75px] max-w-[981px] w-full px-4 md:px-0">
           {#each categories as category}
             <div class="w-full max-w-[300px] mx-auto relative">
