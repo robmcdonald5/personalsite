@@ -1,10 +1,11 @@
-<script>
+<script lang="ts">
   import Header from '$lib/Header.svelte';
   import Footer from '$lib/Footer.svelte';
   
   // State management for showcase display
   let activeSection = $state('Natural Language Intent Parsing');
   let activeLanguage = $state('Python');
+  let activeImageStep = $state(0); // For cycling through images within each section
   
   // Navigation sections with their corresponding icons
   const sections = [
@@ -14,15 +15,55 @@
     { name: 'Backend API & Data Persistence', icon: 'backend_nav_icon.svg' }
   ];
   
-  // @ts-ignore
-  function setActiveSection(section) {
+  // Image steps configuration for each section
+  const imageSteps: Record<string, { title: string; image: string }[]> = {
+    'Natural Language Intent Parsing': [
+      { title: 'NLP Pipeline', image: 'pipeline__image' },
+      { title: 'Data Training', image: 'data__image' },
+      { title: 'Sentence Clustering', image: 'clustering__image' }
+    ],
+    'Intent Fine-Tuning': [
+      { title: 'Model Training', image: 'training__image' },
+      { title: 'Fine-Tuning Process', image: 'finetuning__image' },
+      { title: 'Validation', image: 'validation__image' }
+    ],
+    'Interactive Chat Interface': [
+      { title: 'Chat UI', image: 'chat__image' },
+      { title: 'Message Flow', image: 'flow__image' },
+      { title: 'Response Generation', image: 'response__image' }
+    ],
+    'Backend API & Data Persistence': [
+      { title: 'API Architecture', image: 'api__image' },
+      { title: 'Database Schema', image: 'database__image' },
+      { title: 'Data Flow', image: 'dataflow__image' }
+    ]
+  };
+
+  function setActiveSection(section: string) {
     activeSection = section;
+    activeImageStep = 0; // Reset to first image when switching sections
   }
   
-  // @ts-ignore
-  function setActiveLanguage(language) {
+  function setActiveLanguage(language: string) {
     activeLanguage = language;
   }
+
+  function previousImage() {
+    const steps = imageSteps[activeSection];
+    if (steps) {
+      activeImageStep = activeImageStep > 0 ? activeImageStep - 1 : steps.length - 1;
+    }
+  }
+
+  function nextImage() {
+    const steps = imageSteps[activeSection];
+    if (steps) {
+      activeImageStep = activeImageStep < steps.length - 1 ? activeImageStep + 1 : 0;
+    }
+  }
+
+  // Derived reactive value for current image step
+  const currentImageStep = $derived(imageSteps[activeSection]?.[activeImageStep]);
 </script>
 
 <svelte:head>
@@ -70,21 +111,22 @@
             <!-- Image Container -->
             <div class="bg-white border border-[#E5E7EB] rounded-lg overflow-hidden shadow-sm">
               <div class="h-[400px] bg-[#FAFAFA] flex items-center justify-center">
-                <!-- Placeholder for pipeline image -->
-                <div class="w-full h-full bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
-                  <div class="text-gray-400 text-sm">Pipeline Visualization</div>
-                </div>
+                {#if currentImageStep}
+                  <img src="/{currentImageStep.image}.svg" alt="{currentImageStep.title}" class="max-w-full max-h-full object-contain" />
+                {:else}
+                  <div class="text-gray-400 text-sm">Image Loading...</div>
+                {/if}
               </div>
               
               <!-- Navigation Footer -->
               <div class="h-[60px] bg-white border-t border-[#E5E7EB] flex items-center justify-center gap-4">
-                <button class="p-2 hover:bg-gray-50 rounded" aria-label="Previous pipeline step">
+                <button class="p-2 hover:bg-gray-50 rounded" onclick={previousImage} aria-label="Previous step">
                   <svg class="w-4 h-4 text-gray-600 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                   </svg>
                 </button>
-                <span class="text-sm font-medium text-[#2D2D2D]">NLP Pipeline</span>
-                <button class="p-2 hover:bg-gray-50 rounded" aria-label="Next pipeline step">
+                <span class="text-sm font-medium text-[#2D2D2D]">{currentImageStep?.title || 'Loading...'}</span>
+                <button class="p-2 hover:bg-gray-50 rounded" onclick={nextImage} aria-label="Next step">
                   <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                   </svg>
