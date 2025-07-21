@@ -69,43 +69,51 @@
                 onclick={() => toggleDropdown(category.name)}
               >
                 <div class="flex flex-col items-start">
-                  <h3 class="text-[#000000] text-xl font-inter font-semibold mb-1">
-                    {category.name}
-                  </h3>
+                  <div class="flex items-center gap-2">
+                    <h3 class="text-[#000000] text-xl font-inter font-semibold">
+                      {category.name}
+                    </h3>
+                    <img 
+                      src="/dropdown__icon.svg" 
+                      alt="dropdown icon" 
+                      class="w-4 h-4 flex-shrink-0 transition-transform {openDropdown === category.name ? 'rotate-180' : ''}"
+                    />
+                  </div>
                   <p class="text-[#666666] font-inter text-sm">
                     {category.count} Project{category.count !== 1 ? 's' : ''}
                   </p>
                 </div>
-                <img 
-                  src="/dropdown__icon.svg" 
-                  alt="dropdown icon" 
-                  class="w-4 h-4 flex-shrink-0 transition-transform {openDropdown === category.name ? 'rotate-180' : ''}"
-                />
               </button>
                           
               <!-- Dropdown Content -->
               {#if openDropdown === category.name}
                 {#if category.name === 'Chatbots'}
                   <!-- Chatbots Dropdown -->
-                  <div 
+                  <div
                     class="absolute top-0 left-0 w-[300px] h-[239px] bg-[#FAFAFA] border border-[#EAEAEA] rounded-2xl shadow-lg z-10"
+                    role="button"
+                    tabindex="0"
                     onclick={() => toggleDropdown(category.name)}
+                    onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleDropdown(category.name); } }}
+                    aria-label={`Close ${category.name} dropdown`}
                   >
                     <!-- Header section with title and icon -->
                     <div class="relative h-[119px] bg-[#FFFFFF] rounded-t-2xl flex items-center justify-between !pl-[40px] pr-6">
                       <div class="flex flex-col items-start">
-                        <h3 class="text-[#000000] text-xl font-inter font-semibold mb-1">
-                          Chatbots
-                        </h3>
+                        <div class="flex items-center gap-2">
+                          <h3 class="text-[#000000] text-xl font-inter font-semibold">
+                            Chatbots
+                          </h3>
+                          <img 
+                            src="/dropdown__icon.svg" 
+                            alt="dropdown icon" 
+                            class="w-4 h-4 flex-shrink-0 transform rotate-180" 
+                          />
+                        </div>
                         <p class="text-[#666666] font-inter text-sm">
                           2 Projects
                         </p>
                       </div>
-                      <img 
-                        src="/dropdown__icon.svg" 
-                        alt="dropdown icon" 
-                        class="w-4 h-4 flex-shrink-0 transform rotate-180" 
-                      />
                     </div>
                     
                     <!-- Project items -->
@@ -126,7 +134,14 @@
                   </div>
                 {:else}
                   <!-- Placeholder for other dropdowns -->
-                  <div class="absolute top-[122px] left-0 w-[300px] p-4 bg-white border border-[#EAEAEA] rounded-xl shadow-lg z-10">
+                  <div
+                    class="absolute top-[122px] left-0 w-[300px] p-4 bg-white border border-[#EAEAEA] rounded-xl shadow-lg z-10"
+                    role="button"
+                    tabindex="0"
+                    onclick={() => toggleDropdown(category.name)}
+                    onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleDropdown(category.name); } }}
+                    aria-label={`Close ${category.name} dropdown`}
+                  >
                     <p class="text-sm text-[#666666]">
                       Projects for {category.name} will be listed here.
                     </p>
