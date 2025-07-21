@@ -53,7 +53,19 @@
             <div class="bg-white border border-[#E5E7EB] rounded-lg overflow-hidden shadow-sm">
               <div class="h-[400px] bg-[#FAFAFA] flex items-center justify-center">
                 {#if currentImageStep}
-                  <img src="/{currentImageStep.image}" alt="{currentImageStep.title}" class="max-w-full max-h-full object-contain" />
+                  <img 
+                    src="/{currentImageStep.image}" 
+                    alt="{currentImageStep.title}" 
+                    class="max-w-full max-h-full object-contain"
+                    onerror={(e) => {
+                      (e.currentTarget as HTMLElement).style.display = 'none';
+                      const errorDiv = e.currentTarget.nextElementSibling as HTMLElement;
+                      if (errorDiv) errorDiv.style.display = 'block';
+                    }}
+                  />
+                  <div class="text-gray-400 text-sm hidden">
+                    Image not found: {currentImageStep.image}
+                  </div>
                 {:else}
                   <div class="text-gray-400 text-sm">Image Loading...</div>
                 {/if}
