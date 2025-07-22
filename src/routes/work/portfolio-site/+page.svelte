@@ -203,7 +203,7 @@
     <div class="w-full h-[4px] gradient-divider"></div>
 
     <!-- WASM Demo Section -->
-    <div class="w-full bg-[#FFFFFF] flex justify-center">
+    <div class="w-full bg-[#FAFAFA] flex justify-center">
       <WasmDemo />
     </div>
 

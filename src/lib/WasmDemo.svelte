@@ -87,7 +87,11 @@
       const ctx = canvas.getContext('2d');
       if (!ctx) throw new Error('Could not get canvas context');
 
-      // Reset to original
+      // Always reset canvas to original dimensions first
+      canvas.width = originalCanvas.width;
+      canvas.height = originalCanvas.height;
+      
+      // Reset to original image
       ctx.drawImage(originalCanvas, 0, 0);
 
       if (filterId === 'none') {
@@ -111,8 +115,10 @@
             break;
           case 'thumbnail':
             result = await ImageUtils.createThumbnail(imageData, 150);
+            // For thumbnail, we need to clear and resize the canvas
             canvas.width = result.width;
             canvas.height = result.height;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
             break;
           default:
             throw new Error('Unknown filter');
@@ -151,7 +157,7 @@
   }
 </script>
 
-<section class="w-full max-w-[1440px] py-16 px-[5%] md:px-[180px]">
+<section class="w-full max-w-[1440px] py-16 px-[5%] md:px-[180px] bg-[#FAFAFA]">
   <div class="flex flex-col items-center gap-12">
     <!-- Header -->
     <div class="flex justify-center items-center flex-row gap-[49px] w-full max-w-[1080px]">
