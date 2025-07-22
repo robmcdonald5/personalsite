@@ -2,7 +2,6 @@
   import Header from '$lib/Header.svelte';
   import Hero from '$lib/Hero.svelte';
   import CodeSamples from '$lib/CodeSamples.svelte';
-  import WasmDemo from '$lib/WasmDemo.svelte';
   import Footer from '$lib/Footer.svelte';
 </script>
 
@@ -18,10 +17,6 @@
     <div class="w-full h-[4px] gradient-divider"></div>
     <div class="w-full bg-[#FFFFFF] flex justify-center flex-grow">
       <CodeSamples />
-    </div>
-    <div class="w-full h-[4px] gradient-divider"></div>
-    <div class="w-full bg-[#FFFFFF] flex justify-center">
-      <WasmDemo />
     </div>
     <div class="w-full h-[4px] gradient-divider"></div>
   </main>

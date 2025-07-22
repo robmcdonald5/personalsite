@@ -13,6 +13,7 @@ interface ImageProcessor {
 
 interface WasmModule {
   ImageProcessor: { new (): ImageProcessor };
+  default: (module_or_path?: string | URL) => Promise<any>;
 }
 
 let wasmModule: WasmModule | null = null;
@@ -28,8 +29,12 @@ export async function initImageProcessor(): Promise<ImageProcessor> {
 
   try {
     // Dynamic import of the WASM module
-    const wasmPath = '/wasm-modules/image-processor/pkg/image_processor.js';
+    const wasmPath = '/wasm-modules/image-processor/image_processor.js';
     wasmModule = await import(/* @vite-ignore */ wasmPath);
+    
+    // Initialize WASM module (required for modern wasm-pack)
+    await wasmModule.default();
+    
     processor = new wasmModule.ImageProcessor();
     return processor;
   } catch (error) {

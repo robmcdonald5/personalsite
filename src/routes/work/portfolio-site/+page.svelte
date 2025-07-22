@@ -1,6 +1,7 @@
 <script lang="ts">
   import Header from '$lib/Header.svelte';
   import Footer from '$lib/Footer.svelte';
+  import WasmDemo from '$lib/WasmDemo.svelte';
 </script>
 
 <svelte:head>
@@ -47,7 +48,7 @@
                 Built with SvelteKit + WebAssembly
               </div>
               <div class="text-[#4B5563] text-lg font-inter">
-                Leverages modern web framework for clean scalability. UI elements are compiled with WebAssembly using Rust for quick loading and rendering.
+                Leverages modern web framework for clean scalability. UI elements are compiled with WebAssembly using Rust for quick loading and rendering. Scroll down for a live demo.
               </div>
             </div>
 
@@ -197,6 +198,13 @@
           </div>
         </div>
       </section>
+    </div>
+
+    <div class="w-full h-[4px] gradient-divider"></div>
+
+    <!-- WASM Demo Section -->
+    <div class="w-full bg-[#FFFFFF] flex justify-center">
+      <WasmDemo />
     </div>
 
     <div class="w-full h-[4px] gradient-divider"></div>
