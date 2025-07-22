@@ -253,7 +253,7 @@
                       </button>
                       <button 
                         class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
-                        onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
+                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ai-menu-chatbot'; }}
                       >
                         <span class="text-[#666666] font-inter">Chipotle AI Menu</span>
                       </button>
@@ -292,7 +292,7 @@
                     <div class="flex flex-col">
                       <button 
                         class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
-                        onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
+                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ai-menu-chatbot'; }}
                       >
                         <span class="text-[#666666] font-inter">Chipotle AI Menu</span>
                       </button>
@@ -400,7 +400,7 @@
                     <div class="flex flex-col">
                       <button 
                         class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
-                        onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
+                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ai-menu-chatbot'; }}
                       >
                         <span class="text-[#666666] font-inter">Chipotle AI Menu</span>
                       </button>
@@ -457,7 +457,7 @@
                     <div class="flex flex-col">
                       <button 
                         class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
-                        onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
+                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ai-menu-chatbot'; }}
                       >
                         <span class="text-[#666666] font-inter">Chipotle AI Menu</span>
                       </button>
@@ -547,7 +547,7 @@
                     <div class="flex flex-col">
                       <button 
                         class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
-                        onclick={(e) => { e.stopPropagation(); /* Handle project click */ }}
+                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ai-menu-chatbot'; }}
                       >
                         <span class="text-[#666666] font-inter">Chipotle AI Menu</span>
                       </button>
