@@ -4,7 +4,7 @@
       <span class="text-[56px] font-inter font-bold tracking-[-0.02em]">
         Software engineer by trade,<br />
       </span>
-      <span class="text-[40px] font-inter font-normal tracking-[-0.02em]">
+      <span class="text-[40px] font-inter font-light tracking-[-0.02em]">
         AI enthusiast by obsession.
       </span>
     </span>
