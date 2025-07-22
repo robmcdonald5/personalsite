@@ -23,14 +23,14 @@
   // Use $effect for reactive side effects
   $effect(() => {
     // This runs when wasmSupported changes
-    if (!wasmSupported) {
+    if (!wasmSupported && import.meta.env.DEV) {
       console.log('📱 WASM Demo: Running in fallback mode');
     }
   });
 
-  // Use $effect for error logging
+  // Use $effect for error logging  
   $effect(() => {
-    if (error) {
+    if (error && import.meta.env.DEV) {
       console.error('❌ WASM Demo Error:', error);
     }
   });
