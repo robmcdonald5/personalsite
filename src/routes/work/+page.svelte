@@ -1,9 +1,10 @@
-<script>
+<script lang="ts">
   import Header from '$lib/Header.svelte';
   import Footer from '$lib/Footer.svelte';
   
   // Svelte 5 runes for dropdown state management
-  let openDropdown = $state(null);
+  let openDropdown = $state<string | null>(null);
+  let autoCloseTimeout = $state<number | null>(null);
   
   // Project categories data
   const categories = [
@@ -17,9 +18,31 @@
     { name: 'Scripting', count: 3, position: { row: 9, col: 2 } }
   ];
   
-  // @ts-ignore
-  function toggleDropdown(categoryName) {
+  function toggleDropdown(categoryName: string) {
+    // Clear any existing timeout
+    if (autoCloseTimeout) {
+      clearTimeout(autoCloseTimeout);
+      autoCloseTimeout = null;
+    }
     openDropdown = openDropdown === categoryName ? null : categoryName;
+  }
+  
+  // Auto-close dropdown when mouse leaves the area
+  function handleMouseLeave(categoryName: string) {
+    if (openDropdown === categoryName) {
+      autoCloseTimeout = setTimeout(() => {
+        openDropdown = null;
+        autoCloseTimeout = null;
+      }, 2000); // 2 second delay
+    }
+  }
+  
+  // Cancel auto-close when mouse enters back into the area
+  function handleMouseEnter() {
+    if (autoCloseTimeout) {
+      clearTimeout(autoCloseTimeout);
+      autoCloseTimeout = null;
+    }
   }
 </script>
 
@@ -47,7 +70,10 @@
         </div>
         
         <!-- Navigate Projects Button -->
-        <div class="flex justify-center mb-[200px] relative">
+        <div class="flex justify-center mb-[200px] relative"
+             role="navigation"
+             onmouseenter={handleMouseEnter}
+             onmouseleave={() => handleMouseLeave('navigate')}>
           <button 
             class="flex items-center gap-2 py-3 px-6 bg-[#4A90E2] rounded-2xl hover:bg-[#3A7BC8] transition-colors w-[280px]"
             onclick={() => toggleDropdown('navigate')}
@@ -127,9 +153,12 @@
         <div class="flex justify-center items-center min-h-[400px] mb-[200px]">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-x-[27px] gap-y-[75px] max-w-[981px] w-full px-4 md:px-0">
           {#each categories as category}
-            <div class="w-full max-w-[300px] mx-auto relative">
+            <div class="w-full max-w-[300px] mx-auto relative"
+                 role="group"
+                 onmouseenter={handleMouseEnter}
+                 onmouseleave={() => handleMouseLeave(category.name)}>
               <button
-                class="w-full max-w-[300px] h-[120px] flex items-center justify-between pl-[40px] pr-6 py-6 bg-[#FAFAFA] border border-[#EAEAEA] rounded-2xl hover:bg-[#F0F0F0] transition-colors"
+                class="w-full max-w-[300px] h-[80px] flex items-center justify-between pl-[40px] pr-6 py-4 bg-[#FAFAFA] border border-[#EAEAEA] rounded-2xl hover:bg-[#F0F0F0] transition-colors"
                 onclick={() => toggleDropdown(category.name)}
               >
                 <div class="flex flex-col items-start">
