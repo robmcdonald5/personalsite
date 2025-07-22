@@ -263,7 +263,44 @@
               <!-- Code Display Area -->
               <div class="h-[350px] bg-white p-6">
                 <div class="w-full h-full bg-[#1E1E1E] rounded-lg flex items-center justify-center">
-                  {#if currentCodeImage}
+                  {#if activeSection === 'Natural Language Intent Parsing' && activeLanguage === 'Python' && activeCodeStep === 0}
+                    <!-- VS Code-style code display for Precomputing Intent Embeddings -->
+                    <div class="w-full h-full bg-[#1e1e1e] rounded-lg overflow-hidden">
+                      <!-- VS Code-style header -->
+                      <div class="h-[24px] bg-[#323233] flex items-center px-2 border-b border-[#2d2d30]">
+                        <div class="flex items-center gap-1">
+                          <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#27ca3f]"></div>
+                        </div>
+                        <div class="ml-4 text-[#cccccc] text-xs font-mono">embedding_processor.py</div>
+                      </div>
+                      <!-- Code content -->
+                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                        <div class="text-[#6a9955]"># Load intents using config.py</div>
+                        <div><span class="text-[#c586c0]">with</span> <span class="text-[#dcdcaa]">open</span>(<span class="text-[#9cdcfe]">config</span>.<span class="text-[#9cdcfe]">INTENTS_FILE</span>, <span class="text-[#ce9178]">'r'</span>) <span class="text-[#c586c0]">as</span> <span class="text-[#9cdcfe]">f</span>:</div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">intents</span> = <span class="text-[#dcdcaa]">json</span>.<span class="text-[#dcdcaa]">load</span>(<span class="text-[#9cdcfe]">f</span>)</div>
+                        <div class="mt-1"></div>
+                        <div class="text-[#6a9955]"># Create a dictionary mapping tags to their respective intents for easier access</div>
+                        <div><span class="text-[#9cdcfe]">intents_dict</span> = &#123;<span class="text-[#9cdcfe]">intent</span>[<span class="text-[#ce9178]">'tag'</span>]: <span class="text-[#9cdcfe]">intent</span> <span class="text-[#c586c0]">for</span> <span class="text-[#9cdcfe]">intent</span> <span class="text-[#c586c0]">in</span> <span class="text-[#9cdcfe]">intents</span>[<span class="text-[#ce9178]">'intents'</span>]&#125;</div>
+                        <div class="mt-1"></div>
+                        <div class="text-[#6a9955]"># Precompute intent embeddings</div>
+                        <div><span class="text-[#9cdcfe]">all_patterns</span> = []</div>
+                        <div><span class="text-[#9cdcfe]">pattern_tags</span> = []</div>
+                        <div class="mt-1"></div>
+                        <div><span class="text-[#c586c0]">for</span> <span class="text-[#9cdcfe]">intent</span> <span class="text-[#c586c0]">in</span> <span class="text-[#9cdcfe]">intents</span>[<span class="text-[#ce9178]">'intents'</span>]:</div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">tag</span> = <span class="text-[#9cdcfe]">intent</span>[<span class="text-[#ce9178]">'tag'</span>]</div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">patterns</span> = <span class="text-[#9cdcfe]">intent</span>[<span class="text-[#ce9178]">'patterns'</span>]</div>
+                        <div class="pl-4"><span class="text-[#c586c0]">for</span> <span class="text-[#9cdcfe]">pattern</span> <span class="text-[#c586c0]">in</span> <span class="text-[#9cdcfe]">patterns</span>:</div>
+                        <div class="pl-8"><span class="text-[#9cdcfe]">cleaned_pattern</span> = <span class="text-[#dcdcaa]">clean_sentence</span>(<span class="text-[#9cdcfe]">pattern</span>)</div>
+                        <div class="pl-8"><span class="text-[#9cdcfe]">all_patterns</span>.<span class="text-[#dcdcaa]">append</span>(<span class="text-[#9cdcfe]">cleaned_pattern</span>)</div>
+                        <div class="pl-8"><span class="text-[#9cdcfe]">pattern_tags</span>.<span class="text-[#dcdcaa]">append</span>(<span class="text-[#9cdcfe]">tag</span>)</div>
+                        <div class="mt-1"></div>
+                        <div><span class="text-[#9cdcfe]">pattern_embeddings</span> = <span class="text-[#9cdcfe]">sentence_model</span>.<span class="text-[#dcdcaa]">encode</span>(<span class="text-[#9cdcfe]">all_patterns</span>)</div>
+                        <div class="mb-2"></div>
+                      </div>
+                    </div>
+                  {:else if currentCodeImage}
                     <img src="/{currentCodeImage}" alt="Code sample" class="max-w-full max-h-full object-contain rounded" />
                   {:else}
                     <div class="text-gray-400 text-sm">Code Loading...</div>
