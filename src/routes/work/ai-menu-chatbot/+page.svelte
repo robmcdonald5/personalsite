@@ -273,7 +273,7 @@
                           <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
                           <div class="w-3 h-3 rounded-full bg-[#27ca3f]"></div>
                         </div>
-                        <div class="ml-4 text-[#cccccc] text-xs font-mono">embedding_processor.py</div>
+                        <div class="ml-4 text-[#cccccc] text-xs font-mono">Python</div>
                       </div>
                       <!-- Code content -->
                       <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
@@ -310,7 +310,7 @@
                           <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
                           <div class="w-3 h-3 rounded-full bg-[#27ca3f]"></div>
                         </div>
-                        <div class="ml-4 text-[#cccccc] text-xs font-mono">intents.json</div>
+                        <div class="ml-4 text-[#cccccc] text-xs font-mono">JSON</div>
                       </div>
                       <!-- Code content -->
                       <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
@@ -349,7 +349,7 @@
                           <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
                           <div class="w-3 h-3 rounded-full bg-[#27ca3f]"></div>
                         </div>
-                        <div class="ml-4 text-[#cccccc] text-xs font-mono">intents.json</div>
+                        <div class="ml-4 text-[#cccccc] text-xs font-mono">JSON</div>
                       </div>
                       <!-- Code content -->
                       <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
@@ -385,7 +385,7 @@
                           <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
                           <div class="w-3 h-3 rounded-full bg-[#27ca3f]"></div>
                         </div>
-                        <div class="ml-4 text-[#cccccc] text-xs font-mono">intents.json</div>
+                        <div class="ml-4 text-[#cccccc] text-xs font-mono">JSON</div>
                       </div>
                       <!-- Code content -->
                       <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
@@ -431,7 +431,7 @@
                           <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
                           <div class="w-3 h-3 rounded-full bg-[#27ca3f]"></div>
                         </div>
-                        <div class="ml-4 text-[#cccccc] text-xs font-mono">intent_trainer.py</div>
+                        <div class="ml-4 text-[#cccccc] text-xs font-mono">Python</div>
                       </div>
                       <!-- Code content -->
                       <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
@@ -463,7 +463,7 @@
                           <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
                           <div class="w-3 h-3 rounded-full bg-[#27ca3f]"></div>
                         </div>
-                        <div class="ml-4 text-[#cccccc] text-xs font-mono">intent_trainer.py</div>
+                        <div class="ml-4 text-[#cccccc] text-xs font-mono">Python</div>
                       </div>
                       <!-- Code content -->
                       <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
@@ -502,12 +502,12 @@
                           <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
                           <div class="w-3 h-3 rounded-full bg-[#27ca3f]"></div>
                         </div>
-                        <div class="ml-4 text-[#cccccc] text-xs font-mono">intent_trainer.py</div>
+                        <div class="ml-4 text-[#cccccc] text-xs font-mono">Python</div>
                       </div>
                       <!-- Code content -->
                       <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
                         <div class="text-[#6a9955]"># Configuration</div>
-                        <div><span class="text-[#9cdcfe]">INTENTS_FILE</span> = <span class="text-[#ce9178]">'intents.json'</span></div>
+                        <div><span class="text-[#9cdcfe]">INTENTS_FILE</span> = <span class="text-[#ce9178]">'JSON'</span></div>
                         <div><span class="text-[#9cdcfe]">BASE_MODEL_NAME</span> = <span class="text-[#ce9178]">'all-MiniLM-L6-v2'</span></div>
                         <div><span class="text-[#9cdcfe]">FINE_TUNED_MODEL_PATH</span> = <span class="text-[#ce9178]">'fine_tuned_intent_model'</span></div>
                         <div class="mt-1"></div>
@@ -523,6 +523,501 @@
                         <div class="pl-10"><span class="text-[#9cdcfe]">output_path</span>=<span class="text-[#9cdcfe]">FINE_TUNED_MODEL_PATH</span>,</div>
                         <div class="pl-10"><span class="text-[#9cdcfe]">show_progress_bar</span>=<span class="text-[#569cd6]">True</span>,</div>
                         <div class="pl-10"><span class="text-[#9cdcfe]">optimizer_params</span>=&#123;<span class="text-[#ce9178]">'lr'</span>: <span class="text-[#9cdcfe]">LEARNING_RATE</span>&#125;)</div>
+                        <div class="mb-2"></div>
+                      </div>
+                    </div>
+                  {:else if activeSection === 'Interactive Chat Interface' && activeLanguage === 'JS' && activeCodeStep === 0}
+                    <!-- VS Code-style code display for Intent Endpoint Piping -->
+                    <div class="w-full h-full bg-[#1e1e1e] rounded-lg overflow-hidden">
+                      <!-- VS Code-style header -->
+                      <div class="h-[24px] bg-[#323233] flex items-center px-2 border-b border-[#2d2d30]">
+                        <div class="flex items-center gap-1">
+                          <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#27ca3f]"></div>
+                        </div>
+                        <div class="ml-4 text-[#cccccc] text-xs font-mono">React</div>
+                      </div>
+                      <!-- Code content -->
+                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                        <div><span class="text-[#c586c0]">const</span> <span class="text-[#dcdcaa]">handleSubmit</span> = <span class="text-[#c586c0]">async</span> (<span class="text-[#9cdcfe]">e</span>) <span class="text-[#c586c0]">=></span> &#123;</div>
+                        <div class="pl-2"><span class="text-[#9cdcfe]">e</span>.<span class="text-[#dcdcaa]">preventDefault</span>();</div>
+                        <div class="mt-1"></div>
+                        <div class="pl-2"><span class="text-[#c586c0]">if</span> (!<span class="text-[#9cdcfe]">userInput</span>.<span class="text-[#dcdcaa]">trim</span>()) &#123;</div>
+                        <div class="pl-4"><span class="text-[#c586c0]">return</span>;</div>
+                        <div class="pl-2">&#125;</div>
+                        <div class="mt-1"></div>
+                        <div class="pl-2"><span class="text-[#c586c0]">const</span> <span class="text-[#9cdcfe]">userMessage</span> = &#123; <span class="text-[#9cdcfe]">text</span>: <span class="text-[#9cdcfe]">userInput</span>, <span class="text-[#9cdcfe]">sender</span>: <span class="text-[#ce9178]">"user"</span> &#125;;</div>
+                        <div class="pl-2"><span class="text-[#dcdcaa]">setMessages</span>((<span class="text-[#9cdcfe]">prev</span>) <span class="text-[#c586c0]">=></span> [...<span class="text-[#9cdcfe]">prev</span>, <span class="text-[#9cdcfe]">userMessage</span>]);</div>
+                        <div class="mt-1"></div>
+                        <div class="pl-2"><span class="text-[#c586c0]">try</span> &#123;</div>
+                        <div class="pl-4"><span class="text-[#6a9955]">// Prepare the data to send</span></div>
+                        <div class="pl-4"><span class="text-[#c586c0]">const</span> <span class="text-[#9cdcfe]">dataToSend</span> = &#123;</div>
+                        <div class="pl-6"><span class="text-[#9cdcfe]">message</span>: <span class="text-[#9cdcfe]">userInput</span>,</div>
+                        <div class="pl-6"><span class="text-[#9cdcfe]">session_id</span>: <span class="text-[#9cdcfe]">sessionId</span>, <span class="text-[#6a9955]">// Include session_id in the request</span></div>
+                        <div class="pl-4">&#125;;</div>
+                        <div class="mt-1"></div>
+                        <div class="pl-4"><span class="text-[#c586c0]">const</span> <span class="text-[#9cdcfe]">response</span> = <span class="text-[#c586c0]">await</span> <span class="text-[#9cdcfe]">axios</span>.<span class="text-[#dcdcaa]">post</span>(<span class="text-[#ce9178]">`$&#123;baseURL&#125;/chat`</span>, <span class="text-[#9cdcfe]">dataToSend</span>, &#123;</div>
+                        <div class="pl-6"><span class="text-[#9cdcfe]">headers</span>: &#123;</div>
+                        <div class="pl-8"><span class="text-[#ce9178]">"Content-Type"</span>: <span class="text-[#ce9178]">"application/json"</span>,</div>
+                        <div class="pl-6">&#125;,</div>
+                        <div class="pl-4">&#125;);</div>
+                        <div class="mt-1"></div>
+                        <div class="pl-4"><span class="text-[#c586c0]">const</span> <span class="text-[#9cdcfe]">gptMessage</span> = &#123; <span class="text-[#9cdcfe]">text</span>: <span class="text-[#9cdcfe]">response</span>.<span class="text-[#9cdcfe]">data</span>.<span class="text-[#9cdcfe]">response</span>, <span class="text-[#9cdcfe]">sender</span>: <span class="text-[#ce9178]">"chipotle"</span> &#125;;</div>
+                        <div class="pl-4"><span class="text-[#dcdcaa]">setMessages</span>((<span class="text-[#9cdcfe]">prev</span>) <span class="text-[#c586c0]">=></span> [...<span class="text-[#9cdcfe]">prev</span>, <span class="text-[#9cdcfe]">gptMessage</span>]);</div>
+                        <div class="pl-2">&#125;</div>
+                        <div>&#125;;</div>
+                        <div class="mb-2"></div>
+                      </div>
+                    </div>
+                  {:else if activeSection === 'Interactive Chat Interface' && activeLanguage === 'JS' && activeCodeStep === 1}
+                    <!-- VS Code-style code display for Live Order Tracking -->
+                    <div class="w-full h-full bg-[#1e1e1e] rounded-lg overflow-hidden">
+                      <!-- VS Code-style header -->
+                      <div class="h-[24px] bg-[#323233] flex items-center px-2 border-b border-[#2d2d30]">
+                        <div class="flex items-center gap-1">
+                          <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#27ca3f]"></div>
+                        </div>
+                        <div class="ml-4 text-[#cccccc] text-xs font-mono">React</div>
+                      </div>
+                      <!-- Code content -->
+                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                        <div class="text-[#6a9955]">// Fetch function</div>
+                        <div><span class="text-[#c586c0]">const</span> <span class="text-[#dcdcaa]">fetchOrderDetails</span> = <span class="text-[#c586c0]">async</span> () <span class="text-[#c586c0]">=></span> &#123;</div>
+                        <div class="pl-2"><span class="text-[#c586c0]">try</span> &#123;</div>
+                        <div class="pl-4"><span class="text-[#c586c0]">const</span> &#123; <span class="text-[#9cdcfe]">data</span> &#125; = <span class="text-[#c586c0]">await</span> <span class="text-[#9cdcfe]">axios</span>.<span class="text-[#dcdcaa]">get</span>(<span class="text-[#ce9178]">`$&#123;baseURL&#125;/get_order`</span>, &#123;</div>
+                        <div class="pl-6"><span class="text-[#9cdcfe]">params</span>: &#123; <span class="text-[#9cdcfe]">session_id</span>: <span class="text-[#9cdcfe]">sessionId</span> &#125;</div>
+                        <div class="pl-4">&#125;);</div>
+                        <div class="pl-4"><span class="text-[#dcdcaa]">setOrderDetails</span>(<span class="text-[#9cdcfe]">data</span>.<span class="text-[#9cdcfe]">order_details</span>);</div>
+                        <div class="pl-2">&#125; <span class="text-[#c586c0]">catch</span> (<span class="text-[#9cdcfe]">err</span>) &#123;</div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">console</span>.<span class="text-[#dcdcaa]">error</span>(<span class="text-[#ce9178]">"Error fetching order details:"</span>, <span class="text-[#9cdcfe]">err</span>);</div>
+                        <div class="pl-2">&#125;</div>
+                        <div>&#125;;</div>
+                        <div class="mt-1"></div>
+                        <div class="text-[#6a9955]">// On session init or update</div>
+                        <div><span class="text-[#dcdcaa]">useEffect</span>(() <span class="text-[#c586c0]">=></span> &#123;</div>
+                        <div class="pl-2"><span class="text-[#c586c0]">if</span> (<span class="text-[#9cdcfe]">sessionId</span>) <span class="text-[#dcdcaa]">fetchOrderDetails</span>();</div>
+                        <div>&#125;, [<span class="text-[#9cdcfe]">sessionId</span>]);</div>
+                        <div class="mt-1"></div>
+                        <div><span class="text-[#c586c0]">await</span> <span class="text-[#dcdcaa]">fetchOrderDetails</span>();</div>
+                        <div class="mb-2"></div>
+                      </div>
+                    </div>
+                  {:else if activeSection === 'Interactive Chat Interface' && activeLanguage === 'JS' && activeCodeStep === 2}
+                    <!-- VS Code-style code display for Dynamic Menu Loading & Rendering -->
+                    <div class="w-full h-full bg-[#1e1e1e] rounded-lg overflow-hidden">
+                      <!-- VS Code-style header -->
+                      <div class="h-[24px] bg-[#323233] flex items-center px-2 border-b border-[#2d2d30]">
+                        <div class="flex items-center gap-1">
+                          <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#27ca3f]"></div>
+                        </div>
+                        <div class="ml-4 text-[#cccccc] text-xs font-mono">React</div>
+                      </div>
+                      <!-- Code content -->
+                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                        <div class="text-[#6a9955]">// Fetch menu items on mount</div>
+                        <div><span class="text-[#c586c0]">const</span> [<span class="text-[#9cdcfe]">menuItems</span>, <span class="text-[#9cdcfe]">setMenuItems</span>] = <span class="text-[#dcdcaa]">useState</span>([]);</div>
+                        <div><span class="text-[#dcdcaa]">useEffect</span>(() <span class="text-[#c586c0]">=></span> &#123;</div>
+                        <div class="pl-2"><span class="text-[#c586c0]">const</span> <span class="text-[#dcdcaa]">fetchMenuItems</span> = <span class="text-[#c586c0]">async</span> () <span class="text-[#c586c0]">=></span> &#123;</div>
+                        <div class="pl-4"><span class="text-[#c586c0]">try</span> &#123;</div>
+                        <div class="pl-6"><span class="text-[#c586c0]">const</span> &#123; <span class="text-[#9cdcfe]">data</span> &#125; = <span class="text-[#c586c0]">await</span> <span class="text-[#9cdcfe]">axios</span>.<span class="text-[#dcdcaa]">get</span>(<span class="text-[#ce9178]">`$&#123;baseURL&#125;/get_menu_items`</span>);</div>
+                        <div class="pl-6"><span class="text-[#dcdcaa]">setMenuItems</span>(<span class="text-[#9cdcfe]">data</span>.<span class="text-[#9cdcfe]">menu_items</span>);</div>
+                        <div class="pl-4">&#125; <span class="text-[#c586c0]">catch</span> (<span class="text-[#9cdcfe]">e</span>) &#123;</div>
+                        <div class="pl-6"><span class="text-[#9cdcfe]">console</span>.<span class="text-[#dcdcaa]">error</span>(<span class="text-[#ce9178]">"Error fetching menu items:"</span>, <span class="text-[#9cdcfe]">e</span>);</div>
+                        <div class="pl-4">&#125;</div>
+                        <div class="pl-2">&#125;;</div>
+                        <div class="pl-2"><span class="text-[#dcdcaa]">fetchMenuItems</span>();</div>
+                        <div>&#125;, []);</div>
+                        <div class="mt-1"></div>
+                        <div class="text-[#6a9955]">// Render grouped by category</div>
+                        <div>&#123;<span class="text-[#9cdcfe]">menuItems</span>.<span class="text-[#9cdcfe]">length</span> > <span class="text-[#b5cea8]">0</span> ? (</div>
+                        <div class="pl-2"><span class="text-[#9cdcfe]">Object</span>.<span class="text-[#dcdcaa]">entries</span>(</div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">menuItems</span>.<span class="text-[#dcdcaa]">reduce</span>((<span class="text-[#9cdcfe]">acc</span>, <span class="text-[#9cdcfe]">item</span>) <span class="text-[#c586c0]">=></span> &#123;</div>
+                        <div class="pl-6"><span class="text-[#9cdcfe]">item</span>.<span class="text-[#9cdcfe]">category</span>.<span class="text-[#dcdcaa]">forEach</span>(<span class="text-[#9cdcfe]">cat</span> <span class="text-[#c586c0]">=></span> &#123;</div>
+                        <div class="pl-8"><span class="text-[#9cdcfe]">acc</span>[<span class="text-[#9cdcfe]">cat</span>] = <span class="text-[#9cdcfe]">acc</span>[<span class="text-[#9cdcfe]">cat</span>] || [];</div>
+                        <div class="pl-8"><span class="text-[#9cdcfe]">acc</span>[<span class="text-[#9cdcfe]">cat</span>].<span class="text-[#dcdcaa]">push</span>(<span class="text-[#9cdcfe]">item</span>);</div>
+                        <div class="pl-6">&#125;);</div>
+                        <div class="pl-6"><span class="text-[#c586c0]">return</span> <span class="text-[#9cdcfe]">acc</span>;</div>
+                        <div class="pl-4">&#125;, &#123;&#125;)</div>
+                        <div class="pl-2">).<span class="text-[#dcdcaa]">map</span>(([<span class="text-[#9cdcfe]">category</span>, <span class="text-[#9cdcfe]">items</span>]) <span class="text-[#c586c0]">=></span> (</div>
+                        <div class="pl-4"><span class="text-[#6a9955]">// Render logic for each category</span></div>
+                        <div class="pl-2">))</div>
+                        <div>) : <span class="text-[#569cd6]">null</span>&#125;</div>
+                        <div class="mb-2"></div>
+                      </div>
+                    </div>
+                  {:else if activeSection === 'Interactive Chat Interface' && activeLanguage === 'JS' && activeCodeStep === 3}
+                    <!-- VS Code-style code display for Dynamic Scroll & Interactive Bar -->
+                    <div class="w-full h-full bg-[#1e1e1e] rounded-lg overflow-hidden">
+                      <!-- VS Code-style header -->
+                      <div class="h-[24px] bg-[#323233] flex items-center px-2 border-b border-[#2d2d30]">
+                        <div class="flex items-center gap-1">
+                          <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#27ca3f]"></div>
+                        </div>
+                        <div class="ml-4 text-[#cccccc] text-xs font-mono">React</div>
+                      </div>
+                      <!-- Code content -->
+                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                        <div><span class="text-[#c586c0]">const</span> <span class="text-[#9cdcfe]">messagesEndRef</span> = <span class="text-[#dcdcaa]">useRef</span>(<span class="text-[#569cd6]">null</span>);</div>
+                        <div class="mt-1"></div>
+                        <div><span class="text-[#dcdcaa]">useEffect</span>(() <span class="text-[#c586c0]">=></span> &#123;</div>
+                        <div class="pl-2"><span class="text-[#9cdcfe]">messagesEndRef</span>.<span class="text-[#9cdcfe]">current</span>?.<span class="text-[#dcdcaa]">scrollIntoView</span>(&#123; <span class="text-[#9cdcfe]">behavior</span>: <span class="text-[#ce9178]">"smooth"</span> &#125;);</div>
+                        <div>&#125;, [<span class="text-[#9cdcfe]">messages</span>]);</div>
+                        <div class="mt-1"></div>
+                        <div>&lt;<span class="text-[#4ec9b0]">div</span> <span class="text-[#92c5f7]">ref</span>=&#123;<span class="text-[#9cdcfe]">messagesEndRef</span>&#125; /&gt;</div>
+                        <div class="mt-1"></div>
+                        <div><span class="text-[#dcdcaa]">useEffect</span>(() <span class="text-[#c586c0]">=></span> &#123;</div>
+                        <div class="pl-2"><span class="text-[#c586c0]">if</span> (<span class="text-[#9cdcfe]">sender</span> === <span class="text-[#ce9178]">"chipotle"</span>) &#123;</div>
+                        <div class="pl-4"><span class="text-[#c586c0]">let</span> <span class="text-[#9cdcfe]">index</span> = <span class="text-[#b5cea8]">0</span>;</div>
+                        <div class="pl-4"><span class="text-[#c586c0]">const</span> <span class="text-[#9cdcfe]">interval</span> = <span class="text-[#dcdcaa]">setInterval</span>(() <span class="text-[#c586c0]">=></span> &#123;</div>
+                        <div class="pl-6"><span class="text-[#dcdcaa]">setDisplayedText</span>(<span class="text-[#9cdcfe]">text</span>.<span class="text-[#dcdcaa]">slice</span>(<span class="text-[#b5cea8]">0</span>, <span class="text-[#9cdcfe]">index</span> + <span class="text-[#b5cea8]">1</span>));</div>
+                        <div class="pl-6"><span class="text-[#9cdcfe]">index</span>++;</div>
+                        <div class="pl-6"><span class="text-[#c586c0]">if</span> (<span class="text-[#9cdcfe]">index</span> >= <span class="text-[#9cdcfe]">text</span>.<span class="text-[#9cdcfe]">length</span>) <span class="text-[#dcdcaa]">clearInterval</span>(<span class="text-[#9cdcfe]">interval</span>);</div>
+                        <div class="pl-4">&#125;, <span class="text-[#b5cea8]">50</span>); <span class="text-[#6a9955]">// 50 ms per character</span></div>
+                        <div class="pl-4"><span class="text-[#c586c0]">return</span> () <span class="text-[#c586c0]">=></span> <span class="text-[#dcdcaa]">clearInterval</span>(<span class="text-[#9cdcfe]">interval</span>);</div>
+                        <div class="pl-2">&#125;</div>
+                        <div>&#125;, [<span class="text-[#9cdcfe]">text</span>, <span class="text-[#9cdcfe]">sender</span>]);</div>
+                        <div class="mb-2"></div>
+                      </div>
+                    </div>
+                  {:else if activeSection === 'Interactive Chat Interface' && activeLanguage === 'Python' && activeCodeStep === 0}
+                    <!-- VS Code-style code display for Chat Endpoint Integration -->
+                    <div class="w-full h-full bg-[#1e1e1e] rounded-lg overflow-hidden">
+                      <!-- VS Code-style header -->
+                      <div class="h-[24px] bg-[#323233] flex items-center px-2 border-b border-[#2d2d30]">
+                        <div class="flex items-center gap-1">
+                          <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#27ca3f]"></div>
+                        </div>
+                        <div class="ml-4 text-[#cccccc] text-xs font-mono">Python</div>
+                      </div>
+                      <!-- Code content -->
+                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                        <div><span class="text-[#c586c0]">from</span> <span class="text-[#9cdcfe]">flask</span> <span class="text-[#c586c0]">import</span> <span class="text-[#9cdcfe]">request</span>, <span class="text-[#9cdcfe]">jsonify</span></div>
+                        <div class="mt-1"></div>
+                        <div><span class="text-[#dcdcaa]">@app.route</span>(<span class="text-[#ce9178]">'/chat'</span>, <span class="text-[#9cdcfe]">methods</span>=[<span class="text-[#ce9178]">'POST'</span>])</div>
+                        <div><span class="text-[#c586c0]">def</span> <span class="text-[#dcdcaa]">chat</span>():</div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">data</span> = <span class="text-[#9cdcfe]">request</span>.<span class="text-[#9cdcfe]">json</span></div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">user_msg</span> = <span class="text-[#9cdcfe]">data</span>.<span class="text-[#dcdcaa]">get</span>(<span class="text-[#ce9178]">"message"</span>, <span class="text-[#ce9178]">""</span>)</div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">session_id</span> = <span class="text-[#9cdcfe]">data</span>.<span class="text-[#dcdcaa]">get</span>(<span class="text-[#ce9178]">"session_id"</span>, <span class="text-[#569cd6]">None</span>)</div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">response_text</span> = <span class="text-[#dcdcaa]">handle_intent</span>(<span class="text-[#9cdcfe]">user_msg</span>)</div>
+                        <div class="pl-4"><span class="text-[#c586c0]">return</span> <span class="text-[#dcdcaa]">jsonify</span>(&#123;</div>
+                        <div class="pl-8"><span class="text-[#ce9178]">"response"</span>: <span class="text-[#9cdcfe]">response_text</span>,</div>
+                        <div class="pl-8"><span class="text-[#ce9178]">"session_id"</span>: <span class="text-[#9cdcfe]">session_id</span></div>
+                        <div class="pl-4">&#125;)</div>
+                        <div class="mt-1"></div>
+                        <div><span class="text-[#dcdcaa]">@app.route</span>(<span class="text-[#ce9178]">'/get_order'</span>, <span class="text-[#9cdcfe]">methods</span>=[<span class="text-[#ce9178]">'GET'</span>])</div>
+                        <div><span class="text-[#c586c0]">def</span> <span class="text-[#dcdcaa]">get_order</span>():</div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">session_id</span> = <span class="text-[#9cdcfe]">request</span>.<span class="text-[#9cdcfe]">args</span>.<span class="text-[#dcdcaa]">get</span>(<span class="text-[#ce9178]">'session_id'</span>)</div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">order</span> = <span class="text-[#dcdcaa]">fetch_order_from_store</span>(<span class="text-[#9cdcfe]">session_id</span>)</div>
+                        <div class="pl-4"><span class="text-[#c586c0]">return</span> <span class="text-[#dcdcaa]">jsonify</span>(&#123;<span class="text-[#ce9178]">"order_details"</span>: <span class="text-[#9cdcfe]">order</span>&#125;)</div>
+                        <div class="mt-1"></div>
+                        <div><span class="text-[#dcdcaa]">@app.route</span>(<span class="text-[#ce9178]">'/get_menu_items'</span>, <span class="text-[#9cdcfe]">methods</span>=[<span class="text-[#ce9178]">'GET'</span>])</div>
+                        <div><span class="text-[#c586c0]">def</span> <span class="text-[#dcdcaa]">get_menu_items</span>():</div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">menu_items</span> = <span class="text-[#dcdcaa]">load_menu_data</span>()</div>
+                        <div class="pl-4"><span class="text-[#c586c0]">return</span> <span class="text-[#dcdcaa]">jsonify</span>(&#123;<span class="text-[#ce9178]">"menu_items"</span>: <span class="text-[#9cdcfe]">menu_items</span>&#125;)</div>
+                        <div class="mb-2"></div>
+                      </div>
+                    </div>
+                  {:else if activeSection === 'Interactive Chat Interface' && activeLanguage === 'Python' && activeCodeStep === 1}
+                    <!-- VS Code-style code display for Real-time Session Management -->
+                    <div class="w-full h-full bg-[#1e1e1e] rounded-lg overflow-hidden">
+                      <!-- VS Code-style header -->
+                      <div class="h-[24px] bg-[#323233] flex items-center px-2 border-b border-[#2d2d30]">
+                        <div class="flex items-center gap-1">
+                          <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#27ca3f]"></div>
+                        </div>
+                        <div class="ml-4 text-[#cccccc] text-xs font-mono">Python</div>
+                      </div>
+                      <!-- Code content -->
+                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                        <div><span class="text-[#dcdcaa]">@app.route</span>(<span class="text-[#ce9178]">'/get_order'</span>, <span class="text-[#9cdcfe]">methods</span>=[<span class="text-[#ce9178]">'GET'</span>])</div>
+                        <div><span class="text-[#c586c0]">def</span> <span class="text-[#dcdcaa]">get_order</span>():</div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">session_id</span> = <span class="text-[#9cdcfe]">request</span>.<span class="text-[#9cdcfe]">args</span>.<span class="text-[#dcdcaa]">get</span>(<span class="text-[#ce9178]">'session_id'</span>)</div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">order</span> = <span class="text-[#dcdcaa]">fetch_order_from_store</span>(<span class="text-[#9cdcfe]">session_id</span>)</div>
+                        <div class="pl-4"><span class="text-[#c586c0]">return</span> <span class="text-[#dcdcaa]">jsonify</span>(&#123;<span class="text-[#ce9178]">"order_details"</span>: <span class="text-[#9cdcfe]">order</span>&#125;)</div>
+                        <div class="mt-1"></div>
+                        <div><span class="text-[#dcdcaa]">@app.route</span>(<span class="text-[#ce9178]">'/get_menu_items'</span>, <span class="text-[#9cdcfe]">methods</span>=[<span class="text-[#ce9178]">'GET'</span>])</div>
+                        <div><span class="text-[#c586c0]">def</span> <span class="text-[#dcdcaa]">get_menu_items</span>():</div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">menu_items</span> = <span class="text-[#dcdcaa]">load_menu_data</span>()</div>
+                        <div class="pl-4"><span class="text-[#c586c0]">return</span> <span class="text-[#dcdcaa]">jsonify</span>(&#123;<span class="text-[#ce9178]">"menu_items"</span>: <span class="text-[#9cdcfe]">menu_items</span>&#125;)</div>
+                        <div class="mt-1"></div>
+                        <div><span class="text-[#c586c0]">from</span> <span class="text-[#9cdcfe]">flask_socketio</span> <span class="text-[#c586c0]">import</span> <span class="text-[#9cdcfe]">SocketIO</span>, <span class="text-[#9cdcfe]">emit</span></div>
+                        <div class="mt-1"></div>
+                        <div><span class="text-[#9cdcfe]">socketio</span> = <span class="text-[#dcdcaa]">SocketIO</span>(<span class="text-[#9cdcfe]">app</span>, <span class="text-[#9cdcfe]">cors_allowed_origins</span>=<span class="text-[#ce9178]">"*"</span>)</div>
+                        <div class="mt-1"></div>
+                        <div><span class="text-[#dcdcaa]">@socketio.on</span>(<span class="text-[#ce9178]">'user_message'</span>)</div>
+                        <div><span class="text-[#c586c0]">def</span> <span class="text-[#dcdcaa]">handle_message</span>(<span class="text-[#9cdcfe]">data</span>):</div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">reply</span> = <span class="text-[#dcdcaa]">handle_intent</span>(<span class="text-[#9cdcfe]">data</span>[<span class="text-[#ce9178]">'text'</span>])</div>
+                        <div class="pl-4"><span class="text-[#dcdcaa]">emit</span>(<span class="text-[#ce9178]">'bot_reply'</span>, &#123;<span class="text-[#ce9178]">'text'</span>: <span class="text-[#9cdcfe]">reply</span>&#125;)</div>
+                        <div class="mb-2"></div>
+                      </div>
+                    </div>
+                  {:else if activeSection === 'Interactive Chat Interface' && activeLanguage === 'MongoDB' && activeCodeStep === 0}
+                    <!-- VS Code-style code display for Menu Collection -->
+                    <div class="w-full h-full bg-[#1e1e1e] rounded-lg overflow-hidden">
+                      <!-- VS Code-style header -->
+                      <div class="h-[24px] bg-[#323233] flex items-center px-2 border-b border-[#2d2d30]">
+                        <div class="flex items-center gap-1">
+                          <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#27ca3f]"></div>
+                        </div>
+                        <div class="ml-4 text-[#cccccc] text-xs font-mono">MongoDB</div>
+                      </div>
+                      <!-- Code content -->
+                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                        <div>&#123;</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"_id"</span>: <span class="text-[#dcdcaa]">ObjectId</span>(<span class="text-[#ce9178]">"671133dcec57aa8e6398c747"</span>),</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"name"</span>: <span class="text-[#ce9178]">"Burrito"</span>,</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"menu_type"</span>: [<span class="text-[#ce9178]">"..."</span>],</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"category"</span>: [<span class="text-[#ce9178]">"..."</span>],</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"size_details"</span>: [<span class="text-[#ce9178]">"..."</span>],</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"colloquialism"</span>: <span class="text-[#ce9178]">""</span></div>
+                        <div>&#125;,</div>
+                        <div>&#123;</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"_id"</span>: <span class="text-[#dcdcaa]">ObjectId</span>(<span class="text-[#ce9178]">"671136c0ec57aa8e6398c750"</span>),</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"name"</span>: <span class="text-[#ce9178]">"Fajita Vegetables"</span>,</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"menu_type"</span>: [<span class="text-[#ce9178]">"..."</span>],</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"category"</span>: [<span class="text-[#ce9178]">"..."</span>],</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"size_type"</span>: [<span class="text-[#ce9178]">"..."</span>],</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"per_serving"</span>: <span class="text-[#ce9178]">"2.5 oz"</span>,</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"vegan"</span>: <span class="text-[#569cd6]">true</span>,</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"colloquialism"</span>: <span class="text-[#ce9178]">"Fajita Veggies"</span></div>
+                        <div>&#125;</div>
+                        <div class="mb-2"></div>
+                      </div>
+                    </div>
+                  {:else if activeSection === 'Interactive Chat Interface' && activeLanguage === 'MongoDB' && activeCodeStep === 1}
+                    <!-- VS Code-style code display for Order Collection -->
+                    <div class="w-full h-full bg-[#1e1e1e] rounded-lg overflow-hidden">
+                      <!-- VS Code-style header -->
+                      <div class="h-[24px] bg-[#323233] flex items-center px-2 border-b border-[#2d2d30]">
+                        <div class="flex items-center gap-1">
+                          <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#27ca3f]"></div>
+                        </div>
+                        <div class="ml-4 text-[#cccccc] text-xs font-mono">MongoDB</div>
+                      </div>
+                      <!-- Code content -->
+                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                        <div>&#123;</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"_id"</span>: <span class="text-[#dcdcaa]">ObjectId</span>(<span class="text-[#ce9178]">"673fe6468f96a25598c274d9"</span>),</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"session_id"</span>: <span class="text-[#ce9178]">"d4dbb848-550f-44b8-9671-a021da5f5e95"</span>,</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"order_id"</span>: <span class="text-[#b5cea8]">1</span>,</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"item"</span>: <span class="text-[#ce9178]">"burrito"</span>,</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"price"</span>: <span class="text-[#b5cea8]">9.45</span>,</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"category"</span>: <span class="text-[#ce9178]">"entree"</span>,</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"completed"</span>: <span class="text-[#569cd6]">false</span>,</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"meats"</span>: [],</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"rice"</span>: [],</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"beans"</span>: [],</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"toppings"</span>: []</div>
+                        <div>&#125;,</div>
+                        <div>&#123;</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"_id"</span>: <span class="text-[#dcdcaa]">ObjectId</span>(<span class="text-[#ce9178]">"674e7645295687177a2ebd90"</span>),</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"session_id"</span>: <span class="text-[#ce9178]">"9981919d-faaf-48b1-9cc7-f72896ea484b"</span>,</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"order_id"</span>: <span class="text-[#b5cea8]">1</span>,</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"item"</span>: <span class="text-[#ce9178]">"bowl"</span>,</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"price"</span>: <span class="text-[#b5cea8]">9.45</span>,</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"category"</span>: <span class="text-[#ce9178]">"entree"</span>,</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"completed"</span>: <span class="text-[#569cd6]">false</span>,</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"meats"</span>: [],</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"rice"</span>: [],</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"beans"</span>: [],</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"toppings"</span>: []</div>
+                        <div>&#125;</div>
+                        <div class="mb-2"></div>
+                      </div>
+                    </div>
+                  {:else if activeSection === 'Interactive Chat Interface' && activeLanguage === 'MongoDB' && activeCodeStep === 2}
+                    <!-- VS Code-style code display for Session Tracking Collection -->
+                    <div class="w-full h-full bg-[#1e1e1e] rounded-lg overflow-hidden">
+                      <!-- VS Code-style header -->
+                      <div class="h-[24px] bg-[#323233] flex items-center px-2 border-b border-[#2d2d30]">
+                        <div class="flex items-center gap-1">
+                          <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#27ca3f]"></div>
+                        </div>
+                        <div class="ml-4 text-[#cccccc] text-xs font-mono">MongoDB</div>
+                      </div>
+                      <!-- Code content -->
+                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                        <div>&#123;</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"_id"</span>: <span class="text-[#dcdcaa]">ObjectId</span>(<span class="text-[#ce9178]">"673fb98c83ac47d6fa4cd03f"</span>),</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"session_id"</span>: <span class="text-[#ce9178]">"c135f1aa-2713-4ddb-9996-a98a7ce6b2cd"</span>,</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"is_fixing"</span>: <span class="text-[#569cd6]">false</span>,</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"missing_field_context"</span>: &#123;&#125;,</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"chat_length"</span>: <span class="text-[#b5cea8]">0</span>,</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"last_activity"</span>: <span class="text-[#ce9178]">"2024-11-22T20:31:52.803+00:00"</span></div>
+                        <div>&#125;,</div>
+                        <div>&#123;</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"_id"</span>: <span class="text-[#dcdcaa]">ObjectId</span>(<span class="text-[#ce9178]">"673fc1b58f96a255598c274be"</span>),</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"session_id"</span>: <span class="text-[#ce9178]">"d4dbb848-550f-44b8-9671-a021daf55e95"</span>,</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"is_fixing"</span>: <span class="text-[#569cd6]">true</span>,</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"missing_field_context"</span>: &#123;&#125;,</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"chat_length"</span>: <span class="text-[#b5cea8]">1</span>,</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"last_activity"</span>: <span class="text-[#ce9178]">"2024-11-22T02:46:884+00:00"</span></div>
+                        <div>&#125;</div>
+                        <div class="mb-2"></div>
+                      </div>
+                    </div>
+                  {:else if activeSection === 'Backend API & Data Persistence' && activeLanguage === 'Python' && activeCodeStep === 0}
+                    <!-- VS Code-style code display for Database Connection With Proxy -->
+                    <div class="w-full h-full bg-[#1e1e1e] rounded-lg overflow-hidden">
+                      <!-- VS Code-style header -->
+                      <div class="h-[24px] bg-[#323233] flex items-center px-2 border-b border-[#2d2d30]">
+                        <div class="flex items-center gap-1">
+                          <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#27ca3f]"></div>
+                        </div>
+                        <div class="ml-4 text-[#cccccc] text-xs font-mono">Python</div>
+                      </div>
+                      <!-- Code content -->
+                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                        <div><span class="text-[#c586c0]">class</span> <span class="text-[#4ec9b0]">Database</span>:</div>
+                        <div class="pl-4"><span class="text-[#c586c0]">def</span> <span class="text-[#dcdcaa]">connect</span>(<span class="text-[#9cdcfe]">self</span>):</div>
+                        <div class="pl-8"><span class="text-[#c586c0]">for</span> <span class="text-[#9cdcfe]">attempt</span> <span class="text-[#c586c0]">in</span> <span class="text-[#dcdcaa]">range</span>(<span class="text-[#b5cea8]">3</span>):</div>
+                        <div class="pl-12"><span class="text-[#c586c0]">try</span>:</div>
+                        <div class="pl-16"><span class="text-[#dcdcaa]">print</span>(<span class="text-[#ce9178]">f"Attempting to connect to MongoDB (Attempt &#123;attempt + 1&#125;)"</span>)</div>
+                        <div class="mt-1"></div>
+                        <div class="pl-16"><span class="text-[#6a9955]"># Set up SOCKS proxy if QUOTAGUARDSTATIC_SOCKS_URL is set</span></div>
+                        <div class="pl-16"><span class="text-[#9cdcfe]">quotaguard_url</span> = <span class="text-[#9cdcfe]">os</span>.<span class="text-[#dcdcaa]">getenv</span>(<span class="text-[#ce9178]">'QUOTAGUARDSTATIC_SOCKS_URL'</span>)</div>
+                        <div class="pl-16"><span class="text-[#c586c0]">if</span> <span class="text-[#9cdcfe]">quotaguard_url</span>:</div>
+                        <div class="pl-20"><span class="text-[#9cdcfe]">parsed</span> = <span class="text-[#dcdcaa]">urlparse</span>(<span class="text-[#9cdcfe]">quotaguard_url</span>)</div>
+                        <div class="pl-20"><span class="text-[#c586c0]">if</span> <span class="text-[#9cdcfe]">parsed</span>.<span class="text-[#9cdcfe]">scheme</span> != <span class="text-[#ce9178]">'socks5'</span>:</div>
+                        <div class="pl-24"><span class="text-[#c586c0]">raise</span> <span class="text-[#dcdcaa]">ValueError</span>(<span class="text-[#ce9178]">f"Unsupported proxy scheme &#123;parsed.scheme&#125;"</span>)</div>
+                        <div class="mt-1"></div>
+                        <div class="pl-20"><span class="text-[#9cdcfe]">socks</span>.<span class="text-[#dcdcaa]">set_default_proxy</span>(</div>
+                        <div class="pl-24"><span class="text-[#9cdcfe]">socks</span>.<span class="text-[#9cdcfe]">PROXY_TYPE_SOCKS5</span>,</div>
+                        <div class="pl-24"><span class="text-[#9cdcfe]">parsed</span>.<span class="text-[#9cdcfe]">hostname</span>,</div>
+                        <div class="pl-24"><span class="text-[#9cdcfe]">parsed</span>.<span class="text-[#9cdcfe]">port</span>,</div>
+                        <div class="pl-24"><span class="text-[#569cd6]">True</span>,</div>
+                        <div class="pl-24"><span class="text-[#9cdcfe]">parsed</span>.<span class="text-[#9cdcfe]">username</span>,</div>
+                        <div class="pl-24"><span class="text-[#9cdcfe]">parsed</span>.<span class="text-[#9cdcfe]">password</span></div>
+                        <div class="pl-20">)</div>
+                        <div class="mt-1"></div>
+                        <div class="pl-20"><span class="text-[#9cdcfe]">socket</span>.<span class="text-[#9cdcfe]">socket</span> = <span class="text-[#9cdcfe]">socks</span>.<span class="text-[#9cdcfe]">socksocket</span>  <span class="text-[#6a9955]"># Monkey patch socket module</span></div>
+                        <div class="mt-1"></div>
+                        <div class="pl-16"><span class="text-[#9cdcfe]">self</span>.<span class="text-[#9cdcfe]">client</span> = <span class="text-[#dcdcaa]">MongoClient</span>(</div>
+                        <div class="pl-20"><span class="text-[#9cdcfe]">self</span>.<span class="text-[#9cdcfe]">uri</span>,</div>
+                        <div class="pl-20"><span class="text-[#9cdcfe]">serverSelectionTimeoutMS</span>=<span class="text-[#b5cea8]">30000</span>,</div>
+                        <div class="pl-20"><span class="text-[#9cdcfe]">socketTimeoutMS</span>=<span class="text-[#b5cea8]">30000</span>,</div>
+                        <div class="pl-20"><span class="text-[#9cdcfe]">tls</span>=<span class="text-[#569cd6]">True</span></div>
+                        <div class="pl-16">)</div>
+                        <div class="mb-2"></div>
+                      </div>
+                    </div>
+                  {:else if activeSection === 'Backend API & Data Persistence' && activeLanguage === 'Python' && activeCodeStep === 1}
+                    <!-- VS Code-style code display for Fetching Current Order -->
+                    <div class="w-full h-full bg-[#1e1e1e] rounded-lg overflow-hidden">
+                      <!-- VS Code-style header -->
+                      <div class="h-[24px] bg-[#323233] flex items-center px-2 border-b border-[#2d2d30]">
+                        <div class="flex items-center gap-1">
+                          <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#27ca3f]"></div>
+                        </div>
+                        <div class="ml-4 text-[#cccccc] text-xs font-mono">Python</div>
+                      </div>
+                      <!-- Code content -->
+                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                        <div><span class="text-[#dcdcaa]">@app.route</span>(<span class="text-[#ce9178]">'/get_order'</span>, <span class="text-[#9cdcfe]">methods</span>=[<span class="text-[#ce9178]">'GET'</span>])</div>
+                        <div><span class="text-[#c586c0]">def</span> <span class="text-[#dcdcaa]">get_order</span>():</div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">session_id</span> = <span class="text-[#9cdcfe]">request</span>.<span class="text-[#9cdcfe]">args</span>.<span class="text-[#dcdcaa]">get</span>(<span class="text-[#ce9178]">'session_id'</span>)</div>
+                        <div class="pl-4"><span class="text-[#c586c0]">if</span> <span class="text-[#c586c0]">not</span> <span class="text-[#9cdcfe]">session_id</span>:</div>
+                        <div class="pl-8"><span class="text-[#c586c0]">return</span> <span class="text-[#dcdcaa]">jsonify</span>(&#123;<span class="text-[#ce9178]">"error"</span>: <span class="text-[#ce9178]">"Missing session_id"</span>&#125;), <span class="text-[#b5cea8]">400</span></div>
+                        <div class="mt-1"></div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">order_details</span> = <span class="text-[#dcdcaa]">list</span>(<span class="text-[#9cdcfe]">db</span>.<span class="text-[#dcdcaa]">get_db</span>().<span class="text-[#9cdcfe]">orders</span>.<span class="text-[#dcdcaa]">find</span>(&#123;<span class="text-[#ce9178]">'session_id'</span>: <span class="text-[#9cdcfe]">session_id</span>&#125;))</div>
+                        <div class="mt-1"></div>
+                        <div class="pl-4"><span class="text-[#c586c0]">for</span> <span class="text-[#9cdcfe]">order</span> <span class="text-[#c586c0]">in</span> <span class="text-[#9cdcfe]">order_details</span>:</div>
+                        <div class="pl-8"><span class="text-[#9cdcfe]">order</span>[<span class="text-[#ce9178]">'_id'</span>] = <span class="text-[#dcdcaa]">str</span>(<span class="text-[#9cdcfe]">order</span>[<span class="text-[#ce9178]">'_id'</span>])</div>
+                        <div class="mt-1"></div>
+                        <div class="pl-4"><span class="text-[#c586c0]">return</span> <span class="text-[#dcdcaa]">jsonify</span>(&#123;<span class="text-[#ce9178]">"order_details"</span>: <span class="text-[#9cdcfe]">order_details</span>&#125;)</div>
+                        <div class="mb-2"></div>
+                      </div>
+                    </div>
+                  {:else if activeSection === 'Backend API & Data Persistence' && activeLanguage === 'Python' && activeCodeStep === 2}
+                    <!-- VS Code-style code display for Session Management Endpoint -->
+                    <div class="w-full h-full bg-[#1e1e1e] rounded-lg overflow-hidden">
+                      <!-- VS Code-style header -->
+                      <div class="h-[24px] bg-[#323233] flex items-center px-2 border-b border-[#2d2d30]">
+                        <div class="flex items-center gap-1">
+                          <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#27ca3f]"></div>
+                        </div>
+                        <div class="ml-4 text-[#cccccc] text-xs font-mono">Python</div>
+                      </div>
+                      <!-- Code content -->
+                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                        <div><span class="text-[#dcdcaa]">@app.route</span>(<span class="text-[#ce9178]">'/get_order'</span>, <span class="text-[#9cdcfe]">methods</span>=[<span class="text-[#ce9178]">'GET'</span>])</div>
+                        <div><span class="text-[#c586c0]">def</span> <span class="text-[#dcdcaa]">get_order</span>():</div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">session_id</span> = <span class="text-[#9cdcfe]">request</span>.<span class="text-[#9cdcfe]">args</span>.<span class="text-[#dcdcaa]">get</span>(<span class="text-[#ce9178]">'session_id'</span>)</div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">order</span> = <span class="text-[#dcdcaa]">fetch_order_from_store</span>(<span class="text-[#9cdcfe]">session_id</span>)</div>
+                        <div class="pl-4"><span class="text-[#c586c0]">return</span> <span class="text-[#dcdcaa]">jsonify</span>(&#123;<span class="text-[#ce9178]">"order_details"</span>: <span class="text-[#9cdcfe]">order</span>&#125;)</div>
+                        <div class="mt-1"></div>
+                        <div><span class="text-[#dcdcaa]">@app.route</span>(<span class="text-[#ce9178]">'/get_menu_items'</span>, <span class="text-[#9cdcfe]">methods</span>=[<span class="text-[#ce9178]">'GET'</span>])</div>
+                        <div><span class="text-[#c586c0]">def</span> <span class="text-[#dcdcaa]">get_menu_items</span>():</div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">menu_items</span> = <span class="text-[#dcdcaa]">load_menu_data</span>()</div>
+                        <div class="pl-4"><span class="text-[#c586c0]">return</span> <span class="text-[#dcdcaa]">jsonify</span>(&#123;<span class="text-[#ce9178]">"menu_items"</span>: <span class="text-[#9cdcfe]">menu_items</span>&#125;)</div>
+                        <div class="mt-1"></div>
+                        <div><span class="text-[#c586c0]">from</span> <span class="text-[#9cdcfe]">flask_socketio</span> <span class="text-[#c586c0]">import</span> <span class="text-[#9cdcfe]">SocketIO</span>, <span class="text-[#9cdcfe]">emit</span></div>
+                        <div class="mt-1"></div>
+                        <div><span class="text-[#9cdcfe]">socketio</span> = <span class="text-[#dcdcaa]">SocketIO</span>(<span class="text-[#9cdcfe]">app</span>, <span class="text-[#9cdcfe]">cors_allowed_origins</span>=<span class="text-[#ce9178]">"*"</span>)</div>
+                        <div class="mt-1"></div>
+                        <div><span class="text-[#dcdcaa]">@socketio.on</span>(<span class="text-[#ce9178]">'user_message'</span>)</div>
+                        <div><span class="text-[#c586c0]">def</span> <span class="text-[#dcdcaa]">handle_message</span>(<span class="text-[#9cdcfe]">data</span>):</div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">reply</span> = <span class="text-[#dcdcaa]">handle_intent</span>(<span class="text-[#9cdcfe]">data</span>[<span class="text-[#ce9178]">'text'</span>])</div>
+                        <div class="pl-4"><span class="text-[#dcdcaa]">emit</span>(<span class="text-[#ce9178]">'bot_reply'</span>, &#123;<span class="text-[#ce9178]">'text'</span>: <span class="text-[#9cdcfe]">reply</span>&#125;)</div>
+                        <div class="mb-2"></div>
+                      </div>
+                    </div>
+                  {:else if activeSection === 'Backend API & Data Persistence' && activeLanguage === 'Docker' && activeCodeStep === 0}
+                    <!-- VS Code-style code display for Docker Compose Deployment -->
+                    <div class="w-full h-full bg-[#1e1e1e] rounded-lg overflow-hidden">
+                      <!-- VS Code-style header -->
+                      <div class="h-[24px] bg-[#323233] flex items-center px-2 border-b border-[#2d2d30]">
+                        <div class="flex items-center gap-1">
+                          <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#27ca3f]"></div>
+                        </div>
+                        <div class="ml-4 text-[#cccccc] text-xs font-mono">docker</div>
+                      </div>
+                      <!-- Code content -->
+                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                        <div><span class="text-[#6a9955]"># docker-compose.yml</span></div>
+                        <div><span class="text-[#9cdcfe]">version</span>: <span class="text-[#ce9178]">"3.8"</span></div>
+                        <div><span class="text-[#9cdcfe]">services</span>:</div>
+                        <div class="pl-2"><span class="text-[#9cdcfe]">backend</span>:</div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">build</span>: <span class="text-[#ce9178]">.</span></div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">ports</span>:</div>
+                        <div class="pl-6">- <span class="text-[#ce9178]">"5000:5000"</span></div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">environment</span>:</div>
+                        <div class="pl-6">- <span class="text-[#9cdcfe]">MONGO_URI</span>=<span class="text-[#ce9178]">$&#123;MONGO_URI&#125;</span></div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">depends_on</span>:</div>
+                        <div class="pl-6">- <span class="text-[#9cdcfe]">db</span></div>
+                        <div class="mt-1"></div>
+                        <div class="pl-2"><span class="text-[#9cdcfe]">db</span>:</div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">image</span>: <span class="text-[#ce9178]">mongo:6.0</span></div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">volumes</span>:</div>
+                        <div class="pl-6">- <span class="text-[#9cdcfe]">mongo_data</span>:<span class="text-[#ce9178]">/data/db</span></div>
+                        <div class="mt-1"></div>
+                        <div><span class="text-[#9cdcfe]">volumes</span>:</div>
+                        <div class="pl-2"><span class="text-[#9cdcfe]">mongo_data</span>:</div>
                         <div class="mb-2"></div>
                       </div>
                     </div>
