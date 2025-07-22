@@ -38,9 +38,15 @@ export async function initImageProcessor(): Promise<ImageProcessor> {
     wasmModule = await import(/* @vite-ignore */ wasmPath);
     
     // Initialize WASM module (required for modern wasm-pack)
-    await wasmModule.default();
+    if (wasmModule?.default) {
+      await wasmModule.default();
+    }
     
-    processor = new wasmModule.ImageProcessor();
+    if (wasmModule?.ImageProcessor) {
+      processor = new wasmModule.ImageProcessor();
+    } else {
+      throw new Error('ImageProcessor not found in WASM module');
+    }
     console.log('✅ WASM image processor initialized successfully');
     return processor;
   } catch (error) {

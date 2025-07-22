@@ -2,14 +2,16 @@
   import { onMount } from 'svelte';
   import { ImageUtils, FallbackImageUtils } from '$lib/wasm/image-utils.js';
 
-  let canvas: HTMLCanvasElement;
-  let originalCanvas: HTMLCanvasElement;
-  let fileInput: HTMLInputElement;
-  let isProcessing = false;
-  let wasmSupported = true;
-  let currentFilter = 'none';
-  let error = '';
+  // Modern Svelte 5 runes for state management
+  let canvas = $state<HTMLCanvasElement>();
+  let originalCanvas = $state<HTMLCanvasElement>();
+  let fileInput = $state<HTMLInputElement>();
+  let isProcessing = $state(false);
+  let wasmSupported = $state(true);
+  let currentFilter = $state('none');
+  let error = $state('');
 
+  // Static data doesn't need reactivity
   const filters = [
     { id: 'none', name: 'Original' },
     { id: 'blur', name: 'Blur (WASM)' },
@@ -18,11 +20,25 @@
     { id: 'thumbnail', name: 'Thumbnail (WASM)' }
   ];
 
+  // Use $effect for reactive side effects
+  $effect(() => {
+    // This runs when wasmSupported changes
+    if (!wasmSupported) {
+      console.log('📱 WASM Demo: Running in fallback mode');
+    }
+  });
+
+  // Use $effect for error logging
+  $effect(() => {
+    if (error) {
+      console.error('❌ WASM Demo Error:', error);
+    }
+  });
+
+  // Initialize on mount
   onMount(async () => {
-    // Initialize with a sample image
     await loadSampleImage();
     
-    // Try to initialize WASM
     try {
       await ImageUtils.init();
       console.log('🚀 WASM Demo: Image processor ready');
@@ -47,6 +63,8 @@
   }
 
   function setupCanvases(img: HTMLImageElement) {
+    if (!originalCanvas || !canvas) return;
+    
     // Set up original canvas
     originalCanvas.width = Math.min(img.width, 300);
     originalCanvas.height = Math.min(img.height, 300);
@@ -183,11 +201,11 @@
         bind:this={fileInput}
         type="file" 
         accept="image/*" 
-        on:change={handleFileUpload}
+        onchange={handleFileUpload}
         class="hidden"
       />
       <button 
-        on:click={() => fileInput?.click()}
+        onclick={() => fileInput?.click()}
         class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
       >
         Upload Image
@@ -219,7 +237,7 @@
     <div class="flex flex-wrap justify-center gap-4">
       {#each filters as filter}
         <button
-          on:click={() => applyFilter(filter.id)}
+          onclick={() => applyFilter(filter.id)}
           disabled={isProcessing}
           class="px-4 py-2 rounded-lg border transition-colors
                  {currentFilter === filter.id 

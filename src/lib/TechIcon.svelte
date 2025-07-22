@@ -1,8 +1,16 @@
 <script lang="ts">
-  export let name: string;
-  export let width: string = "32px";
-  export let height: string = "32px";
-  export let className: string = "";
+  // Modern Svelte 5 props destructuring
+  let { 
+    name, 
+    width = "32px", 
+    height = "32px", 
+    className = "" 
+  }: {
+    name: string;
+    width?: string;
+    height?: string;
+    className?: string;
+  } = $props();
 
   // Map of tech names to their SVG paths - only load what's needed per page
   const icons: Record<string, string> = {
@@ -28,7 +36,8 @@
     typescript: "/tech-stack__typescript-icon.svg"
   };
 
-  $: iconSrc = icons[name] || "";
+  // Modern Svelte 5 derived state
+  const iconSrc = $derived(icons[name] || "");
 </script>
 
 {#if iconSrc}
