@@ -6,5 +6,16 @@ export default defineConfig({
 	plugins: [
 		tailwindcss(),
 		sveltekit()
-	]
+	],
+	optimizeDeps: {
+		exclude: ['@wasm-modules/image-processor']
+	},
+	server: {
+		fs: {
+			allow: ['..']
+		}
+	},
+	worker: {
+		format: 'es'
+	}
 });
