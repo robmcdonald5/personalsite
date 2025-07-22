@@ -5,10 +5,18 @@
   // State management for showcase display (placeholder for future implementation)
   let activeImageStep = $state(0);
   
-  // Image steps for Dune Spice Wars Wiki showcase (placeholder)
+  // Image steps for Dune Spice Wars Wiki showcase
   const imageSteps = [
-    { title: 'placeholder-wiki-landing', image: 'placeholder__image.png' },
-    { title: 'placeholder-wiki-page', image: 'placeholder__image.png' }
+    { title: 'landing page', image: 'landing__image.png' },
+    { title: 'atreides info', image: 'atreides__image.png' },
+    { title: 'harkonnen info', image: 'harkonnen__image.png' },
+    { title: 'smugglers info', image: 'smugglers__image.png' },
+    { title: 'fremen info', image: 'fremen__image.png' },
+    { title: 'corrino info', image: 'corrino__image.png' },
+    { title: 'ecaz info', image: 'ecaz__image.png' },
+    { title: 'vernius info', image: 'vernius__image.png' },
+    { title: 'house guides', image: 'guides__image.png' },
+    { title: 'house interactive wiki', image: 'interactivedisplay__image.png' }
   ];
   
   function previousImage() {
