@@ -14,11 +14,11 @@
 
   <main class="flex-grow flex flex-col">
     <!-- About Hero Section -->
-    <div class="w-full bg-[#FFFFFF] flex justify-center py-[90px]">
+    <div class="w-full bg-[#FFFFFF] flex justify-center">
       <section class="w-full max-w-[1440px] px-[5%] md:px-[180px]">
-        <div class="grid md:grid-cols-2 gap-[90px] md:h-[315px]">
+        <div class="grid md:grid-cols-2 gap-[90px] pt-[40px]">
           <!-- About Text Content - Left Side -->
-          <div class="flex flex-col gap-[29px] max-w-[500px] md:self-center">
+          <div class="flex flex-col gap-[29px] max-w-[500px] md:self-center pb-[90px] md:pb-0">
             <h1 class="text-[#2D2D2D] text-[56px] font-inter font-bold tracking-[-1.12px]">
               about
             </h1>
@@ -33,8 +33,8 @@
             </p>
           </div>
           
-          <!-- Profile Image - Right Side, Bottom Aligned -->
-          <div class="w-[228px] h-[315px] bg-cover bg-center justify-self-end md:self-end" style="background-image: url(/hero__headshot.png)"></div>
+          <!-- Profile Image - Right Side, extends to bottom -->
+          <div class="w-[285px] h-[456px] bg-contain bg-bottom bg-no-repeat justify-self-end md:self-end" style="background-image: url(/hero__headshot.png)"></div>
         </div>
       </section>
     </div>
