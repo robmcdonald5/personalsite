@@ -15,7 +15,7 @@
   <main class="flex-grow flex flex-col">
     <!-- Hero Section -->
     <div class="w-full bg-[#FFFFFF] flex justify-center py-[90px] relative">
-      <section class="w-full max-w-[1440px] px-[5%] md:px-[180px]">
+      <section class="relative w-full max-w-[1440px] px-[5%] md:px-[180px]">
         <div class="flex flex-col md:flex-row items-center justify-between gap-[60px] md:gap-[120px]">
           <!-- Hero Text Content -->
           <div class="flex flex-col gap-6 max-w-[500px]">
@@ -24,16 +24,30 @@
             </h1>
           </div>
         </div>
-        
-        <!-- Visual Elements - Absolutely positioned -->
-        <div class="absolute top-[125px] right-[335px] hidden md:block">
-          <img src="/hero__visual-element-square.svg" alt="decorative square" class="w-[64px] h-[64px]" />
+
+        <!-- Visual Elements -->
+        <!-- We mirror the left padding using pr-[5%] md:pr-[180px] so spacing matches the text block's left padding -->
+        <div class="pointer-events-none absolute inset-0 hidden md:flex justify-start items-center">
+          <div class="relative w-full pr-[180px]">
+            <!-- Big circle - top right -->
+            <img src="/hero__visual-element-circle1.svg" alt="decorative circle" class="w-[96px] h-[96px] absolute top-[-75px] right-[200px]" />
+            <!-- Square - middle left of the group -->
+            <img src="/hero__visual-element-square.svg" alt="decorative square" class="w-[64px] h-[64px] absolute top-[-30px] right-[355px]" />
+            <!-- Small circle - bottom center -->
+            <img src="/hero__visual-element-circle2.svg" alt="decorative circle" class="w-[48px] h-[48px] absolute top-[75px] right-[335px]" />
+          </div>
         </div>
-        <div class="absolute top-[230px] right-[325px] hidden md:block">
-          <img src="/hero__visual-element-circle2.svg" alt="decorative circle" class="w-[48px] h-[48px]" />
-        </div>
-        <div class="absolute top-[80px] right-[180px] hidden md:block">
-          <img src="/hero__visual-element-circle1.svg" alt="decorative circle" class="w-[96px] h-[96px]" />
+
+        <!-- Mobile shapes (optional) -->
+        <div class="pointer-events-none absolute inset-0 flex md:hidden justify-start items-center">
+          <div class="relative w-full pr-[5%]">
+            <!-- Big circle - top right -->
+            <img src="/hero__visual-element-circle1.svg" alt="decorative circle" class="w-[72px] h-[72px] absolute top-[-60px] right-[150px]" />
+            <!-- Square - middle left of the group -->
+            <img src="/hero__visual-element-square.svg" alt="decorative square" class="w-[52px] h-[52px] absolute top-[-25px] right-[265px]" />
+            <!-- Small circle - bottom center -->
+            <img src="/hero__visual-element-circle2.svg" alt="decorative circle" class="w-[40px] h-[40px] absolute top-[55px] right-[250px]" />
+          </div>
         </div>
       </section>
     </div>
@@ -94,20 +108,21 @@
                 class="px-4 py-3.5 bg-[#FFFFFF] border border-[#E5E5E5] rounded-lg text-[#333333] font-inter placeholder:text-[#9CA3AF] focus:outline-none focus:border-[#4A90E2] transition-colors resize-vertical"
               ></textarea>
             </div>
-          </form>
 
-          <!-- Submit Button -->
-          <div class="flex justify-start">
-            <button
-              type="submit"
-              class="flex items-center justify-center py-[15px] px-[37px] bg-[#2D2D2D] rounded-lg text-[#FFFFFF] font-inter font-medium hover:bg-[#1A1A1A] transition-colors"
-            >
-              Send email
-            </button>
-          </div>
+            <!-- Submit Button (move inside form for proper submission) -->
+            <div class="flex justify-start md:col-span-2">
+              <button
+                type="submit"
+                class="flex items-center justify-center py-[15px] px-[37px] bg-[#2D2D2D] rounded-lg text-[#FFFFFF] font-inter font-medium hover:bg-[#1A1A1A] transition-colors"
+              >
+                Send email
+              </button>
+            </div>
+          </form>
         </div>
       </section>
     </div>
+
     <div class="w-full h-[4px] gradient-divider"></div>
   </main>
 
