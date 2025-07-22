@@ -14,7 +14,7 @@
 
   <main class="flex-grow flex flex-col">
     <!-- Hero Section -->
-    <div class="w-full bg-[#FFFFFF] flex justify-center py-[90px]">
+    <div class="w-full bg-[#FFFFFF] flex justify-center py-[90px] relative">
       <section class="w-full max-w-[1440px] px-[5%] md:px-[180px]">
         <div class="flex flex-col md:flex-row items-center justify-between gap-[60px] md:gap-[120px]">
           <!-- Hero Text Content -->
@@ -23,23 +23,17 @@
               Need to get in touch with me?
             </h1>
           </div>
-          
-          <!-- Visual Elements -->
-          <div class="relative flex items-center justify-center">
-            <!-- Main divider/visual element -->
-            <div class="w-[200px] md:w-[360px] h-[200px] md:h-[360px] bg-gradient-to-br from-[#E0E0E0] to-[#F5F5F5] rounded-full"></div>
-            
-            <!-- Decorative elements -->
-            <div class="absolute -top-[20px] -right-[20px]">
-              <img src="/hero__visual-element-circle1.svg" alt="decorative circle" class="w-[40px] h-[40px]" />
-            </div>
-            <div class="absolute -bottom-[30px] -left-[30px]">
-              <img src="/hero__visual-element-circle2.svg" alt="decorative circle" class="w-[60px] h-[60px]" />
-            </div>
-            <div class="absolute top-[20px] left-[20px]">
-              <img src="/hero__visual-element-square.svg" alt="decorative square" class="w-[30px] h-[30px]" />
-            </div>
-          </div>
+        </div>
+        
+        <!-- Visual Elements - Absolutely positioned -->
+        <div class="absolute top-[125px] right-[335px] hidden md:block">
+          <img src="/hero__visual-element-square.svg" alt="decorative square" class="w-[64px] h-[64px]" />
+        </div>
+        <div class="absolute top-[230px] right-[325px] hidden md:block">
+          <img src="/hero__visual-element-circle2.svg" alt="decorative circle" class="w-[48px] h-[48px]" />
+        </div>
+        <div class="absolute top-[80px] right-[180px] hidden md:block">
+          <img src="/hero__visual-element-circle1.svg" alt="decorative circle" class="w-[96px] h-[96px]" />
         </div>
       </section>
     </div>
