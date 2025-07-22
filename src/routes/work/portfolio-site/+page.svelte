@@ -33,7 +33,7 @@
             <!-- Background Geometric Element -->
             <div class="absolute left-[68px] top-[0px]">
               <img 
-                src="/showcase__background-geo.svg" 
+                src="/showcase__background-icon.svg" 
                 alt="Background geometric element" 
                 class="w-[135px] h-[155px]"
                 onerror={(e) => {

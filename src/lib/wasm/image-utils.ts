@@ -33,8 +33,8 @@ export async function initImageProcessor(): Promise<ImageProcessor> {
       throw new Error('WebAssembly is not supported in this browser');
     }
 
-    // Dynamic import of the WASM module
-    const wasmPath = '/wasm-modules/image-processor/image_processor.js';
+    // Dynamic import of the WASM module with cache busting
+    const wasmPath = `/wasm-modules/image-processor/image_processor.js?v=${Date.now()}`;
     wasmModule = await import(/* @vite-ignore */ wasmPath);
     
     // Initialize WASM module (required for modern wasm-pack)
@@ -120,11 +120,22 @@ export class ImageUtils {
     await this.init();
     if (!this.processor) throw new Error('Image processor not initialized');
 
+    // Validate input parameters
+    if (maxSize <= 0) throw new Error('Thumbnail size must be positive');
+    if (imageData.width <= 0 || imageData.height <= 0) throw new Error('Invalid image dimensions');
+
     const dimensions = this.processor.get_thumbnail_dimensions(
       imageData.width,
       imageData.height,
       maxSize
     );
+
+    console.log('Raw WASM dimensions result:', dimensions);
+    
+    // Validate returned dimensions
+    if (!dimensions || dimensions.length < 2 || dimensions[0] <= 0 || dimensions[1] <= 0) {
+      throw new Error(`WASM returned invalid thumbnail dimensions: ${dimensions}`);
+    }
 
     const thumbnailData = this.processor.create_thumbnail(
       new Uint8Array(imageData.data),

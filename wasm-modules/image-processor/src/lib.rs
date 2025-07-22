@@ -120,16 +120,34 @@ impl ImageProcessor {
     /// Get the dimensions that would result from thumbnail creation
     #[wasm_bindgen]
     pub fn get_thumbnail_dimensions(&self, width: u32, height: u32, thumb_size: u32) -> js_sys::Array {
+        // Ensure we don't get zero dimensions
+        if width == 0 || height == 0 || thumb_size == 0 {
+            let result = js_sys::Array::new();
+            result.push(&JsValue::from(1u32));
+            result.push(&JsValue::from(1u32));
+            return result;
+        }
+        
         let aspect_ratio = width as f32 / height as f32;
         let (new_width, new_height) = if width > height {
-            (thumb_size, (thumb_size as f32 / aspect_ratio) as u32)
+            // Landscape: limit width to thumb_size
+            let new_height = (thumb_size as f32 / aspect_ratio).max(1.0) as u32;
+            (thumb_size, new_height)
         } else {
-            ((thumb_size as f32 * aspect_ratio) as u32, thumb_size)
+            // Portrait or square: limit height to thumb_size
+            let new_width = (thumb_size as f32 * aspect_ratio).max(1.0) as u32;
+            (new_width, thumb_size)
         };
         
+        // Ensure minimum dimensions of 1x1
+        let final_width = new_width.max(1);
+        let final_height = new_height.max(1);
+        
+        console_log!("Thumbnail dimensions: {}x{} -> {}x{}", width, height, final_width, final_height);
+        
         let result = js_sys::Array::new();
-        result.push(&JsValue::from(new_width));
-        result.push(&JsValue::from(new_height));
+        result.push(&JsValue::from(final_width));
+        result.push(&JsValue::from(final_height));
         result
     }
 }

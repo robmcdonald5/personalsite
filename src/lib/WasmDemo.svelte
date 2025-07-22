@@ -133,11 +133,31 @@
             result = await ImageUtils.convertToGrayscale(imageData);
             break;
           case 'thumbnail':
-            result = await ImageUtils.createThumbnail(imageData, 150);
-            // For thumbnail, we need to clear and resize the canvas
-            canvas.width = result.width;
-            canvas.height = result.height;
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            console.log('Creating thumbnail from image:', imageData.width, 'x', imageData.height);
+            try {
+              result = await ImageUtils.createThumbnail(imageData, 150);
+              console.log('Thumbnail result:', result);
+              // Validate dimensions before resizing canvas
+              if (!result || result.width <= 0 || result.height <= 0) {
+                throw new Error(`Invalid thumbnail dimensions: ${result?.width}x${result?.height}`);
+              }
+              // For thumbnail, we need to clear and resize the canvas
+              canvas.width = result.width;
+              canvas.height = result.height;
+              ctx.clearRect(0, 0, canvas.width, canvas.height);
+            } catch (thumbnailError) {
+              console.warn('WASM thumbnail failed, using fallback:', thumbnailError);
+              // Fallback: create thumbnail using canvas scaling
+              const thumbSize = 150;
+              const scale = Math.min(thumbSize / canvas.width, thumbSize / canvas.height);
+              const newWidth = Math.floor(canvas.width * scale);
+              const newHeight = Math.floor(canvas.height * scale);
+              
+              canvas.width = newWidth;
+              canvas.height = newHeight;
+              ctx.drawImage(originalCanvas, 0, 0, newWidth, newHeight);
+              return; // Skip the normal result processing
+            }
             break;
           default:
             throw new Error('Unknown filter');

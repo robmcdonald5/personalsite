@@ -5,7 +5,8 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "npm run build:wasm && vite build",
+		"build": "vite build",
+		"build:full": "npm run build:wasm && vite build",
 		"build:wasm": "cd wasm-modules/image-processor && wasm-pack build --target web --out-dir pkg && cp -r pkg/* ../../static/wasm-modules/image-processor/",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
