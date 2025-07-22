@@ -300,6 +300,232 @@
                         <div class="mb-2"></div>
                       </div>
                     </div>
+                  {:else if activeSection === 'Natural Language Intent Parsing' && activeLanguage === 'JSON' && activeCodeStep === 0}
+                    <!-- VS Code-style code display for Intent Pattern JSON -->
+                    <div class="w-full h-full bg-[#1e1e1e] rounded-lg overflow-hidden">
+                      <!-- VS Code-style header -->
+                      <div class="h-[24px] bg-[#323233] flex items-center px-2 border-b border-[#2d2d30]">
+                        <div class="flex items-center gap-1">
+                          <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#27ca3f]"></div>
+                        </div>
+                        <div class="ml-4 text-[#cccccc] text-xs font-mono">intents.json</div>
+                      </div>
+                      <!-- Code content -->
+                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                        <div><span class="text-[#ce9178]">"intents"</span>: [</div>
+                        <div class="pl-2">&#123;</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"tag"</span>: <span class="text-[#ce9178]">"order"</span>,</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"patterns"</span>: [</div>
+                        <div class="pl-6"><span class="text-[#ce9178]">"I'd like to order a burrito."</span>,</div>
+                        <div class="pl-6"><span class="text-[#ce9178]">"Can I get a chicken bowl?"</span>,</div>
+                        <div class="pl-6"><span class="text-[#ce9178]">"I want three tacos."</span>,</div>
+                        <div class="pl-6"><span class="text-[#ce9178]">"Add guacamole to my order."</span>,</div>
+                        <div class="pl-6"><span class="text-[#ce9178]">"I'd like a veggie salad."</span>,</div>
+                        <div class="pl-6"><span class="text-[#ce9178]">"Can I have a steak burrito?"</span>,</div>
+                        <div class="pl-6"><span class="text-[#ce9178]">"I want to order some food."</span>,</div>
+                        <div class="pl-6"><span class="text-[#ce9178]">"Let me get a chicken quesadilla."</span>,</div>
+                        <div class="pl-6"><span class="text-[#ce9178]">"I'd like to start an order."</span>,</div>
+                        <div class="pl-6"><span class="text-[#ce9178]">"I want to order food."</span></div>
+                        <div class="pl-4">],</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"responses"</span>: [</div>
+                        <div class="pl-6"><span class="text-[#ce9178]">"Sure, I've added that to your order."</span>,</div>
+                        <div class="pl-6"><span class="text-[#ce9178]">"Got it! I've added it to your cart."</span>,</div>
+                        <div class="pl-6"><span class="text-[#ce9178]">"Adding that to your order."</span></div>
+                        <div class="pl-4">]</div>
+                        <div class="pl-2">&#125;</div>
+                        <div>]</div>
+                        <div class="mb-2"></div>
+                      </div>
+                    </div>
+                  {:else if activeSection === 'Natural Language Intent Parsing' && activeLanguage === 'JSON' && activeCodeStep === 1}
+                    <!-- VS Code-style code display for Reset Order JSON -->
+                    <div class="w-full h-full bg-[#1e1e1e] rounded-lg overflow-hidden">
+                      <!-- VS Code-style header -->
+                      <div class="h-[24px] bg-[#323233] flex items-center px-2 border-b border-[#2d2d30]">
+                        <div class="flex items-center gap-1">
+                          <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#27ca3f]"></div>
+                        </div>
+                        <div class="ml-4 text-[#cccccc] text-xs font-mono">intents.json</div>
+                      </div>
+                      <!-- Code content -->
+                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                        <div>&#123;</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"tag"</span>: <span class="text-[#ce9178]">"reset_order"</span>,</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"patterns"</span>: [</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"Clear my order."</span>,</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"Cancel everything."</span>,</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"Start over."</span>,</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"I want to reset my order."</span>,</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"Delete all items."</span>,</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"Remove everything from my cart."</span>,</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"Can we start fresh?"</span>,</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"Discard my current order."</span>,</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"Erase my order."</span>,</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"Reset my cart."</span></div>
+                        <div class="pl-2">],</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"responses"</span>: [</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"I've cleared your entire order. You can start fresh."</span>,</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"All orders have been cleared. Ready for your new order."</span></div>
+                        <div class="pl-2">]</div>
+                        <div>&#125;</div>
+                        <div class="mb-2"></div>
+                      </div>
+                    </div>
+                  {:else if activeSection === 'Natural Language Intent Parsing' && activeLanguage === 'JSON' && activeCodeStep === 2}
+                    <!-- VS Code-style code display for Check Price & Fallback JSON -->
+                    <div class="w-full h-full bg-[#1e1e1e] rounded-lg overflow-hidden">
+                      <!-- VS Code-style header -->
+                      <div class="h-[24px] bg-[#323233] flex items-center px-2 border-b border-[#2d2d30]">
+                        <div class="flex items-center gap-1">
+                          <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#27ca3f]"></div>
+                        </div>
+                        <div class="ml-4 text-[#cccccc] text-xs font-mono">intents.json</div>
+                      </div>
+                      <!-- Code content -->
+                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                        <div>&#123;</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"tag"</span>: <span class="text-[#ce9178]">"check_price"</span>,</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"patterns"</span>: [</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"How much does the burrito cost?"</span>,</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"What's the price of a bowl?"</span>,</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"Tell me the price of the steak taco."</span>,</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"How much is guacamole?"</span>,</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"What's the total cost?"</span>,</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"Price of the chips and salsa?"</span>,</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"Can you tell me the price of a salad?"</span>,</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"What's the cost of adding extra meat?"</span>,</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"How much for a chicken quesadilla?"</span>,</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"What's the price for chips?"</span></div>
+                        <div class="pl-2">],</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"responses"</span>: [</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"Let me check the price for you."</span>,</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"I'll look up that price."</span>,</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"Let me find the price for you."</span></div>
+                        <div class="pl-2">]</div>
+                        <div>&#125;,</div>
+                        <div>&#123;</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"tag"</span>: <span class="text-[#ce9178]">"fallback"</span>,</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"patterns"</span>: [],</div>
+                        <div class="pl-2"><span class="text-[#ce9178]">"responses"</span>: [</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"I didn't catch that. Could you rephrase that?"</span>,</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"I'm not sure what you mean. Could you say that differently?"</span>,</div>
+                        <div class="pl-4"><span class="text-[#ce9178]">"Could you clarify what you'd like?"</span></div>
+                        <div class="pl-2">]</div>
+                        <div>&#125;</div>
+                        <div class="mb-2"></div>
+                      </div>
+                    </div>
+                  {:else if activeSection === 'Intent Fine-Tuning' && activeLanguage === 'Python' && activeCodeStep === 0}
+                    <!-- VS Code-style code display for Loading & Mapping Intent Patterns -->
+                    <div class="w-full h-full bg-[#1e1e1e] rounded-lg overflow-hidden">
+                      <!-- VS Code-style header -->
+                      <div class="h-[24px] bg-[#323233] flex items-center px-2 border-b border-[#2d2d30]">
+                        <div class="flex items-center gap-1">
+                          <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#27ca3f]"></div>
+                        </div>
+                        <div class="ml-4 text-[#cccccc] text-xs font-mono">intent_trainer.py</div>
+                      </div>
+                      <!-- Code content -->
+                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                        <div><span class="text-[#c586c0]">with</span> <span class="text-[#dcdcaa]">open</span>(<span class="text-[#9cdcfe]">INTENTS_FILE</span>, <span class="text-[#ce9178]">'r'</span>) <span class="text-[#c586c0]">as</span> <span class="text-[#9cdcfe]">f</span>:</div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">intents_data</span> = <span class="text-[#dcdcaa]">json</span>.<span class="text-[#dcdcaa]">load</span>(<span class="text-[#9cdcfe]">f</span>)</div>
+                        <div class="mt-1"></div>
+                        <div><span class="text-[#9cdcfe]">train_examples</span> = []</div>
+                        <div><span class="text-[#c586c0]">for</span> <span class="text-[#9cdcfe]">intent</span> <span class="text-[#c586c0]">in</span> <span class="text-[#9cdcfe]">intents_data</span>[<span class="text-[#ce9178]">'intents'</span>]:</div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">tag</span> = <span class="text-[#9cdcfe]">intent</span>[<span class="text-[#ce9178]">'tag'</span>]</div>
+                        <div class="pl-4"><span class="text-[#c586c0]">for</span> <span class="text-[#9cdcfe]">pattern</span> <span class="text-[#c586c0]">in</span> <span class="text-[#9cdcfe]">intent</span>[<span class="text-[#ce9178]">'patterns'</span>]:</div>
+                        <div class="pl-8"><span class="text-[#9cdcfe]">train_examples</span>.<span class="text-[#dcdcaa]">append</span>(<span class="text-[#dcdcaa]">InputExample</span>(<span class="text-[#9cdcfe]">texts</span>=[<span class="text-[#9cdcfe]">pattern</span>], <span class="text-[#9cdcfe]">label</span>=<span class="text-[#9cdcfe]">tag</span>))</div>
+                        <div class="mt-1"></div>
+                        <div><span class="text-[#9cdcfe]">label_map</span> = &#123;<span class="text-[#9cdcfe]">label</span>: <span class="text-[#9cdcfe]">i</span> <span class="text-[#c586c0]">for</span> <span class="text-[#9cdcfe]">i</span>, <span class="text-[#9cdcfe]">label</span> <span class="text-[#c586c0]">in</span> <span class="text-[#dcdcaa]">enumerate</span>(<span class="text-[#dcdcaa]">sorted</span>(</div>
+                        <div class="pl-4"><span class="text-[#dcdcaa]">set</span>(<span class="text-[#9cdcfe]">example</span>.<span class="text-[#9cdcfe]">label</span> <span class="text-[#c586c0]">for</span> <span class="text-[#9cdcfe]">example</span> <span class="text-[#c586c0]">in</span> <span class="text-[#9cdcfe]">train_examples</span>)</div>
+                        <div>))&#125;</div>
+                        <div class="mt-1"></div>
+                        <div><span class="text-[#c586c0]">for</span> <span class="text-[#9cdcfe]">example</span> <span class="text-[#c586c0]">in</span> <span class="text-[#9cdcfe]">train_examples</span>:</div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">example</span>.<span class="text-[#9cdcfe]">label</span> = <span class="text-[#9cdcfe]">label_map</span>[<span class="text-[#9cdcfe]">example</span>.<span class="text-[#9cdcfe]">label</span>]</div>
+                        <div class="mb-2"></div>
+                      </div>
+                    </div>
+                  {:else if activeSection === 'Intent Fine-Tuning' && activeLanguage === 'Python' && activeCodeStep === 1}
+                    <!-- VS Code-style code display for Loss Function Setup -->
+                    <div class="w-full h-full bg-[#1e1e1e] rounded-lg overflow-hidden">
+                      <!-- VS Code-style header -->
+                      <div class="h-[24px] bg-[#323233] flex items-center px-2 border-b border-[#2d2d30]">
+                        <div class="flex items-center gap-1">
+                          <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#27ca3f]"></div>
+                        </div>
+                        <div class="ml-4 text-[#cccccc] text-xs font-mono">intent_trainer.py</div>
+                      </div>
+                      <!-- Code content -->
+                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                        <div class="text-[#6a9955]"># Map labels to integers for SoftmaxLoss</div>
+                        <div><span class="text-[#9cdcfe]">label_map</span> = &#123;<span class="text-[#9cdcfe]">label</span>: <span class="text-[#9cdcfe]">i</span> <span class="text-[#c586c0]">for</span> <span class="text-[#9cdcfe]">i</span>, <span class="text-[#9cdcfe]">label</span> <span class="text-[#c586c0]">in</span></div>
+                        <div class="pl-13"><span class="text-[#dcdcaa]">enumerate</span>(<span class="text-[#dcdcaa]">sorted</span>(<span class="text-[#dcdcaa]">list</span>(<span class="text-[#dcdcaa]">set</span>([<span class="text-[#9cdcfe]">example</span>.<span class="text-[#9cdcfe]">label</span></div>
+                        <div class="pl-37"><span class="text-[#c586c0]">for</span> <span class="text-[#9cdcfe]">example</span> <span class="text-[#c586c0]">in</span></div>
+                        <div class="pl-37"><span class="text-[#9cdcfe]">train_examples</span>]))))&#125;</div>
+                        <div class="mt-1"></div>
+                        <div><span class="text-[#c586c0]">for</span> <span class="text-[#9cdcfe]">example</span> <span class="text-[#c586c0]">in</span> <span class="text-[#9cdcfe]">train_examples</span>:</div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">example</span>.<span class="text-[#9cdcfe]">label</span> = <span class="text-[#9cdcfe]">label_map</span>[<span class="text-[#9cdcfe]">example</span>.<span class="text-[#9cdcfe]">label</span>]</div>
+                        <div class="mt-1"></div>
+                        <div><span class="text-[#dcdcaa]">print</span>(<span class="text-[#ce9178]">f"Loaded &#123;len(train_examples)&#125; training examples."</span>)</div>
+                        <div class="mt-1"></div>
+                        <div><span class="text-[#dcdcaa]">print</span>(<span class="text-[#ce9178]">f"Loading base model: &#123;BASE_MODEL_NAME&#125;..."</span>)</div>
+                        <div><span class="text-[#9cdcfe]">model</span> = <span class="text-[#dcdcaa]">SentenceTransformer</span>(<span class="text-[#9cdcfe]">BASE_MODEL_NAME</span>)</div>
+                        <div class="mt-1"></div>
+                        <div class="text-[#6a9955]"># Define the DataLoader</div>
+                        <div><span class="text-[#9cdcfe]">train_dataloader</span> = <span class="text-[#dcdcaa]">DataLoader</span>(<span class="text-[#9cdcfe]">train_examples</span>, <span class="text-[#9cdcfe]">shuffle</span>=<span class="text-[#569cd6]">True</span>,</div>
+                        <div class="pl-30"><span class="text-[#9cdcfe]">batch_size</span>=<span class="text-[#9cdcfe]">TRAIN_BATCH_SIZE</span>)</div>
+                        <div class="mt-1"></div>
+                        <div class="text-[#6a9955]"># Define the loss function. SoftmaxLoss is suitable for classification tasks.</div>
+                        <div><span class="text-[#9cdcfe]">train_loss</span> = <span class="text-[#9cdcfe]">losses</span>.<span class="text-[#dcdcaa]">SoftmaxLoss</span>(<span class="text-[#9cdcfe]">model</span>=<span class="text-[#9cdcfe]">model</span>,</div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">sentence_embedding_dimension</span>=<span class="text-[#9cdcfe]">model</span>.<span class="text-[#dcdcaa]">get_sentence_embedding_dimension</span>(),</div>
+                        <div class="pl-4"><span class="text-[#9cdcfe]">num_labels</span>=<span class="text-[#dcdcaa]">len</span>(<span class="text-[#9cdcfe]">label_map</span>))</div>
+                        <div class="mb-2"></div>
+                      </div>
+                    </div>
+                  {:else if activeSection === 'Intent Fine-Tuning' && activeLanguage === 'Python' && activeCodeStep === 2}
+                    <!-- VS Code-style code display for Training Regiment -->
+                    <div class="w-full h-full bg-[#1e1e1e] rounded-lg overflow-hidden">
+                      <!-- VS Code-style header -->
+                      <div class="h-[24px] bg-[#323233] flex items-center px-2 border-b border-[#2d2d30]">
+                        <div class="flex items-center gap-1">
+                          <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                          <div class="w-3 h-3 rounded-full bg-[#27ca3f]"></div>
+                        </div>
+                        <div class="ml-4 text-[#cccccc] text-xs font-mono">intent_trainer.py</div>
+                      </div>
+                      <!-- Code content -->
+                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                        <div class="text-[#6a9955]"># Configuration</div>
+                        <div><span class="text-[#9cdcfe]">INTENTS_FILE</span> = <span class="text-[#ce9178]">'intents.json'</span></div>
+                        <div><span class="text-[#9cdcfe]">BASE_MODEL_NAME</span> = <span class="text-[#ce9178]">'all-MiniLM-L6-v2'</span></div>
+                        <div><span class="text-[#9cdcfe]">FINE_TUNED_MODEL_PATH</span> = <span class="text-[#ce9178]">'fine_tuned_intent_model'</span></div>
+                        <div class="mt-1"></div>
+                        <div class="text-[#6a9955]"># Training parameters</div>
+                        <div><span class="text-[#9cdcfe]">NUM_EPOCHS</span> = <span class="text-[#b5cea8]">4</span></div>
+                        <div><span class="text-[#9cdcfe]">TRAIN_BATCH_SIZE</span> = <span class="text-[#b5cea8]">16</span></div>
+                        <div><span class="text-[#9cdcfe]">LEARNING_RATE</span> = <span class="text-[#b5cea8]">2e-5</span></div>
+                        <div class="mt-1"></div>
+                        <div class="text-[#6a9955]"># Train the model</div>
+                        <div><span class="text-[#9cdcfe]">model</span>.<span class="text-[#dcdcaa]">fit</span>(<span class="text-[#9cdcfe]">train_objectives</span>=[(<span class="text-[#9cdcfe]">train_dataloader</span>, <span class="text-[#9cdcfe]">train_loss</span>)],</div>
+                        <div class="pl-10"><span class="text-[#9cdcfe]">epochs</span>=<span class="text-[#9cdcfe]">NUM_EPOCHS</span>,</div>
+                        <div class="pl-10"><span class="text-[#9cdcfe]">warmup_steps</span>=<span class="text-[#b5cea8]">100</span>,</div>
+                        <div class="pl-10"><span class="text-[#9cdcfe]">output_path</span>=<span class="text-[#9cdcfe]">FINE_TUNED_MODEL_PATH</span>,</div>
+                        <div class="pl-10"><span class="text-[#9cdcfe]">show_progress_bar</span>=<span class="text-[#569cd6]">True</span>,</div>
+                        <div class="pl-10"><span class="text-[#9cdcfe]">optimizer_params</span>=&#123;<span class="text-[#ce9178]">'lr'</span>: <span class="text-[#9cdcfe]">LEARNING_RATE</span>&#125;)</div>
+                        <div class="mb-2"></div>
+                      </div>
+                    </div>
                   {:else if currentCodeImage}
                     <img src="/{currentCodeImage}" alt="Code sample" class="max-w-full max-h-full object-contain rounded" />
                   {:else}
