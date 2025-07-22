@@ -25,8 +25,9 @@
     // Try to initialize WASM
     try {
       await ImageUtils.init();
+      console.log('🚀 WASM Demo: Image processor ready');
     } catch (err) {
-      console.warn('WASM not supported, using fallback:', err);
+      console.warn('⚠️ WASM Demo: Fallback mode activated -', err);
       wasmSupported = false;
     }
   });
@@ -251,7 +252,13 @@
       </p>
       <p class="mt-2">
         Try uploading your own image and applying different filters to see the performance difference.
+        All processing happens locally in your browser - no data is sent to any server.
       </p>
+      {#if wasmSupported}
+        <p class="mt-2 text-green-700 font-medium">
+          🚀 Rust-compiled WebAssembly delivering near-native performance in your browser!
+        </p>
+      {/if}
     </div>
   </div>
 </section>

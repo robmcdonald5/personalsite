@@ -1,5 +1,4 @@
 use wasm_bindgen::prelude::*;
-use web_sys::{console, ImageData};
 
 // Import the `console.log` function from the browser
 #[wasm_bindgen]
@@ -138,8 +137,5 @@ impl ImageProcessor {
 // Initialize panic hook for better error messages in development
 #[wasm_bindgen(start)]
 pub fn main() {
-    #[cfg(feature = "console_error_panic_hook")]
-    console_error_panic_hook::set_once();
-    
     console_log!("WASM Image Processor module loaded");
 }

@@ -28,6 +28,11 @@ export async function initImageProcessor(): Promise<ImageProcessor> {
   }
 
   try {
+    // Check if WebAssembly is supported
+    if (typeof WebAssembly === 'undefined') {
+      throw new Error('WebAssembly is not supported in this browser');
+    }
+
     // Dynamic import of the WASM module
     const wasmPath = '/wasm-modules/image-processor/image_processor.js';
     wasmModule = await import(/* @vite-ignore */ wasmPath);
@@ -36,9 +41,13 @@ export async function initImageProcessor(): Promise<ImageProcessor> {
     await wasmModule.default();
     
     processor = new wasmModule.ImageProcessor();
+    console.log('✅ WASM image processor initialized successfully');
     return processor;
   } catch (error) {
-    console.warn('Failed to load WASM image processor, falling back to JavaScript:', error);
+    console.warn('❌ Failed to load WASM image processor:', error);
+    if (error instanceof Error) {
+      console.warn('Error details:', error.message);
+    }
     throw error;
   }
 }
