@@ -51,36 +51,9 @@
               </div>
             </div>
 
-            <!-- SvelteKit Feature Card -->
+            <!-- Code Block (lowest z-index) -->
             <div 
-              class="w-[180px] h-[180px] flex flex-col justify-center items-center py-[18px] px-[37px] bg-[#FFFFFF] rounded-xl absolute left-[560.5px] top-[106.19px]"
-              style="transform: rotate(-5deg)"
-            >
-              <div>
-                <img 
-                  src="/showcase__sveltekit-icon.svg" 
-                  alt="SvelteKit" 
-                  class="w-[43px] h-[52px]"
-                  onerror={(e) => {
-                    (e.currentTarget as HTMLElement).style.display = 'none';
-                  }}
-                />
-              </div>
-              <div class="flex justify-center items-center p-2.5">
-                <span class="text-[#2D2D2D] text-lg font-inter text-center font-semibold">
-                  SvelteKit
-                </span>
-              </div>
-              <div class="flex justify-center items-center p-2.5">
-                <p class="text-[#6B7280] text-sm font-inter text-center font-light">
-                  Frontend Framework
-                </p>
-              </div>
-            </div>
-
-            <!-- Code Block -->
-            <div 
-              class="w-[234px] h-[146px] flex justify-center items-center py-[17px] px-4 bg-[#282C34] rounded-lg absolute left-[669px] top-[159.17px]"
+              class="w-[234px] h-[146px] flex justify-center items-center py-[17px] px-4 bg-[#282C34] rounded-lg absolute left-[669px] top-[159.17px] z-10"
               style="transform: rotate(-2deg)"
             >
               <div class="text-xs font-roboto-mono font-light" style="transform: rotate(0deg)">
@@ -116,30 +89,57 @@
               </div>
             </div>
 
-            <!-- WebAssembly Feature Card -->
+            <!-- SvelteKit Feature Card (higher z-index) -->
             <div 
-              class="w-[180px] h-[180px] flex flex-col justify-center items-center py-[18px] px-[37px] bg-[#FFFFFF] rounded-xl absolute left-[836.69px] top-[171px]"
+              class="w-[180px] h-[180px] flex flex-col justify-center items-center py-[18px] px-[37px] bg-[#FFFFFF] rounded-xl absolute left-[560.5px] top-[106.19px] z-20"
+              style="transform: rotate(-5deg)"
+            >
+              <div class="flex flex-col items-center justify-center gap-2 w-full h-full">
+                <div class="flex justify-center items-center">
+                  <img 
+                    src="/tech-stack__sveltekit-icon.svg" 
+                    alt="SvelteKit" 
+                    class="w-[50px] h-[60px]"
+                    onerror={(e) => {
+                      (e.currentTarget as HTMLElement).style.display = 'none';
+                    }}
+                  />
+                </div>
+                <div class="text-center">
+                  <div class="text-[#2D2D2D] text-lg font-inter font-semibold">
+                    SvelteKit
+                  </div>
+                  <p class="text-[#6B7280] text-sm font-inter font-light">
+                    Frontend Framework
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- WebAssembly Feature Card (higher z-index) -->
+            <div 
+              class="w-[180px] h-[180px] flex flex-col justify-center items-center py-[18px] px-[37px] bg-[#FFFFFF] rounded-xl absolute left-[836.69px] top-[171px] z-20"
               style="transform: rotate(5deg)"
             >
-              <div>
-                <img 
-                  src="/showcase__wasm-icon.svg" 
-                  alt="WebAssembly" 
-                  class="w-[45px] h-[45px]"
-                  onerror={(e) => {
-                    (e.currentTarget as HTMLElement).style.display = 'none';
-                  }}
-                />
-              </div>
-              <div class="flex justify-center items-center p-2.5">
-                <span class="text-[#2D2D2D] text-lg font-inter text-center font-semibold">
-                  WebAssembly
-                </span>
-              </div>
-              <div class="flex justify-center items-center p-2.5">
-                <p class="text-[#6B7280] text-sm font-inter text-center font-light">
-                  Compiled from Rust
-                </p>
+              <div class="flex flex-col items-center justify-center gap-2 w-full h-full">
+                <div class="flex justify-center items-center">
+                  <img 
+                    src="/tech-stack__wasm-icon.svg" 
+                    alt="WebAssembly" 
+                    class="w-[50px] h-[50px]"
+                    onerror={(e) => {
+                      (e.currentTarget as HTMLElement).style.display = 'none';
+                    }}
+                  />
+                </div>
+                <div class="text-center">
+                  <div class="text-[#2D2D2D] text-lg font-inter font-semibold">
+                    WebAssembly
+                  </div>
+                  <p class="text-[#6B7280] text-sm font-inter font-light">
+                    Compiled from Rust
+                  </p>
+                </div>
               </div>
             </div>
           </div>
