@@ -40,7 +40,7 @@
             <div class="text-[#4A90E2] text-2xl font-dm-sans font-bold">
               edit
             </div>
-            <div class="text-[#2D2D2D] text-2xl font-inter text-center font-semibold">
+            <div class="text-[#2D2D2D] text-2xl font-inter font-semibold">
               Mutate Existing Work
             </div>
             <div class="text-[#6B7280] text-sm font-inter">
@@ -53,7 +53,7 @@
             <div class="text-[#4A90E2] text-2xl font-dm-sans font-bold">
               create
             </div>
-            <div class="text-[#2D2D2D] text-2xl font-inter text-center font-semibold">
+            <div class="text-[#2D2D2D] text-2xl font-inter font-semibold">
               Write New Stories
             </div>
             <div class="text-[#6B7280] text-sm font-inter">
@@ -66,7 +66,7 @@
             <div class="text-[#4A90E2] text-2xl font-dm-sans font-bold">
               pipeline
             </div>
-            <div class="text-[#2D2D2D] text-2xl font-inter text-center font-semibold">
+            <div class="text-[#2D2D2D] text-2xl font-inter font-semibold">
               Agentic Framework
             </div>
             <div class="text-[#6B7280] text-sm font-inter">

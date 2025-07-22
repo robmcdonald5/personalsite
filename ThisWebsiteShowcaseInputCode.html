@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      class="flex justify-center items-center flex-col px-[180px] bg-[#FFFFFF]">
+      <div
+        class="w-[1440px] flex justify-center items-center flex-col gap-2.5 px-[180px]">
+        <div class="w-[1440px] h-[90px] bg-[#111111] relative">
+          <div
+            class="absolute top-[13.33%] bottom-[68.89%] left-[97.5%] right-[1.39%]">
+            <img
+              src="https://picsum.photos/id/16/16"
+              alt="header_back-element1 placeholder" />
+          </div>
+          <div
+            class="w-[96px] h-[40px] flex justify-start items-center flex-row gap-4 absolute left-[1164px] top-[25px]">
+            <div>
+              <img
+                src="https://picsum.photos/id/40/40"
+                alt="header__external-link placeholder" />
+            </div>
+            <div>
+              <img
+                src="https://picsum.photos/id/40/40"
+                alt="header__external-link placeholder" />
+            </div>
+          </div>
+          <div
+            class="w-[287px] h-[30px] flex justify-start items-center flex-row gap-8 absolute left-[807px] top-[30px]">
+            <div class="text-[#FFFFFF] text-[26px] font-['Inter'] font-light">
+              about
+            </div>
+            <div class="text-[#4A90E2] text-[26px] font-['Inter'] font-light">
+              work
+            </div>
+            <div class="text-[#FFFFFF] text-[26px] font-['Inter'] font-light">
+              contact
+            </div>
+          </div>
+          <div class="absolute left-[180px] top-[16px]">
+            <img
+              src="https://picsum.photos/id/67/56"
+              alt="header__logo placeholder" />
+          </div>
+        </div>
+      </div>
+      <div
+        class="w-[1440px] h-[960px] flex justify-start items-center flex-col gap-[30px] py-[52px] px-[180px] bg-[#FAFAFA] shadow-[_0px_4px_12px_0px_rgba(0,0,0,0.05)]">
+        <div class="w-[848px] flex justify-start items-center flex-col gap-4">
+          <div
+            class="self-stretch text-[#2D2D2D] text-3xl font-['Inter'] text-center font-bold tracking-[-0.6px]">
+            My Portfolio Site
+          </div>
+          <div class="text-[#4B5563] font-['Inter'] text-center">
+            My personal portfolio site (this site) made with SvelteKit hosted on
+            Vercel. UI elements are compiled with Wasm for performance and
+            deployed on Vercel.
+          </div>
+        </div>
+        <div
+          class="flex self-stretch justify-center items-center flex-row gap-2.5 p-2.5">
+          <div class="w-[1080px] h-[460px] bg-[#F3F4F6] rounded-2xl relative">
+            <div
+              class="w-[234px] h-[146px] flex justify-center items-center flex-row gap-2.5 py-[17px] px-4 bg-[#282C34] rounded-lg absolute left-[669px] top-[159.17px]"
+              style="transform: rotate(-2deg)">
+              <span
+                class="text-xs font-['Roboto_Mono'] font-light"
+                style="transform: rotate(0deg)">
+                <span class="text-[#5C6370]">
+                  // Svelte component
+                  <br />
+                </span>
+                <span class="text-[#C678DD]">import</span>
+                <span class="text-[#5C6370]"></span>
+                <span class="text-[#ABB2BF]">
+                  { wasm }
+                  <br />
+                </span>
+                <span class="text-[#C678DD]">from</span>
+                <span class="text-[#ABB2BF]"></span>
+                <span class="text-[#98C379]">‘./rust_module’</span>
+                <span class="text-[#ABB2BF]">
+                  ;
+                  <br />
+                </span>
+                <span class="text-[#C678DD]">let</span>
+                <span class="text-[#ABB2BF]">result =</span>
+                <span class="text-[#61AFEF]">wasm.process</span>
+                <span class="text-[#ABB2BF]">
+                  ();
+                  <br />
+                </span>
+                <span class="text-[#C678DD]">function</span>
+                <span class="text-[#ABB2BF]"></span>
+                <span class="text-[#61AFEF]">handleClick</span>
+                <span class="text-[#ABB2BF]">
+                  () {
+                  <br />
+                  &nbsp;&nbsp;&nbsp;result =
+                </span>
+                <span class="text-[#61AFEF]">wasm.compute</span>
+                <span class="text-[#ABB2BF]">
+                  ();
+                  <br />
+                  }
+                </span>
+              </span>
+            </div>
+            <div
+              class="w-[180px] h-[180px] flex justify-center items-center flex-col py-[18px] px-[37px] bg-[#FFFFFF] rounded-xl absolute left-[836.69px] top-[171px]"
+              style="transform: rotate(5deg)">
+              <div>
+                <img
+                  src="https://picsum.photos/id/45/45"
+                  alt="showcase__feature-icon placeholder" />
+              </div>
+              <div
+                class="flex justify-center items-center flex-row gap-2.5 p-2.5">
+                <span
+                  class="text-[#2D2D2D] text-lg font-['Inter'] text-center font-semibold">
+                  WebAssembly
+                </span>
+              </div>
+              <div
+                class="flex justify-center items-center flex-row gap-2.5 p-2.5">
+                <p
+                  class="text-[#6B7280] text-sm font-['Inter'] text-center font-light">
+                  Compiled from Rust
+                </p>
+              </div>
+            </div>
+            <div
+              class="w-[180px] h-[180px] flex justify-center items-center flex-col py-[18px] px-[37px] bg-[#FFFFFF] rounded-xl absolute left-[560.5px] top-[106.19px]"
+              style="transform: rotate(-5deg)">
+              <div>
+                <img
+                  src="https://picsum.photos/id/43/52"
+                  alt="showcase__feature-icon placeholder" />
+              </div>
+              <div
+                class="flex justify-center items-center flex-row gap-2.5 p-2.5">
+                <span
+                  class="text-[#2D2D2D] text-lg font-['Inter'] text-center font-semibold">
+                  SvelteKit
+                </span>
+              </div>
+              <div
+                class="flex justify-center items-center flex-row gap-2.5 p-2.5">
+                <p
+                  class="text-[#6B7280] text-sm font-['Inter'] text-center font-light">
+                  Frontend Framework
+                </p>
+              </div>
+            </div>
+            <div class="absolute left-[68px] top-[0px]">
+              <img
+                src="https://picsum.photos/id/135/155"
+                alt="showcase__background-geo placeholder" />
+            </div>
+            <div
+              class="w-[469px] h-[191px] flex justify-start items-start flex-col gap-6 absolute left-[60px] top-[90px]">
+              <div class="text-[#2D2D2D] text-[42px] font-['Inter'] font-bold">
+                Built with SvelteKit + WebAssembly
+              </div>
+              <div class="self-stretch text-[#4B5563] text-lg font-['Inter']">
+                Leverages modern web framework for clean scalability. UI
+                elements are compiled with WebAssembly using Rust for quick
+                loading and rendering.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="grid py-[25px] px-[57px] bg-[#FFFFFF] rounded-lg shadow-[_0px_1px_2px_0px_rgba(0,0,0,0.05)] grid-cols-4 grid-rows-3 gap-x-4 gap-y-3">
+          <div
+            class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 pt-[12.6669921875px] pb-[13.3330078125px] pr-[74px] pl-[13px] bg-[#F9FAFB] rounded-lg col-span-1 row-span-1 row-start-3">
+            <div class="text-[#000000] font-['Inter'] font-medium">
+              WebAssembly
+            </div>
+            <div>
+              <img
+                src="https://picsum.photos/id/30/30"
+                alt="tech-stack__wasm-icon placeholder" />
+            </div>
+          </div>
+          <div
+            class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-[4.000499725341797px] pt-3 pb-[12.010599136352539px] pr-[148px] pl-[11px] bg-[#F9FAFB] rounded-lg col-span-1 row-span-1 col-start-4 row-start-2">
+            <div class="text-[#000000] font-['Inter'] font-medium">Rust</div>
+            <div>
+              <img
+                src="https://picsum.photos/id/32/32"
+                alt="tech-stack__rust-icon placeholder" />
+            </div>
+          </div>
+          <div
+            class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-[13.937538146972656px] pr-[101px] pl-[18px] bg-[#F9FAFB] rounded-lg col-span-1 row-span-1 col-start-3 row-start-2">
+            <div class="text-[#000000] font-['Inter'] font-medium">
+              Formspree
+            </div>
+            <div>
+              <img
+                src="https://picsum.photos/id/25/28"
+                alt="tech-stack__formspree-icon placeholder" />
+            </div>
+          </div>
+          <div
+            class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-[13.124999046325684px] pr-[135px] pl-[9px] bg-[#F9FAFB] rounded-lg col-span-1 row-span-1 col-start-2 row-start-2">
+            <div class="text-[#000000] font-['Inter'] font-medium">Vercel</div>
+            <div>
+              <img
+                src="https://picsum.photos/id/34/30"
+                alt="tech-stack__vercel-icon placeholder" />
+            </div>
+          </div>
+          <div
+            class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-[4.369834899902344px] pt-3 pb-[11.999927520751953px] pr-[114px] pl-4 bg-[#F9FAFB] rounded-lg col-span-1 row-span-1 row-start-2">
+            <div class="text-[#000000] font-['Inter'] font-medium">
+              SvelteKit
+            </div>
+            <div>
+              <img
+                src="https://picsum.photos/id/27/32"
+                alt="tech-stack__sveltekit-icon placeholder" />
+            </div>
+          </div>
+          <div
+            class="text-[#2D2D2D] text-[26px] font-['Inter'] text-center font-semibold col-span-1 row-span-1">
+            Technology Stack
+          </div>
+        </div>
+      </div>
+      <div
+        class="w-[1440px] flex justify-center items-center flex-col gap-2.5 px-[180px]">
+        <div class="w-[1440px] h-[71px] bg-[#F5F5F5] relative">
+          <div
+            class="w-[287px] h-[30px] flex justify-start items-center flex-row gap-8 absolute left-[973px] top-[20px]">
+            <div class="text-[#000000] text-[26px] font-['Inter'] font-light">
+              about
+            </div>
+            <div class="text-[#000000] text-[26px] font-['Inter'] font-light">
+              work
+            </div>
+            <div class="text-[#000000] text-[26px] font-['Inter'] font-light">
+              contact
+            </div>
+          </div>
+          <div
+            class="w-[223px] h-[46px] flex justify-center items-center flex-row gap-2.5 p-2.5 absolute left-[180px] top-[12px]">
+            <span class="text-[#000000] font-['Roboto_Mono'] font-thin">
+              <span class="text-xl">©</span>
+              <span class="text-[10px]"></span>
+              <span>2025</span>
+              <span class="text-[10px]"></span>
+              <span>Joshua</span>
+              <span class="text-[10px]"></span>
+              <span>McDonald</span>
+            </span>
+          </div>
+          <div
+            class="w-[1440px] h-[4px] absolute left-[0px] top-[0px]"
+            style="background: linear-gradient(180deg, #E0E0E0 0%, #F5F5F5 100%)"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
