@@ -5,10 +5,13 @@
   // State management for showcase display (placeholder for future implementation)
   let activeImageStep = $state(0);
   
-  // Image steps for E-commerce Price Tracker showcase (placeholder)
+  // Image steps for E-commerce Price Tracker showcase
   const imageSteps = [
-    { title: 'placeholder-tracker-main', image: 'placeholder__image.png' },
-    { title: 'placeholder-crawler-page', image: 'placeholder__image.png' }
+    { title: 'website crawler interactive page', image: 'crawler__image.png' },
+    { title: 'progress dashboard', image: 'dashboard__image.png' },
+    { title: 'crawler initiation', image: 'crawlercode__code.png' },
+    { title: 'scraper initiation', image: 'scrapercode__code.png' },
+    { title: 'ui logic', image: 'uilogiccode__code.png' }
   ];
   
   function previousImage() {
