@@ -18,7 +18,7 @@
       <section class="w-full max-w-[1440px] px-[5%] md:px-[180px]">
         <div class="grid md:grid-cols-2 gap-[90px] pt-[40px]">
           <!-- About Text Content - Left Side -->
-          <div class="flex flex-col gap-[29px] max-w-[500px] md:self-center pb-[90px] md:pb-0">
+          <div class="flex flex-col gap-[29px] max-w-[500px] md:self-start md:mt-[40px] pb-[90px] md:pb-0">
             <h1 class="text-[#2D2D2D] text-[56px] font-inter font-bold tracking-[-1.12px]">
               about
             </h1>
@@ -42,7 +42,7 @@
     <div class="w-full h-[4px] gradient-divider"></div>
 
     <!-- Content Section -->
-    <div class="w-full bg-[#FAFAFA] flex justify-center items-center flex-grow">
+    <div class="w-full bg-[#FAFAFA] flex justify-center items-center flex-grow py-[80px]">
       <section class="w-full max-w-[1440px] px-[5%] md:px-[180px]">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-x-[27px] gap-y-[76px]">
           <!-- Experience Column -->
