@@ -49,7 +49,7 @@
         <!-- Navigate Projects Button -->
         <div class="flex justify-center mb-[200px] relative">
           <button 
-            class="flex items-center gap-2 py-3 px-6 bg-[#4A90E2] rounded-2xl hover:bg-[#3A7BC8] transition-colors min-w-[200px]"
+            class="flex items-center gap-2 py-3 px-6 bg-[#4A90E2] rounded-2xl hover:bg-[#3A7BC8] transition-colors w-[280px]"
             onclick={() => toggleDropdown('navigate')}
           >
             <span class="text-[#FFFFFF] text-base font-inter font-semibold">
@@ -61,7 +61,7 @@
           {#if openDropdown === 'navigate'}
             <!-- Navigate Projects Dropdown -->
             <div
-              class="absolute top-0 left-1/2 transform -translate-x-1/2 min-w-[200px] bg-[#FAFAFA] border border-[#EAEAEA] rounded-2xl shadow-lg z-10"
+              class="absolute top-0 left-1/2 transform -translate-x-1/2 w-[280px] bg-[#FAFAFA] border border-[#EAEAEA] rounded-2xl shadow-lg z-10"
               role="button"
               tabindex="0"
               onclick={() => toggleDropdown('navigate')}
@@ -69,7 +69,7 @@
               aria-label="Close Navigate Projects dropdown"
             >
               <!-- Header section with title and icon - same size as button -->
-              <div class="flex items-center gap-2 py-3 px-6 bg-[#E0FFFF] rounded-t-2xl min-w-[200px]">
+              <div class="flex items-center gap-2 py-3 px-6 bg-[#E0FFFF] rounded-t-2xl w-full">
                 <span class="text-[#000000] text-base font-inter font-semibold">
                   Navigate Projects
                 </span>
