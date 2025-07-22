@@ -8,9 +8,9 @@
     <div class="flex justify-start items-center flex-row gap-[40px] md:gap-[120px] overflow-x-auto">
       <div class="w-[280px] h-[240px] bg-[#1e1e1e] border-solid border-[#2d2d30] border rounded-lg shadow-lg relative">
         <div class="absolute top-[176px] left-0 w-full h-[1px] bg-[#4A5568]"></div>
-        <div class="text-[#d4d4d4] text-xl font-roboto font-light absolute left-[24px] top-[193px]">
+        <a href="/work/ai-menu-chatbot" class="text-[#d4d4d4] text-xl font-roboto font-light absolute left-[24px] top-[193px] hover:underline">
           Model Training
-        </div>
+        </a>
         <div class="w-[264px] h-[160px] rounded-tl-md rounded-tr-md absolute left-[8px] top-[8px] bg-[#1e1e1e] overflow-hidden">
           <!-- VS Code-style header -->
           <div class="h-[24px] bg-[#323233] flex items-center px-2 border-b border-[#2d2d30]">
@@ -49,9 +49,9 @@
       </div>
       <div class="w-[280px] h-[240px] bg-[#1e1e1e] border-solid border-[#2d2d30] border rounded-lg shadow-lg relative">
         <div class="absolute top-[176px] left-0 w-full h-[1px] bg-[#4A5568]"></div>
-        <div class="text-[#d4d4d4] text-xl font-roboto font-light absolute left-[24px] top-[193px]">
+        <a href="/work/ecommerce-price-tracker" class="text-[#d4d4d4] text-xl font-roboto font-light absolute left-[24px] top-[193px] hover:underline">
           API & Web Integration
-        </div>
+        </a>
         <div class="w-[264px] h-[160px] rounded-tl-md rounded-tr-md absolute left-[8px] top-[8px] bg-[#1e1e1e] overflow-hidden">
           <!-- VS Code-style header -->
           <div class="h-[24px] bg-[#323233] flex items-center px-2 border-b border-[#2d2d30]">
@@ -82,9 +82,9 @@
       </div>
       <div class="w-[280px] h-[240px] bg-[#1e1e1e] border-solid border-[#2d2d30] border rounded-lg shadow-lg relative">
         <div class="absolute top-[176px] left-0 w-full h-[1px] bg-[#4A5568]"></div>
-        <div class="text-[#d4d4d4] text-xl font-roboto font-light absolute left-[24px] top-[193px]">
+        <a href="/work/creative-writing-assistant" class="text-[#d4d4d4] text-xl font-roboto font-light absolute left-[24px] top-[193px] hover:underline">
           NLP & Preprocessing
-        </div>
+        </a>
         <div class="w-[264px] h-[160px] rounded-tl-md rounded-tr-md absolute left-[8px] top-[8px] bg-[#1e1e1e] overflow-hidden">
           <!-- VS Code-style header -->
           <div class="h-[24px] bg-[#323233] flex items-center px-2 border-b border-[#2d2d30]">
