@@ -49,7 +49,7 @@
           <h1 class="text-[#2D2D2D] text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
             Dune Spice Wars Interactive Wikipedia
           </h1>
-          <p class="text-[#2D2D2D] text-lg font-inter text-center max-w-[650px]">
+          <p class="text-[#2D2D2D] text-lg font-inter text-center max-w-[900px]">
             Dune Spice Wars unofficial interactive Wikipedia. Built using React & Next.js deployed with GitHub Pages, this site serves as an interactive wiki for players to be able to visualize all mechanics of the Dune Spice Wars RTS game.
           </p>
         </div>

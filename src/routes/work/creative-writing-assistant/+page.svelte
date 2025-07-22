@@ -21,7 +21,7 @@
           <h1 class="text-[#2D2D2D] text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
             AI Creative Writing Assistant
           </h1>
-          <p class="text-[#2D2D2D] text-lg font-inter text-center max-w-[650px]">
+          <p class="text-[#2D2D2D] text-lg font-inter text-center max-w-[800px]">
             In progress development of AI creative writing assistant / web app. Leverages agentic framework using LangChain to help users properly utilize AI for creative writing. More soon..
           </p>
         </div>

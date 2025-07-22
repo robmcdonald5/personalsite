@@ -44,7 +44,7 @@
           <h1 class="text-[#2D2D2D] text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
             E-Commerce Price Tracker + Scraper
           </h1>
-          <p class="text-[#2D2D2D] text-lg font-inter text-center max-w-[650px]">
+          <p class="text-[#2D2D2D] text-lg font-inter text-center max-w-[900px]">
             In progress development of price tracking & alert desktop application. Web scraping done with BeautifulSoup & Selenium. Application logic and visuals will use Python + TypeScript (Tauri). Storage and persistent data analysis / gen will use PostgreSQL. Finished product will be able to 'board' a website, scrape trackable data from them and allow for persistent tracking of specific targeted elements (price deltas, addition / removals to charts, etc..).
           </p>
         </div>
