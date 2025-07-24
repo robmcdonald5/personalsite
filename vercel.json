@@ -1,6 +1,4 @@
 {
-  "buildCommand": "npm run build",
-  "installCommand": "npm install && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && source ~/.cargo/env && cargo install wasm-pack",
   "headers": [
     {
       "source": "/wasm-modules/(.*)",

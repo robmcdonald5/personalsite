@@ -10,8 +10,7 @@ node_modules
 
 # WASM/Rust build artifacts
 /wasm-modules/*/target/
-/wasm-modules/*/pkg/
-/static/wasm-modules/
+# Note: /static/wasm-modules/ is now tracked for Vercel deployment
 Cargo.lock
 
 # OS
