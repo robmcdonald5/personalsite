@@ -23,7 +23,7 @@
             My Portfolio Site
           </h1>
           <p class="text-[#2D2D2D] text-lg font-inter text-center max-w-[650px]">
-            My personal portfolio site (this site) made with SvelteKit hosted on Vercel. UI elements are compiled with Wasm for performance and deployed on Vercel.
+            My personal portfolio site (this site) made with SvelteKit hosted on Vercel. UI elements are compiled with Wasm for performance, with contact forms powered by Formspark and Turnstile CAPTCHA protection.
           </p>
         </div>
 
@@ -171,12 +171,12 @@
               <div class="text-[#000000] font-inter font-medium">Vercel</div>
             </div>
             
-            <!-- Formspree -->
-            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-3 pr-[101px] pl-[18px] bg-[#F9FAFB] rounded-lg col-start-3 row-start-2">
+            <!-- Formspark -->
+            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-3 pr-[105px] pl-[18px] bg-[#F9FAFB] rounded-lg col-start-3 row-start-2">
               <div>
-                <img src="/tech-stack__formspree-icon.svg" alt="Formspree" class="w-[25px] h-[28px]" />
+                <img src="/tech-stack__formspark-icon.svg" alt="Formspark" class="w-[25px] h-[28px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">Formspree</div>
+              <div class="text-[#000000] font-inter font-medium">Formspark</div>
             </div>
             
             <!-- Rust -->
@@ -194,6 +194,14 @@
                 <img src="/tech-stack__wasm-icon.svg" alt="WebAssembly" class="w-[30px] h-[30px]" />
               </div>
               <div class="text-[#000000] font-inter font-medium">WebAssembly</div>
+            </div>
+            
+            <!-- Turnstile -->
+            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-3 pr-[115px] pl-[18px] bg-[#F9FAFB] rounded-lg col-start-2 row-start-3">
+              <div>
+                <img src="/tech-stack__turnstile-icon.svg" alt="Turnstile" class="w-[25px] h-[28px]" />
+              </div>
+              <div class="text-[#000000] font-inter font-medium">Turnstile</div>
             </div>
           </div>
         </div>
