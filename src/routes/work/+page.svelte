@@ -106,15 +106,17 @@
 			</section>
 		</div>
 
+		<div class="w-full h-[4px] gradient-divider"></div>
+
 		<!-- Projects Section -->
 		<div class="w-full bg-[#FAFAFA] flex justify-center flex-grow py-[80px]">
 			<section class="w-full max-w-[1440px] px-[5%] md:px-[180px]">
 				<!-- Filter Navigation -->
 				<div class="flex justify-center mb-[60px]">
-					<div class="flex flex-wrap justify-center gap-3">
+					<div class="flex justify-center gap-2 overflow-x-auto scrollbar-hide max-w-full">
 						{#each allCategories as category}
 							<button
-								class="px-6 py-3 rounded-full font-inter font-medium text-base transition-all duration-200 {activeCategory === category 
+								class="px-4 py-2 rounded-full font-inter font-medium text-sm whitespace-nowrap transition-all duration-200 {activeCategory === category 
 									? 'bg-[#4A90E2] text-[#FFFFFF] shadow-lg' 
 									: 'bg-[#FFFFFF] text-[#2D2D2D] border border-[#EAEAEA] hover:bg-[#F0F0F0] hover:border-[#4A90E2]'}"
 								onclick={() => selectCategory(category)}
