@@ -9,7 +9,7 @@
 			id: 'ai-menu-chatbot',
 			name: 'Chipotle AI Menu',
 			href: '/work/ai-menu-chatbot',
-			categories: ['Chatbots', 'Python', 'Machine Learning', 'NLP', 'Scripting'],
+			categories: ['Chatbots', 'Python', 'Machine Learning', 'NLP', 'Scripting', 'JavaScript'],
 			imageQuery: 'AI chatbot interface with menu items',
 			previewImage: '/project-previews/ai-menu-chatbot.png'
 		},
@@ -17,7 +17,7 @@
 			id: 'poe-market-analyzer',
 			name: 'PoE Market Analyzer',
 			href: '/work/poe-market-analyzer',
-			categories: ['Websites', 'Python', 'Database', 'Machine Learning', 'Automation', 'Scripting'],
+			categories: ['Websites', 'Python', 'Database', 'Machine Learning', 'Automation', 'Scripting', 'JavaScript', 'TypeScript', 'Rust', 'FastAPI'],
 			imageQuery: 'Market analysis dashboard with charts',
 			previewImage: '/project-previews/poe-market-analyzer.png'
 		},
@@ -25,7 +25,7 @@
 			id: 'ecommerce-price-tracker',
 			name: 'E-Commerce Price Tracker',
 			href: '/work/ecommerce-price-tracker',
-			categories: ['Python', 'Database', 'Machine Learning', 'Automation', 'Scripting'],
+			categories: ['Python', 'Database', 'Machine Learning', 'Automation', 'Scripting', 'TypeScript', 'Postgres'],
 			imageQuery: 'E-commerce price tracking interface',
 			previewImage: '/project-previews/ecommerce-price-tracker.png'
 		},
@@ -33,7 +33,7 @@
 			id: 'creative-writing-assistant',
 			name: 'Creative Writing AI Assistant',
 			href: '/work/creative-writing-assistant',
-			categories: ['Chatbots', 'Websites', 'Python', 'Database', 'Machine Learning', 'NLP'],
+			categories: ['Chatbots', 'Websites', 'Python', 'Database', 'Machine Learning', 'NLP', 'JavaScript', 'TypeScript', 'Postgres', 'FastAPI', 'Agentic'],
 			imageQuery: 'AI writing assistant interface',
 			previewImage: '/project-previews/creative-writing-assistant.png'
 		},
@@ -41,7 +41,7 @@
 			id: 'portfolio-site',
 			name: 'Personal Site',
 			href: '/work/portfolio-site',
-			categories: ['Websites'],
+			categories: ['Websites', 'JavaScript', 'TypeScript', 'Rust'],
 			imageQuery: 'Personal portfolio website design',
 			previewImage: '/project-previews/portfolio-site.png'
 		},
@@ -49,22 +49,15 @@
 			id: 'dune-spice-wars-wiki',
 			name: 'Dune Spice Wars Interactive Wiki',
 			href: '/work/dune-spice-wars-wiki',
-			categories: ['Websites'],
+			categories: ['Websites', 'JavaScript'],
 			imageQuery: 'Interactive wiki interface with game data',
 			previewImage: '/project-previews/dune-spice-wars-wiki.png'
 		}
 	];
 
 	const allCategories = [
-		'All',
-		'Chatbots',
-		'Websites', 
-		'Python',
-		'Database',
-		'Machine Learning',
-		'NLP',
-		'Automation',
-		'Scripting'
+		['All', 'Chatbots', 'Websites', 'Python', 'Database', 'Machine Learning', 'NLP'],
+		['Automation', 'Scripting', 'JavaScript', 'TypeScript', 'Rust', 'MongoDB', 'Postgres', 'FastAPI', 'Agentic']
 	];
 
 	let activeCategory = 'All';
@@ -119,16 +112,20 @@
 			<section class="w-full max-w-[1440px] px-[5%] md:px-[180px]">
 				<!-- Filter Navigation -->
 				<div class="flex justify-center mb-[60px]">
-					<div class="flex justify-center gap-2 overflow-x-auto scrollbar-hide max-w-full">
-						{#each allCategories as category}
-							<button
-								class="px-4 py-2 rounded-full font-inter font-medium text-sm whitespace-nowrap transition-all duration-200 {activeCategory === category 
-									? 'bg-[#4A90E2] text-[#FFFFFF] shadow-lg' 
-									: 'bg-[#FFFFFF] text-[#2D2D2D] border border-[#EAEAEA] hover:bg-[#F0F0F0] hover:border-[#4A90E2]'}"
-								onclick={() => selectCategory(category)}
-							>
-								{category}
-							</button>
+					<div class="flex flex-col gap-3 max-w-full">
+						{#each allCategories as categoryRow}
+							<div class="flex justify-center gap-2 overflow-x-auto scrollbar-hide">
+								{#each categoryRow as category}
+									<button
+										class="px-4 py-2 rounded-full font-inter font-medium text-sm whitespace-nowrap transition-all duration-200 {activeCategory === category 
+											? 'bg-[#4A90E2] text-[#FFFFFF] shadow-lg' 
+											: 'bg-[#FFFFFF] text-[#2D2D2D] border border-[#EAEAEA] hover:bg-[#F0F0F0] hover:border-[#4A90E2]'}"
+										onclick={() => selectCategory(category)}
+									>
+										{category}
+									</button>
+								{/each}
+							</div>
 						{/each}
 					</div>
 				</div>

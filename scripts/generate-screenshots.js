@@ -150,8 +150,11 @@ async function generateWithPlaywright(outputDir) {
     
   } finally {
     await browser.close();
+    cleanupPreviewServer();
   }
 }
+
+let previewServer = null;
 
 async function startPreviewServer() {
   const { spawn } = await import('child_process');
@@ -159,14 +162,14 @@ async function startPreviewServer() {
   return new Promise((resolve, reject) => {
     console.log('🚀 Starting preview server...');
     
-    const server = spawn('npx', ['vite', 'preview', '--port', '4173', '--host'], {
+    previewServer = spawn('npx', ['vite', 'preview', '--port', '4173', '--host'], {
       cwd: join(__dirname, '..'),
       stdio: 'pipe'
     });
     
     let started = false;
     
-    server.stdout.on('data', (data) => {
+    previewServer.stdout.on('data', (data) => {
       const output = data.toString();
       if (output.includes('4173') && !started) {
         started = true;
@@ -174,22 +177,31 @@ async function startPreviewServer() {
       }
     });
     
-    server.stderr.on('data', (data) => {
+    previewServer.stderr.on('data', (data) => {
       console.log('Preview server output:', data.toString());
+    });
+    
+    previewServer.on('error', (error) => {
+      console.error('Preview server error:', error);
+      reject(error);
     });
     
     setTimeout(() => {
       if (!started) {
-        server.kill();
-        reject(new Error('Preview server failed to start'));
+        console.log('❌ Preview server timeout - killing process');
+        previewServer?.kill('SIGTERM');
+        reject(new Error('Preview server failed to start within 10 seconds'));
       }
     }, 10000);
-    
-    // Store server reference for cleanup
-    process.on('exit', () => server.kill());
-    process.on('SIGTERM', () => server.kill());
-    process.on('SIGINT', () => server.kill());
   });
+}
+
+function cleanupPreviewServer() {
+  if (previewServer && !previewServer.killed) {
+    console.log('🧹 Cleaning up preview server...');
+    previewServer.kill('SIGTERM');
+    previewServer = null;
+  }
 }
 
 async function generatePlaceholders(outputDir) {
@@ -213,5 +225,32 @@ async function generateSinglePlaceholder(outputDir, project) {
   console.log(`📄 Generated placeholder: ${project.id}.svg`);
 }
 
+// Handle process termination
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, cleaning up...');
+  cleanupPreviewServer();
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, cleaning up...');  
+  cleanupPreviewServer();
+  process.exit(0);
+});
+
+process.on('exit', () => {
+  cleanupPreviewServer();
+});
+
 // Run the script
-generateScreenshots().catch(console.error);
+generateScreenshots()
+  .then(() => {
+    console.log('✨ All done!');
+    cleanupPreviewServer();
+    process.exit(0);
+  })
+  .catch((error) => {
+    console.error('❌ Screenshot generation failed:', error);
+    cleanupPreviewServer();
+    process.exit(1);
+  });
