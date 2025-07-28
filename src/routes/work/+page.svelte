@@ -1,625 +1,181 @@
 <script lang="ts">
-  import Header from '$lib/Header.svelte';
-  import Footer from '$lib/Footer.svelte';
+	import Header from '$lib/Header.svelte';
+	import Footer from '$lib/Footer.svelte';
+	import { fly } from 'svelte/transition';
 
-  // Svelte 5 runes for dropdown state management
-  let openDropdown = $state<string | null>(null);
-  let autoCloseTimeout = $state<number | null>(null);
+	// Project data
+	const allProjects = [
+		{
+			id: 'ai-menu-chatbot',
+			name: 'Chipotle AI Menu',
+			href: '/work/ai-menu-chatbot',
+			categories: ['Chatbots', 'Python', 'Machine Learning', 'NLP', 'Scripting'],
+			imageQuery: 'AI chatbot interface with menu items'
+		},
+		{
+			id: 'poe-market-analyzer',
+			name: 'PoE Market Analyzer',
+			href: '/work/poe-market-analyzer',
+			categories: ['Websites', 'Python', 'Database', 'Machine Learning', 'Automation', 'Scripting'],
+			imageQuery: 'Market analysis dashboard with charts'
+		},
+		{
+			id: 'ecommerce-price-tracker',
+			name: 'E-Commerce Price Tracker',
+			href: '/work/ecommerce-price-tracker',
+			categories: ['Python', 'Database', 'Machine Learning', 'Automation', 'Scripting'],
+			imageQuery: 'E-commerce price tracking interface'
+		},
+		{
+			id: 'creative-writing-assistant',
+			name: 'Creative Writing AI Assistant',
+			href: '/work/creative-writing-assistant',
+			categories: ['Chatbots', 'Websites', 'Python', 'Database', 'Machine Learning', 'NLP'],
+			imageQuery: 'AI writing assistant interface'
+		},
+		{
+			id: 'portfolio-site',
+			name: 'Personal Site',
+			href: '/work/portfolio-site',
+			categories: ['Websites'],
+			imageQuery: 'Personal portfolio website design'
+		},
+		{
+			id: 'dune-spice-wars-wiki',
+			name: 'Dune Spice Wars Interactive Wiki',
+			href: '/work/dune-spice-wars-wiki',
+			categories: ['Websites'],
+			imageQuery: 'Interactive wiki interface with game data'
+		}
+	];
 
-  // Project categories data
-  const categories = [
-    { name: 'Chatbots', count: 2, position: { row: 5, col: 1 } },
-    { name: 'Websites', count: 5, position: { row: 5, col: 2 } },
-    { name: 'Python', count: 4, position: { row: 5, col: 3 } },
-    { name: 'Database', count: 3, position: { row: 7, col: 1 } },
-    { name: 'Machine Learning', count: 4, position: { row: 7, col: 2 } },
-    { name: 'NLP', count: 2, position: { row: 7, col: 3 } },
-    { name: 'Automation', count: 2, position: { row: 9, col: 1 } },
-    { name: 'Scripting', count: 3, position: { row: 9, col: 2 } }
-  ];
+	const allCategories = [
+		'All',
+		'Chatbots',
+		'Websites', 
+		'Python',
+		'Database',
+		'Machine Learning',
+		'NLP',
+		'Automation',
+		'Scripting'
+	];
 
-  function toggleDropdown(categoryName: string) {
-    // Clear any existing timeout
-    if (autoCloseTimeout) {
-      clearTimeout(autoCloseTimeout);
-      autoCloseTimeout = null;
-    }
-    openDropdown = openDropdown === categoryName ? null : categoryName;
-  }
+	let activeCategory = 'All';
 
-  // Auto-close dropdown when mouse leaves the area
-  function handleMouseLeave(categoryName: string) {
-    if (openDropdown === categoryName) {
-      autoCloseTimeout = setTimeout(() => {
-        openDropdown = null;
-        autoCloseTimeout = null;
-      }, 2000); // 2 second delay
-    }
-  }
+	// Reactive statement for filtered projects
+	$: filteredProjects = activeCategory === 'All' 
+		? allProjects 
+		: allProjects.filter(project => project.categories.includes(activeCategory));
 
-  // Cancel auto-close when mouse enters back into the area
-  function handleMouseEnter() {
-    if (autoCloseTimeout) {
-      clearTimeout(autoCloseTimeout);
-      autoCloseTimeout = null;
-    }
-  }
+	function selectCategory(category: string) {
+		activeCategory = category;
+	}
+
+	function handleImageError(event: Event) {
+		const target = event.target as HTMLImageElement;
+		target.style.display = 'none';
+		if (target.nextElementSibling) {
+			(target.nextElementSibling as HTMLElement).style.display = 'flex';
+		}
+	}
 </script>
 
 <svelte:head>
-  <title>Work - Joshua McDonald</title>
+	<title>Work - Joshua McDonald</title>
+	<meta name="description" content="Explore snippets of the work I've done over my development career." />
 </svelte:head>
 
 <div class="flex flex-col min-h-screen w-full bg-[#FFFFFF] overflow-x-hidden">
-  <header class="w-full bg-[#111111] flex justify-center">
-    <Header />
-  </header>
+	<header class="w-full bg-[#111111] flex justify-center">
+		<Header />
+	</header>
 
-  <main class="flex-grow flex flex-col">
-    <!-- Hero Section -->
-    <div class="w-full bg-[#FFFFFF] flex justify-center py-[80px] flex-grow">
-      <section class="w-full max-w-[1440px] px-[5%] md:px-[180px]">
-        <!-- Title and Description -->
-        <div class="flex flex-col items-center gap-4 mb-[60px]">
-          <h1 class="text-[#2D2D2D] text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
-            My Work
-          </h1>
-          <p class="text-[#2D2D2D] text-lg font-inter text-center max-w-[600px]">
-            Explore snippets of the work I've done over my development career.
-          </p>
-        </div>
+	<main class="flex-grow flex flex-col">
+		<!-- Hero Section -->
+		<div class="w-full bg-[#FFFFFF] flex justify-center py-[80px]">
+			<section class="w-full max-w-[1440px] px-[5%] md:px-[180px]">
+				<div class="flex flex-col items-center gap-4 mb-[60px]">
+					<h1 class="text-[#2D2D2D] text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
+						My Work
+					</h1>
+					<p class="text-[#2D2D2D] text-lg font-inter text-center max-w-[600px]">
+						A curated collection of my projects. From web applications to machine learning models, here's what I've been building.
+					</p>
+				</div>
+			</section>
+		</div>
 
-        <!-- Navigate Projects Button -->
-        <div class="flex justify-center mb-[200px] relative"
-             role="navigation"
-             onmouseenter={handleMouseEnter}
-             onmouseleave={() => handleMouseLeave('navigate')}>
-          <button 
-            class="flex items-center gap-2 py-3 px-6 bg-[#4A90E2] rounded-2xl hover:bg-[#3A7BC8] transition-colors w-[280px]"
-            onclick={() => toggleDropdown('navigate')}
-          >
-            <span class="text-[#FFFFFF] text-base font-inter font-semibold">
-              Navigate Projects
-            </span>
-            <img src="/dropdown__icon.svg" alt="dropdown icon" class="w-4 h-4" />
-          </button>
+		<!-- Projects Section -->
+		<div class="w-full bg-[#FAFAFA] flex justify-center flex-grow py-[80px]">
+			<section class="w-full max-w-[1440px] px-[5%] md:px-[180px]">
+				<!-- Filter Navigation -->
+				<div class="flex justify-center mb-[60px]">
+					<div class="flex flex-wrap justify-center gap-3">
+						{#each allCategories as category}
+							<button
+								class="px-6 py-3 rounded-full font-inter font-medium text-base transition-all duration-200 {activeCategory === category 
+									? 'bg-[#4A90E2] text-[#FFFFFF] shadow-lg' 
+									: 'bg-[#FFFFFF] text-[#2D2D2D] border border-[#EAEAEA] hover:bg-[#F0F0F0] hover:border-[#4A90E2]'}"
+								onclick={() => selectCategory(category)}
+							>
+								{category}
+							</button>
+						{/each}
+					</div>
+				</div>
 
-          {#if openDropdown === 'navigate'}
-            <!-- Navigate Projects Dropdown -->
-            <div
-              class="absolute top-0 left-1/2 transform -translate-x-1/2 w-[280px] bg-[#FFFFFF] border-2 border-[#4A90E2] rounded-2xl shadow-lg z-10 overflow-hidden"
-              role="button"
-              tabindex="0"
-              onclick={() => toggleDropdown('navigate')}
-              onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleDropdown('navigate'); } }}
-              aria-label="Close Navigate Projects dropdown"
-            >
-              <!-- Header section with title and icon - same size as button -->
-              <div class="flex items-center gap-2 py-3 px-6 bg-[#E8F4FD] border-b-2 border-[#4A90E2] rounded-t-2xl w-full">
-                <span class="text-[#000000] text-base font-inter font-semibold">
-                  Navigate Projects
-                </span>
-                <img 
-                  src="/dropdown__icon.svg" 
-                  alt="dropdown icon" 
-                  class="w-4 h-4 flex-shrink-0 transform rotate-180"
-                />
-              </div>
+				<!-- Projects Grid -->
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-[60px]">
+					{#each filteredProjects as project, i (project.id)}
+						<div in:fly={{ y: 20, duration: 400, delay: i * 50 }} out:fly={{ y: -10, duration: 200 }}>
+							<a
+								href={project.href}
+								class="group block bg-[#FFFFFF] border border-[#EAEAEA] rounded-2xl overflow-hidden h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-[#4A90E2]"
+							>
+								<div class="aspect-video overflow-hidden bg-[#F8F9FA]">
+									<img
+										src="/placeholder.svg"
+										alt={project.name}
+										class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+										onerror={handleImageError}
+									/>
+									<div class="w-full h-full bg-[#F8F9FA] flex items-center justify-center text-[#666666] font-inter text-sm" style="display: none;">
+										{project.imageQuery}
+									</div>
+								</div>
+								<div class="p-6">
+									<h3 class="text-[#2D2D2D] text-xl font-inter font-semibold mb-3">{project.name}</h3>
+									<div class="flex flex-wrap gap-2">
+										{#each project.categories.slice(0, 3) as cat}
+											<span class="px-3 py-1 bg-[#F0F0F0] text-[#666666] text-sm font-inter rounded-full">
+												{cat}
+											</span>
+										{/each}
+										{#if project.categories.length > 3}
+											<span class="px-3 py-1 bg-[#F0F0F0] text-[#666666] text-sm font-inter rounded-full">
+												+{project.categories.length - 3}
+											</span>
+										{/if}
+									</div>
+								</div>
+							</a>
+						</div>
+					{/each}
+				</div>
 
-              <!-- Project items -->
-              <div class="flex flex-col">
-                <button 
-                  class="w-full h-[48px] flex items-center py-3 px-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
-                  onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ai-menu-chatbot'; }}
-                >
-                  <span class="text-[#666666] font-inter">Chipotle AI Menu</span>
-                </button>
-                <button 
-                  class="w-full h-[48px] flex items-center py-3 px-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
-                  onclick={(e) => { e.stopPropagation(); window.location.href = '/work/poe-market-analyzer'; }}
-                >
-                  <span class="text-[#666666] font-inter">PoE Market Analyzer</span>
-                </button>
-                <button 
-                  class="w-full h-[48px] flex items-center py-3 px-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
-                  onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ecommerce-price-tracker'; }}
-                >
-                  <span class="text-[#666666] font-inter">E-Commerce Price Tracker</span>
-                </button>
-                <button 
-                  class="w-full h-[48px] flex items-center py-3 px-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
-                  onclick={(e) => { e.stopPropagation(); window.location.href = '/work/creative-writing-assistant'; }}
-                >
-                  <span class="text-[#666666] font-inter">Creative Writing AI Assistant</span>
-                </button>
-                <button 
-                  class="w-full h-[48px] flex items-center py-3 px-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
-                  onclick={(e) => { e.stopPropagation(); window.location.href = '/work/portfolio-site'; }}
-                >
-                  <span class="text-[#666666] font-inter">Personal Site</span>
-                </button>
-                <button 
-                  class="w-full h-[48px] flex items-center py-3 px-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors rounded-b-2xl text-left"
-                  onclick={(e) => { e.stopPropagation(); window.location.href = '/work/dune-spice-wars-wiki'; }}
-                >
-                  <span class="text-[#666666] font-inter">Dune Spice Wars Interactive Wiki</span>
-                </button>
-              </div>
-            </div>
-          {/if}
-        </div>
+				{#if filteredProjects.length === 0}
+					<div class="text-center py-16">
+						<p class="text-[#666666] font-inter text-lg">No projects found in this category.</p>
+					</div>
+				{/if}
+			</section>
+		</div>
 
-        <!-- Project Categories Grid -->
-        <div class="flex justify-center items-center min-h-[400px] mb-[200px]">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-x-[27px] gap-y-[75px] max-w-[981px] w-full px-4 md:px-0">
-          {#each categories as category}
-            <div class="w-full max-w-[300px] mx-auto relative"
-                 role="group"
-                 onmouseenter={handleMouseEnter}
-                 onmouseleave={() => handleMouseLeave(category.name)}>
-              <button
-                class="w-full max-w-[300px] h-[80px] flex items-center justify-between pl-[40px] pr-6 py-4 bg-[#FAFAFA] border border-[#EAEAEA] rounded-2xl hover:bg-[#F0F0F0] transition-colors {openDropdown === category.name ? 'bg-[#E8F4FD] border-[#4A90E2]' : ''}"
-                onclick={() => toggleDropdown(category.name)}
-              >
-                <div class="flex flex-col items-start">
-                  <div class="flex items-baseline gap-2">
-                    <h3 class="text-[#000000] text-xl font-inter font-semibold">
-                      {category.name}
-                    </h3>
-                    <img 
-                      src="/dropdown__icon.svg" 
-                      alt="dropdown icon" 
-                      class="w-4 h-4 flex-shrink-0 transition-transform {openDropdown === category.name ? 'rotate-180' : ''}"
-                    />
-                  </div>
-                  <p class="text-[#666666] font-inter text-sm">
-                    {category.count} Project{category.count !== 1 ? 's' : ''}
-                  </p>
-                </div>
-              </button>
+		<div class="w-full h-[4px] gradient-divider"></div>
+	</main>
 
-              <!-- Dropdown Content -->
-              {#if openDropdown === category.name}
-                {#if category.name === 'Chatbots'}
-                  <!-- Chatbots Dropdown -->
-                  <div
-                    class="absolute top-0 left-0 w-[300px] bg-[#FFFFFF] border-2 border-[#4A90E2] rounded-2xl shadow-lg z-10 overflow-hidden"
-                    role="button"
-                    tabindex="0"
-                    onclick={() => toggleDropdown(category.name)}
-                    onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleDropdown(category.name); } }}
-                    aria-label={`Close ${category.name} dropdown`}
-                  >
-                    <!-- Header section with title and icon - same size as button -->
-                    <div class="h-[80px] flex items-center justify-between pl-[40px] pr-6 py-4 bg-[#E8F4FD] border-b-2 border-[#4A90E2] rounded-t-2xl w-full">
-                      <div class="flex flex-col items-start">
-                        <div class="flex items-baseline gap-2">
-                          <h3 class="text-[#000000] text-xl font-inter font-semibold">
-                            {category.name}
-                          </h3>
-                          <img 
-                            src="/dropdown__icon.svg" 
-                            alt="dropdown icon" 
-                            class="w-4 h-4 flex-shrink-0 transition-transform rotate-180"
-                          />
-                        </div>
-                        <p class="text-[#666666] font-inter text-sm">
-                          {category.count} Project{category.count !== 1 ? 's' : ''}
-                        </p>
-                      </div>
-                    </div>
-
-                    <!-- Project items -->
-                    <div class="flex flex-col">
-                      <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
-                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ai-menu-chatbot'; }}
-                      >
-                        <span class="text-[#666666] font-inter">Chipotle AI Menu</span>
-                      </button>
-                      <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors rounded-b-2xl text-left"
-                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/creative-writing-assistant'; }}
-                      >
-                        <span class="text-[#666666] font-inter">AI Creative Writing Assistant</span>
-                      </button>
-                    </div>
-                  </div>
-                {:else if category.name === 'Websites'}
-                  <!-- Websites Dropdown -->
-                  <div
-                    class="absolute top-0 left-0 w-[300px] bg-[#FFFFFF] border-2 border-[#4A90E2] rounded-2xl shadow-lg z-10 overflow-hidden"
-                    role="button"
-                    tabindex="0"
-                    onclick={() => toggleDropdown(category.name)}
-                    onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleDropdown(category.name); } }}
-                    aria-label={`Close ${category.name} dropdown`}
-                  >
-                    <!-- Header section with title and icon - same size as button -->
-                    <div class="h-[80px] flex items-center justify-between pl-[40px] pr-6 py-4 bg-[#E8F4FD] border-b-2 border-[#4A90E2] rounded-t-2xl w-full">
-                      <div class="flex flex-col items-start">
-                        <div class="flex items-baseline gap-2">
-                          <h3 class="text-[#000000] text-xl font-inter font-semibold">
-                            {category.name}
-                          </h3>
-                          <img 
-                            src="/dropdown__icon.svg" 
-                            alt="dropdown icon" 
-                            class="w-4 h-4 flex-shrink-0 transform rotate-180"
-                          />
-                        </div>
-                        <p class="text-[#666666] font-inter text-sm">
-                          {category.count} Project{category.count !== 1 ? 's' : ''}
-                        </p>
-                      </div>
-                    </div>
-
-                    <!-- Project items -->
-                    <div class="flex flex-col">
-                      <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
-                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/portfolio-site'; }}
-                      >
-                        <span class="text-[#666666] font-inter">My Portfolio Site</span>
-                      </button>
-                      <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
-                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/poe-market-analyzer'; }}
-                      >
-                        <span class="text-[#666666] font-inter">Path of Exile Market Analyzer</span>
-                      </button>
-                      <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
-                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/creative-writing-assistant'; }}
-                      >
-                        <span class="text-[#666666] font-inter">AI Creative Writing Assistant</span>
-                      </button>
-                      <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
-                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/dune-spice-wars-wiki'; }}
-                      >
-                        <span class="text-[#666666] font-inter">Dune Spice Wars Wiki</span>
-                      </button>
-                      <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors rounded-b-2xl text-left"
-                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ai-menu-chatbot'; }}
-                      >
-                        <span class="text-[#666666] font-inter">Chipotle AI Menu</span>
-                      </button>
-                    </div>
-                  </div>
-                {:else if category.name === 'Python'}
-                  <!-- Python Dropdown -->
-                  <div
-                    class="absolute top-0 left-0 w-[300px] bg-[#FFFFFF] border-2 border-[#4A90E2] rounded-2xl shadow-lg z-10 overflow-hidden"
-                    role="button"
-                    tabindex="0"
-                    onclick={() => toggleDropdown(category.name)}
-                    onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleDropdown(category.name); } }}
-                    aria-label={`Close ${category.name} dropdown`}
-                  >
-                    <!-- Header section with title and icon - same size as button -->
-                    <div class="h-[80px] flex items-center justify-between pl-[40px] pr-6 py-4 bg-[#E8F4FD] border-b-2 border-[#4A90E2] rounded-t-2xl w-full">
-                      <div class="flex flex-col items-start">
-                        <div class="flex items-baseline gap-2">
-                          <h3 class="text-[#000000] text-xl font-inter font-semibold">
-                            Python
-                          </h3>
-                          <img 
-                            src="/dropdown__icon.svg" 
-                            alt="dropdown icon" 
-                            class="w-4 h-4 flex-shrink-0 transform rotate-180"
-                          />
-                        </div>
-                        <p class="text-[#666666] font-inter text-sm">
-                          4 Projects
-                        </p>
-                      </div>
-                    </div>
-
-                    <!-- Project items -->
-                    <div class="flex flex-col">
-                      <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
-                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ai-menu-chatbot'; }}
-                      >
-                        <span class="text-[#666666] font-inter">Chipotle AI Menu</span>
-                      </button>
-                      <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
-                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/creative-writing-assistant'; }}
-                      >
-                        <span class="text-[#666666] font-inter">AI Creative Writing Assistant</span>
-                      </button>
-                      <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
-                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/poe-market-analyzer'; }}
-                      >
-                        <span class="text-[#666666] font-inter">Path of Exile Market Analyzer</span>
-                      </button>
-                      <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors rounded-b-2xl text-left"
-                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ecommerce-price-tracker'; }}
-                      >
-                        <span class="text-[#666666] font-inter">E-Commerce Price Tracker</span>
-                      </button>
-                    </div>
-                  </div>
-                {:else if category.name === 'Database'}
-                  <!-- Database Dropdown -->
-                  <div
-                    class="absolute top-0 left-0 w-[300px] bg-[#FFFFFF] border-2 border-[#4A90E2] rounded-2xl shadow-lg z-10 overflow-hidden"
-                    role="button"
-                    tabindex="0"
-                    onclick={() => toggleDropdown(category.name)}
-                    onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleDropdown(category.name); } }}
-                    aria-label={`Close ${category.name} dropdown`}
-                  >
-                    <!-- Header section with title and icon - same size as button -->
-                    <div class="h-[80px] flex items-center justify-between pl-[40px] pr-6 py-4 bg-[#E8F4FD] border-b-2 border-[#4A90E2] rounded-t-2xl w-full">
-                      <div class="flex flex-col items-start">
-                        <div class="flex items-baseline gap-2">
-                          <h3 class="text-[#000000] text-xl font-inter font-semibold">
-                            Database
-                          </h3>
-                          <img 
-                            src="/dropdown__icon.svg" 
-                            alt="dropdown icon" 
-                            class="w-4 h-4 flex-shrink-0 transform rotate-180"
-                          />
-                        </div>
-                        <p class="text-[#666666] font-inter text-sm">
-                          3 Projects
-                        </p>
-                      </div>
-                    </div>
-
-                    <!-- Project items -->
-                    <div class="flex flex-col">
-                      <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
-                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/creative-writing-assistant'; }}
-                      >
-                        <span class="text-[#666666] font-inter">AI Creative Writing Assistant</span>
-                      </button>
-                      <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
-                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ecommerce-price-tracker'; }}
-                      >
-                        <span class="text-[#666666] font-inter">E-Commerce Price Tracker</span>
-                      </button>
-                      <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors rounded-b-2xl text-left"
-                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/poe-market-analyzer'; }}
-                      >
-                        <span class="text-[#666666] font-inter">Path of Exile Market Analyzer</span>
-                      </button>
-                    </div>
-                  </div>
-                {:else if category.name === 'Machine Learning'}
-                  <!-- Machine Learning Dropdown -->
-                  <div
-                    class="absolute top-0 left-0 w-[300px] bg-[#FFFFFF] border-2 border-[#4A90E2] rounded-2xl shadow-lg z-10 overflow-hidden"
-                    role="button"
-                    tabindex="0"
-                    onclick={() => toggleDropdown(category.name)}
-                    onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleDropdown(category.name); } }}
-                    aria-label={`Close ${category.name} dropdown`}
-                  >
-                    <!-- Header section with title and icon - same size as button -->
-                    <div class="h-[80px] flex items-center justify-between pl-[40px] pr-6 py-4 bg-[#E8F4FD] border-b-2 border-[#4A90E2] rounded-t-2xl w-full">
-                      <div class="flex flex-col items-start">
-                        <div class="flex items-baseline gap-2">
-                          <h3 class="text-[#000000] text-xl font-inter font-semibold">
-                            Machine Learning
-                          </h3>
-                          <img 
-                            src="/dropdown__icon.svg" 
-                            alt="dropdown icon" 
-                            class="w-4 h-4 flex-shrink-0 transform rotate-180"
-                          />
-                        </div>
-                        <p class="text-[#666666] font-inter text-sm">
-                          4 Projects
-                        </p>
-                      </div>
-                    </div>
-
-                    <!-- Project items -->
-                    <div class="flex flex-col">
-                      <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
-                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ai-menu-chatbot'; }}
-                      >
-                        <span class="text-[#666666] font-inter">Chipotle AI Menu</span>
-                      </button>
-                      <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
-                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/creative-writing-assistant'; }}
-                      >
-                        <span class="text-[#666666] font-inter">AI Creative Writing Assistant</span>
-                      </button>
-                      <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
-                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ecommerce-price-tracker'; }}
-                      >
-                        <span class="text-[#666666] font-inter">E-Commerce Price Tracker</span>
-                      </button>
-                      <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors rounded-b-2xl text-left"
-                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/poe-market-analyzer'; }}
-                      >
-                        <span class="text-[#666666] font-inter">Path of Exile Market Analyzer</span>
-                      </button>
-                    </div>
-                  </div>
-                {:else if category.name === 'NLP'}
-                  <!-- NLP Dropdown -->
-                  <div
-                    class="absolute top-0 left-0 w-[300px] bg-[#FFFFFF] border-2 border-[#4A90E2] rounded-2xl shadow-lg z-10 overflow-hidden"
-                    role="button"
-                    tabindex="0"
-                    onclick={() => toggleDropdown(category.name)}
-                    onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleDropdown(category.name); } }}
-                    aria-label={`Close ${category.name} dropdown`}
-                  >
-                    <!-- Header section with title and icon - same size as button -->
-                    <div class="h-[80px] flex items-center justify-between pl-[40px] pr-6 py-4 bg-[#E8F4FD] border-b-2 border-[#4A90E2] rounded-t-2xl w-full">
-                      <div class="flex flex-col items-start">
-                        <div class="flex items-baseline gap-2">
-                          <h3 class="text-[#000000] text-xl font-inter font-semibold">
-                            NLP
-                          </h3>
-                          <img 
-                            src="/dropdown__icon.svg" 
-                            alt="dropdown icon" 
-                            class="w-4 h-4 flex-shrink-0 transform rotate-180"
-                          />
-                        </div>
-                        <p class="text-[#666666] font-inter text-sm">
-                          2 Projects
-                        </p>
-                      </div>
-                    </div>
-
-                    <!-- Project items -->
-                    <div class="flex flex-col">
-                      <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
-                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ai-menu-chatbot'; }}
-                      >
-                        <span class="text-[#666666] font-inter">Chipotle AI Menu</span>
-                      </button>
-                      <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors rounded-b-2xl text-left"
-                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/creative-writing-assistant'; }}
-                      >
-                        <span class="text-[#666666] font-inter">AI Creative Writing Assistant</span>
-                      </button>
-                    </div>
-                  </div>
-                {:else if category.name === 'Automation'}
-                  <!-- Automation Dropdown -->
-                  <div
-                    class="absolute top-0 left-0 w-[300px] bg-[#FFFFFF] border-2 border-[#4A90E2] rounded-2xl shadow-lg z-10 overflow-hidden"
-                    role="button"
-                    tabindex="0"
-                    onclick={() => toggleDropdown(category.name)}
-                    onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleDropdown(category.name); } }}
-                    aria-label={`Close ${category.name} dropdown`}
-                  >
-                    <!-- Header section with title and icon - same size as button -->
-                    <div class="h-[80px] flex items-center justify-between pl-[40px] pr-6 py-4 bg-[#E8F4FD] border-b-2 border-[#4A90E2] rounded-t-2xl w-full">
-                      <div class="flex flex-col items-start">
-                        <div class="flex items-baseline gap-2">
-                          <h3 class="text-[#000000] text-xl font-inter font-semibold">
-                            Automation
-                          </h3>
-                          <img 
-                            src="/dropdown__icon.svg" 
-                            alt="dropdown icon" 
-                            class="w-4 h-4 flex-shrink-0 transform rotate-180"
-                          />
-                        </div>
-                        <p class="text-[#666666] font-inter text-sm">
-                          2 Projects
-                        </p>
-                      </div>
-                    </div>
-
-                    <!-- Project items -->
-                    <div class="flex flex-col">
-                      <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
-                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ecommerce-price-tracker'; }}
-                      >
-                        <span class="text-[#666666] font-inter">E-Commerce Price Tracker</span>
-                      </button>
-                      <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors rounded-b-2xl text-left"
-                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/poe-market-analyzer'; }}
-                      >
-                        <span class="text-[#666666] font-inter">Path of Exile Market Analyzer</span>
-                      </button>
-                    </div>
-                  </div>
-                {:else if category.name === 'Scripting'}
-                  <!-- Scripting Dropdown -->
-                  <div
-                    class="absolute top-0 left-0 w-[300px] bg-[#FFFFFF] border-2 border-[#4A90E2] rounded-2xl shadow-lg z-10 overflow-hidden"
-                    role="button"
-                    tabindex="0"
-                    onclick={() => toggleDropdown(category.name)}
-                    onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleDropdown(category.name); } }}
-                    aria-label={`Close ${category.name} dropdown`}
-                  >
-                    <!-- Header section with title and icon - same size as button -->
-                    <div class="h-[80px] flex items-center justify-between pl-[40px] pr-6 py-4 bg-[#E8F4FD] border-b-2 border-[#4A90E2] rounded-t-2xl w-full">
-                      <div class="flex flex-col items-start">
-                        <div class="flex items-baseline gap-2">
-                          <h3 class="text-[#000000] text-xl font-inter font-semibold">
-                            Scripting
-                          </h3>
-                          <img 
-                            src="/dropdown__icon.svg" 
-                            alt="dropdown icon" 
-                            class="w-4 h-4 flex-shrink-0 transform rotate-180"
-                          />
-                        </div>
-                        <p class="text-[#666666] font-inter text-sm">
-                          3 Projects
-                        </p>
-                      </div>
-                    </div>
-
-                    <!-- Project items -->
-                    <div class="flex flex-col">
-                      <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
-                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ai-menu-chatbot'; }}
-                      >
-                        <span class="text-[#666666] font-inter">Chipotle AI Menu</span>
-                      </button>
-                      <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
-                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ecommerce-price-tracker'; }}
-                      >
-                        <span class="text-[#666666] font-inter">E-Commerce Price Tracker</span>
-                      </button>
-                      <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors rounded-b-2xl text-left"
-                        onclick={(e) => { e.stopPropagation(); window.location.href = '/work/poe-market-analyzer'; }}
-                      >
-                        <span class="text-[#666666] font-inter">Path of Exile Market Analyzer</span>
-                      </button>
-                    </div>
-                  </div>
-                {:else}
-                  <!-- Fallback placeholder -->
-                  <div
-                    class="absolute top-[122px] left-0 w-[300px] p-4 bg-white border border-[#EAEAEA] rounded-xl shadow-lg z-10"
-                    role="button"
-                    tabindex="0"
-                    onclick={() => toggleDropdown(category.name)}
-                    onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleDropdown(category.name); } }}
-                    aria-label={`Close ${category.name} dropdown`}
-                  >
-                    <p class="text-sm text-[#666666]">
-                      Projects for {category.name} will be listed here.
-                    </p>
-                  </div>
-                {/if}
-              {/if}
-            </div>
-          {/each}
-          </div>
-        </div>
-      </section>
-    </div>
-    <div class="w-full h-[4px] gradient-divider"></div>
-  </main>
-
-  <footer class="w-full bg-[#F5F5F5] flex justify-center">
-    <Footer />
-  </footer>
+	<footer class="w-full bg-[#F5F5F5] flex justify-center">
+		<Footer />
+	</footer>
 </div>
