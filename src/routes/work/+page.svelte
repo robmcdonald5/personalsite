@@ -153,7 +153,6 @@
 									</div>
 								</div>
 								<div class="p-6">
-									<h3 class="text-[#2D2D2D] text-xl font-inter font-semibold mb-3">{project.name}</h3>
 									<div class="flex flex-wrap gap-2">
 										{#each project.categories.slice(0, 3) as cat}
 											<span class="px-3 py-1 bg-[#F0F0F0] text-[#666666] text-sm font-inter rounded-full">
