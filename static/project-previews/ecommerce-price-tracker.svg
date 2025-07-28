@@ -1,0 +1,6 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#F8F9FA"/>
+    <rect x="100" y="100" width="1000" height="600" fill="#FFFFFF" stroke="#EAEAEA" stroke-width="2" rx="16"/>
+    <text x="600" y="380" font-family="Inter, sans-serif" font-size="32" font-weight="600" fill="#2D2D2D" text-anchor="middle">E-Commerce Price Tracker</text>
+    <text x="600" y="430" font-family="Inter, sans-serif" font-size="16" fill="#666666" text-anchor="middle">Project preview coming soon</text>
+  </svg>

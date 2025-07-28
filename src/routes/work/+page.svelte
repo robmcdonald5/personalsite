@@ -10,42 +10,48 @@
 			name: 'Chipotle AI Menu',
 			href: '/work/ai-menu-chatbot',
 			categories: ['Chatbots', 'Python', 'Machine Learning', 'NLP', 'Scripting'],
-			imageQuery: 'AI chatbot interface with menu items'
+			imageQuery: 'AI chatbot interface with menu items',
+			previewImage: '/project-previews/ai-menu-chatbot.png'
 		},
 		{
 			id: 'poe-market-analyzer',
 			name: 'PoE Market Analyzer',
 			href: '/work/poe-market-analyzer',
 			categories: ['Websites', 'Python', 'Database', 'Machine Learning', 'Automation', 'Scripting'],
-			imageQuery: 'Market analysis dashboard with charts'
+			imageQuery: 'Market analysis dashboard with charts',
+			previewImage: '/project-previews/poe-market-analyzer.png'
 		},
 		{
 			id: 'ecommerce-price-tracker',
 			name: 'E-Commerce Price Tracker',
 			href: '/work/ecommerce-price-tracker',
 			categories: ['Python', 'Database', 'Machine Learning', 'Automation', 'Scripting'],
-			imageQuery: 'E-commerce price tracking interface'
+			imageQuery: 'E-commerce price tracking interface',
+			previewImage: '/project-previews/ecommerce-price-tracker.png'
 		},
 		{
 			id: 'creative-writing-assistant',
 			name: 'Creative Writing AI Assistant',
 			href: '/work/creative-writing-assistant',
 			categories: ['Chatbots', 'Websites', 'Python', 'Database', 'Machine Learning', 'NLP'],
-			imageQuery: 'AI writing assistant interface'
+			imageQuery: 'AI writing assistant interface',
+			previewImage: '/project-previews/creative-writing-assistant.png'
 		},
 		{
 			id: 'portfolio-site',
 			name: 'Personal Site',
 			href: '/work/portfolio-site',
 			categories: ['Websites'],
-			imageQuery: 'Personal portfolio website design'
+			imageQuery: 'Personal portfolio website design',
+			previewImage: '/project-previews/portfolio-site.png'
 		},
 		{
 			id: 'dune-spice-wars-wiki',
 			name: 'Dune Spice Wars Interactive Wiki',
 			href: '/work/dune-spice-wars-wiki',
 			categories: ['Websites'],
-			imageQuery: 'Interactive wiki interface with game data'
+			imageQuery: 'Interactive wiki interface with game data',
+			previewImage: '/project-previews/dune-spice-wars-wiki.png'
 		}
 	];
 
@@ -137,7 +143,7 @@
 							>
 								<div class="aspect-video overflow-hidden bg-[#F8F9FA]">
 									<img
-										src="/placeholder.svg"
+										src={project.previewImage}
 										alt={project.name}
 										class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
 										onerror={handleImageError}
