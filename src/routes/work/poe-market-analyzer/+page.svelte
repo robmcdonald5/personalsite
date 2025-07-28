@@ -155,6 +155,14 @@
               </div>
               <div class="text-[#000000] font-inter font-medium">FastAPI</div>
             </div>
+            
+            <!-- TypeScript -->
+            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-3 pr-[110px] pl-[13px] bg-[#F9FAFB] rounded-lg col-start-3 row-start-3">
+              <div>
+                <img src="/tech-stack__typescript-icon.svg" alt="TypeScript" class="w-[30px] h-[30px]" />
+              </div>
+              <div class="text-[#000000] font-inter font-medium">TypeScript</div>
+            </div>
           </div>
         </div>
       </section>

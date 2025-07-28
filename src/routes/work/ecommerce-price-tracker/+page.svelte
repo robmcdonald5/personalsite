@@ -269,6 +269,14 @@
               </div>
               <div class="text-[#000000] font-inter font-medium">BeautifulSoup</div>
             </div>
+            
+            <!-- Selenium -->
+            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-3 pr-[122px] pl-[13px] bg-[#F9FAFB] rounded-lg col-start-2 row-start-3">
+              <div>
+                <img src="/tech-stack__selenium-icon.svg" alt="Selenium" class="w-[30px] h-[30px]" />
+              </div>
+              <div class="text-[#000000] font-inter font-medium">Selenium</div>
+            </div>
           </div>
         </div>
       </section>
