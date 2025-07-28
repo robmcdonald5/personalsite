@@ -203,6 +203,22 @@
               </div>
               <div class="text-[#000000] font-inter font-medium">Turnstile</div>
             </div>
+            
+            <!-- TypeScript -->
+            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-3 pr-[105px] pl-[18px] bg-[#F9FAFB] rounded-lg col-start-3 row-start-3">
+              <div>
+                <img src="/tech-stack__typescript-icon.svg" alt="TypeScript" class="w-[25px] h-[28px]" />
+              </div>
+              <div class="text-[#000000] font-inter font-medium">TypeScript</div>
+            </div>
+            
+            <!-- Playwright -->
+            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-3 pr-[110px] pl-[18px] bg-[#F9FAFB] rounded-lg col-start-4 row-start-3">
+              <div>
+                <img src="/tech-stack__playwright-icon.svg" alt="Playwright" class="w-[25px] h-[28px]" />
+              </div>
+              <div class="text-[#000000] font-inter font-medium">Playwright</div>
+            </div>
           </div>
         </div>
       </section>
