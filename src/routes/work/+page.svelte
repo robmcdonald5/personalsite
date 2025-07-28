@@ -87,7 +87,7 @@
           {#if openDropdown === 'navigate'}
             <!-- Navigate Projects Dropdown -->
             <div
-              class="absolute top-0 left-1/2 transform -translate-x-1/2 w-[280px] bg-[#FAFAFA] border border-[#EAEAEA] rounded-2xl shadow-lg z-10"
+              class="absolute top-0 left-1/2 transform -translate-x-1/2 w-[280px] bg-[#FFFFFF] border-2 border-[#4A90E2] rounded-2xl shadow-lg z-10 overflow-hidden"
               role="button"
               tabindex="0"
               onclick={() => toggleDropdown('navigate')}
@@ -95,7 +95,7 @@
               aria-label="Close Navigate Projects dropdown"
             >
               <!-- Header section with title and icon - same size as button -->
-              <div class="flex items-center gap-2 py-3 px-6 bg-[#E0FFFF] rounded-t-2xl w-full">
+              <div class="flex items-center gap-2 py-3 px-6 bg-[#E8F4FD] border-b-2 border-[#4A90E2] rounded-t-2xl w-full">
                 <span class="text-[#000000] text-base font-inter font-semibold">
                   Navigate Projects
                 </span>
@@ -109,37 +109,37 @@
               <!-- Project items -->
               <div class="flex flex-col">
                 <button 
-                  class="w-full h-[48px] flex items-center py-3 px-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                  class="w-full h-[48px] flex items-center py-3 px-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
                   onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ai-menu-chatbot'; }}
                 >
                   <span class="text-[#666666] font-inter">Chipotle AI Menu</span>
                 </button>
                 <button 
-                  class="w-full h-[48px] flex items-center py-3 px-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                  class="w-full h-[48px] flex items-center py-3 px-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
                   onclick={(e) => { e.stopPropagation(); window.location.href = '/work/poe-market-analyzer'; }}
                 >
                   <span class="text-[#666666] font-inter">PoE Market Analyzer</span>
                 </button>
                 <button 
-                  class="w-full h-[48px] flex items-center py-3 px-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                  class="w-full h-[48px] flex items-center py-3 px-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
                   onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ecommerce-price-tracker'; }}
                 >
                   <span class="text-[#666666] font-inter">E-Commerce Price Tracker</span>
                 </button>
                 <button 
-                  class="w-full h-[48px] flex items-center py-3 px-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                  class="w-full h-[48px] flex items-center py-3 px-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
                   onclick={(e) => { e.stopPropagation(); window.location.href = '/work/creative-writing-assistant'; }}
                 >
                   <span class="text-[#666666] font-inter">Creative Writing AI Assistant</span>
                 </button>
                 <button 
-                  class="w-full h-[48px] flex items-center py-3 px-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                  class="w-full h-[48px] flex items-center py-3 px-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
                   onclick={(e) => { e.stopPropagation(); window.location.href = '/work/portfolio-site'; }}
                 >
                   <span class="text-[#666666] font-inter">Personal Site</span>
                 </button>
                 <button 
-                  class="w-full h-[48px] flex items-center py-3 px-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
+                  class="w-full h-[48px] flex items-center py-3 px-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors rounded-b-2xl text-left"
                   onclick={(e) => { e.stopPropagation(); window.location.href = '/work/dune-spice-wars-wiki'; }}
                 >
                   <span class="text-[#666666] font-inter">Dune Spice Wars Interactive Wiki</span>
