@@ -1,11 +1,11 @@
 <script lang="ts">
   import Header from '$lib/Header.svelte';
   import Footer from '$lib/Footer.svelte';
-  
+
   // Svelte 5 runes for dropdown state management
   let openDropdown = $state<string | null>(null);
   let autoCloseTimeout = $state<number | null>(null);
-  
+
   // Project categories data
   const categories = [
     { name: 'Chatbots', count: 2, position: { row: 5, col: 1 } },
@@ -17,7 +17,7 @@
     { name: 'Automation', count: 2, position: { row: 9, col: 1 } },
     { name: 'Scripting', count: 3, position: { row: 9, col: 2 } }
   ];
-  
+
   function toggleDropdown(categoryName: string) {
     // Clear any existing timeout
     if (autoCloseTimeout) {
@@ -26,7 +26,7 @@
     }
     openDropdown = openDropdown === categoryName ? null : categoryName;
   }
-  
+
   // Auto-close dropdown when mouse leaves the area
   function handleMouseLeave(categoryName: string) {
     if (openDropdown === categoryName) {
@@ -36,7 +36,7 @@
       }, 2000); // 2 second delay
     }
   }
-  
+
   // Cancel auto-close when mouse enters back into the area
   function handleMouseEnter() {
     if (autoCloseTimeout) {
@@ -68,7 +68,7 @@
             Explore snippets of the work I've done over my development career.
           </p>
         </div>
-        
+
         <!-- Navigate Projects Button -->
         <div class="flex justify-center mb-[200px] relative"
              role="navigation"
@@ -83,7 +83,7 @@
             </span>
             <img src="/dropdown__icon.svg" alt="dropdown icon" class="w-4 h-4" />
           </button>
-          
+
           {#if openDropdown === 'navigate'}
             <!-- Navigate Projects Dropdown -->
             <div
@@ -102,10 +102,10 @@
                 <img 
                   src="/dropdown__icon.svg" 
                   alt="dropdown icon" 
-                  class="w-4 h-4 flex-shrink-0 transform rotate-180" 
+                  class="w-4 h-4 flex-shrink-0 transform rotate-180"
                 />
               </div>
-              
+
               <!-- Project items -->
               <div class="flex flex-col">
                 <button 
@@ -148,7 +148,7 @@
             </div>
           {/if}
         </div>
-        
+
         <!-- Project Categories Grid -->
         <div class="flex justify-center items-center min-h-[400px] mb-[200px]">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-x-[27px] gap-y-[75px] max-w-[981px] w-full px-4 md:px-0">
@@ -158,7 +158,7 @@
                  onmouseenter={handleMouseEnter}
                  onmouseleave={() => handleMouseLeave(category.name)}>
               <button
-                class="w-full max-w-[300px] h-[80px] flex items-center justify-between pl-[40px] pr-6 py-4 bg-[#FAFAFA] border border-[#EAEAEA] rounded-2xl hover:bg-[#F0F0F0] transition-colors"
+                class="w-full max-w-[300px] h-[80px] flex items-center justify-between pl-[40px] pr-6 py-4 bg-[#FAFAFA] border border-[#EAEAEA] rounded-2xl hover:bg-[#F0F0F0] transition-colors {openDropdown === category.name ? 'bg-[#E8F4FD] border-[#4A90E2]' : ''}"
                 onclick={() => toggleDropdown(category.name)}
               >
                 <div class="flex flex-col items-start">
@@ -177,48 +177,48 @@
                   </p>
                 </div>
               </button>
-                          
+
               <!-- Dropdown Content -->
               {#if openDropdown === category.name}
                 {#if category.name === 'Chatbots'}
                   <!-- Chatbots Dropdown -->
                   <div
-                    class="absolute top-0 left-0 w-[300px] h-[239px] bg-[#FAFAFA] border border-[#EAEAEA] rounded-2xl shadow-lg z-10"
+                    class="absolute top-0 left-0 w-[300px] bg-[#FFFFFF] border-2 border-[#4A90E2] rounded-2xl shadow-lg z-10 overflow-hidden"
                     role="button"
                     tabindex="0"
                     onclick={() => toggleDropdown(category.name)}
                     onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleDropdown(category.name); } }}
                     aria-label={`Close ${category.name} dropdown`}
                   >
-                    <!-- Header section with title and icon -->
-                    <div class="relative h-[119px] bg-[#FFFFFF] rounded-t-2xl flex items-center justify-between pl-[40px] pr-6">
+                    <!-- Header section with title and icon - same size as button -->
+                    <div class="h-[80px] flex items-center justify-between pl-[40px] pr-6 py-4 bg-[#E8F4FD] border-b-2 border-[#4A90E2] rounded-t-2xl w-full">
                       <div class="flex flex-col items-start">
                         <div class="flex items-baseline gap-2">
                           <h3 class="text-[#000000] text-xl font-inter font-semibold">
-                            Chatbots
+                            {category.name}
                           </h3>
                           <img 
                             src="/dropdown__icon.svg" 
                             alt="dropdown icon" 
-                            class="w-4 h-4 flex-shrink-0 transform rotate-180" 
+                            class="w-4 h-4 flex-shrink-0 transition-transform rotate-180"
                           />
                         </div>
                         <p class="text-[#666666] font-inter text-sm">
-                          2 Projects
+                          {category.count} Project{category.count !== 1 ? 's' : ''}
                         </p>
                       </div>
                     </div>
-                    
+
                     <!-- Project items -->
                     <div class="flex flex-col">
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ai-menu-chatbot'; }}
                       >
                         <span class="text-[#666666] font-inter">Chipotle AI Menu</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors rounded-b-2xl text-left"
                         onclick={(e) => { e.stopPropagation(); window.location.href = '/work/creative-writing-assistant'; }}
                       >
                         <span class="text-[#666666] font-inter">AI Creative Writing Assistant</span>
@@ -228,60 +228,60 @@
                 {:else if category.name === 'Websites'}
                   <!-- Websites Dropdown -->
                   <div
-                    class="absolute top-0 left-0 w-[300px] h-[419px] bg-[#FAFAFA] border border-[#EAEAEA] rounded-2xl shadow-lg z-10"
+                    class="absolute top-0 left-0 w-[300px] bg-[#FFFFFF] border-2 border-[#4A90E2] rounded-2xl shadow-lg z-10 overflow-hidden"
                     role="button"
                     tabindex="0"
                     onclick={() => toggleDropdown(category.name)}
                     onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleDropdown(category.name); } }}
                     aria-label={`Close ${category.name} dropdown`}
                   >
-                    <!-- Header section with title and icon -->
-                    <div class="relative h-[119px] bg-[#FFFFFF] rounded-t-2xl flex items-center justify-between pl-[40px] pr-6">
+                    <!-- Header section with title and icon - same size as button -->
+                    <div class="h-[80px] flex items-center justify-between pl-[40px] pr-6 py-4 bg-[#E8F4FD] border-b-2 border-[#4A90E2] rounded-t-2xl w-full">
                       <div class="flex flex-col items-start">
                         <div class="flex items-baseline gap-2">
                           <h3 class="text-[#000000] text-xl font-inter font-semibold">
-                            Websites
+                            {category.name}
                           </h3>
                           <img 
                             src="/dropdown__icon.svg" 
                             alt="dropdown icon" 
-                            class="w-4 h-4 flex-shrink-0 transform rotate-180" 
+                            class="w-4 h-4 flex-shrink-0 transform rotate-180"
                           />
                         </div>
                         <p class="text-[#666666] font-inter text-sm">
-                          5 Projects
+                          {category.count} Project{category.count !== 1 ? 's' : ''}
                         </p>
                       </div>
                     </div>
-                    
+
                     <!-- Project items -->
                     <div class="flex flex-col">
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); window.location.href = '/work/portfolio-site'; }}
                       >
                         <span class="text-[#666666] font-inter">My Portfolio Site</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); window.location.href = '/work/poe-market-analyzer'; }}
                       >
                         <span class="text-[#666666] font-inter">Path of Exile Market Analyzer</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); window.location.href = '/work/creative-writing-assistant'; }}
                       >
                         <span class="text-[#666666] font-inter">AI Creative Writing Assistant</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); window.location.href = '/work/dune-spice-wars-wiki'; }}
                       >
                         <span class="text-[#666666] font-inter">Dune Spice Wars Wiki</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors rounded-b-2xl text-left"
                         onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ai-menu-chatbot'; }}
                       >
                         <span class="text-[#666666] font-inter">Chipotle AI Menu</span>
@@ -291,15 +291,15 @@
                 {:else if category.name === 'Python'}
                   <!-- Python Dropdown -->
                   <div
-                    class="absolute top-0 left-0 w-[300px] h-[359px] bg-[#FAFAFA] border border-[#EAEAEA] rounded-2xl shadow-lg z-10"
+                    class="absolute top-0 left-0 w-[300px] bg-[#FFFFFF] border-2 border-[#4A90E2] rounded-2xl shadow-lg z-10 overflow-hidden"
                     role="button"
                     tabindex="0"
                     onclick={() => toggleDropdown(category.name)}
                     onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleDropdown(category.name); } }}
                     aria-label={`Close ${category.name} dropdown`}
                   >
-                    <!-- Header section with title and icon -->
-                    <div class="relative h-[119px] bg-[#FFFFFF] rounded-t-2xl flex items-center justify-between pl-[40px] pr-6">
+                    <!-- Header section with title and icon - same size as button -->
+                    <div class="h-[80px] flex items-center justify-between pl-[40px] pr-6 py-4 bg-[#E8F4FD] border-b-2 border-[#4A90E2] rounded-t-2xl w-full">
                       <div class="flex flex-col items-start">
                         <div class="flex items-baseline gap-2">
                           <h3 class="text-[#000000] text-xl font-inter font-semibold">
@@ -308,7 +308,7 @@
                           <img 
                             src="/dropdown__icon.svg" 
                             alt="dropdown icon" 
-                            class="w-4 h-4 flex-shrink-0 transform rotate-180" 
+                            class="w-4 h-4 flex-shrink-0 transform rotate-180"
                           />
                         </div>
                         <p class="text-[#666666] font-inter text-sm">
@@ -316,29 +316,29 @@
                         </p>
                       </div>
                     </div>
-                    
+
                     <!-- Project items -->
                     <div class="flex flex-col">
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ai-menu-chatbot'; }}
                       >
                         <span class="text-[#666666] font-inter">Chipotle AI Menu</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); window.location.href = '/work/creative-writing-assistant'; }}
                       >
                         <span class="text-[#666666] font-inter">AI Creative Writing Assistant</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); window.location.href = '/work/poe-market-analyzer'; }}
                       >
                         <span class="text-[#666666] font-inter">Path of Exile Market Analyzer</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors rounded-b-2xl text-left"
                         onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ecommerce-price-tracker'; }}
                       >
                         <span class="text-[#666666] font-inter">E-Commerce Price Tracker</span>
@@ -348,15 +348,15 @@
                 {:else if category.name === 'Database'}
                   <!-- Database Dropdown -->
                   <div
-                    class="absolute top-0 left-0 w-[300px] h-[299px] bg-[#FAFAFA] border border-[#EAEAEA] rounded-2xl shadow-lg z-10"
+                    class="absolute top-0 left-0 w-[300px] bg-[#FFFFFF] border-2 border-[#4A90E2] rounded-2xl shadow-lg z-10 overflow-hidden"
                     role="button"
                     tabindex="0"
                     onclick={() => toggleDropdown(category.name)}
                     onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleDropdown(category.name); } }}
                     aria-label={`Close ${category.name} dropdown`}
                   >
-                    <!-- Header section with title and icon -->
-                    <div class="relative h-[119px] bg-[#FFFFFF] rounded-t-2xl flex items-center justify-between pl-[40px] pr-6">
+                    <!-- Header section with title and icon - same size as button -->
+                    <div class="h-[80px] flex items-center justify-between pl-[40px] pr-6 py-4 bg-[#E8F4FD] border-b-2 border-[#4A90E2] rounded-t-2xl w-full">
                       <div class="flex flex-col items-start">
                         <div class="flex items-baseline gap-2">
                           <h3 class="text-[#000000] text-xl font-inter font-semibold">
@@ -365,7 +365,7 @@
                           <img 
                             src="/dropdown__icon.svg" 
                             alt="dropdown icon" 
-                            class="w-4 h-4 flex-shrink-0 transform rotate-180" 
+                            class="w-4 h-4 flex-shrink-0 transform rotate-180"
                           />
                         </div>
                         <p class="text-[#666666] font-inter text-sm">
@@ -373,23 +373,23 @@
                         </p>
                       </div>
                     </div>
-                    
+
                     <!-- Project items -->
                     <div class="flex flex-col">
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); window.location.href = '/work/creative-writing-assistant'; }}
                       >
                         <span class="text-[#666666] font-inter">AI Creative Writing Assistant</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ecommerce-price-tracker'; }}
                       >
                         <span class="text-[#666666] font-inter">E-Commerce Price Tracker</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors rounded-b-2xl text-left"
                         onclick={(e) => { e.stopPropagation(); window.location.href = '/work/poe-market-analyzer'; }}
                       >
                         <span class="text-[#666666] font-inter">Path of Exile Market Analyzer</span>
@@ -399,15 +399,15 @@
                 {:else if category.name === 'Machine Learning'}
                   <!-- Machine Learning Dropdown -->
                   <div
-                    class="absolute top-0 left-0 w-[300px] h-[359px] bg-[#FAFAFA] border border-[#EAEAEA] rounded-2xl shadow-lg z-10"
+                    class="absolute top-0 left-0 w-[300px] bg-[#FFFFFF] border-2 border-[#4A90E2] rounded-2xl shadow-lg z-10 overflow-hidden"
                     role="button"
                     tabindex="0"
                     onclick={() => toggleDropdown(category.name)}
                     onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleDropdown(category.name); } }}
                     aria-label={`Close ${category.name} dropdown`}
                   >
-                    <!-- Header section with title and icon -->
-                    <div class="relative h-[119px] bg-[#FFFFFF] rounded-t-2xl flex items-center justify-between pl-[40px] pr-6">
+                    <!-- Header section with title and icon - same size as button -->
+                    <div class="h-[80px] flex items-center justify-between pl-[40px] pr-6 py-4 bg-[#E8F4FD] border-b-2 border-[#4A90E2] rounded-t-2xl w-full">
                       <div class="flex flex-col items-start">
                         <div class="flex items-baseline gap-2">
                           <h3 class="text-[#000000] text-xl font-inter font-semibold">
@@ -416,7 +416,7 @@
                           <img 
                             src="/dropdown__icon.svg" 
                             alt="dropdown icon" 
-                            class="w-4 h-4 flex-shrink-0 transform rotate-180" 
+                            class="w-4 h-4 flex-shrink-0 transform rotate-180"
                           />
                         </div>
                         <p class="text-[#666666] font-inter text-sm">
@@ -424,29 +424,29 @@
                         </p>
                       </div>
                     </div>
-                    
+
                     <!-- Project items -->
                     <div class="flex flex-col">
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ai-menu-chatbot'; }}
                       >
                         <span class="text-[#666666] font-inter">Chipotle AI Menu</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); window.location.href = '/work/creative-writing-assistant'; }}
                       >
                         <span class="text-[#666666] font-inter">AI Creative Writing Assistant</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ecommerce-price-tracker'; }}
                       >
                         <span class="text-[#666666] font-inter">E-Commerce Price Tracker</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors rounded-b-2xl text-left"
                         onclick={(e) => { e.stopPropagation(); window.location.href = '/work/poe-market-analyzer'; }}
                       >
                         <span class="text-[#666666] font-inter">Path of Exile Market Analyzer</span>
@@ -456,15 +456,15 @@
                 {:else if category.name === 'NLP'}
                   <!-- NLP Dropdown -->
                   <div
-                    class="absolute top-0 left-0 w-[300px] h-[239px] bg-[#FAFAFA] border border-[#EAEAEA] rounded-2xl shadow-lg z-10"
+                    class="absolute top-0 left-0 w-[300px] bg-[#FFFFFF] border-2 border-[#4A90E2] rounded-2xl shadow-lg z-10 overflow-hidden"
                     role="button"
                     tabindex="0"
                     onclick={() => toggleDropdown(category.name)}
                     onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleDropdown(category.name); } }}
                     aria-label={`Close ${category.name} dropdown`}
                   >
-                    <!-- Header section with title and icon -->
-                    <div class="relative h-[119px] bg-[#FFFFFF] rounded-t-2xl flex items-center justify-between pl-[40px] pr-6">
+                    <!-- Header section with title and icon - same size as button -->
+                    <div class="h-[80px] flex items-center justify-between pl-[40px] pr-6 py-4 bg-[#E8F4FD] border-b-2 border-[#4A90E2] rounded-t-2xl w-full">
                       <div class="flex flex-col items-start">
                         <div class="flex items-baseline gap-2">
                           <h3 class="text-[#000000] text-xl font-inter font-semibold">
@@ -473,7 +473,7 @@
                           <img 
                             src="/dropdown__icon.svg" 
                             alt="dropdown icon" 
-                            class="w-4 h-4 flex-shrink-0 transform rotate-180" 
+                            class="w-4 h-4 flex-shrink-0 transform rotate-180"
                           />
                         </div>
                         <p class="text-[#666666] font-inter text-sm">
@@ -481,17 +481,17 @@
                         </p>
                       </div>
                     </div>
-                    
+
                     <!-- Project items -->
                     <div class="flex flex-col">
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ai-menu-chatbot'; }}
                       >
                         <span class="text-[#666666] font-inter">Chipotle AI Menu</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors rounded-b-2xl text-left"
                         onclick={(e) => { e.stopPropagation(); window.location.href = '/work/creative-writing-assistant'; }}
                       >
                         <span class="text-[#666666] font-inter">AI Creative Writing Assistant</span>
@@ -501,15 +501,15 @@
                 {:else if category.name === 'Automation'}
                   <!-- Automation Dropdown -->
                   <div
-                    class="absolute top-0 left-0 w-[300px] h-[239px] bg-[#FAFAFA] border border-[#EAEAEA] rounded-2xl shadow-lg z-10"
+                    class="absolute top-0 left-0 w-[300px] bg-[#FFFFFF] border-2 border-[#4A90E2] rounded-2xl shadow-lg z-10 overflow-hidden"
                     role="button"
                     tabindex="0"
                     onclick={() => toggleDropdown(category.name)}
                     onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleDropdown(category.name); } }}
                     aria-label={`Close ${category.name} dropdown`}
                   >
-                    <!-- Header section with title and icon -->
-                    <div class="relative h-[119px] bg-[#FFFFFF] rounded-t-2xl flex items-center justify-between pl-[40px] pr-6">
+                    <!-- Header section with title and icon - same size as button -->
+                    <div class="h-[80px] flex items-center justify-between pl-[40px] pr-6 py-4 bg-[#E8F4FD] border-b-2 border-[#4A90E2] rounded-t-2xl w-full">
                       <div class="flex flex-col items-start">
                         <div class="flex items-baseline gap-2">
                           <h3 class="text-[#000000] text-xl font-inter font-semibold">
@@ -518,7 +518,7 @@
                           <img 
                             src="/dropdown__icon.svg" 
                             alt="dropdown icon" 
-                            class="w-4 h-4 flex-shrink-0 transform rotate-180" 
+                            class="w-4 h-4 flex-shrink-0 transform rotate-180"
                           />
                         </div>
                         <p class="text-[#666666] font-inter text-sm">
@@ -526,17 +526,17 @@
                         </p>
                       </div>
                     </div>
-                    
+
                     <!-- Project items -->
                     <div class="flex flex-col">
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ecommerce-price-tracker'; }}
                       >
                         <span class="text-[#666666] font-inter">E-Commerce Price Tracker</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors rounded-b-2xl text-left"
                         onclick={(e) => { e.stopPropagation(); window.location.href = '/work/poe-market-analyzer'; }}
                       >
                         <span class="text-[#666666] font-inter">Path of Exile Market Analyzer</span>
@@ -546,15 +546,15 @@
                 {:else if category.name === 'Scripting'}
                   <!-- Scripting Dropdown -->
                   <div
-                    class="absolute top-0 left-0 w-[300px] h-[299px] bg-[#FAFAFA] border border-[#EAEAEA] rounded-2xl shadow-lg z-10"
+                    class="absolute top-0 left-0 w-[300px] bg-[#FFFFFF] border-2 border-[#4A90E2] rounded-2xl shadow-lg z-10 overflow-hidden"
                     role="button"
                     tabindex="0"
                     onclick={() => toggleDropdown(category.name)}
                     onkeydown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleDropdown(category.name); } }}
                     aria-label={`Close ${category.name} dropdown`}
                   >
-                    <!-- Header section with title and icon -->
-                    <div class="relative h-[119px] bg-[#FFFFFF] rounded-t-2xl flex items-center justify-between pl-[40px] pr-6">
+                    <!-- Header section with title and icon - same size as button -->
+                    <div class="h-[80px] flex items-center justify-between pl-[40px] pr-6 py-4 bg-[#E8F4FD] border-b-2 border-[#4A90E2] rounded-t-2xl w-full">
                       <div class="flex flex-col items-start">
                         <div class="flex items-baseline gap-2">
                           <h3 class="text-[#000000] text-xl font-inter font-semibold">
@@ -563,7 +563,7 @@
                           <img 
                             src="/dropdown__icon.svg" 
                             alt="dropdown icon" 
-                            class="w-4 h-4 flex-shrink-0 transform rotate-180" 
+                            class="w-4 h-4 flex-shrink-0 transform rotate-180"
                           />
                         </div>
                         <p class="text-[#666666] font-inter text-sm">
@@ -571,23 +571,23 @@
                         </p>
                       </div>
                     </div>
-                    
+
                     <!-- Project items -->
                     <div class="flex flex-col">
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ai-menu-chatbot'; }}
                       >
                         <span class="text-[#666666] font-inter">Chipotle AI Menu</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors text-left"
                         onclick={(e) => { e.stopPropagation(); window.location.href = '/work/ecommerce-price-tracker'; }}
                       >
                         <span class="text-[#666666] font-inter">E-Commerce Price Tracker</span>
                       </button>
                       <button 
-                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FAFAFA] hover:bg-[#F0F0F0] transition-colors rounded-b-2xl text-left"
+                        class="w-[300px] h-[60px] flex items-center justify-between py-[19px] pl-[40px] pr-6 bg-[#FFFFFF] hover:bg-[#F8F9FA] transition-colors rounded-b-2xl text-left"
                         onclick={(e) => { e.stopPropagation(); window.location.href = '/work/poe-market-analyzer'; }}
                       >
                         <span class="text-[#666666] font-inter">Path of Exile Market Analyzer</span>
