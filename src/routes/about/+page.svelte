@@ -18,15 +18,15 @@
       <section class="w-full max-w-[1440px] px-[5%] md:px-[180px]">
         <div class="grid md:grid-cols-2 gap-[90px] pt-[40px]">
           <!-- About Text Content - Left Side -->
-          <div class="flex flex-col gap-[29px] max-w-[500px] md:self-start md:mt-[40px] pb-[90px] md:pb-0">
-            <h1 class="text-[#2D2D2D] text-[56px] font-inter font-bold tracking-[-1.12px]">
+          <div class="flex flex-col gap-[20px] max-w-[500px] md:self-start md:mt-[40px] pb-[90px] md:pb-0">
+            <h1 class="text-[#2D2D2D] text-[64px] font-inter font-bold tracking-[-1.28px]">
               about
             </h1>
             <p class="text-[#4B4B4B] font-inter font-light text-lg">
               I'm a software engineer and AI<br />
               enthusiast based in Texas.
             </p>
-            <p class="text-[#000000] text-sm font-inter font-extralight max-w-[280px]">
+            <p class="text-[#000000] text-base font-inter font-extralight max-w-[280px]">
               I've been working with and building software systems for most of my
               life. Currently I am focused on making AI applications — blending
               creativity, efficiency, and elegance.
