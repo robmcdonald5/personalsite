@@ -9,7 +9,7 @@
 			id: 'ai-menu-chatbot',
 			name: 'Chipotle AI Menu',
 			href: '/work/ai-menu-chatbot',
-			categories: ['Chatbots', 'Python', 'Machine Learning', 'NLP', 'Scripting', 'JavaScript'],
+			categories: ['Chatbots', 'Websites', 'Python', 'Database', 'Machine Learning', 'NLP', 'Scripting', 'JavaScript', 'MongoDB'],
 			imageQuery: 'AI chatbot interface with menu items',
 			previewImage: '/project-previews/ai-menu-chatbot.png'
 		},
