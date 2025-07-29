@@ -34,23 +34,23 @@
 
   <main class="flex-grow flex flex-col">
     <!-- Hero Section -->
-    <div class="w-full bg-[#FFFFFF] flex justify-center py-[80px] flex-grow">
-      <section class="w-full max-w-[1440px] px-[5%] md:px-[180px]">
+    <div class="w-full bg-[#FFFFFF] flex justify-center py-[40px] lg:py-[80px] flex-grow">
+      <section class="w-full max-w-[1440px] px-[5%] lg:px-[180px]">
         <!-- Title and Description -->
-        <div class="flex flex-col items-center gap-4 mb-[60px]">
-          <h1 class="text-[#2D2D2D] text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
+        <div class="flex flex-col items-center gap-3 mb-[40px] lg:mb-[60px]">
+          <h1 class="text-[#2D2D2D] text-[28px] lg:text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
             Path of Exile Market Analyzer
           </h1>
-          <p class="text-[#2D2D2D] text-lg font-inter text-center max-w-[650px]">
+          <p class="text-[#2D2D2D] text-sm lg:text-lg font-inter text-center max-w-[650px] px-4 lg:px-0">
             In progress development of companion web app for the game Path of Exile. Uses Svelte, Supabase, Python, and Rust to generate customized newsletters showing specific market trends via pathofexile.com API calls using FastAPI PoE.
           </p>
         </div>
 
         <!-- Single Image Display -->
-        <div class="w-full flex justify-center mb-16">
-          <div class="w-[850px] flex flex-col">
+        <div class="w-full flex justify-center mb-8 lg:mb-16 px-4 lg:px-0">
+          <div class="w-full max-w-[850px] flex flex-col">
             <!-- Title Card Header -->
-            <div class="w-[850px] h-[20px] bg-[#2D2D2D] rounded-tl-md rounded-tr-md relative">
+            <div class="w-full h-[20px] bg-[#2D2D2D] rounded-tl-md rounded-tr-md relative">
               <!-- Previous Button -->
               <button onclick={previousImage} aria-label="Previous step" class="absolute top-[2px] right-[56px] w-[16px] h-[16px] flex items-center justify-center">
                 <svg class="w-3 h-3 text-white rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -66,16 +66,16 @@
               </button>
               
               <!-- URL Display -->
-              <div class="w-[318px] h-[10px] flex justify-center items-center flex-row bg-[#1E1E1E] absolute top-[25%] bottom-[25%] left-[31.25%] right-[31.25%]">
-                <div class="text-[#9CA3AF] text-[8px] font-inter text-center">
+              <div class="w-[60%] lg:w-[318px] h-[10px] flex justify-center items-center flex-row bg-[#1E1E1E] absolute top-[25%] bottom-[25%] left-[20%] lg:left-[31.25%] right-[20%] lg:right-[31.25%]">
+                <div class="text-[#9CA3AF] text-[6px] lg:text-[8px] font-inter text-center">
                   {currentImageStep?.title || 'Loading...'}
                 </div>
               </div>
             </div>
             
             <!-- Image Container -->
-            <div class="w-[850px] h-[500px] flex justify-center items-center bg-[#1E1E1E] border-solid border-[#2D2D2D] border-b-[6px] border-x-[6px] rounded-br-md rounded-bl-md shadow-[0px_2px_4px_0px_rgba(0,0,0,0.05)]">
-              <div class="w-[838px] h-[494px] flex justify-center items-center">
+            <div class="w-full h-[300px] lg:h-[500px] flex justify-center items-center bg-[#1E1E1E] border-solid border-[#2D2D2D] border-b-[6px] border-x-[6px] rounded-br-md rounded-bl-md shadow-[0px_2px_4px_0px_rgba(0,0,0,0.05)]">
+              <div class="w-full h-full flex justify-center items-center p-2 lg:p-3">
                 {#if currentImageStep}
                   <img 
                     src="/{currentImageStep.image}" 
@@ -99,16 +99,16 @@
         </div>
         
         <!-- Tech Stack Showcase -->
-        <div class="w-full flex justify-center mt-16">
-          <div class="grid py-[25px] px-[57px] bg-[#F3F4F6] rounded-lg shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] grid-cols-4 grid-rows-3 gap-x-4 gap-y-3">
+        <div class="w-full flex justify-center mt-8 lg:mt-16 px-4 lg:px-0">
+          <div class="grid py-[20px] lg:py-[25px] px-[20px] lg:px-[57px] bg-[#F3F4F6] rounded-lg shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] grid-cols-1 lg:grid-cols-4 grid-rows-auto lg:grid-rows-3 gap-x-2 lg:gap-x-4 gap-y-3">
             <!-- Title - positioned in grid -->
-            <div class="text-[#2D2D2D] text-[26px] font-inter text-center font-semibold col-span-1 row-span-1">
+            <div class="text-[#2D2D2D] text-[20px] lg:text-[26px] font-inter text-center font-semibold col-span-1 lg:col-span-4 row-span-1 mb-2 lg:mb-0">
               Technology Stack
             </div>
             
             <!-- Row 2 Tech Cards -->
             <!-- SvelteKit -->
-            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 pt-3 pb-3 pr-[114px] pl-4 bg-[#F9FAFB] rounded-lg col-start-1 row-start-2">
+            <div class="w-full lg:w-[230px] h-[56px] flex justify-start items-center flex-row gap-2 lg:gap-1 pt-3 pb-3 px-4 lg:pr-[114px] lg:pl-4 bg-[#F9FAFB] rounded-lg">
               <div>
                 <img src="/tech-stack__sveltekit-icon.svg" alt="SvelteKit" class="w-[32px] h-[32px]" />
               </div>
@@ -116,7 +116,7 @@
             </div>
             
             <!-- Vercel -->
-            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-3 pr-[135px] pl-[9px] bg-[#F9FAFB] rounded-lg col-start-2 row-start-2">
+            <div class="w-full lg:w-[230px] h-[56px] flex justify-start items-center flex-row gap-2 lg:gap-1 py-3 px-4 lg:pr-[135px] lg:pl-[9px] bg-[#F9FAFB] rounded-lg">
               <div>
                 <img src="/tech-stack__vercel-icon.svg" alt="Vercel" class="w-[30px] h-[30px]" />
               </div>
@@ -124,7 +124,7 @@
             </div>
             
             <!-- Python -->
-            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-3.5 pr-[128px] pl-[15px] bg-[#F9FAFB] rounded-lg col-start-3 row-start-2">
+            <div class="w-full lg:w-[230px] h-[56px] flex justify-start items-center flex-row gap-2 lg:gap-1 py-3.5 px-4 lg:pr-[128px] lg:pl-[15px] bg-[#F9FAFB] rounded-lg">
               <div>
                 <img src="/tech-stack__python-icon.svg" alt="Python" class="w-[28px] h-[28px]" />
               </div>
@@ -132,7 +132,7 @@
             </div>
             
             <!-- Supabase -->
-            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 pt-3 pb-3 pr-[107px] pl-[11px] bg-[#F9FAFB] rounded-lg col-start-4 row-start-2">
+            <div class="w-full lg:w-[230px] h-[56px] flex justify-start items-center flex-row gap-2 lg:gap-1 pt-3 pb-3 px-4 lg:pr-[107px] lg:pl-[11px] bg-[#F9FAFB] rounded-lg">
               <div>
                 <img src="/tech-stack__supabase-icon.svg" alt="Supabase" class="w-[31px] h-[32px]" />
               </div>
@@ -141,7 +141,7 @@
             
             <!-- Row 3 Tech Cards -->
             <!-- Rust -->
-            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-3 pr-[148px] pl-[17px] bg-[#F9FAFB] rounded-lg col-start-1 row-start-3">
+            <div class="w-full lg:w-[230px] h-[56px] flex justify-start items-center flex-row gap-2 lg:gap-1 py-3 px-4 lg:pr-[148px] lg:pl-[17px] bg-[#F9FAFB] rounded-lg">
               <div>
                 <img src="/tech-stack__rust-icon.svg" alt="Rust" class="w-[29px] h-[29px]" />
               </div>
@@ -149,7 +149,7 @@
             </div>
             
             <!-- FastAPI -->
-            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-3 pr-[124px] pl-[13px] bg-[#F9FAFB] rounded-lg col-start-2 row-start-3">
+            <div class="w-full lg:w-[230px] h-[56px] flex justify-start items-center flex-row gap-2 lg:gap-1 py-3 px-4 lg:pr-[124px] lg:pl-[13px] bg-[#F9FAFB] rounded-lg">
               <div>
                 <img src="/tech-stack__fastapi-icon.svg" alt="FastAPI" class="w-[30px] h-[30px]" />
               </div>
@@ -157,7 +157,7 @@
             </div>
             
             <!-- TypeScript -->
-            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-3 pr-[110px] pl-[13px] bg-[#F9FAFB] rounded-lg col-start-3 row-start-3">
+            <div class="w-full lg:w-[230px] h-[56px] flex justify-start items-center flex-row gap-2 lg:gap-1 py-3 px-4 lg:pr-[110px] lg:pl-[13px] bg-[#F9FAFB] rounded-lg">
               <div>
                 <img src="/tech-stack__typescript-icon.svg" alt="TypeScript" class="w-[30px] h-[30px]" />
               </div>

@@ -37,23 +37,23 @@
 
   <main class="flex-grow flex flex-col">
     <!-- Hero Section -->
-    <div class="w-full bg-[#FFFFFF] flex justify-center py-[80px] flex-grow">
-      <section class="w-full max-w-[1440px] px-[5%] md:px-[180px]">
+    <div class="w-full bg-[#FFFFFF] flex justify-center py-[40px] lg:py-[80px] flex-grow">
+      <section class="w-full max-w-[1440px] px-[5%] lg:px-[180px]">
         <!-- Title and Description -->
-        <div class="flex flex-col items-center gap-4 mb-[60px]">
-          <h1 class="text-[#2D2D2D] text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
+        <div class="flex flex-col items-center gap-3 lg:gap-4 mb-[40px] lg:mb-[60px]">
+          <h1 class="text-[#2D2D2D] text-[28px] lg:text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
             E-Commerce Price Tracker + Scraper
           </h1>
-          <p class="text-[#2D2D2D] text-lg font-inter text-center max-w-[900px]">
+          <p class="text-[#2D2D2D] text-sm lg:text-lg font-inter text-center max-w-[650px] lg:max-w-[900px] px-4 lg:px-0">
             In progress development of price tracking & alert desktop application. Web scraping done with BeautifulSoup & Selenium. Application logic and visuals will use Python + TypeScript (Tauri). Storage and persistent data analysis / gen will use PostgreSQL. Finished product will be able to 'board' a website, scrape trackable data from them and allow for persistent tracking of specific targeted elements (price deltas, addition / removals to charts, etc..).
           </p>
         </div>
 
         <!-- Single Image Display -->
-        <div class="w-full flex justify-center mb-16">
-          <div class="w-[850px] flex flex-col">
+        <div class="w-full flex justify-center mb-8 lg:mb-16 px-4 lg:px-0">
+          <div class="w-full max-w-[850px] flex flex-col">
             <!-- Title Card Header -->
-            <div class="w-[850px] h-[20px] bg-[#2D2D2D] rounded-tl-md rounded-tr-md relative">
+            <div class="w-full h-[20px] bg-[#2D2D2D] rounded-tl-md rounded-tr-md relative">
               <!-- Previous Button -->
               <button onclick={previousImage} aria-label="Previous step" class="absolute top-[2px] right-[56px] w-[16px] h-[16px] flex items-center justify-center">
                 <svg class="w-3 h-3 text-white rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -69,16 +69,16 @@
               </button>
               
               <!-- URL Display -->
-              <div class="w-[318px] h-[10px] flex justify-center items-center flex-row bg-[#1E1E1E] absolute top-[25%] bottom-[25%] left-[31.25%] right-[31.25%]">
-                <div class="text-[#9CA3AF] text-[8px] font-inter text-center">
+              <div class="w-[60%] lg:w-[318px] h-[10px] flex justify-center items-center flex-row bg-[#1E1E1E] absolute top-[25%] bottom-[25%] left-[20%] lg:left-[31.25%] right-[20%] lg:right-[31.25%]">
+                <div class="text-[#9CA3AF] text-[6px] lg:text-[8px] font-inter text-center">
                   {currentImageStep?.title || 'Loading...'}
                 </div>
               </div>
             </div>
             
             <!-- Image Container -->
-            <div class="w-[850px] h-[500px] flex justify-center items-center bg-[#1E1E1E] border-solid border-[#2D2D2D] border-b-[6px] border-x-[6px] rounded-br-md rounded-bl-md shadow-[0px_2px_4px_0px_rgba(0,0,0,0.05)]">
-              <div class="w-[838px] h-[494px] flex justify-center items-center">
+            <div class="w-full h-[300px] lg:h-[500px] flex justify-center items-center bg-[#1E1E1E] border-solid border-[#2D2D2D] border-b-[6px] border-x-[6px] rounded-br-md rounded-bl-md shadow-[0px_2px_4px_0px_rgba(0,0,0,0.05)]">
+              <div class="w-full h-full flex justify-center items-center p-2 lg:p-3">
                 {#if currentImageStep && currentImageStep.title === 'crawler initiation'}
                   <!-- VS Code-style code display for crawler initiation -->
                   <div class="w-full h-full bg-[#1e1e1e] rounded-lg overflow-hidden">
@@ -92,7 +92,7 @@
                       <div class="ml-4 text-[#cccccc] text-xs font-mono">Python</div>
                     </div>
                     <!-- Code content -->
-                    <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                    <div class="p-2 lg:p-3 text-[10px] lg:text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
                       <div><span class="text-[#9cdcfe]">options</span> = <span class="text-[#9cdcfe]">webdriver</span>.<span class="text-[#dcdcaa]">ChromeOptions</span>()</div>
                       <div><span class="text-[#9cdcfe]">options</span>.<span class="text-[#dcdcaa]">add_argument</span>(<span class="text-[#ce9178]">'--headless'</span>)</div>
                       <div><span class="text-[#c586c0]">try</span>:</div>
@@ -134,7 +134,7 @@
                       <div class="ml-4 text-[#cccccc] text-xs font-mono">Python</div>
                     </div>
                     <!-- Code content -->
-                    <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                    <div class="p-2 lg:p-3 text-[10px] lg:text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
                       <div><span class="text-[#9cdcfe]">postgrest_url</span> = <span class="text-[#ce9178]">'http://localhost:3000/products'</span></div>
                       <div><span class="text-[#9cdcfe]">headers</span> = &#123;<span class="text-[#ce9178]">'Content-Type'</span>: <span class="text-[#ce9178]">'application/json'</span>&#125;</div>
                       <div class="mt-1"></div>
@@ -169,7 +169,7 @@
                       <div class="ml-4 text-[#cccccc] text-xs font-mono">TypeScript</div>
                     </div>
                     <!-- Code content -->
-                    <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                    <div class="p-2 lg:p-3 text-[10px] lg:text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
                       <div><span class="text-[#c586c0]">async</span> <span class="text-[#c586c0]">function</span> <span class="text-[#dcdcaa]">trackProduct</span>(<span class="text-[#9cdcfe]">url</span>: <span class="text-[#4ec9b0]">string</span>) &#123;</div>
                       <div class="pl-4"><span class="text-[#c586c0]">const</span> <span class="text-[#9cdcfe]">outputDiv</span> = <span class="text-[#9cdcfe]">document</span>.<span class="text-[#dcdcaa]">getElementById</span>(<span class="text-[#ce9178]">'output'</span>);</div>
                       <div class="pl-4"><span class="text-[#c586c0]">if</span> (!<span class="text-[#9cdcfe]">outputDiv</span>) <span class="text-[#c586c0]">return</span>;</div>
@@ -221,16 +221,16 @@
         </div>
         
         <!-- Tech Stack Showcase -->
-        <div class="w-full flex justify-center mt-16">
-          <div class="grid py-[25px] px-[57px] bg-[#F3F4F6] rounded-lg shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] grid-cols-4 grid-rows-3 gap-x-4 gap-y-3">
+        <div class="w-full flex justify-center mt-8 lg:mt-16 px-4 lg:px-0">
+          <div class="grid py-[20px] lg:py-[25px] px-[20px] lg:px-[57px] bg-[#F3F4F6] rounded-lg shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] grid-cols-1 lg:grid-cols-4 grid-rows-auto lg:grid-rows-3 gap-x-2 lg:gap-x-4 gap-y-3">
             <!-- Title - positioned in grid -->
-            <div class="text-[#2D2D2D] text-[26px] font-inter text-center font-semibold col-span-1 row-span-1">
+            <div class="text-[#2D2D2D] text-[20px] lg:text-[26px] font-inter text-center font-semibold col-span-1 lg:col-span-4 row-span-1 mb-2 lg:mb-0">
               Technology Stack
             </div>
             
             <!-- Row 2 Tech Cards -->
             <!-- Python -->
-            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-3.5 pr-[128px] pl-[15px] bg-[#F9FAFB] rounded-lg col-start-1 row-start-2">
+            <div class="w-full lg:w-[230px] h-[56px] flex justify-start items-center flex-row gap-2 lg:gap-1 py-3.5 px-4 lg:pr-[128px] lg:pl-[15px] bg-[#F9FAFB] rounded-lg">
               <div>
                 <img src="/tech-stack__python-icon.svg" alt="Python" class="w-[28px] h-[28px]" />
               </div>
@@ -238,7 +238,7 @@
             </div>
             
             <!-- TypeScript -->
-            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-3.5 pr-[99px] pl-[15px] bg-[#F9FAFB] rounded-lg col-start-2 row-start-2">
+            <div class="w-full lg:w-[230px] h-[56px] flex justify-start items-center flex-row gap-2 lg:gap-1 py-3.5 px-4 lg:pr-[99px] lg:pl-[15px] bg-[#F9FAFB] rounded-lg">
               <div>
                 <img src="/tech-stack__typescript-icon.svg" alt="TypeScript" class="w-[28px] h-[28px]" />
               </div>
@@ -246,7 +246,7 @@
             </div>
             
             <!-- Tauri -->
-            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-3 pr-[145px] pl-[11px] bg-[#F9FAFB] rounded-lg col-start-3 row-start-2">
+            <div class="w-full lg:w-[230px] h-[56px] flex justify-start items-center flex-row gap-2 lg:gap-1 py-3 px-4 lg:pr-[145px] lg:pl-[11px] bg-[#F9FAFB] rounded-lg">
               <div>
                 <img src="/tech-stack__tauri-icon.svg" alt="Tauri" class="w-[32px] h-[36px]" />
               </div>
@@ -254,7 +254,7 @@
             </div>
             
             <!-- PostgreSQL -->
-            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-3 pr-[115px] pl-[11px] bg-[#F9FAFB] rounded-lg col-start-4 row-start-2">
+            <div class="w-full lg:w-[230px] h-[56px] flex justify-start items-center flex-row gap-2 lg:gap-1 py-3 px-4 lg:pr-[115px] lg:pl-[11px] bg-[#F9FAFB] rounded-lg">
               <div>
                 <img src="/tech-stack__postgres-icon.svg" alt="PostgreSQL" class="w-[32px] h-[33px]" />
               </div>
@@ -263,7 +263,7 @@
             
             <!-- Row 3 Tech Cards -->
             <!-- BeautifulSoup -->
-            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-3 pr-[71px] pl-[13px] bg-[#F9FAFB] rounded-lg col-start-1 row-start-3">
+            <div class="w-full lg:w-[230px] h-[56px] flex justify-start items-center flex-row gap-2 lg:gap-1 py-3 px-4 lg:pr-[71px] lg:pl-[13px] bg-[#F9FAFB] rounded-lg">
               <div>
                 <img src="/tech-stack__beautifulsoup-icon.svg" alt="BeautifulSoup" class="w-[30px] h-[30px]" />
               </div>
@@ -271,7 +271,7 @@
             </div>
             
             <!-- Selenium -->
-            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-3 pr-[122px] pl-[13px] bg-[#F9FAFB] rounded-lg col-start-2 row-start-3">
+            <div class="w-full lg:w-[230px] h-[56px] flex justify-start items-center flex-row gap-2 lg:gap-1 py-3 px-4 lg:pr-[122px] lg:pl-[13px] bg-[#F9FAFB] rounded-lg">
               <div>
                 <img src="/tech-stack__selenium-icon.svg" alt="Selenium" class="w-[30px] h-[30px]" />
               </div>

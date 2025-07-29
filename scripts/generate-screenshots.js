@@ -94,55 +94,11 @@ async function generateWithPlaywright(outputDir) {
     for (const project of projects) {
       console.log(`📸 Taking screenshot of ${project.name}...`);
       
-      const page = await context.newPage();
-      const fullUrl = `${baseUrl}${project.url}`;
-      
-      try {
-        // Navigate to the page
-        await page.goto(fullUrl, { 
-          waitUntil: 'domcontentloaded',
-          timeout: 30000 
-        });
-        
-        // Wait for content to load
-        await page.waitForTimeout(3000);
-        
-        // Wait for main content to be visible
-        try {
-          await page.waitForSelector('main', { timeout: 5000 });
-        } catch (e) {
-          console.log(`⚠️  Main content not found for ${project.name}, proceeding anyway`);
-        }
-        
-        // Get header height to exclude it from screenshot
-        let headerHeight = 0;
-        try {
-          headerHeight = await page.evaluate(() => {
-            const header = document.querySelector('header');
-            return header ? header.offsetHeight : 0;
-          });
-          console.log(`📏 Header height for ${project.name}: ${headerHeight}px`);
-        } catch (e) {
-          console.log(`⚠️  Could not determine header height for ${project.name}, using default offset`);
-          headerHeight = 80; // Default header height fallback
-        }
-        
-        // Take screenshot focusing on hero area (excluding header)
-        const outputPath = join(outputDir, `${project.id}.png`);
-        await page.screenshot({
-          path: outputPath,
-          type: 'png',
-          fullPage: false,
-          clip: { x: 0, y: headerHeight, width: 1200, height: 800 }
-        });
-        
-        console.log(`✅ Generated: ${project.id}.png`);
-      } catch (error) {
-        console.warn(`⚠️  Failed to screenshot ${project.name}: ${error.message}`);
+      const success = await screenshotWithRetry(context, baseUrl, project, outputDir);
+      if (!success) {
+        console.warn(`⚠️  All retries failed for ${project.name}, generating placeholder`);
         await generateSinglePlaceholder(outputDir, project);
       }
-      
-      await page.close();
     }
     
     await context.close();
@@ -173,7 +129,12 @@ async function startPreviewServer() {
       const output = data.toString();
       if (output.includes('4173') && !started) {
         started = true;
-        setTimeout(() => resolve('http://localhost:4173'), 2000);
+        console.log('🎯 Preview server detected, waiting for full startup...');
+        // Wait longer and then verify the server is actually responding
+        setTimeout(async () => {
+          await waitForServerReady('http://localhost:4173');
+          resolve('http://localhost:4173');
+        }, 3000);
       }
     });
     
@@ -190,10 +151,102 @@ async function startPreviewServer() {
       if (!started) {
         console.log('❌ Preview server timeout - killing process');
         previewServer?.kill('SIGTERM');
-        reject(new Error('Preview server failed to start within 10 seconds'));
+        reject(new Error('Preview server failed to start within 15 seconds'));
       }
-    }, 10000);
+    }, 15000);
   });
+}
+
+async function waitForServerReady(baseUrl, maxRetries = 10) {
+  const { chromium } = await import('playwright');
+  
+  for (let i = 0; i < maxRetries; i++) {
+    try {
+      console.log(`🔄 Checking server readiness (attempt ${i + 1}/${maxRetries})...`);
+      
+      const browser = await chromium.launch({ headless: true });
+      const context = await browser.newContext();
+      const page = await context.newPage();
+      
+      await page.goto(baseUrl, { 
+        waitUntil: 'domcontentloaded', 
+        timeout: 5000 
+      });
+      
+      await browser.close();
+      console.log('✅ Server is ready!');
+      return;
+    } catch (error) {
+      console.log(`⏳ Server not ready yet, retrying in 1 second... (${error.message})`);
+      await new Promise(resolve => setTimeout(resolve, 1000));
+    }
+  }
+  
+  throw new Error('Server failed to become ready after maximum retries');
+}
+
+async function screenshotWithRetry(context, baseUrl, project, outputDir, maxRetries = 3) {
+  for (let attempt = 1; attempt <= maxRetries; attempt++) {
+    const page = await context.newPage();
+    const fullUrl = `${baseUrl}${project.url}`;
+    
+    try {
+      console.log(`🎯 Attempt ${attempt}/${maxRetries} for ${project.name}`);
+      
+      // Navigate to the page
+      await page.goto(fullUrl, { 
+        waitUntil: 'domcontentloaded',
+        timeout: 30000 
+      });
+      
+      // Wait for content to load
+      await page.waitForTimeout(3000);
+      
+      // Wait for main content to be visible
+      try {
+        await page.waitForSelector('main', { timeout: 5000 });
+      } catch (e) {
+        console.log(`⚠️  Main content not found for ${project.name}, proceeding anyway`);
+      }
+      
+      // Get header height to exclude it from screenshot
+      let headerHeight = 0;
+      try {
+        headerHeight = await page.evaluate(() => {
+          const header = document.querySelector('header');
+          return header ? header.offsetHeight : 0;
+        });
+        console.log(`📏 Header height for ${project.name}: ${headerHeight}px`);
+      } catch (e) {
+        console.log(`⚠️  Could not determine header height for ${project.name}, using default offset`);
+        headerHeight = 80; // Default header height fallback
+      }
+      
+      // Take screenshot focusing on hero area (excluding header)
+      const outputPath = join(outputDir, `${project.id}.png`);
+      await page.screenshot({
+        path: outputPath,
+        type: 'png',
+        fullPage: false,
+        clip: { x: 0, y: headerHeight, width: 1200, height: 800 }
+      });
+      
+      console.log(`✅ Generated: ${project.id}.png`);
+      await page.close();
+      return true;
+      
+    } catch (error) {
+      console.warn(`⚠️  Attempt ${attempt} failed for ${project.name}: ${error.message}`);
+      await page.close();
+      
+      if (attempt < maxRetries) {
+        console.log(`🔄 Retrying in 2 seconds...`);
+        await new Promise(resolve => setTimeout(resolve, 2000));
+      }
+    }
+  }
+  
+  return false;
 }
 
 function cleanupPreviewServer() {

@@ -42,23 +42,23 @@
 
   <main class="flex-grow flex flex-col">
     <!-- Hero Section -->
-    <div class="w-full bg-[#FFFFFF] flex justify-center py-[80px] flex-grow">
-      <section class="w-full max-w-[1440px] px-[5%] md:px-[180px]">
+    <div class="w-full bg-[#FFFFFF] flex justify-center py-[40px] lg:py-[80px] flex-grow">
+      <section class="w-full max-w-[1440px] px-[5%] lg:px-[180px]">
         <!-- Title and Description -->
-        <div class="flex flex-col items-center gap-4 mb-[60px]">
-          <h1 class="text-[#2D2D2D] text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
+        <div class="flex flex-col items-center gap-3 lg:gap-4 mb-[40px] lg:mb-[60px]">
+          <h1 class="text-[#2D2D2D] text-[28px] lg:text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
             Dune Spice Wars Interactive Wikipedia
           </h1>
-          <p class="text-[#2D2D2D] text-lg font-inter text-center max-w-[900px]">
+          <p class="text-[#2D2D2D] text-sm lg:text-lg font-inter text-center max-w-[650px] lg:max-w-[900px] px-4 lg:px-0">
             Dune Spice Wars unofficial interactive Wikipedia. Built using React & Next.js deployed with GitHub Pages, this site serves as an interactive wiki for players to be able to visualize all mechanics of the Dune Spice Wars RTS game.
           </p>
         </div>
 
         <!-- Single Image Display -->
-        <div class="w-full flex justify-center mb-16">
-          <div class="w-[850px] flex flex-col">
+        <div class="w-full flex justify-center mb-8 lg:mb-16 px-4 lg:px-0">
+          <div class="w-full max-w-[850px] flex flex-col">
             <!-- Title Card Header -->
-            <div class="w-[850px] h-[20px] bg-[#2D2D2D] rounded-tl-md rounded-tr-md relative">
+            <div class="w-full h-[20px] bg-[#2D2D2D] rounded-tl-md rounded-tr-md relative">
               <!-- Previous Button -->
               <button onclick={previousImage} aria-label="Previous step" class="absolute top-[2px] right-[56px] w-[16px] h-[16px] flex items-center justify-center">
                 <svg class="w-3 h-3 text-white rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -74,16 +74,16 @@
               </button>
               
               <!-- URL Display -->
-              <div class="w-[318px] h-[10px] flex justify-center items-center flex-row bg-[#1E1E1E] absolute top-[25%] bottom-[25%] left-[31.25%] right-[31.25%]">
-                <div class="text-[#9CA3AF] text-[8px] font-inter text-center">
+              <div class="w-[60%] lg:w-[318px] h-[10px] flex justify-center items-center flex-row bg-[#1E1E1E] absolute top-[25%] bottom-[25%] left-[20%] lg:left-[31.25%] right-[20%] lg:right-[31.25%]">
+                <div class="text-[#9CA3AF] text-[6px] lg:text-[8px] font-inter text-center">
                   {currentImageStep?.title || 'Loading...'}
                 </div>
               </div>
             </div>
             
             <!-- Image Container -->
-            <div class="w-[850px] h-[500px] flex justify-center items-center bg-[#1E1E1E] border-solid border-[#2D2D2D] border-b-[6px] border-x-[6px] rounded-br-md rounded-bl-md shadow-[0px_2px_4px_0px_rgba(0,0,0,0.05)]">
-              <div class="w-[838px] h-[494px] flex justify-center items-center">
+            <div class="w-full h-[300px] lg:h-[500px] flex justify-center items-center bg-[#1E1E1E] border-solid border-[#2D2D2D] border-b-[6px] border-x-[6px] rounded-br-md rounded-bl-md shadow-[0px_2px_4px_0px_rgba(0,0,0,0.05)]">
+              <div class="w-full h-full flex justify-center items-center p-2 lg:p-3">
                 {#if currentImageStep}
                   <img 
                     src="/{currentImageStep.image}" 
@@ -107,16 +107,16 @@
         </div>
         
         <!-- Tech Stack Showcase -->
-        <div class="w-full flex justify-center mt-16">
-          <div class="grid py-[25px] px-[57px] bg-[#F3F4F6] rounded-lg shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] grid-cols-4 grid-rows-3 gap-x-4 gap-y-3">
+        <div class="w-full flex justify-center mt-8 lg:mt-16 px-4 lg:px-0">
+          <div class="grid py-[20px] lg:py-[25px] px-[20px] lg:px-[57px] bg-[#F3F4F6] rounded-lg shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] grid-cols-1 lg:grid-cols-4 grid-rows-auto lg:grid-rows-3 gap-x-2 lg:gap-x-4 gap-y-3">
             <!-- Title - positioned in grid -->
-            <div class="text-[#2D2D2D] text-[26px] font-inter text-center font-semibold col-span-1 row-span-1">
+            <div class="text-[#2D2D2D] text-[20px] lg:text-[26px] font-inter text-center font-semibold col-span-1 lg:col-span-4 row-span-1 mb-2 lg:mb-0">
               Technology Stack
             </div>
             
             <!-- Row 2 Tech Cards -->
             <!-- React -->
-            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-3 pr-[139px] pl-[15px] bg-[#F9FAFB] rounded-lg col-start-1 row-start-2">
+            <div class="w-full lg:w-[230px] h-[56px] flex justify-start items-center flex-row gap-2 lg:gap-1 py-3 px-4 lg:pr-[139px] lg:pl-[15px] bg-[#F9FAFB] rounded-lg">
               <div>
                 <img src="/tech-stack__react-icon.svg" alt="React" class="w-[28px] h-[29px]" />
               </div>
@@ -124,7 +124,7 @@
             </div>
             
             <!-- Next.js -->
-            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-3 pr-[130px] pl-[13px] bg-[#F9FAFB] rounded-lg col-start-2 row-start-2">
+            <div class="w-full lg:w-[230px] h-[56px] flex justify-start items-center flex-row gap-2 lg:gap-1 py-3 px-4 lg:pr-[130px] lg:pl-[13px] bg-[#F9FAFB] rounded-lg">
               <div>
                 <img src="/tech-stack__nextjs-icon.svg" alt="Next.js" class="w-[30px] h-[30px]" />
               </div>
@@ -132,7 +132,7 @@
             </div>
             
             <!-- GitHub Pages -->
-            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-3 pr-[77px] pl-[13px] bg-[#F9FAFB] rounded-lg col-start-3 row-start-2">
+            <div class="w-full lg:w-[230px] h-[56px] flex justify-start items-center flex-row gap-2 lg:gap-1 py-3 px-4 lg:pr-[77px] lg:pl-[13px] bg-[#F9FAFB] rounded-lg">
               <div>
                 <img src="/tech-stack__githubpages-icon.svg" alt="GitHub Pages" class="w-[30px] h-[30px]" />
               </div>

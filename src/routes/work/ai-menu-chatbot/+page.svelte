@@ -155,40 +155,40 @@
 
   <main class="flex-grow flex flex-col">
     <!-- Hero Section -->
-    <div class="w-full bg-[#FFFFFF] flex justify-center py-[80px] flex-grow">
-      <section class="w-full max-w-[1440px] px-[5%] md:px-[180px]">
+    <div class="w-full bg-[#FFFFFF] flex justify-center py-[40px] lg:py-[80px] flex-grow">
+      <section class="w-full max-w-[1440px] px-[5%] lg:px-[180px]">
         <!-- Title and Description -->
-        <div class="flex flex-col items-center gap-4 mb-[60px]">
-          <h1 class="text-[#2D2D2D] text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
+        <div class="flex flex-col items-center gap-3 mb-[40px] lg:mb-[60px]">
+          <h1 class="text-[#2D2D2D] text-[28px] lg:text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
             Chipotle AI Menu
           </h1>
-          <p class="text-[#2D2D2D] text-lg font-inter text-center max-w-[650px]">
+          <p class="text-[#2D2D2D] text-sm lg:text-lg font-inter text-center max-w-[650px] px-4 lg:px-0">
             Conversational AI chatbot that lets users place Chipotle orders using natural language — built with React, MongoDB, Flask, spaCy, NLTK, PyTorch.
           </p>
         </div>
 
         <!-- Navigation Tabs -->
-        <div class="w-full flex justify-center mb-8">
-          <div class="flex gap-8">
+        <div class="w-full flex justify-center mb-6 lg:mb-8 px-4 lg:px-0">
+          <div class="flex flex-wrap justify-center gap-2 lg:gap-8">
             {#each sections as section}
               <button
-                class="flex items-center gap-2 px-4 py-2 rounded-full border transition-all duration-200 {activeSection === section.name ? 'bg-[#4A90E2] text-white border-[#4A90E2]' : 'bg-white text-[#6B7280] border-[#E5E7EB] hover:border-[#4A90E2]'}"
+                class="flex items-center gap-1 lg:gap-2 px-2 lg:px-4 py-1.5 lg:py-2 rounded-full border transition-all duration-200 {activeSection === section.name ? 'bg-[#4A90E2] text-white border-[#4A90E2]' : 'bg-white text-[#6B7280] border-[#E5E7EB] hover:border-[#4A90E2]'}"
                 onclick={() => setActiveSection(section.name)}
               >
-                <img src="/{section.icon}" alt="{section.name}" class="w-4 h-4" />
-                <span class="text-sm font-medium">{section.name}</span>
+                <img src="/{section.icon}" alt="{section.name}" class="w-3 lg:w-4 h-3 lg:h-4" />
+                <span class="text-xs lg:text-sm font-medium hidden sm:inline">{section.name}</span>
               </button>
             {/each}
           </div>
         </div>
 
         <!-- Main Display Area -->
-        <div class="w-full max-w-[1200px] mx-auto flex gap-8 items-start">
+        <div class="w-full max-w-[1200px] mx-auto flex flex-col lg:flex-row gap-6 lg:gap-8 items-start px-4 lg:px-0">
           <!-- Left Side - Image Showcase -->
-          <div class="flex-1 max-w-[580px]">
+          <div class="w-full lg:flex-1 lg:max-w-[580px]">
             <!-- Image Container -->
             <div class="bg-white border border-[#E5E7EB] rounded-lg overflow-hidden shadow-sm">
-              <div class="h-[400px] bg-[#FAFAFA] flex items-center justify-center">
+              <div class="h-[300px] lg:h-[400px] bg-[#FAFAFA] flex items-center justify-center">
                 {#if currentImageStep}
                   <img src="/{currentImageStep.image}" alt="{currentImageStep.title}" class="max-w-full max-h-full object-contain" />
                 {:else}
@@ -197,13 +197,13 @@
               </div>
               
               <!-- Navigation Footer -->
-              <div class="h-[60px] bg-white border-t border-[#E5E7EB] flex items-center justify-between px-4">
+              <div class="h-[50px] lg:h-[60px] bg-white border-t border-[#E5E7EB] flex items-center justify-between px-3 lg:px-4">
                 <button class="p-2 hover:bg-gray-50 rounded flex-shrink-0" onclick={previousImage} aria-label="Previous step">
                   <svg class="w-4 h-4 text-gray-600 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                   </svg>
                 </button>
-                <span class="text-sm font-medium text-[#2D2D2D] text-center flex-1 px-4">{currentImageStep?.title || 'Loading...'}</span>
+                <span class="text-xs lg:text-sm font-medium text-[#2D2D2D] text-center flex-1 px-2 lg:px-4">{currentImageStep?.title || 'Loading...'}</span>
                 <button class="p-2 hover:bg-gray-50 rounded flex-shrink-0" onclick={nextImage} aria-label="Next step">
                   <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -214,11 +214,11 @@
           </div>
 
           <!-- Right Side - Code Showcase -->
-          <div class="flex-1 max-w-[480px]">
+          <div class="w-full lg:flex-1 lg:max-w-[480px]">
             <div class="bg-white border border-[#E5E7EB] rounded-lg overflow-hidden shadow-sm">
               <!-- Code Title Bar -->
-              <div class="h-[50px] bg-[#F9FAFB] border-b border-[#E5E7EB] flex items-center justify-between px-6">
-                <span class="text-sm font-medium text-[#2D2D2D]">{currentCodeTitle || 'Loading...'}</span>
+              <div class="h-[45px] lg:h-[50px] bg-[#F9FAFB] border-b border-[#E5E7EB] flex items-center justify-between px-4 lg:px-6">
+                <span class="text-xs lg:text-sm font-medium text-[#2D2D2D]">{currentCodeTitle || 'Loading...'}</span>
                 {#if hasMultipleCodeImages}
                   <div class="flex items-center gap-2">
                     <button 
@@ -247,11 +247,11 @@
               </div>
 
               <!-- Language Tabs -->
-              <div class="bg-[#F3F4F6] border-b border-[#E5E7EB] px-6 pt-4">
+              <div class="bg-[#F3F4F6] border-b border-[#E5E7EB] px-4 lg:px-6 pt-3 lg:pt-4">
                 <div class="flex gap-1">
                   {#each availableLanguages as language}
                     <button
-                      class="px-6 py-2 text-sm font-medium rounded-t-md transition-all {activeLanguage === language ? 'bg-white text-[#1F2937] border-b-2 border-[#4A90E2]' : 'text-[#6B7280] hover:text-[#1F2937]'}"
+                      class="px-3 lg:px-6 py-1.5 lg:py-2 text-xs lg:text-sm font-medium rounded-t-md transition-all {activeLanguage === language ? 'bg-white text-[#1F2937] border-b-2 border-[#4A90E2]' : 'text-[#6B7280] hover:text-[#1F2937]'}"
                       onclick={() => setActiveLanguage(language)}
                     >
                       {language}
@@ -261,7 +261,7 @@
               </div>
 
               <!-- Code Display Area -->
-              <div class="h-[350px] bg-white p-6">
+              <div class="h-[280px] lg:h-[350px] bg-white p-3 lg:p-6">
                 <div class="w-full h-full bg-[#1E1E1E] rounded-lg flex items-center justify-center">
                   {#if activeSection === 'Natural Language Intent Parsing' && activeLanguage === 'Python' && activeCodeStep === 0}
                     <!-- VS Code-style code display for Precomputing Intent Embeddings -->
@@ -276,7 +276,7 @@
                         <div class="ml-4 text-[#cccccc] text-xs font-mono">Python</div>
                       </div>
                       <!-- Code content -->
-                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                      <div class="p-2 lg:p-3 text-[10px] lg:text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
                         <div class="text-[#6a9955]"># Load intents using config.py</div>
                         <div><span class="text-[#c586c0]">with</span> <span class="text-[#dcdcaa]">open</span>(<span class="text-[#9cdcfe]">config</span>.<span class="text-[#9cdcfe]">INTENTS_FILE</span>, <span class="text-[#ce9178]">'r'</span>) <span class="text-[#c586c0]">as</span> <span class="text-[#9cdcfe]">f</span>:</div>
                         <div class="pl-4"><span class="text-[#9cdcfe]">intents</span> = <span class="text-[#dcdcaa]">json</span>.<span class="text-[#dcdcaa]">load</span>(<span class="text-[#9cdcfe]">f</span>)</div>
@@ -313,7 +313,7 @@
                         <div class="ml-4 text-[#cccccc] text-xs font-mono">JSON</div>
                       </div>
                       <!-- Code content -->
-                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                      <div class="p-2 lg:p-3 text-[10px] lg:text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
                         <div><span class="text-[#ce9178]">"intents"</span>: [</div>
                         <div class="pl-2">&#123;</div>
                         <div class="pl-4"><span class="text-[#ce9178]">"tag"</span>: <span class="text-[#ce9178]">"order"</span>,</div>
@@ -352,7 +352,7 @@
                         <div class="ml-4 text-[#cccccc] text-xs font-mono">JSON</div>
                       </div>
                       <!-- Code content -->
-                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                      <div class="p-2 lg:p-3 text-[10px] lg:text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
                         <div>&#123;</div>
                         <div class="pl-2"><span class="text-[#ce9178]">"tag"</span>: <span class="text-[#ce9178]">"reset_order"</span>,</div>
                         <div class="pl-2"><span class="text-[#ce9178]">"patterns"</span>: [</div>
@@ -388,7 +388,7 @@
                         <div class="ml-4 text-[#cccccc] text-xs font-mono">JSON</div>
                       </div>
                       <!-- Code content -->
-                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                      <div class="p-2 lg:p-3 text-[10px] lg:text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
                         <div>&#123;</div>
                         <div class="pl-2"><span class="text-[#ce9178]">"tag"</span>: <span class="text-[#ce9178]">"check_price"</span>,</div>
                         <div class="pl-2"><span class="text-[#ce9178]">"patterns"</span>: [</div>
@@ -434,7 +434,7 @@
                         <div class="ml-4 text-[#cccccc] text-xs font-mono">Python</div>
                       </div>
                       <!-- Code content -->
-                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                      <div class="p-2 lg:p-3 text-[10px] lg:text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
                         <div><span class="text-[#c586c0]">with</span> <span class="text-[#dcdcaa]">open</span>(<span class="text-[#9cdcfe]">INTENTS_FILE</span>, <span class="text-[#ce9178]">'r'</span>) <span class="text-[#c586c0]">as</span> <span class="text-[#9cdcfe]">f</span>:</div>
                         <div class="pl-4"><span class="text-[#9cdcfe]">intents_data</span> = <span class="text-[#dcdcaa]">json</span>.<span class="text-[#dcdcaa]">load</span>(<span class="text-[#9cdcfe]">f</span>)</div>
                         <div class="mt-1"></div>
@@ -466,7 +466,7 @@
                         <div class="ml-4 text-[#cccccc] text-xs font-mono">Python</div>
                       </div>
                       <!-- Code content -->
-                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                      <div class="p-2 lg:p-3 text-[10px] lg:text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
                         <div class="text-[#6a9955]"># Map labels to integers for SoftmaxLoss</div>
                         <div><span class="text-[#9cdcfe]">label_map</span> = &#123;<span class="text-[#9cdcfe]">label</span>: <span class="text-[#9cdcfe]">i</span> <span class="text-[#c586c0]">for</span> <span class="text-[#9cdcfe]">i</span>, <span class="text-[#9cdcfe]">label</span> <span class="text-[#c586c0]">in</span></div>
                         <div class="pl-13"><span class="text-[#dcdcaa]">enumerate</span>(<span class="text-[#dcdcaa]">sorted</span>(<span class="text-[#dcdcaa]">list</span>(<span class="text-[#dcdcaa]">set</span>([<span class="text-[#9cdcfe]">example</span>.<span class="text-[#9cdcfe]">label</span></div>
@@ -505,7 +505,7 @@
                         <div class="ml-4 text-[#cccccc] text-xs font-mono">Python</div>
                       </div>
                       <!-- Code content -->
-                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                      <div class="p-2 lg:p-3 text-[10px] lg:text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
                         <div class="text-[#6a9955]"># Configuration</div>
                         <div><span class="text-[#9cdcfe]">INTENTS_FILE</span> = <span class="text-[#ce9178]">'JSON'</span></div>
                         <div><span class="text-[#9cdcfe]">BASE_MODEL_NAME</span> = <span class="text-[#ce9178]">'all-MiniLM-L6-v2'</span></div>
@@ -539,7 +539,7 @@
                         <div class="ml-4 text-[#cccccc] text-xs font-mono">React</div>
                       </div>
                       <!-- Code content -->
-                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                      <div class="p-2 lg:p-3 text-[10px] lg:text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
                         <div><span class="text-[#c586c0]">const</span> <span class="text-[#dcdcaa]">handleSubmit</span> = <span class="text-[#c586c0]">async</span> (<span class="text-[#9cdcfe]">e</span>) <span class="text-[#c586c0]">=></span> &#123;</div>
                         <div class="pl-2"><span class="text-[#9cdcfe]">e</span>.<span class="text-[#dcdcaa]">preventDefault</span>();</div>
                         <div class="mt-1"></div>
@@ -583,7 +583,7 @@
                         <div class="ml-4 text-[#cccccc] text-xs font-mono">React</div>
                       </div>
                       <!-- Code content -->
-                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                      <div class="p-2 lg:p-3 text-[10px] lg:text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
                         <div class="text-[#6a9955]">// Fetch function</div>
                         <div><span class="text-[#c586c0]">const</span> <span class="text-[#dcdcaa]">fetchOrderDetails</span> = <span class="text-[#c586c0]">async</span> () <span class="text-[#c586c0]">=></span> &#123;</div>
                         <div class="pl-2"><span class="text-[#c586c0]">try</span> &#123;</div>
@@ -618,7 +618,7 @@
                         <div class="ml-4 text-[#cccccc] text-xs font-mono">React</div>
                       </div>
                       <!-- Code content -->
-                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                      <div class="p-2 lg:p-3 text-[10px] lg:text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
                         <div class="text-[#6a9955]">// Fetch menu items on mount</div>
                         <div><span class="text-[#c586c0]">const</span> [<span class="text-[#9cdcfe]">menuItems</span>, <span class="text-[#9cdcfe]">setMenuItems</span>] = <span class="text-[#dcdcaa]">useState</span>([]);</div>
                         <div><span class="text-[#dcdcaa]">useEffect</span>(() <span class="text-[#c586c0]">=></span> &#123;</div>
@@ -663,7 +663,7 @@
                         <div class="ml-4 text-[#cccccc] text-xs font-mono">React</div>
                       </div>
                       <!-- Code content -->
-                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                      <div class="p-2 lg:p-3 text-[10px] lg:text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
                         <div><span class="text-[#c586c0]">const</span> <span class="text-[#9cdcfe]">messagesEndRef</span> = <span class="text-[#dcdcaa]">useRef</span>(<span class="text-[#569cd6]">null</span>);</div>
                         <div class="mt-1"></div>
                         <div><span class="text-[#dcdcaa]">useEffect</span>(() <span class="text-[#c586c0]">=></span> &#123;</div>
@@ -699,7 +699,7 @@
                         <div class="ml-4 text-[#cccccc] text-xs font-mono">Python</div>
                       </div>
                       <!-- Code content -->
-                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                      <div class="p-2 lg:p-3 text-[10px] lg:text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
                         <div><span class="text-[#c586c0]">from</span> <span class="text-[#9cdcfe]">flask</span> <span class="text-[#c586c0]">import</span> <span class="text-[#9cdcfe]">request</span>, <span class="text-[#9cdcfe]">jsonify</span></div>
                         <div class="mt-1"></div>
                         <div><span class="text-[#dcdcaa]">@app.route</span>(<span class="text-[#ce9178]">'/chat'</span>, <span class="text-[#9cdcfe]">methods</span>=[<span class="text-[#ce9178]">'POST'</span>])</div>
@@ -739,7 +739,7 @@
                         <div class="ml-4 text-[#cccccc] text-xs font-mono">Python</div>
                       </div>
                       <!-- Code content -->
-                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                      <div class="p-2 lg:p-3 text-[10px] lg:text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
                         <div><span class="text-[#dcdcaa]">@app.route</span>(<span class="text-[#ce9178]">'/get_order'</span>, <span class="text-[#9cdcfe]">methods</span>=[<span class="text-[#ce9178]">'GET'</span>])</div>
                         <div><span class="text-[#c586c0]">def</span> <span class="text-[#dcdcaa]">get_order</span>():</div>
                         <div class="pl-4"><span class="text-[#9cdcfe]">session_id</span> = <span class="text-[#9cdcfe]">request</span>.<span class="text-[#9cdcfe]">args</span>.<span class="text-[#dcdcaa]">get</span>(<span class="text-[#ce9178]">'session_id'</span>)</div>
@@ -775,7 +775,7 @@
                         <div class="ml-4 text-[#cccccc] text-xs font-mono">MongoDB</div>
                       </div>
                       <!-- Code content -->
-                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                      <div class="p-2 lg:p-3 text-[10px] lg:text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
                         <div>&#123;</div>
                         <div class="pl-2"><span class="text-[#ce9178]">"_id"</span>: <span class="text-[#dcdcaa]">ObjectId</span>(<span class="text-[#ce9178]">"671133dcec57aa8e6398c747"</span>),</div>
                         <div class="pl-2"><span class="text-[#ce9178]">"name"</span>: <span class="text-[#ce9178]">"Burrito"</span>,</div>
@@ -810,7 +810,7 @@
                         <div class="ml-4 text-[#cccccc] text-xs font-mono">MongoDB</div>
                       </div>
                       <!-- Code content -->
-                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                      <div class="p-2 lg:p-3 text-[10px] lg:text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
                         <div>&#123;</div>
                         <div class="pl-2"><span class="text-[#ce9178]">"_id"</span>: <span class="text-[#dcdcaa]">ObjectId</span>(<span class="text-[#ce9178]">"673fe6468f96a25598c274d9"</span>),</div>
                         <div class="pl-2"><span class="text-[#ce9178]">"session_id"</span>: <span class="text-[#ce9178]">"d4dbb848-550f-44b8-9671-a021da5f5e95"</span>,</div>
@@ -853,7 +853,7 @@
                         <div class="ml-4 text-[#cccccc] text-xs font-mono">MongoDB</div>
                       </div>
                       <!-- Code content -->
-                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                      <div class="p-2 lg:p-3 text-[10px] lg:text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
                         <div>&#123;</div>
                         <div class="pl-2"><span class="text-[#ce9178]">"_id"</span>: <span class="text-[#dcdcaa]">ObjectId</span>(<span class="text-[#ce9178]">"673fb98c83ac47d6fa4cd03f"</span>),</div>
                         <div class="pl-2"><span class="text-[#ce9178]">"session_id"</span>: <span class="text-[#ce9178]">"c135f1aa-2713-4ddb-9996-a98a7ce6b2cd"</span>,</div>
@@ -886,7 +886,7 @@
                         <div class="ml-4 text-[#cccccc] text-xs font-mono">Python</div>
                       </div>
                       <!-- Code content -->
-                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                      <div class="p-2 lg:p-3 text-[10px] lg:text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
                         <div><span class="text-[#c586c0]">class</span> <span class="text-[#4ec9b0]">Database</span>:</div>
                         <div class="pl-4"><span class="text-[#c586c0]">def</span> <span class="text-[#dcdcaa]">connect</span>(<span class="text-[#9cdcfe]">self</span>):</div>
                         <div class="pl-8"><span class="text-[#c586c0]">for</span> <span class="text-[#9cdcfe]">attempt</span> <span class="text-[#c586c0]">in</span> <span class="text-[#dcdcaa]">range</span>(<span class="text-[#b5cea8]">3</span>):</div>
@@ -933,7 +933,7 @@
                         <div class="ml-4 text-[#cccccc] text-xs font-mono">Python</div>
                       </div>
                       <!-- Code content -->
-                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                      <div class="p-2 lg:p-3 text-[10px] lg:text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
                         <div><span class="text-[#dcdcaa]">@app.route</span>(<span class="text-[#ce9178]">'/get_order'</span>, <span class="text-[#9cdcfe]">methods</span>=[<span class="text-[#ce9178]">'GET'</span>])</div>
                         <div><span class="text-[#c586c0]">def</span> <span class="text-[#dcdcaa]">get_order</span>():</div>
                         <div class="pl-4"><span class="text-[#9cdcfe]">session_id</span> = <span class="text-[#9cdcfe]">request</span>.<span class="text-[#9cdcfe]">args</span>.<span class="text-[#dcdcaa]">get</span>(<span class="text-[#ce9178]">'session_id'</span>)</div>
@@ -962,7 +962,7 @@
                         <div class="ml-4 text-[#cccccc] text-xs font-mono">Python</div>
                       </div>
                       <!-- Code content -->
-                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                      <div class="p-2 lg:p-3 text-[10px] lg:text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
                         <div><span class="text-[#dcdcaa]">@app.route</span>(<span class="text-[#ce9178]">'/get_order'</span>, <span class="text-[#9cdcfe]">methods</span>=[<span class="text-[#ce9178]">'GET'</span>])</div>
                         <div><span class="text-[#c586c0]">def</span> <span class="text-[#dcdcaa]">get_order</span>():</div>
                         <div class="pl-4"><span class="text-[#9cdcfe]">session_id</span> = <span class="text-[#9cdcfe]">request</span>.<span class="text-[#9cdcfe]">args</span>.<span class="text-[#dcdcaa]">get</span>(<span class="text-[#ce9178]">'session_id'</span>)</div>
@@ -998,7 +998,7 @@
                         <div class="ml-4 text-[#cccccc] text-xs font-mono">docker</div>
                       </div>
                       <!-- Code content -->
-                      <div class="p-3 text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
+                      <div class="p-2 lg:p-3 text-[10px] lg:text-xs font-mono leading-tight text-[#d4d4d4] overflow-auto" style="height: calc(100% - 24px);">
                         <div><span class="text-[#6a9955]"># docker-compose.yml</span></div>
                         <div><span class="text-[#9cdcfe]">version</span>: <span class="text-[#ce9178]">"3.8"</span></div>
                         <div><span class="text-[#9cdcfe]">services</span>:</div>
@@ -1033,21 +1033,21 @@
         </div>
         
         <!-- Tech Stack Showcase -->
-        <div class="w-full flex justify-center mt-16">
-          <div class="grid py-[25px] px-[57px] bg-[#F3F4F6] rounded-lg shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] grid-cols-4 grid-rows-3 gap-x-4 gap-y-3">
+        <div class="w-full flex justify-center mt-8 lg:mt-16 px-4 lg:px-0">
+          <div class="grid py-[20px] lg:py-[25px] px-[20px] lg:px-[57px] bg-[#F3F4F6] rounded-lg shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] grid-cols-1 lg:grid-cols-4 grid-rows-auto lg:grid-rows-3 gap-x-2 lg:gap-x-4 gap-y-3">
             <!-- Title - positioned in grid -->
-            <div class="text-[#2D2D2D] text-[26px] font-inter text-center font-semibold col-span-1 row-span-1">
+            <div class="text-[#2D2D2D] text-[20px] lg:text-[26px] font-inter text-center font-semibold col-span-1 lg:col-span-4 row-span-1 mb-2 lg:mb-0">
               Technology Stack
             </div>
             
-            <!-- spaCy - between Flask and PyTorch (col 3, row 3) -->
-            <div class="w-[230px] h-[56px] flex justify-start items-center pl-[17px] bg-[#F9FAFB] rounded-lg col-start-3 row-start-3">
+            <!-- spaCy -->
+            <div class="w-full lg:w-[230px] h-[56px] flex justify-start items-center px-4 lg:pl-[17px] bg-[#F9FAFB] rounded-lg">
               <img src="/tech-stack__spacy-icon+title.svg" alt="spaCy" class="w-[120px] h-[30px]" />
             </div>
             
             <!-- Row 2 Tech Cards -->
             <!-- React -->
-            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 pt-[13px] pb-[14.5px] pr-[139px] pl-[15px] bg-[#F9FAFB] rounded-lg col-start-1 row-start-2">
+            <div class="w-full lg:w-[230px] h-[56px] flex justify-start items-center flex-row gap-2 lg:gap-1 py-3 px-4 lg:pr-[139px] lg:pl-[15px] bg-[#F9FAFB] rounded-lg">
               <div>
                 <img src="/tech-stack__react-icon.svg" alt="React" class="w-[29px] h-[29px]" />
               </div>
@@ -1055,7 +1055,7 @@
             </div>
             
             <!-- Next.js -->
-            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 pt-[13px] pb-[13px] pr-[130px] pl-[13px] bg-[#F9FAFB] rounded-lg col-start-2 row-start-2">
+            <div class="w-full lg:w-[230px] h-[56px] flex justify-start items-center flex-row gap-2 lg:gap-1 py-3 px-4 lg:pr-[130px] lg:pl-[13px] bg-[#F9FAFB] rounded-lg">
               <div>
                 <img src="/tech-stack__nextjs-icon.svg" alt="Next.js" class="w-[30px] h-[30px]" />
               </div>
@@ -1063,7 +1063,7 @@
             </div>
             
             <!-- Heroku -->
-            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-[13px] pr-[127px] pl-4 bg-[#F9FAFB] rounded-lg col-start-3 row-start-2">
+            <div class="w-full lg:w-[230px] h-[56px] flex justify-start items-center flex-row gap-2 lg:gap-1 py-3 px-4 lg:pr-[127px] lg:pl-4 bg-[#F9FAFB] rounded-lg">
               <div>
                 <img src="/tech-stack__heroku-icon.svg" alt="Heroku" class="w-[30px] h-[30px]" />
               </div>
@@ -1071,7 +1071,7 @@
             </div>
             
             <!-- Python -->
-            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-[14px] pr-[128px] pl-[15px] bg-[#F9FAFB] rounded-lg col-start-4 row-start-2">
+            <div class="w-full lg:w-[230px] h-[56px] flex justify-start items-center flex-row gap-2 lg:gap-1 py-3 px-4 lg:pr-[128px] lg:pl-[15px] bg-[#F9FAFB] rounded-lg">
               <div>
                 <img src="/tech-stack__python-icon.svg" alt="Python" class="w-[28px] h-[28px]" />
               </div>
@@ -1080,7 +1080,7 @@
             
             <!-- Row 3 Tech Cards -->
             <!-- MongoDB -->
-            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-[13px] pr-[120px] pl-[17px] bg-[#F9FAFB] rounded-lg col-start-1 row-start-3">
+            <div class="w-full lg:w-[230px] h-[56px] flex justify-start items-center flex-row gap-2 lg:gap-1 py-3 px-4 lg:pr-[120px] lg:pl-[17px] bg-[#F9FAFB] rounded-lg">
               <div>
                 <img src="/tech-stack__mongodb-icon.svg" alt="MongoDB" class="w-[29px] h-[29px]" />
               </div>
@@ -1088,7 +1088,7 @@
             </div>
             
             <!-- Flask -->
-            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-[14px] pr-[143px] pl-[17px] bg-[#F9FAFB] rounded-lg col-start-2 row-start-3">
+            <div class="w-full lg:w-[230px] h-[56px] flex justify-start items-center flex-row gap-2 lg:gap-1 py-3 px-4 lg:pr-[143px] lg:pl-[17px] bg-[#F9FAFB] rounded-lg">
               <div>
                 <img src="/tech-stack__flask-icon.svg" alt="Flask" class="w-[28px] h-[28px]" />
               </div>
@@ -1096,7 +1096,7 @@
             </div>
             
             <!-- PyTorch -->
-            <div class="w-[230px] h-[56px] flex justify-start items-center flex-row gap-1 py-[13px] pr-[120px] pl-[17px] bg-[#F9FAFB] rounded-lg col-start-4 row-start-3">
+            <div class="w-full lg:w-[230px] h-[56px] flex justify-start items-center flex-row gap-2 lg:gap-1 py-3 px-4 lg:pr-[120px] lg:pl-[17px] bg-[#F9FAFB] rounded-lg">
               <div>
                 <img src="/tech-stack__pytorch-icon.svg" alt="PyTorch" class="w-[30px] h-[30px]" />
               </div>
