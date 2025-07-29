@@ -94,11 +94,11 @@
 		<!-- Hero Section -->
 		<div class="w-full bg-[#FFFFFF] flex justify-center py-[40px] lg:py-[80px]">
 			<section class="w-full max-w-[1440px] px-[5%] lg:px-[180px]">
-				<div class="flex flex-col items-center gap-4 mb-[40px] lg:mb-[60px]">
+				<div class="flex flex-col items-center gap-4 mb-[32px] lg:mb-[60px] px-4 lg:px-0">
 					<h1 class="text-[#2D2D2D] text-[36px] lg:text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
 						My Work
 					</h1>
-					<p class="text-[#2D2D2D] text-base lg:text-lg font-inter text-center max-w-[600px] px-4">
+					<p class="text-[#2D2D2D] text-sm lg:text-lg font-inter text-center max-w-[600px] px-4">
 						A curated collection of my projects. From web applications to machine learning models, here's what I've been building.
 					</p>
 				</div>
@@ -111,27 +111,23 @@
 		<div class="w-full bg-[#FAFAFA] flex justify-center flex-grow py-[40px] lg:py-[80px]">
 			<section class="w-full max-w-[1440px] px-[5%] lg:px-[180px]">
 				<!-- Filter Navigation -->
-				<div class="flex justify-center mb-[40px] lg:mb-[60px]">
-					<div class="flex flex-col gap-3 max-w-full">
-						{#each allCategories as categoryRow}
-							<div class="flex justify-center gap-2 overflow-x-auto scrollbar-hide">
-								{#each categoryRow as category}
-									<button
-										class="px-4 py-2 rounded-full font-inter font-medium text-sm whitespace-nowrap transition-all duration-200 {activeCategory === category 
-											? 'bg-[#4A90E2] text-[#FFFFFF] shadow-lg' 
-											: 'bg-[#FFFFFF] text-[#2D2D2D] border border-[#EAEAEA] hover:bg-[#F0F0F0] hover:border-[#4A90E2]'}"
-										onclick={() => selectCategory(category)}
-									>
-										{category}
-									</button>
-								{/each}
-							</div>
+				<div class="flex justify-center mb-[32px] lg:mb-[60px] px-4 lg:px-0">
+					<div class="flex flex-wrap justify-center gap-1.5 lg:gap-2 max-w-full">
+						{#each allCategories.flat() as category}
+							<button
+								class="px-3 lg:px-4 py-1.5 lg:py-2 rounded-full font-inter font-medium text-xs lg:text-sm whitespace-nowrap transition-all duration-200 {activeCategory === category 
+									? 'bg-[#4A90E2] text-[#FFFFFF] shadow-lg' 
+									: 'bg-[#FFFFFF] text-[#2D2D2D] border border-[#EAEAEA] hover:bg-[#F0F0F0] hover:border-[#4A90E2]'}"
+								onclick={() => selectCategory(category)}
+							>
+								{category}
+							</button>
 						{/each}
 					</div>
 				</div>
 
 				<!-- Projects Grid -->
-				<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8 mb-[40px] lg:mb-[60px]">
+				<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-8 mb-[32px] lg:mb-[60px] px-4 lg:px-0">
 					{#each filteredProjects as project, i (project.id)}
 						<div in:fly={{ y: 20, duration: 400, delay: i * 50 }} out:fly={{ y: -10, duration: 200 }}>
 							<a
@@ -149,16 +145,16 @@
 										{project.imageQuery}
 									</div>
 								</div>
-								<div class="p-6">
-									<div class="flex flex-wrap gap-2">
-										{#each project.categories.slice(0, 3) as cat}
-											<span class="px-3 py-1 bg-[#F0F0F0] text-[#666666] text-sm font-inter rounded-full">
+								<div class="p-4 lg:p-6">
+									<div class="flex flex-wrap gap-1.5 lg:gap-2">
+										{#each project.categories.slice(0, 2) as cat}
+											<span class="px-2 lg:px-3 py-0.5 lg:py-1 bg-[#F0F0F0] text-[#666666] text-xs lg:text-sm font-inter rounded-full">
 												{cat}
 											</span>
 										{/each}
-										{#if project.categories.length > 3}
-											<span class="px-3 py-1 bg-[#F0F0F0] text-[#666666] text-sm font-inter rounded-full">
-												+{project.categories.length - 3}
+										{#if project.categories.length > 2}
+											<span class="px-2 lg:px-3 py-0.5 lg:py-1 bg-[#F0F0F0] text-[#666666] text-xs lg:text-sm font-inter rounded-full">
+												+{project.categories.length - 2}
 											</span>
 										{/if}
 									</div>

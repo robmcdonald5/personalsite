@@ -16,17 +16,17 @@
     <!-- About Hero Section -->
     <div class="w-full bg-[#FFFFFF] flex justify-center">
       <section class="w-full max-w-[1440px] px-[5%] lg:px-[180px]">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-[40px] lg:gap-[90px] pt-[20px] lg:pt-[40px]">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-[20px] lg:gap-[90px] pt-[20px] lg:pt-[40px]">
           <!-- About Text Content - Left Side -->
-          <div class="flex flex-col gap-[20px] max-w-[500px] lg:self-start lg:mt-[40px] pb-[40px] lg:pb-0">
-            <h1 class="text-[#2D2D2D] text-[36px] lg:text-[64px] font-inter font-bold tracking-[-1.28px]">
+          <div class="flex flex-col gap-[16px] max-w-[500px] lg:self-start lg:mt-[40px] pb-[20px] lg:pb-0 px-4 lg:px-0">
+            <h1 class="text-[#2D2D2D] text-[32px] lg:text-[64px] font-inter font-bold tracking-[-1.28px] text-center lg:text-left">
               about
             </h1>
-            <p class="text-[#4B4B4B] font-inter font-light text-lg">
+            <p class="text-[#4B4B4B] font-inter font-light text-base lg:text-lg text-center lg:text-left">
               I'm a software engineer and AI<br />
               enthusiast based in Texas.
             </p>
-            <p class="text-[#000000] text-base font-inter font-extralight max-w-[280px]">
+            <p class="text-[#000000] text-sm lg:text-base font-inter font-extralight max-w-full lg:max-w-[280px] text-center lg:text-left">
               I've been working with and building software systems for most of my
               life. Currently I am focused on making AI applications — blending
               creativity, efficiency, and elegance.
@@ -34,7 +34,7 @@
           </div>
           
           <!-- Profile Image - Right Side, extends to bottom -->
-          <div class="w-[200px] lg:w-[285px] h-[320px] lg:h-[456px] bg-contain bg-bottom bg-no-repeat justify-self-center lg:justify-self-end lg:self-end" style="background-image: url(/hero__headshot.png)"></div>
+          <div class="w-[150px] lg:w-[285px] h-[240px] lg:h-[456px] bg-contain bg-center lg:bg-bottom bg-no-repeat justify-self-center lg:justify-self-end lg:self-end mx-auto lg:mx-0" style="background-image: url(/hero__headshot.png)"></div>
         </div>
       </section>
     </div>
@@ -44,7 +44,7 @@
     <!-- Content Section -->
     <div class="w-full bg-[#FAFAFA] flex justify-center items-center flex-grow py-[40px] lg:py-[80px]">
       <section class="w-full max-w-[1440px] px-[5%] lg:px-[180px]">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-x-[20px] lg:gap-x-[27px] gap-y-[40px] lg:gap-y-[76px]">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-x-[16px] lg:gap-x-[27px] gap-y-[32px] lg:gap-y-[76px] px-4 lg:px-0">
           <!-- Experience Column -->
           <div class="flex flex-col gap-6">
             <h2 class="text-[#4B4B4B] text-[20px] lg:text-[28px] font-inter font-bold tracking-[-0.56px]">

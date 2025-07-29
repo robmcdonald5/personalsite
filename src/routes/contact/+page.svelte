@@ -82,17 +82,16 @@
     <!-- Hero Section -->
     <div class="w-full bg-[#FFFFFF] flex justify-center py-[40px] lg:py-[90px] relative">
       <section class="relative w-full max-w-[1440px] px-[5%] lg:px-[180px]">
-        <div class="flex flex-col lg:flex-row items-center justify-between gap-[40px] lg:gap-[120px]">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-[20px] lg:gap-[120px]">
           <!-- Hero Text Content -->
-          <div class="flex flex-col gap-6 max-w-[500px]">
-            <h1 class="text-[#4B4B4B] text-[28px] lg:text-[48px] font-inter font-bold tracking-[-0.96px] leading-tight text-center lg:text-left">
+          <div class="flex flex-col gap-4 max-w-[500px] px-4 lg:px-0">
+            <h1 class="text-[#4B4B4B] text-[24px] lg:text-[48px] font-inter font-bold tracking-[-0.96px] leading-tight text-center lg:text-left">
               Need to get in touch with me?
             </h1>
           </div>
         </div>
 
-        <!-- Visual Elements -->
-        <!-- We mirror the left padding using pr-[5%] md:pr-[180px] so spacing matches the text block's left padding -->
+        <!-- Visual Elements - Desktop Only -->
         <div class="pointer-events-none absolute inset-0 hidden lg:flex justify-start items-center">
           <div class="relative w-full pr-[180px]">
             <!-- Big circle - top right -->
@@ -104,17 +103,7 @@
           </div>
         </div>
 
-        <!-- Mobile shapes (optional) -->
-        <div class="pointer-events-none absolute inset-0 flex lg:hidden justify-start items-center">
-          <div class="relative w-full pr-[5%]">
-            <!-- Big circle - top right -->
-            <img src="/hero__visual-element-circle1.svg" alt="decorative circle" class="w-[72px] h-[72px] absolute top-[-60px] right-[150px]" />
-            <!-- Square - middle left of the group -->
-            <img src="/hero__visual-element-square.svg" alt="decorative square" class="w-[52px] h-[52px] absolute top-[-25px] right-[265px]" />
-            <!-- Small circle - bottom center -->
-            <img src="/hero__visual-element-circle2.svg" alt="decorative circle" class="w-[40px] h-[40px] absolute top-[55px] right-[250px]" />
-          </div>
-        </div>
+        <!-- Mobile shapes - HIDDEN for cleaner mobile layout -->
       </section>
     </div>
 
@@ -125,8 +114,8 @@
       <section class="w-full max-w-[1440px] px-[5%] lg:px-[180px]">
         <div class="w-full max-w-[1080px] mx-auto">
           <!-- Section Title -->
-          <div class="mb-[40px] lg:mb-[60px]">
-            <h2 class="text-[#4B4B4B] text-[28px] lg:text-[48px] font-inter font-bold tracking-[-0.96px]">
+          <div class="mb-[24px] lg:mb-[60px] px-4 lg:px-0">
+            <h2 class="text-[#4B4B4B] text-[24px] lg:text-[48px] font-inter font-bold tracking-[-0.96px] text-center lg:text-left">
               Contact me
             </h2>
           </div>
@@ -164,7 +153,7 @@
           <!-- Contact Form -->
           <form 
             onsubmit={(e) => { e.preventDefault(); handleSubmit(); }}
-            class="grid grid-cols-1 lg:grid-cols-2 gap-x-[16px] lg:gap-x-[24px] gap-y-[16px] lg:gap-y-[24px] mb-[40px]"
+            class="grid grid-cols-1 lg:grid-cols-2 gap-x-[16px] lg:gap-x-[24px] gap-y-[16px] lg:gap-y-[24px] mb-[32px] px-4 lg:px-0"
           >
             <!-- Name Field -->
             <div class="flex flex-col gap-2">
