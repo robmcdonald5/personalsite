@@ -58,3 +58,15 @@
 2. **Build Testing**: Test both development and production builds before deployment
 3. **WASM Updates**: After modifying Rust code, always run `npm run build:wasm` and test in browser
 4. **Cross-Platform**: Be aware of Windows vs Linux differences in build tools (wasm-pack, Rust installation)
+
+### Responsive Design (Mobile Compatability)
+All new components and pages must be developed using a mobile compatable design. The goal is a seamless user experience on all devices, from small phones to large desktops.
+1. **Mobile-First is Mandatory**: All Tailwind CSS utility classes applied without a breakpoint prefix are considered the default mobile styles.
+2. **Standard Desktop Breakpoint**: Use the lg: (1024px) prefix for styles that should only apply to desktop and larger screens. This creates a consistent breakpoint for the main desktop layout.
+3. **Refactoring Desktop-Only Components**: To make an existing desktop design responsive, follow this strict procedure:
+    - First, add the lg: prefix to all existing utility classes that define the desktop layout.
+    - Second, add new, simpler base classes (without prefixes) to create a clean, functional mobile view.
+4. **Implementation Example**: This pattern must be followed to ensure the desktop view is preserved perfectly while adding mobile support.
+    - Original (Desktop-Only): class="grid grid-cols-3 gap-8 p-10"
+    - Correct Refactor (Mobile-First): class="grid grid-cols-1 gap-4 p-4 lg:grid-cols-3 lg:gap-8 lg:p-10"
+5. **Layout Stacking**: For mobile layouts, prefer vertical stacking. Use flex-col for flex containers and grid-cols-1 for grid containers as the base (un-prefixed) style.

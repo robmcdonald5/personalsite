@@ -92,13 +92,13 @@
 
 	<main class="flex-grow flex flex-col">
 		<!-- Hero Section -->
-		<div class="w-full bg-[#FFFFFF] flex justify-center py-[80px]">
-			<section class="w-full max-w-[1440px] px-[5%] md:px-[180px]">
-				<div class="flex flex-col items-center gap-4 mb-[60px]">
-					<h1 class="text-[#2D2D2D] text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
+		<div class="w-full bg-[#FFFFFF] flex justify-center py-[40px] lg:py-[80px]">
+			<section class="w-full max-w-[1440px] px-[5%] lg:px-[180px]">
+				<div class="flex flex-col items-center gap-4 mb-[40px] lg:mb-[60px]">
+					<h1 class="text-[#2D2D2D] text-[36px] lg:text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
 						My Work
 					</h1>
-					<p class="text-[#2D2D2D] text-lg font-inter text-center max-w-[600px]">
+					<p class="text-[#2D2D2D] text-base lg:text-lg font-inter text-center max-w-[600px] px-4">
 						A curated collection of my projects. From web applications to machine learning models, here's what I've been building.
 					</p>
 				</div>
@@ -108,10 +108,10 @@
 		<div class="w-full h-[4px] gradient-divider"></div>
 
 		<!-- Projects Section -->
-		<div class="w-full bg-[#FAFAFA] flex justify-center flex-grow py-[80px]">
-			<section class="w-full max-w-[1440px] px-[5%] md:px-[180px]">
+		<div class="w-full bg-[#FAFAFA] flex justify-center flex-grow py-[40px] lg:py-[80px]">
+			<section class="w-full max-w-[1440px] px-[5%] lg:px-[180px]">
 				<!-- Filter Navigation -->
-				<div class="flex justify-center mb-[60px]">
+				<div class="flex justify-center mb-[40px] lg:mb-[60px]">
 					<div class="flex flex-col gap-3 max-w-full">
 						{#each allCategories as categoryRow}
 							<div class="flex justify-center gap-2 overflow-x-auto scrollbar-hide">
@@ -131,7 +131,7 @@
 				</div>
 
 				<!-- Projects Grid -->
-				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-[60px]">
+				<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8 mb-[40px] lg:mb-[60px]">
 					{#each filteredProjects as project, i (project.id)}
 						<div in:fly={{ y: 20, duration: 400, delay: i * 50 }} out:fly={{ y: -10, duration: 200 }}>
 							<a

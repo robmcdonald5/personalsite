@@ -15,11 +15,11 @@
   <main class="flex-grow flex flex-col">
     <!-- About Hero Section -->
     <div class="w-full bg-[#FFFFFF] flex justify-center">
-      <section class="w-full max-w-[1440px] px-[5%] md:px-[180px]">
-        <div class="grid md:grid-cols-2 gap-[90px] pt-[40px]">
+      <section class="w-full max-w-[1440px] px-[5%] lg:px-[180px]">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-[40px] lg:gap-[90px] pt-[20px] lg:pt-[40px]">
           <!-- About Text Content - Left Side -->
-          <div class="flex flex-col gap-[20px] max-w-[500px] md:self-start md:mt-[40px] pb-[90px] md:pb-0">
-            <h1 class="text-[#2D2D2D] text-[64px] font-inter font-bold tracking-[-1.28px]">
+          <div class="flex flex-col gap-[20px] max-w-[500px] lg:self-start lg:mt-[40px] pb-[40px] lg:pb-0">
+            <h1 class="text-[#2D2D2D] text-[36px] lg:text-[64px] font-inter font-bold tracking-[-1.28px]">
               about
             </h1>
             <p class="text-[#4B4B4B] font-inter font-light text-lg">
@@ -34,7 +34,7 @@
           </div>
           
           <!-- Profile Image - Right Side, extends to bottom -->
-          <div class="w-[285px] h-[456px] bg-contain bg-bottom bg-no-repeat justify-self-end md:self-end" style="background-image: url(/hero__headshot.png)"></div>
+          <div class="w-[200px] lg:w-[285px] h-[320px] lg:h-[456px] bg-contain bg-bottom bg-no-repeat justify-self-center lg:justify-self-end lg:self-end" style="background-image: url(/hero__headshot.png)"></div>
         </div>
       </section>
     </div>
@@ -42,12 +42,12 @@
     <div class="w-full h-[4px] gradient-divider"></div>
 
     <!-- Content Section -->
-    <div class="w-full bg-[#FAFAFA] flex justify-center items-center flex-grow py-[80px]">
-      <section class="w-full max-w-[1440px] px-[5%] md:px-[180px]">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-x-[27px] gap-y-[76px]">
+    <div class="w-full bg-[#FAFAFA] flex justify-center items-center flex-grow py-[40px] lg:py-[80px]">
+      <section class="w-full max-w-[1440px] px-[5%] lg:px-[180px]">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-x-[20px] lg:gap-x-[27px] gap-y-[40px] lg:gap-y-[76px]">
           <!-- Experience Column -->
           <div class="flex flex-col gap-6">
-            <h2 class="text-[#4B4B4B] text-[28px] font-inter font-bold tracking-[-0.56px]">
+            <h2 class="text-[#4B4B4B] text-[20px] lg:text-[28px] font-inter font-bold tracking-[-0.56px]">
               Experience
             </h2>
             <div class="text-[#2D2D2D] font-inter leading-relaxed">
@@ -61,8 +61,8 @@
             </div>
           </div>
           <!-- Expertise Column -->
-          <div class="flex flex-col gap-6 justify-self-center">
-            <h2 class="text-[#4B4B4B] text-[28px] font-inter font-bold tracking-[-0.56px]">
+          <div class="flex flex-col gap-6 lg:justify-self-center">
+            <h2 class="text-[#4B4B4B] text-[20px] lg:text-[28px] font-inter font-bold tracking-[-0.56px]">
               Expertise
             </h2>
             <ul class="text-[#2D2D2D] font-inter flex flex-col gap-3 list-disc list-inside">
@@ -79,7 +79,7 @@
           </div>
           <!-- Recent Projects Column -->
           <div class="flex flex-col gap-6">
-            <h2 class="text-[#4B4B4B] text-[28px] font-inter font-bold tracking-[-0.56px]">
+            <h2 class="text-[#4B4B4B] text-[20px] lg:text-[28px] font-inter font-bold tracking-[-0.56px]">
               Recent Projects
             </h2>
             <div class="text-[#2D2D2D] flex flex-col gap-8">

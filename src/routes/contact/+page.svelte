@@ -80,12 +80,12 @@
 
   <main class="flex-grow flex flex-col">
     <!-- Hero Section -->
-    <div class="w-full bg-[#FFFFFF] flex justify-center py-[90px] relative">
-      <section class="relative w-full max-w-[1440px] px-[5%] md:px-[180px]">
-        <div class="flex flex-col md:flex-row items-center justify-between gap-[60px] md:gap-[120px]">
+    <div class="w-full bg-[#FFFFFF] flex justify-center py-[40px] lg:py-[90px] relative">
+      <section class="relative w-full max-w-[1440px] px-[5%] lg:px-[180px]">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-[40px] lg:gap-[120px]">
           <!-- Hero Text Content -->
           <div class="flex flex-col gap-6 max-w-[500px]">
-            <h1 class="text-[#4B4B4B] text-[48px] md:text-[48px] font-inter font-bold tracking-[-0.96px] leading-tight">
+            <h1 class="text-[#4B4B4B] text-[28px] lg:text-[48px] font-inter font-bold tracking-[-0.96px] leading-tight text-center lg:text-left">
               Need to get in touch with me?
             </h1>
           </div>
@@ -93,7 +93,7 @@
 
         <!-- Visual Elements -->
         <!-- We mirror the left padding using pr-[5%] md:pr-[180px] so spacing matches the text block's left padding -->
-        <div class="pointer-events-none absolute inset-0 hidden md:flex justify-start items-center">
+        <div class="pointer-events-none absolute inset-0 hidden lg:flex justify-start items-center">
           <div class="relative w-full pr-[180px]">
             <!-- Big circle - top right -->
             <img src="/hero__visual-element-circle1.svg" alt="decorative circle" class="w-[96px] h-[96px] absolute top-[-75px] right-[200px]" />
@@ -105,7 +105,7 @@
         </div>
 
         <!-- Mobile shapes (optional) -->
-        <div class="pointer-events-none absolute inset-0 flex md:hidden justify-start items-center">
+        <div class="pointer-events-none absolute inset-0 flex lg:hidden justify-start items-center">
           <div class="relative w-full pr-[5%]">
             <!-- Big circle - top right -->
             <img src="/hero__visual-element-circle1.svg" alt="decorative circle" class="w-[72px] h-[72px] absolute top-[-60px] right-[150px]" />
@@ -121,12 +121,12 @@
     <div class="w-full h-[4px] gradient-divider"></div>
 
     <!-- Contact Form Section -->
-    <div class="w-full bg-[#FAFAFA] flex justify-center py-[90px] flex-grow">
-      <section class="w-full max-w-[1440px] px-[5%] md:px-[180px]">
+    <div class="w-full bg-[#FAFAFA] flex justify-center py-[40px] lg:py-[90px] flex-grow">
+      <section class="w-full max-w-[1440px] px-[5%] lg:px-[180px]">
         <div class="w-full max-w-[1080px] mx-auto">
           <!-- Section Title -->
-          <div class="mb-[60px]">
-            <h2 class="text-[#4B4B4B] text-[48px] font-inter font-bold tracking-[-0.96px]">
+          <div class="mb-[40px] lg:mb-[60px]">
+            <h2 class="text-[#4B4B4B] text-[28px] lg:text-[48px] font-inter font-bold tracking-[-0.96px]">
               Contact me
             </h2>
           </div>
@@ -164,7 +164,7 @@
           <!-- Contact Form -->
           <form 
             onsubmit={(e) => { e.preventDefault(); handleSubmit(); }}
-            class="grid grid-cols-1 md:grid-cols-2 gap-x-[24px] gap-y-[24px] mb-[40px]"
+            class="grid grid-cols-1 lg:grid-cols-2 gap-x-[16px] lg:gap-x-[24px] gap-y-[16px] lg:gap-y-[24px] mb-[40px]"
           >
             <!-- Name Field -->
             <div class="flex flex-col gap-2">
@@ -197,7 +197,7 @@
             </div>
 
             <!-- Message Field -->
-            <div class="flex flex-col gap-2 md:col-span-2">
+            <div class="flex flex-col gap-2 lg:col-span-2">
               <label class="text-[#333333] font-inter font-medium" for="message">
                 Message
               </label>
@@ -212,7 +212,7 @@
             </div>
 
             <!-- Turnstile CAPTCHA -->
-            <div class="flex justify-center md:col-span-2 mb-6">
+            <div class="flex justify-center lg:col-span-2 mb-6">
               <Turnstile 
                 siteKey={env.PUBLIC_TURNSTILE_SITE_KEY}
                 theme="light"
@@ -223,7 +223,7 @@
             </div>
 
             <!-- Submit Button -->
-            <div class="flex justify-start md:col-span-2">
+            <div class="flex justify-start lg:col-span-2">
               <button
                 type="submit"
                 disabled={isSubmitting || !turnstileToken || !name || !email || !message}
