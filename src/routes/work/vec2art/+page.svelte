@@ -153,7 +153,14 @@
         <div class="flex flex-col items-center gap-3 lg:gap-4 mb-[40px] lg:mb-[60px]">
           <div class="flex flex-col lg:flex-row items-center justify-center gap-3 lg:gap-6">
             <h1 class="text-[#2D2D2D] text-[28px] lg:text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
-              vec2art SVG Converter
+              <a
+                href="https://vec2art.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-[#2D2D2D] hover:text-[#4D4D4D] transition-colors duration-200 hover:underline"
+              >
+                vec2art SVG Converter
+              </a>
             </h1>
             <a
               href="https://github.com/robmcdonald5/vec2art"

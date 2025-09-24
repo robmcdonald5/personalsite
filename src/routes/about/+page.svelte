@@ -85,7 +85,14 @@
             <div class="text-[#2D2D2D] flex flex-col gap-8">
               <div>
                 <h3 class="text-lg font-inter font-semibold mb-1">
-                  vec2art SVG Converter
+                  <a
+                    href="https://vec2art.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-[#2D2D2D] hover:text-[#4D4D4D] transition-colors duration-200 hover:underline"
+                  >
+                    vec2art SVG Converter
+                  </a>
                 </h3>
                 <p class="font-inter">
                   Ultra-fast image vectorization tool that transforms raster images into expressive line-art SVGs in under 1.5 seconds. Built with Rust for performance, featuring GPU acceleration and WebAssembly for browser deployment.

@@ -49,11 +49,5 @@
         alt="GitHub"
       />
     </a>
-    <a href="https://www.linkedin.com/in/joshua-mcdonald-45a39a215/" target="_blank" rel="noopener">
-      <img
-        src="/header__external-icon-linkedin.svg"
-        alt="LinkedIn"
-      />
-    </a>
   </div>
 </header>
