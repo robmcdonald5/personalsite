@@ -1,3 +1,25 @@
+# CLAUDE.md
+
+---
+
+# GENERAL RULES
+
+## Agentic Workflow Principles **IMPORTANT**
+
+1. **Outline**
+   When prompted break up the task at hand into a `todo list`.
+
+2. **Delegate**
+   Delegate sub-agents with completing these `todo` tasks using `@'relevant-agent-name'` call(s). Always prompt researchers in parallel if there are multiple research tasks.tran
+
+3. **Analyze**
+   When a sub-agent is done outputting, analyze what it did and decide if the output is good or if the agent needs re-tasked with new instructions.
+
+4. **Summarize**
+   When `todo list` is completed do an overview of what was completed and output succinctly what was accomplished.
+
+---
+
 ### Core Technologies
 1. Framework: SvelteKit
 2. UI Library: Svelte 5

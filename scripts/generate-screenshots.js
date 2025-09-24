@@ -28,6 +28,11 @@ const projects = [
     name: 'Creative Writing AI Assistant'
   },
   {
+    id: 'vec2art',
+    url: '/work/vec2art',
+    name: 'Vec2art - Image Vectorization'
+  },
+  {
     id: 'portfolio-site',
     url: '/work/portfolio-site',
     name: 'Personal Site'
@@ -114,13 +119,15 @@ let previewServer = null;
 
 async function startPreviewServer() {
   const { spawn } = await import('child_process');
-  
+
   return new Promise((resolve, reject) => {
     console.log('🚀 Starting preview server...');
-    
-    previewServer = spawn('npx', ['vite', 'preview', '--port', '4173', '--host'], {
+
+    // Try npm run preview first, then fallback to npx
+    previewServer = spawn('npm', ['run', 'preview'], {
       cwd: join(__dirname, '..'),
-      stdio: 'pipe'
+      stdio: 'pipe',
+      shell: true
     });
     
     let started = false;

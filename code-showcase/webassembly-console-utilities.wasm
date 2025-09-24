@@ -1,0 +1,10 @@
+/// Start a console timer with the given name
+pub fn console_time(name: &str) { time(name); }
+/// End a console timer with the given name
+pub fn console_time_end(name: &str) { timeEnd(name); }
+/// Log a message to the browser console
+pub fn console_log(message: &str) { log(message); }
+/// A macro to provide `println!`‑style syntax for `console.log` logging
+macro_rules! console_log_macro {
+    ( $( $t:tt )* ) => { crate::utils::console_log(&format!( $( $t )* )); };
+}

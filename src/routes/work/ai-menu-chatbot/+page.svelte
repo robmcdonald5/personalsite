@@ -41,44 +41,36 @@
   };
 
   // Code configuration for each section and language
-  const codeConfiguration: Record<string, Record<string, { images: string[], titles: string[] }>> = {
+  const codeConfiguration: Record<string, Record<string, { titles: string[] }>> = {
     'Natural Language Intent Parsing': {
       'Python': {
-        images: ['embedding__code.png'],
         titles: ['Precomputing Intent Embeddings']
       },
       'JSON': {
-        images: ['pattern__code.png', 'pattern1__code.png', 'pattern2__code.png'],
-        titles: ['Intent Pattern Alignment', 'Intent Pattern Alignment', 'Intent Pattern Alignment']
+        titles: ['Intent Pattern Alignment', 'Reset Order Pattern', 'Check Price & Fallback Pattern']
       }
     },
     'Intent Fine-Tuning': {
       'Python': {
-        images: ['intent_pattern.png', 'loss__code.png', 'training__code.png'],
         titles: ['Loading & Mapping Intent Patterns', 'Loss Function Setup', 'Training Regiment']
       }
     },
     'Interactive Chat Interface': {
       'JS': {
-        images: ['intentjs__code.png', 'livejs__code.png', 'menujs__code.png', 'scrolljs__code.png'],
         titles: ['Intent Endpoint Piping', 'Live Order Tracking', 'Dynamic Menu Loading & Rendering', 'Dynamic Scroll & Interactive Bar']
       },
       'Python': {
-        images: ['endpointpython__code.png', 'sessionpython__code.png'],
         titles: ['Chat Endpoint Integration', 'Real-time Session Management']
       },
       'MongoDB': {
-        images: ['menumongo__code.png', 'ordermongo__code.png', 'sessionmongo__code.png'],
         titles: ['Menu Collection', 'Order Collection', 'Session Tracking Collection']
       }
     },
     'Backend API & Data Persistence': {
       'Python': {
-        images: ['databasepython__code.png', 'fetchingpython__code.png', 'sessionpython__code.png'],
         titles: ['Database Connection With Proxy', 'Fetching Current Order', 'Session Management Endpoint']
       },
       'Docker': {
-        images: ['composedocker__code.png'],
         titles: ['Docker Compose Deployment']
       }
     }
@@ -114,7 +106,7 @@
 
   function nextCode() {
     const config = codeConfiguration[activeSection]?.[activeLanguage];
-    if (config && activeCodeStep < config.images.length - 1) {
+    if (config && activeCodeStep < config.titles.length - 1) {
       activeCodeStep = activeCodeStep + 1;
     }
   }
@@ -137,11 +129,10 @@
   const currentImageStep = $derived(imageSteps[activeSection]?.[activeImageStep]);
   const availableLanguages = $derived(Object.keys(codeConfiguration[activeSection] || {}));
   const currentCodeConfig = $derived(codeConfiguration[activeSection]?.[activeLanguage]);
-  const currentCodeImage = $derived(currentCodeConfig?.images[activeCodeStep]);
   const currentCodeTitle = $derived(currentCodeConfig?.titles[activeCodeStep]);
-  const hasMultipleCodeImages = $derived((currentCodeConfig?.images.length || 0) > 1);
+  const hasMultipleCodeImages = $derived((currentCodeConfig?.titles.length || 0) > 1);
   const canGoPrevious = $derived(activeCodeStep > 0);
-  const canGoNext = $derived(currentCodeConfig && activeCodeStep < currentCodeConfig.images.length - 1);
+  const canGoNext = $derived(currentCodeConfig && activeCodeStep < currentCodeConfig.titles.length - 1);
 </script>
 
 <svelte:head>
@@ -159,9 +150,22 @@
       <section class="w-full max-w-[1440px] px-[5%] lg:px-[180px]">
         <!-- Title and Description -->
         <div class="flex flex-col items-center gap-3 mb-[40px] lg:mb-[60px]">
-          <h1 class="text-[#2D2D2D] text-[28px] lg:text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
-            Chipotle AI Menu
-          </h1>
+          <div class="flex flex-col lg:flex-row items-center justify-center gap-3 lg:gap-6">
+            <h1 class="text-[#2D2D2D] text-[28px] lg:text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
+              Chipotle AI Menu
+            </h1>
+            <a
+              href="https://github.com/robmcdonald5/AI-Menu-Chatbot"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center w-8 h-8 lg:w-12 lg:h-12 rounded-full bg-[#2D2D2D] hover:bg-[#4D4D4D] transition-colors duration-200 text-white flex-shrink-0"
+              aria-label="View AI Menu Chatbot on GitHub"
+            >
+              <svg class="w-4 h-4 lg:w-6 lg:h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </a>
+          </div>
           <p class="text-[#2D2D2D] text-sm lg:text-lg font-inter text-center max-w-[650px] px-4 lg:px-0">
             Conversational AI chatbot that lets users place Chipotle orders using natural language — built with React, MongoDB, Flask, spaCy, NLTK, PyTorch.
           </p>
@@ -231,7 +235,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                       </svg>
                     </button>
-                    <span class="text-xs text-gray-500">{activeCodeStep + 1}/{currentCodeConfig?.images.length}</span>
+                    <span class="text-xs text-gray-500">{activeCodeStep + 1}/{currentCodeConfig?.titles.length}</span>
                     <button 
                       class="p-1 hover:bg-gray-200 rounded {!canGoNext ? 'opacity-50 cursor-not-allowed' : ''}" 
                       onclick={nextCode} 
@@ -1021,8 +1025,6 @@
                         <div class="mb-2"></div>
                       </div>
                     </div>
-                  {:else if currentCodeImage}
-                    <img src="/{currentCodeImage}" alt="Code sample" class="max-w-full max-h-full object-contain rounded" />
                   {:else}
                     <div class="text-gray-400 text-sm">Code Loading...</div>
                   {/if}

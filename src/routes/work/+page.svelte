@@ -38,6 +38,14 @@
 			previewImage: '/project-previews/creative-writing-assistant.png'
 		},
 		{
+			id: 'vec2art',
+			name: 'Vec2art - Image Vectorization',
+			href: '/work/vec2art',
+			categories: ['Websites', 'Automation', 'Scripting', 'JavaScript', 'TypeScript', 'Rust'],
+			imageQuery: 'High-performance image vectorization tool',
+			previewImage: '/project-previews/vec2art.png'
+		},
+		{
 			id: 'portfolio-site',
 			name: 'Personal Site',
 			href: '/work/portfolio-site',
