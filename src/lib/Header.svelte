@@ -43,11 +43,33 @@
 
   <!-- Social Icons -->
   <div class="flex items-center gap-[12px] lg:gap-[16px]">
-    <a href="https://github.com/robmcdonald5" target="_blank" rel="noopener" aria-label="GitHub profile">
-      <img
-        src="/header__external-icon-github.svg"
-        alt="GitHub"
-      />
+    <a href="https://github.com/robmcdonald5" target="_blank" rel="noopener" aria-label="GitHub profile" class="github-icon">
+      <svg width="35" height="38" viewBox="0 0 35 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13 31.6667C4.66671 34.1667 4.66671 27.5001 1.33337 26.6667M24.6667 36.6667V30.2167C24.7292 29.422 24.6219 28.6231 24.3517 27.873C24.0816 27.123 23.6549 26.4391 23.1 25.8667C28.3334 25.2834 33.8334 23.3001 33.8334 14.2001C33.8329 11.8731 32.9379 9.63539 31.3334 7.95006C32.0931 5.91424 32.0394 3.66397 31.1834 1.66673C31.1834 1.66673 29.2167 1.08339 24.6667 4.13339C20.8467 3.09809 16.82 3.09809 13 4.13339C8.45004 1.08339 6.48337 1.66673 6.48337 1.66673C5.62733 3.66397 5.57361 5.91424 6.33337 7.95006C4.71692 9.64789 3.82091 11.9058 3.83337 14.2501C3.83337 23.2834 9.33337 25.2667 14.5667 25.9167C14.0184 26.4833 13.5955 27.1591 13.3256 27.8999C13.0556 28.6408 12.9447 29.4302 13 30.2167V36.6667"
+          class="gh-body" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        />
+        <!-- Octocat eyes -->
+        <circle cx="14.5" cy="13.5" r="1.3" class="gh-eye" />
+        <circle cx="22.5" cy="13.5" r="1.3" class="gh-eye" />
+      </svg>
     </a>
   </div>
 </header>
+
+<style>
+  .github-icon .gh-body {
+    stroke: #B3B3B3;
+    transition: stroke 0.2s ease;
+  }
+  .github-icon .gh-eye {
+    fill: var(--color-primary);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  .github-icon:hover .gh-body {
+    stroke: var(--color-primary);
+  }
+  .github-icon:hover .gh-eye {
+    opacity: 1;
+  }
+</style>
