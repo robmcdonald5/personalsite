@@ -9,12 +9,12 @@
   let submitError = $state<string | null>(null);
   let turnstileToken = $state<string | null>(null);
   let resetTurnstile: (() => void) | undefined = $state();
-  
+
   // Form field values
   let name = $state('');
   let email = $state('');
   let message = $state('');
-  
+
   const FORMSPARK_ACTION_URL = `https://submit-form.com/${env.PUBLIC_FORMSPARK_FORM_ID}`;
 
   async function handleSubmit() {
@@ -22,7 +22,7 @@
       submitError = 'Please complete the security verification.';
       return;
     }
-    
+
     if (!name || !email || !message) {
       submitError = 'Please fill in all required fields.';
       return;
@@ -31,7 +31,7 @@
     try {
       isSubmitting = true;
       submitError = null;
-      
+
       await fetch(FORMSPARK_ACTION_URL, {
         method: "POST",
         headers: {
@@ -45,16 +45,16 @@
           "cf-turnstile-response": turnstileToken,
         }),
       });
-      
+
       // Reset form
       name = '';
       email = '';
       message = '';
       turnstileToken = null;
       if (resetTurnstile) resetTurnstile();
-      
+
       isSubmitted = true;
-      
+
     } finally {
       isSubmitting = false;
     }
@@ -73,19 +73,19 @@
   <title>Contact - Joshua McDonald</title>
 </svelte:head>
 
-<div class="flex flex-col min-h-screen w-full bg-[#FFFFFF] overflow-x-hidden">
-  <header class="w-full bg-[#111111] flex justify-center">
+<div class="flex flex-col min-h-screen w-full bg-white overflow-x-hidden">
+  <header class="w-full bg-bg-dark flex justify-center">
     <Header />
   </header>
 
   <main class="flex-grow flex flex-col">
     <!-- Hero Section -->
-    <div class="w-full bg-[#FFFFFF] flex justify-center py-[40px] lg:py-[90px] relative">
+    <div class="w-full bg-white flex justify-center py-[40px] lg:py-[90px] relative">
       <section class="relative w-full max-w-[1440px] px-[5%] lg:px-[180px]">
         <div class="flex flex-col lg:flex-row items-center justify-between gap-[20px] lg:gap-[120px]">
           <!-- Hero Text Content -->
           <div class="flex flex-col gap-4 max-w-[500px] px-4 lg:px-0">
-            <h1 class="text-[#4B4B4B] text-[24px] lg:text-[48px] font-inter font-bold tracking-[-0.96px] leading-tight text-center lg:text-left">
+            <h1 class="text-text-body text-[24px] lg:text-[48px] font-inter font-bold tracking-[-0.96px] leading-tight text-center lg:text-left">
               Need to get in touch with me?
             </h1>
           </div>
@@ -110,12 +110,12 @@
     <div class="w-full h-[4px] gradient-divider"></div>
 
     <!-- Contact Form Section -->
-    <div class="w-full bg-[#FAFAFA] flex justify-center py-[40px] lg:py-[90px] flex-grow">
+    <div class="w-full bg-bg-light flex justify-center py-[40px] lg:py-[90px] flex-grow">
       <section class="w-full max-w-[1440px] px-[5%] lg:px-[180px]">
         <div class="w-full max-w-[1080px] mx-auto">
           <!-- Section Title -->
           <div class="mb-[24px] lg:mb-[60px] px-4 lg:px-0">
-            <h2 class="text-[#4B4B4B] text-[24px] lg:text-[48px] font-inter font-bold tracking-[-0.96px] text-center lg:text-left">
+            <h2 class="text-text-body text-[24px] lg:text-[48px] font-inter font-bold tracking-[-0.96px] text-center lg:text-left">
               Contact me
             </h2>
           </div>
@@ -151,13 +151,13 @@
           {/if}
 
           <!-- Contact Form -->
-          <form 
+          <form
             onsubmit={(e) => { e.preventDefault(); handleSubmit(); }}
             class="grid grid-cols-1 lg:grid-cols-2 gap-x-[16px] lg:gap-x-[24px] gap-y-[16px] lg:gap-y-[24px] mb-[32px] px-4 lg:px-0"
           >
             <!-- Name Field -->
             <div class="flex flex-col gap-2">
-              <label class="text-[#333333] font-inter font-medium" for="name">
+              <label class="text-text-label font-inter font-medium" for="name">
                 Name
               </label>
               <input
@@ -166,13 +166,13 @@
                 bind:value={name}
                 required
                 placeholder="Enter your name"
-                class="h-[48px] px-4 py-3.5 bg-[#FFFFFF] border border-[#E5E5E5] rounded-lg text-[#333333] font-inter placeholder:text-[#9CA3AF] focus:outline-none focus:border-[#4A90E2] transition-colors"
+                class="h-[48px] px-4 py-3.5 bg-white border border-border-input rounded-lg text-text-label font-inter placeholder:text-[#9CA3AF] focus:outline-none focus:border-primary transition-colors"
               />
             </div>
 
             <!-- Email Field -->
             <div class="flex flex-col gap-2">
-              <label class="text-[#333333] font-inter font-medium" for="email">
+              <label class="text-text-label font-inter font-medium" for="email">
                 Email
               </label>
               <input
@@ -181,13 +181,13 @@
                 bind:value={email}
                 required
                 placeholder="Enter your email"
-                class="h-[48px] px-4 py-3.5 bg-[#FFFFFF] border border-[#E5E5E5] rounded-lg text-[#333333] font-inter placeholder:text-[#9CA3AF] focus:outline-none focus:border-[#4A90E2] transition-colors"
+                class="h-[48px] px-4 py-3.5 bg-white border border-border-input rounded-lg text-text-label font-inter placeholder:text-[#9CA3AF] focus:outline-none focus:border-primary transition-colors"
               />
             </div>
 
             <!-- Message Field -->
             <div class="flex flex-col gap-2 lg:col-span-2">
-              <label class="text-[#333333] font-inter font-medium" for="message">
+              <label class="text-text-label font-inter font-medium" for="message">
                 Message
               </label>
               <textarea
@@ -196,13 +196,16 @@
                 rows="6"
                 required
                 placeholder="Enter your message"
-                class="px-4 py-3.5 bg-[#FFFFFF] border border-[#E5E5E5] rounded-lg text-[#333333] font-inter placeholder:text-[#9CA3AF] focus:outline-none focus:border-[#4A90E2] transition-colors resize-vertical"
+                class="px-4 py-3.5 bg-white border border-border-input rounded-lg text-text-label font-inter placeholder:text-[#9CA3AF] focus:outline-none focus:border-primary transition-colors resize-vertical"
               ></textarea>
             </div>
 
-            <!-- Turnstile CAPTCHA -->
+            <!-- Turnstile CAPTCHA
+                 NOTE: on:callback/on:expired are legacy Svelte 4 event directives.
+                 svelte-turnstile v0.11.0 uses createEventDispatcher internally.
+                 Update to callback props when svelte-turnstile releases Svelte 5 support. -->
             <div class="flex justify-center lg:col-span-2 mb-6">
-              <Turnstile 
+              <Turnstile
                 siteKey={env.PUBLIC_TURNSTILE_SITE_KEY}
                 theme="light"
                 on:callback={handleTurnstileCallback}
@@ -216,7 +219,7 @@
               <button
                 type="submit"
                 disabled={isSubmitting || !turnstileToken || !name || !email || !message}
-                class="flex items-center justify-center py-[15px] px-[37px] bg-[#2D2D2D] rounded-lg text-[#FFFFFF] font-inter font-medium hover:bg-[#1A1A1A] transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-[#2D2D2D]"
+                class="flex items-center justify-center py-[15px] px-[37px] bg-text-heading rounded-lg text-white font-inter font-medium hover:bg-[#1A1A1A] transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-text-heading"
               >
                 {#if isSubmitting}
                   <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
@@ -237,7 +240,7 @@
     <div class="w-full h-[4px] gradient-divider"></div>
   </main>
 
-  <footer class="w-full bg-[#F5F5F5] flex justify-center">
+  <footer class="w-full bg-bg-footer flex justify-center">
     <Footer />
   </footer>
 </div>

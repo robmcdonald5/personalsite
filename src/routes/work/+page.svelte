@@ -68,12 +68,13 @@
 		['Automation', 'Scripting', 'JavaScript', 'TypeScript', 'Rust', 'MongoDB', 'Postgres', 'FastAPI', 'Agentic']
 	];
 
-	let activeCategory = 'All';
+	let activeCategory = $state('All');
 
-	// Reactive statement for filtered projects
-	$: filteredProjects = activeCategory === 'All' 
-		? allProjects 
-		: allProjects.filter(project => project.categories.includes(activeCategory));
+	let filteredProjects = $derived(
+		activeCategory === 'All'
+			? allProjects
+			: allProjects.filter(project => project.categories.includes(activeCategory))
+	);
 
 	function selectCategory(category: string) {
 		activeCategory = category;
@@ -93,20 +94,20 @@
 	<meta name="description" content="Explore snippets of the work I've done over my development career." />
 </svelte:head>
 
-<div class="flex flex-col min-h-screen w-full bg-[#FFFFFF] overflow-x-hidden">
-	<header class="w-full bg-[#111111] flex justify-center">
+<div class="flex flex-col min-h-screen w-full bg-white overflow-x-hidden">
+	<header class="w-full bg-bg-dark flex justify-center">
 		<Header />
 	</header>
 
 	<main class="flex-grow flex flex-col">
 		<!-- Hero Section -->
-		<div class="w-full bg-[#FFFFFF] flex justify-center py-[40px] lg:py-[80px]">
+		<div class="w-full bg-white flex justify-center py-[40px] lg:py-[80px]">
 			<section class="w-full max-w-[1440px] px-[5%] lg:px-[180px]">
 				<div class="flex flex-col items-center gap-4 mb-[32px] lg:mb-[60px] px-4 lg:px-0">
-					<h1 class="text-[#2D2D2D] text-[36px] lg:text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
+					<h1 class="text-text-heading text-[36px] lg:text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
 						My Work
 					</h1>
-					<p class="text-[#2D2D2D] text-sm lg:text-lg font-inter text-center max-w-[600px] px-4">
+					<p class="text-text-heading text-sm lg:text-lg font-inter text-center max-w-[600px] px-4">
 						A curated collection of my projects. From web applications to machine learning models, here's what I've been building.
 					</p>
 				</div>
@@ -116,16 +117,16 @@
 		<div class="w-full h-[4px] gradient-divider"></div>
 
 		<!-- Projects Section -->
-		<div class="w-full bg-[#FAFAFA] flex justify-center flex-grow py-[40px] lg:py-[80px]">
+		<div class="w-full bg-bg-light flex justify-center flex-grow py-[40px] lg:py-[80px]">
 			<section class="w-full max-w-[1440px] px-[5%] lg:px-[180px]">
 				<!-- Filter Navigation -->
 				<div class="flex justify-center mb-[32px] lg:mb-[60px] px-4 lg:px-0">
 					<div class="flex flex-wrap justify-center gap-1.5 lg:gap-2 max-w-full">
 						{#each allCategories.flat() as category}
 							<button
-								class="px-3 lg:px-4 py-1.5 lg:py-2 rounded-full font-inter font-medium text-xs lg:text-sm whitespace-nowrap transition-all duration-200 {activeCategory === category 
-									? 'bg-[#4A90E2] text-[#FFFFFF] shadow-lg' 
-									: 'bg-[#FFFFFF] text-[#2D2D2D] border border-[#EAEAEA] hover:bg-[#F0F0F0] hover:border-[#4A90E2]'}"
+								class="px-3 lg:px-4 py-1.5 lg:py-2 rounded-full font-inter font-medium text-xs lg:text-sm whitespace-nowrap transition-all duration-200 {activeCategory === category
+									? 'bg-primary text-white shadow-lg'
+									: 'bg-white text-text-heading border border-border-default hover:bg-bg-tag hover:border-primary'}"
 								onclick={() => selectCategory(category)}
 							>
 								{category}
@@ -140,28 +141,29 @@
 						<div in:fly={{ y: 20, duration: 400, delay: i * 50 }} out:fly={{ y: -10, duration: 200 }}>
 							<a
 								href={project.href}
-								class="group block bg-[#FFFFFF] border border-[#EAEAEA] rounded-2xl overflow-hidden h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-[#4A90E2]"
+								class="group block bg-white border border-border-default rounded-2xl overflow-hidden h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-primary"
 							>
-								<div class="aspect-video overflow-hidden bg-[#F8F9FA]">
+								<div class="aspect-video overflow-hidden bg-bg-lighter">
 									<img
 										src={project.previewImage}
 										alt={project.name}
+										loading="lazy"
 										class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
 										onerror={handleImageError}
 									/>
-									<div class="w-full h-full bg-[#F8F9FA] flex items-center justify-center text-[#666666] font-inter text-sm" style="display: none;">
+									<div class="w-full h-full bg-bg-lighter flex items-center justify-center text-text-muted font-inter text-sm" style="display: none;" role="img" aria-label="{project.name} placeholder">
 										{project.imageQuery}
 									</div>
 								</div>
 								<div class="p-4 lg:p-6">
 									<div class="flex flex-wrap gap-1.5 lg:gap-2">
 										{#each project.categories.slice(0, 2) as cat}
-											<span class="px-2 lg:px-3 py-0.5 lg:py-1 bg-[#F0F0F0] text-[#666666] text-xs lg:text-sm font-inter rounded-full">
+											<span class="px-2 lg:px-3 py-0.5 lg:py-1 bg-bg-tag text-text-muted text-xs lg:text-sm font-inter rounded-full">
 												{cat}
 											</span>
 										{/each}
 										{#if project.categories.length > 2}
-											<span class="px-2 lg:px-3 py-0.5 lg:py-1 bg-[#F0F0F0] text-[#666666] text-xs lg:text-sm font-inter rounded-full">
+											<span class="px-2 lg:px-3 py-0.5 lg:py-1 bg-bg-tag text-text-muted text-xs lg:text-sm font-inter rounded-full">
 												+{project.categories.length - 2}
 											</span>
 										{/if}
@@ -174,7 +176,7 @@
 
 				{#if filteredProjects.length === 0}
 					<div class="text-center py-16">
-						<p class="text-[#666666] font-inter text-lg">No projects found in this category.</p>
+						<p class="text-text-muted font-inter text-lg">No projects found in this category.</p>
 					</div>
 				{/if}
 			</section>
@@ -183,7 +185,7 @@
 		<div class="w-full h-[4px] gradient-divider"></div>
 	</main>
 
-	<footer class="w-full bg-[#F5F5F5] flex justify-center">
+	<footer class="w-full bg-bg-footer flex justify-center">
 		<Footer />
 	</footer>
 </div>
