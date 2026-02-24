@@ -1,5 +1,26 @@
 @import "tailwindcss";
 
+@theme {
+  --font-inter: 'Inter', sans-serif;
+  --font-roboto: 'Roboto', sans-serif;
+  --font-roboto-mono: 'Roboto Mono', monospace;
+  --font-montserrat: 'Montserrat', sans-serif;
+
+  --color-primary: #4A90E2;
+  --color-text-heading: #2D2D2D;
+  --color-text-body: #4B4B4B;
+  --color-text-muted: #666666;
+  --color-text-label: #333333;
+  --color-bg-dark: #111111;
+  --color-bg-light: #FAFAFA;
+  --color-bg-lighter: #F8F9FA;
+  --color-bg-tag: #F0F0F0;
+  --color-bg-footer: #F5F5F5;
+  --color-border-default: #EAEAEA;
+  --color-border-light: #E0E0E0;
+  --color-border-input: #E5E5E5;
+}
+
 /* Local Font Declarations */
 @font-face {
   font-family: 'Inter';
@@ -67,7 +88,7 @@
 
 /* Component Styles */
 .gradient-divider {
-  background: linear-gradient(180deg, #E0E0E0 0%, #F5F5F5 100%);
+  background: linear-gradient(180deg, var(--color-border-light) 0%, var(--color-bg-footer) 100%);
 }
 
 .card-image {
