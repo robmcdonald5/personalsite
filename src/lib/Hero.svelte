@@ -5,10 +5,10 @@
   <div class="text-center lg:text-left">
     <span class="text-text-heading">
       <span class="text-[24px] lg:text-[56px] font-inter font-bold tracking-[-0.02em] leading-tight">
-        Software engineer by trade,<br />
+        Software engineer.<br />
       </span>
       <span class="text-[18px] lg:text-[40px] font-inter font-light tracking-[-0.02em]">
-        AI enthusiast by obsession.
+        I Build AI Powered Tools.
       </span>
     </span>
   </div>
