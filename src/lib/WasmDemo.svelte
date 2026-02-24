@@ -196,15 +196,15 @@
   }
 </script>
 
-<section class="w-full max-w-[1440px] py-16 px-[5%] md:px-[180px] bg-[#FAFAFA]">
+<section class="w-full max-w-[1440px] py-16 px-[5%] lg:px-[180px] bg-bg-light">
   <div class="flex flex-col items-center gap-12">
     <!-- Header -->
-    <div class="flex justify-center items-center flex-row gap-[49px] w-full max-w-[1080px]">
-      <div class="flex-1 h-0 border-solid border-[#E0E0E0] border-b"></div>
-      <span class="text-[#000000] text-xl font-montserrat font-medium whitespace-nowrap">
+    <div class="flex justify-center items-center flex-row gap-[20px] lg:gap-[49px] w-full max-w-[1080px]">
+      <div class="flex-1 h-0 border-solid border-border-light border-b"></div>
+      <span class="text-black text-xl font-montserrat font-medium whitespace-nowrap">
         WASM IMAGE PROCESSING DEMO
       </span>
-      <div class="flex-1 h-0 border-solid border-[#E0E0E0] border-b"></div>
+      <div class="flex-1 h-0 border-solid border-border-light border-b"></div>
     </div>
 
     <!-- WASM Status -->
