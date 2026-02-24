@@ -30,3 +30,5 @@ vite.config.ts.timestamp-*
 # Coding CLI
 .claude/*
 CLAUDE.md
+.mcp.json
+.vscode/*
