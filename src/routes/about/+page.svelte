@@ -28,7 +28,7 @@
             <p class="text-black text-sm lg:text-base font-inter font-extralight max-w-full lg:max-w-[280px] text-center lg:text-left">
               I've been working with and building software systems for most of my
               life. Currently I am focused on making AI applications — blending
-              art, gaming, and speed.
+              art, gaming, and efficiency.
             </p>
           </div>
 
