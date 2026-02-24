@@ -27,26 +27,26 @@
   <title>Path of Exile Market Analyzer - Joshua McDonald</title>
 </svelte:head>
 
-<div class="flex flex-col min-h-screen w-full bg-[#FFFFFF] overflow-x-hidden">
-  <header class="w-full bg-[#111111] flex justify-center">
+<div class="flex flex-col min-h-screen w-full bg-white overflow-x-hidden">
+  <header class="w-full bg-bg-dark flex justify-center">
     <Header />
   </header>
 
   <main class="flex-grow flex flex-col">
     <!-- Hero Section -->
-    <div class="w-full bg-[#FFFFFF] flex justify-center py-[40px] lg:py-[80px] flex-grow">
+    <div class="w-full bg-white flex justify-center py-[40px] lg:py-[80px] flex-grow">
       <section class="w-full max-w-[1440px] px-[5%] lg:px-[180px]">
         <!-- Title and Description -->
         <div class="flex flex-col items-center gap-3 mb-[40px] lg:mb-[60px]">
           <div class="flex flex-col lg:flex-row items-center justify-center gap-3 lg:gap-6">
-            <h1 class="text-[#2D2D2D] text-[28px] lg:text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
+            <h1 class="text-text-heading text-[28px] lg:text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
               Path of Exile Market Analyzer
             </h1>
             <a
               href="https://github.com/robmcdonald5/poe-digest"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center w-8 h-8 lg:w-12 lg:h-12 rounded-full bg-[#2D2D2D] hover:bg-[#4D4D4D] transition-colors duration-200 text-white flex-shrink-0"
+              class="inline-flex items-center justify-center w-8 h-8 lg:w-12 lg:h-12 rounded-full bg-text-heading hover:bg-[#4D4D4D] transition-colors duration-200 text-white flex-shrink-0"
               aria-label="View PoE Market Analyzer on GitHub"
             >
               <svg class="w-4 h-4 lg:w-6 lg:h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -54,7 +54,7 @@
               </svg>
             </a>
           </div>
-          <p class="text-[#2D2D2D] text-sm lg:text-lg font-inter text-center max-w-[650px] px-4 lg:px-0">
+          <p class="text-text-heading text-sm lg:text-lg font-inter text-center max-w-[650px] px-4 lg:px-0">
             In progress development of companion web app for the game Path of Exile. Uses Svelte, Supabase, Python, and Rust to generate customized newsletters showing specific market trends via pathofexile.com API calls using FastAPI PoE.
           </p>
         </div>
@@ -63,7 +63,7 @@
         <div class="w-full flex justify-center mb-8 lg:mb-16 px-4 lg:px-0">
           <div class="w-full max-w-[850px] flex flex-col">
             <!-- Title Card Header -->
-            <div class="w-full h-[20px] bg-[#2D2D2D] rounded-tl-md rounded-tr-md relative">
+            <div class="w-full h-[20px] bg-text-heading rounded-tl-md rounded-tr-md relative">
               <!-- Previous Button -->
               <button onclick={previousImage} aria-label="Previous step" class="absolute top-[2px] right-[56px] w-[16px] h-[16px] flex items-center justify-center">
                 <svg class="w-3 h-3 text-white rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -87,7 +87,7 @@
             </div>
             
             <!-- Image Container -->
-            <div class="w-full h-[300px] lg:h-[500px] flex justify-center items-center bg-[#1E1E1E] border-solid border-[#2D2D2D] border-b-[6px] border-x-[6px] rounded-br-md rounded-bl-md shadow-[0px_2px_4px_0px_rgba(0,0,0,0.05)]">
+            <div class="w-full h-[300px] lg:h-[500px] flex justify-center items-center bg-[#1E1E1E] border-solid border-text-heading border-b-[6px] border-x-[6px] rounded-br-md rounded-bl-md shadow-[0px_2px_4px_0px_rgba(0,0,0,0.05)]">
               <div class="w-full h-full flex justify-center items-center p-2 lg:p-3">
                 {#if currentImageStep}
                   <img 
@@ -115,7 +115,7 @@
         <div class="w-full flex justify-center mt-8 lg:mt-16 px-4 lg:px-0">
           <div class="grid py-[20px] lg:py-[25px] px-[20px] lg:px-[57px] bg-[#F3F4F6] rounded-lg shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] grid-cols-1 lg:grid-cols-4 grid-rows-auto lg:grid-rows-3 gap-x-2 lg:gap-x-4 gap-y-3">
             <!-- Title - positioned in grid -->
-            <div class="text-[#2D2D2D] text-[20px] lg:text-[26px] font-inter text-center font-semibold col-span-1 lg:col-span-4 row-span-1 mb-2 lg:mb-0">
+            <div class="text-text-heading text-[20px] lg:text-[26px] font-inter text-center font-semibold col-span-1 lg:col-span-4 row-span-1 mb-2 lg:mb-0">
               Technology Stack
             </div>
             
@@ -125,7 +125,7 @@
               <div>
                 <img src="/tech-stack__sveltekit-icon.svg" alt="SvelteKit" class="w-[32px] h-[32px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">SvelteKit</div>
+              <div class="text-black font-inter font-medium">SvelteKit</div>
             </div>
             
             <!-- Vercel -->
@@ -133,7 +133,7 @@
               <div>
                 <img src="/tech-stack__vercel-icon.svg" alt="Vercel" class="w-[30px] h-[30px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">Vercel</div>
+              <div class="text-black font-inter font-medium">Vercel</div>
             </div>
             
             <!-- Python -->
@@ -141,7 +141,7 @@
               <div>
                 <img src="/tech-stack__python-icon.svg" alt="Python" class="w-[28px] h-[28px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">Python</div>
+              <div class="text-black font-inter font-medium">Python</div>
             </div>
             
             <!-- Supabase -->
@@ -149,7 +149,7 @@
               <div>
                 <img src="/tech-stack__supabase-icon.svg" alt="Supabase" class="w-[31px] h-[32px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">Supabase</div>
+              <div class="text-black font-inter font-medium">Supabase</div>
             </div>
             
             <!-- Row 3 Tech Cards -->
@@ -158,7 +158,7 @@
               <div>
                 <img src="/tech-stack__rust-icon.svg" alt="Rust" class="w-[29px] h-[29px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">Rust</div>
+              <div class="text-black font-inter font-medium">Rust</div>
             </div>
             
             <!-- FastAPI -->
@@ -166,7 +166,7 @@
               <div>
                 <img src="/tech-stack__fastapi-icon.svg" alt="FastAPI" class="w-[30px] h-[30px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">FastAPI</div>
+              <div class="text-black font-inter font-medium">FastAPI</div>
             </div>
             
             <!-- TypeScript -->
@@ -174,7 +174,7 @@
               <div>
                 <img src="/tech-stack__typescript-icon.svg" alt="TypeScript" class="w-[30px] h-[30px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">TypeScript</div>
+              <div class="text-black font-inter font-medium">TypeScript</div>
             </div>
           </div>
         </div>
@@ -184,7 +184,7 @@
     <div class="w-full h-[4px] gradient-divider"></div>
   </main>
 
-  <footer class="w-full bg-[#F5F5F5] flex justify-center">
+  <footer class="w-full bg-bg-footer flex justify-center">
     <Footer />
   </footer>
 </div>

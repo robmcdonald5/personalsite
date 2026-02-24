@@ -8,26 +8,26 @@
   <title>My Portfolio Site - Joshua McDonald</title>
 </svelte:head>
 
-<div class="flex flex-col min-h-screen w-full bg-[#FFFFFF] overflow-x-hidden">
-  <header class="w-full bg-[#111111] flex justify-center">
+<div class="flex flex-col min-h-screen w-full bg-white overflow-x-hidden">
+  <header class="w-full bg-bg-dark flex justify-center">
     <Header />
   </header>
 
   <main class="flex-grow flex flex-col">
     <!-- Hero Section -->
-    <div class="w-full bg-[#FFFFFF] flex justify-center py-[40px] lg:py-[80px] flex-grow">
+    <div class="w-full bg-white flex justify-center py-[40px] lg:py-[80px] flex-grow">
       <section class="w-full max-w-[1440px] px-[5%] lg:px-[180px]">
         <!-- Title and Description -->
         <div class="flex flex-col items-center gap-3 lg:gap-4 mb-[40px] lg:mb-[60px]">
           <div class="flex flex-col lg:flex-row items-center justify-center gap-3 lg:gap-6">
-            <h1 class="text-[#2D2D2D] text-[28px] lg:text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
+            <h1 class="text-text-heading text-[28px] lg:text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
               My Portfolio Site
             </h1>
             <a
               href="https://github.com/robmcdonald5/personalsite"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center w-8 h-8 lg:w-12 lg:h-12 rounded-full bg-[#2D2D2D] hover:bg-[#4D4D4D] transition-colors duration-200 text-white flex-shrink-0"
+              class="inline-flex items-center justify-center w-8 h-8 lg:w-12 lg:h-12 rounded-full bg-text-heading hover:bg-[#4D4D4D] transition-colors duration-200 text-white flex-shrink-0"
               aria-label="View Portfolio Site on GitHub"
             >
               <svg class="w-4 h-4 lg:w-6 lg:h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -35,7 +35,7 @@
               </svg>
             </a>
           </div>
-          <p class="text-[#2D2D2D] text-sm lg:text-lg font-inter text-center max-w-[650px] px-4 lg:px-0">
+          <p class="text-text-heading text-sm lg:text-lg font-inter text-center max-w-[650px] px-4 lg:px-0">
             My personal portfolio site (this site) made with SvelteKit hosted on Vercel. UI elements are compiled with Wasm for performance, with contact forms powered by Formspark and Turnstile CAPTCHA protection.
           </p>
         </div>
@@ -59,7 +59,7 @@
               
               <!-- Main Content Text -->
               <div class="w-full lg:w-[469px] lg:h-[191px] flex flex-col gap-4 lg:gap-6 lg:absolute lg:left-[60px] lg:top-[90px] mb-6 lg:mb-0">
-                <div class="text-[#2D2D2D] text-[24px] lg:text-[42px] font-inter font-bold text-center lg:text-left">
+                <div class="text-text-heading text-[24px] lg:text-[42px] font-inter font-bold text-center lg:text-left">
                   Built with SvelteKit + WebAssembly
                 </div>
                 <div class="text-[#4B5563] text-sm lg:text-lg font-inter text-center lg:text-left">
@@ -105,7 +105,7 @@
               <!-- Feature Cards - Mobile: Horizontal flex, Desktop: Absolute positioning -->
               <div class="flex flex-row lg:block gap-4 lg:gap-0 justify-center lg:justify-start">
                 <!-- SvelteKit Feature Card -->
-                <div class="w-[140px] lg:w-[180px] h-[140px] lg:h-[180px] flex flex-col justify-center items-center py-3 lg:py-[18px] px-4 lg:px-[37px] bg-[#FFFFFF] rounded-xl lg:absolute lg:left-[560.5px] lg:top-[106.19px] lg:z-20 lg:transform lg:rotate-[-5deg]">
+                <div class="w-[140px] lg:w-[180px] h-[140px] lg:h-[180px] flex flex-col justify-center items-center py-3 lg:py-[18px] px-4 lg:px-[37px] bg-white rounded-xl lg:absolute lg:left-[560.5px] lg:top-[106.19px] lg:z-20 lg:transform lg:rotate-[-5deg]">
                   <div class="flex flex-col items-center justify-center gap-1 lg:gap-2 w-full h-full">
                     <div class="flex justify-center items-center">
                       <img 
@@ -118,7 +118,7 @@
                       />
                     </div>
                     <div class="text-center">
-                      <div class="text-[#2D2D2D] text-sm lg:text-lg font-inter font-semibold">
+                      <div class="text-text-heading text-sm lg:text-lg font-inter font-semibold">
                         SvelteKit
                       </div>
                       <p class="text-[#6B7280] text-xs lg:text-sm font-inter font-light">
@@ -129,7 +129,7 @@
                 </div>
 
                 <!-- WebAssembly Feature Card -->
-                <div class="w-[140px] lg:w-[180px] h-[140px] lg:h-[180px] flex flex-col justify-center items-center py-3 lg:py-[18px] px-4 lg:px-[37px] bg-[#FFFFFF] rounded-xl lg:absolute lg:left-[836.69px] lg:top-[171px] lg:z-20 lg:transform lg:rotate-[5deg]">
+                <div class="w-[140px] lg:w-[180px] h-[140px] lg:h-[180px] flex flex-col justify-center items-center py-3 lg:py-[18px] px-4 lg:px-[37px] bg-white rounded-xl lg:absolute lg:left-[836.69px] lg:top-[171px] lg:z-20 lg:transform lg:rotate-[5deg]">
                   <div class="flex flex-col items-center justify-center gap-1 lg:gap-2 w-full h-full">
                     <div class="flex justify-center items-center">
                       <img 
@@ -142,7 +142,7 @@
                       />
                     </div>
                     <div class="text-center">
-                      <div class="text-[#2D2D2D] text-sm lg:text-lg font-inter font-semibold">
+                      <div class="text-text-heading text-sm lg:text-lg font-inter font-semibold">
                         WebAssembly
                       </div>
                       <p class="text-[#6B7280] text-xs lg:text-sm font-inter font-light">
@@ -160,7 +160,7 @@
         <div class="w-full flex justify-center mt-8 lg:mt-16 px-4 lg:px-0">
           <div class="grid py-[20px] lg:py-[25px] px-[20px] lg:px-[57px] bg-[#F3F4F6] rounded-lg shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] grid-cols-1 lg:grid-cols-4 grid-rows-auto lg:grid-rows-3 gap-x-2 lg:gap-x-4 gap-y-3">
             <!-- Title - positioned in grid -->
-            <div class="text-[#2D2D2D] text-[20px] lg:text-[26px] font-inter text-center font-semibold col-span-1 lg:col-span-4 row-span-1 mb-2 lg:mb-0">
+            <div class="text-text-heading text-[20px] lg:text-[26px] font-inter text-center font-semibold col-span-1 lg:col-span-4 row-span-1 mb-2 lg:mb-0">
               Technology Stack
             </div>
             
@@ -170,7 +170,7 @@
               <div>
                 <img src="/tech-stack__sveltekit-icon.svg" alt="SvelteKit" class="w-[32px] h-[32px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">SvelteKit</div>
+              <div class="text-black font-inter font-medium">SvelteKit</div>
             </div>
             
             <!-- Vercel -->
@@ -178,7 +178,7 @@
               <div>
                 <img src="/tech-stack__vercel-icon.svg" alt="Vercel" class="w-[30px] h-[30px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">Vercel</div>
+              <div class="text-black font-inter font-medium">Vercel</div>
             </div>
             
             <!-- Formspark -->
@@ -186,7 +186,7 @@
               <div>
                 <img src="/tech-stack__formspark-icon.svg" alt="Formspark" class="w-[25px] h-[28px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">Formspark</div>
+              <div class="text-black font-inter font-medium">Formspark</div>
             </div>
             
             <!-- Rust -->
@@ -194,7 +194,7 @@
               <div>
                 <img src="/tech-stack__rust-icon.svg" alt="Rust" class="w-[32px] h-[32px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">Rust</div>
+              <div class="text-black font-inter font-medium">Rust</div>
             </div>
             
             <!-- Row 3 Tech Cards -->
@@ -203,7 +203,7 @@
               <div>
                 <img src="/tech-stack__wasm-icon.svg" alt="WebAssembly" class="w-[30px] h-[30px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">WebAssembly</div>
+              <div class="text-black font-inter font-medium">WebAssembly</div>
             </div>
             
             <!-- Turnstile -->
@@ -211,7 +211,7 @@
               <div>
                 <img src="/tech-stack__turnstile-icon.svg" alt="Turnstile" class="w-[25px] h-[28px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">Turnstile</div>
+              <div class="text-black font-inter font-medium">Turnstile</div>
             </div>
             
             <!-- TypeScript -->
@@ -219,7 +219,7 @@
               <div>
                 <img src="/tech-stack__typescript-icon.svg" alt="TypeScript" class="w-[25px] h-[28px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">TypeScript</div>
+              <div class="text-black font-inter font-medium">TypeScript</div>
             </div>
             
             <!-- Playwright -->
@@ -227,7 +227,7 @@
               <div>
                 <img src="/tech-stack__playwright-icon.svg" alt="Playwright" class="w-[25px] h-[28px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">Playwright</div>
+              <div class="text-black font-inter font-medium">Playwright</div>
             </div>
           </div>
         </div>
@@ -237,14 +237,14 @@
     <div class="w-full h-[4px] gradient-divider"></div>
 
     <!-- WASM Demo Section -->
-    <div class="w-full bg-[#FAFAFA] flex justify-center">
+    <div class="w-full bg-bg-light flex justify-center">
       <WasmDemo />
     </div>
 
     <div class="w-full h-[4px] gradient-divider"></div>
   </main>
 
-  <footer class="w-full bg-[#F5F5F5] flex justify-center">
+  <footer class="w-full bg-bg-footer flex justify-center">
     <Footer />
   </footer>
 </div>

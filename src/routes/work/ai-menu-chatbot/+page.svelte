@@ -139,26 +139,26 @@
   <title>Chipotle AI Menu - Joshua McDonald</title>
 </svelte:head>
 
-<div class="flex flex-col min-h-screen w-full bg-[#FFFFFF] overflow-x-hidden">
-  <header class="w-full bg-[#111111] flex justify-center">
+<div class="flex flex-col min-h-screen w-full bg-white overflow-x-hidden">
+  <header class="w-full bg-bg-dark flex justify-center">
     <Header />
   </header>
 
   <main class="flex-grow flex flex-col">
     <!-- Hero Section -->
-    <div class="w-full bg-[#FFFFFF] flex justify-center py-[40px] lg:py-[80px] flex-grow">
+    <div class="w-full bg-white flex justify-center py-[40px] lg:py-[80px] flex-grow">
       <section class="w-full max-w-[1440px] px-[5%] lg:px-[180px]">
         <!-- Title and Description -->
         <div class="flex flex-col items-center gap-3 mb-[40px] lg:mb-[60px]">
           <div class="flex flex-col lg:flex-row items-center justify-center gap-3 lg:gap-6">
-            <h1 class="text-[#2D2D2D] text-[28px] lg:text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
+            <h1 class="text-text-heading text-[28px] lg:text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
               Chipotle AI Menu
             </h1>
             <a
               href="https://github.com/robmcdonald5/AI-Menu-Chatbot"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center w-8 h-8 lg:w-12 lg:h-12 rounded-full bg-[#2D2D2D] hover:bg-[#4D4D4D] transition-colors duration-200 text-white flex-shrink-0"
+              class="inline-flex items-center justify-center w-8 h-8 lg:w-12 lg:h-12 rounded-full bg-text-heading hover:bg-[#4D4D4D] transition-colors duration-200 text-white flex-shrink-0"
               aria-label="View AI Menu Chatbot on GitHub"
             >
               <svg class="w-4 h-4 lg:w-6 lg:h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -166,7 +166,7 @@
               </svg>
             </a>
           </div>
-          <p class="text-[#2D2D2D] text-sm lg:text-lg font-inter text-center max-w-[650px] px-4 lg:px-0">
+          <p class="text-text-heading text-sm lg:text-lg font-inter text-center max-w-[650px] px-4 lg:px-0">
             Conversational AI chatbot that lets users place Chipotle orders using natural language — built with React, MongoDB, Flask, spaCy, NLTK, PyTorch.
           </p>
         </div>
@@ -176,7 +176,7 @@
           <div class="flex flex-wrap justify-center gap-2 lg:gap-8">
             {#each sections as section}
               <button
-                class="flex items-center gap-1 lg:gap-2 px-2 lg:px-4 py-1.5 lg:py-2 rounded-full border transition-all duration-200 {activeSection === section.name ? 'bg-[#4A90E2] text-white border-[#4A90E2]' : 'bg-white text-[#6B7280] border-[#E5E7EB] hover:border-[#4A90E2]'}"
+                class="flex items-center gap-1 lg:gap-2 px-2 lg:px-4 py-1.5 lg:py-2 rounded-full border transition-all duration-200 {activeSection === section.name ? 'bg-primary text-white border-primary' : 'bg-white text-[#6B7280] border-[#E5E7EB] hover:border-primary'}"
                 onclick={() => setActiveSection(section.name)}
               >
                 <img src="/{section.icon}" alt="{section.name}" class="w-3 lg:w-4 h-3 lg:h-4" />
@@ -192,7 +192,7 @@
           <div class="w-full lg:flex-1 lg:max-w-[580px]">
             <!-- Image Container -->
             <div class="bg-white border border-[#E5E7EB] rounded-lg overflow-hidden shadow-sm">
-              <div class="h-[300px] lg:h-[400px] bg-[#FAFAFA] flex items-center justify-center">
+              <div class="h-[300px] lg:h-[400px] bg-bg-light flex items-center justify-center">
                 {#if currentImageStep}
                   <img src="/{currentImageStep.image}" alt="{currentImageStep.title}" class="max-w-full max-h-full object-contain" />
                 {:else}
@@ -207,7 +207,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                   </svg>
                 </button>
-                <span class="text-xs lg:text-sm font-medium text-[#2D2D2D] text-center flex-1 px-2 lg:px-4">{currentImageStep?.title || 'Loading...'}</span>
+                <span class="text-xs lg:text-sm font-medium text-text-heading text-center flex-1 px-2 lg:px-4">{currentImageStep?.title || 'Loading...'}</span>
                 <button class="p-2 hover:bg-gray-50 rounded flex-shrink-0" onclick={nextImage} aria-label="Next step">
                   <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -222,7 +222,7 @@
             <div class="bg-white border border-[#E5E7EB] rounded-lg overflow-hidden shadow-sm">
               <!-- Code Title Bar -->
               <div class="h-[45px] lg:h-[50px] bg-[#F9FAFB] border-b border-[#E5E7EB] flex items-center justify-between px-4 lg:px-6">
-                <span class="text-xs lg:text-sm font-medium text-[#2D2D2D]">{currentCodeTitle || 'Loading...'}</span>
+                <span class="text-xs lg:text-sm font-medium text-text-heading">{currentCodeTitle || 'Loading...'}</span>
                 {#if hasMultipleCodeImages}
                   <div class="flex items-center gap-2">
                     <button 
@@ -255,7 +255,7 @@
                 <div class="flex gap-1">
                   {#each availableLanguages as language}
                     <button
-                      class="px-3 lg:px-6 py-1.5 lg:py-2 text-xs lg:text-sm font-medium rounded-t-md transition-all {activeLanguage === language ? 'bg-white text-[#1F2937] border-b-2 border-[#4A90E2]' : 'text-[#6B7280] hover:text-[#1F2937]'}"
+                      class="px-3 lg:px-6 py-1.5 lg:py-2 text-xs lg:text-sm font-medium rounded-t-md transition-all {activeLanguage === language ? 'bg-white text-[#1F2937] border-b-2 border-primary' : 'text-[#6B7280] hover:text-[#1F2937]'}"
                       onclick={() => setActiveLanguage(language)}
                     >
                       {language}
@@ -1038,7 +1038,7 @@
         <div class="w-full flex justify-center mt-8 lg:mt-16 px-4 lg:px-0">
           <div class="grid py-[20px] lg:py-[25px] px-[20px] lg:px-[57px] bg-[#F3F4F6] rounded-lg shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] grid-cols-1 lg:grid-cols-4 grid-rows-auto lg:grid-rows-3 gap-x-2 lg:gap-x-4 gap-y-3">
             <!-- Title - positioned in grid -->
-            <div class="text-[#2D2D2D] text-[20px] lg:text-[26px] font-inter text-center font-semibold col-span-1 lg:col-span-4 row-span-1 mb-2 lg:mb-0">
+            <div class="text-text-heading text-[20px] lg:text-[26px] font-inter text-center font-semibold col-span-1 lg:col-span-4 row-span-1 mb-2 lg:mb-0">
               Technology Stack
             </div>
             
@@ -1053,7 +1053,7 @@
               <div>
                 <img src="/tech-stack__react-icon.svg" alt="React" class="w-[29px] h-[29px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">React</div>
+              <div class="text-black font-inter font-medium">React</div>
             </div>
             
             <!-- Next.js -->
@@ -1061,7 +1061,7 @@
               <div>
                 <img src="/tech-stack__nextjs-icon.svg" alt="Next.js" class="w-[30px] h-[30px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">Next.js</div>
+              <div class="text-black font-inter font-medium">Next.js</div>
             </div>
             
             <!-- Heroku -->
@@ -1069,7 +1069,7 @@
               <div>
                 <img src="/tech-stack__heroku-icon.svg" alt="Heroku" class="w-[30px] h-[30px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">Heroku</div>
+              <div class="text-black font-inter font-medium">Heroku</div>
             </div>
             
             <!-- Python -->
@@ -1077,7 +1077,7 @@
               <div>
                 <img src="/tech-stack__python-icon.svg" alt="Python" class="w-[28px] h-[28px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">Python</div>
+              <div class="text-black font-inter font-medium">Python</div>
             </div>
             
             <!-- Row 3 Tech Cards -->
@@ -1086,7 +1086,7 @@
               <div>
                 <img src="/tech-stack__mongodb-icon.svg" alt="MongoDB" class="w-[29px] h-[29px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">MongoDB</div>
+              <div class="text-black font-inter font-medium">MongoDB</div>
             </div>
             
             <!-- Flask -->
@@ -1094,7 +1094,7 @@
               <div>
                 <img src="/tech-stack__flask-icon.svg" alt="Flask" class="w-[28px] h-[28px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">Flask</div>
+              <div class="text-black font-inter font-medium">Flask</div>
             </div>
             
             <!-- PyTorch -->
@@ -1102,7 +1102,7 @@
               <div>
                 <img src="/tech-stack__pytorch-icon.svg" alt="PyTorch" class="w-[30px] h-[30px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">PyTorch</div>
+              <div class="text-black font-inter font-medium">PyTorch</div>
             </div>
           </div>
         </div>
@@ -1112,7 +1112,7 @@
     <div class="w-full h-[4px] gradient-divider"></div>
   </main>
 
-  <footer class="w-full bg-[#F5F5F5] flex justify-center">
+  <footer class="w-full bg-bg-footer flex justify-center">
     <Footer />
   </footer>
 </div>

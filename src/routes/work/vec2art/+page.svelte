@@ -140,24 +140,24 @@
   const canGoNext = $derived(currentCodeConfig && activeCodeStep < currentCodeConfig.titles.length - 1);
 </script>
 
-<div class="flex flex-col min-h-screen w-full bg-[#FFFFFF] overflow-x-hidden">
-  <header class="w-full bg-[#111111] flex justify-center">
+<div class="flex flex-col min-h-screen w-full bg-white overflow-x-hidden">
+  <header class="w-full bg-bg-dark flex justify-center">
     <Header />
   </header>
 
   <main class="flex-grow flex flex-col">
     <!-- Hero Section -->
-    <div class="w-full bg-[#FFFFFF] flex justify-center py-[40px] lg:py-[80px] flex-grow">
+    <div class="w-full bg-white flex justify-center py-[40px] lg:py-[80px] flex-grow">
       <section class="w-full max-w-[1440px] px-[5%] lg:px-[180px]">
         <!-- Title and Description -->
         <div class="flex flex-col items-center gap-3 lg:gap-4 mb-[40px] lg:mb-[60px]">
           <div class="flex flex-col lg:flex-row items-center justify-center gap-3 lg:gap-6">
-            <h1 class="text-[#2D2D2D] text-[28px] lg:text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
+            <h1 class="text-text-heading text-[28px] lg:text-[64px] font-inter font-bold tracking-[-1.28px] text-center leading-tight">
               <a
                 href="https://vec2art.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-[#2D2D2D] hover:text-[#4D4D4D] transition-colors duration-200 hover:underline"
+                class="text-text-heading hover:text-[#4D4D4D] transition-colors duration-200 hover:underline"
               >
                 vec2art SVG Converter
               </a>
@@ -166,7 +166,7 @@
               href="https://github.com/robmcdonald5/vec2art"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center w-8 h-8 lg:w-12 lg:h-12 rounded-full bg-[#2D2D2D] hover:bg-[#4D4D4D] transition-colors duration-200 text-white flex-shrink-0"
+              class="inline-flex items-center justify-center w-8 h-8 lg:w-12 lg:h-12 rounded-full bg-text-heading hover:bg-[#4D4D4D] transition-colors duration-200 text-white flex-shrink-0"
               aria-label="View vec2art on GitHub"
             >
               <svg class="w-4 h-4 lg:w-6 lg:h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -174,7 +174,7 @@
               </svg>
             </a>
           </div>
-          <p class="text-[#2D2D2D] text-sm lg:text-lg font-inter text-center max-w-[650px] lg:max-w-[900px] px-4 lg:px-0">
+          <p class="text-text-heading text-sm lg:text-lg font-inter text-center max-w-[650px] lg:max-w-[900px] px-4 lg:px-0">
             Transforms raster images into expressive line-art SVG illustrations in under 1.5 seconds. Built with Rust for ultra-fast processing, featuring 4 specialized vectorization backends, GPU acceleration, and an artistic enhancement pipeline for hand-drawn aesthetics.
           </p>
         </div>
@@ -184,7 +184,7 @@
           <div class="flex flex-wrap justify-center gap-2 lg:gap-8">
             {#each sections as section}
               <button
-                class="flex items-center gap-2 px-4 lg:px-6 py-2 lg:py-3 rounded-lg border transition-all duration-200 hover:shadow-md {activeSection === section.name ? 'bg-[#4A90E2] text-white border-[#4A90E2] shadow-lg' : 'bg-white text-[#2D2D2D] border-[#E5E7EB] hover:border-[#4A90E2] hover:text-[#4A90E2]'}"
+                class="flex items-center gap-2 px-4 lg:px-6 py-2 lg:py-3 rounded-lg border transition-all duration-200 hover:shadow-md {activeSection === section.name ? 'bg-primary text-white border-primary shadow-lg' : 'bg-white text-text-heading border-[#E5E7EB] hover:border-primary hover:text-primary'}"
                 onclick={() => setActiveSection(section.name)}
                 role="tab"
                 aria-selected={activeSection === section.name}
@@ -210,11 +210,11 @@
             <div class="bg-white border border-[#E5E7EB] rounded-lg overflow-hidden shadow-sm">
               <!-- Image Title Bar -->
               <div class="h-[45px] lg:h-[50px] bg-[#F9FAFB] border-b border-[#E5E7EB] flex items-center justify-center px-4 lg:px-6">
-                <span class="text-xs lg:text-sm font-medium text-[#2D2D2D]">{currentImageTitle || 'Loading...'}</span>
+                <span class="text-xs lg:text-sm font-medium text-text-heading">{currentImageTitle || 'Loading...'}</span>
               </div>
 
               <!-- Image Display Area -->
-              <div class="h-[280px] lg:h-[350px] bg-[#F8F9FA] flex items-center justify-center">
+              <div class="h-[280px] lg:h-[350px] bg-bg-lighter flex items-center justify-center">
                 {#if currentImageSrc}
                   <img
                     src="/vec2art/{currentImageSrc}"
@@ -241,7 +241,7 @@
                 <div class="flex items-center gap-1 lg:gap-2 flex-1 justify-center">
                   {#each imageSteps[activeSection] || [] as _, index}
                     <button
-                      class="w-2 h-2 lg:w-3 lg:h-3 rounded-full transition-all duration-200 {index === activeImageStep ? 'bg-[#4A90E2] scale-110' : 'bg-gray-300 hover:bg-gray-400'}"
+                      class="w-2 h-2 lg:w-3 lg:h-3 rounded-full transition-all duration-200 {index === activeImageStep ? 'bg-primary scale-110' : 'bg-gray-300 hover:bg-gray-400'}"
                       onclick={() => activeImageStep = index}
                       aria-label="Go to step {index + 1}"
                     ></button>
@@ -261,7 +261,7 @@
             <div class="bg-white border border-[#E5E7EB] rounded-lg overflow-hidden shadow-sm">
               <!-- Code Title Bar -->
               <div class="h-[45px] lg:h-[50px] bg-[#F9FAFB] border-b border-[#E5E7EB] flex items-center justify-between px-4 lg:px-6">
-                <span class="text-xs lg:text-sm font-medium text-[#2D2D2D]">{currentCodeTitle || 'Loading...'}</span>
+                <span class="text-xs lg:text-sm font-medium text-text-heading">{currentCodeTitle || 'Loading...'}</span>
                 {#if hasMultipleCodeImages}
                   <div class="flex items-center gap-2">
                     <button
@@ -294,7 +294,7 @@
                 <div class="flex gap-1">
                   {#each availableLanguages as language}
                     <button
-                      class="px-3 lg:px-6 py-1.5 lg:py-2 text-xs lg:text-sm font-medium rounded-t-md transition-all {activeLanguage === language ? 'bg-white text-[#1F2937] border-b-2 border-[#4A90E2]' : 'text-[#6B7280] hover:text-[#1F2937]'}"
+                      class="px-3 lg:px-6 py-1.5 lg:py-2 text-xs lg:text-sm font-medium rounded-t-md transition-all {activeLanguage === language ? 'bg-white text-[#1F2937] border-b-2 border-primary' : 'text-[#6B7280] hover:text-[#1F2937]'}"
                       onclick={() => setActiveLanguage(language)}
                     >
                       {language}
@@ -1529,7 +1529,7 @@
                         <div class="text-center text-gray-400">
                           <div class="text-lg mb-2">📝</div>
                           <div class="text-sm">Code sample for</div>
-                          <div class="text-xs text-[#4A90E2] mt-1">{currentCodeTitle}</div>
+                          <div class="text-xs text-primary mt-1">{currentCodeTitle}</div>
                           <div class="text-xs text-gray-500 mt-1">will be implemented next</div>
                         </div>
                       </div>
@@ -1545,7 +1545,7 @@
         <div class="w-full flex justify-center mt-8 lg:mt-16 px-4 lg:px-0">
           <div class="grid py-[20px] lg:py-[25px] px-[20px] lg:px-[57px] bg-[#F3F4F6] rounded-lg shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] grid-cols-1 lg:grid-cols-4 grid-rows-auto lg:grid-rows-3 gap-x-2 lg:gap-x-4 gap-y-3">
             <!-- Title - positioned in grid -->
-            <div class="text-[#2D2D2D] text-[20px] lg:text-[26px] font-inter text-center font-semibold col-span-1 lg:col-span-4 row-span-1 mb-2 lg:mb-0">
+            <div class="text-text-heading text-[20px] lg:text-[26px] font-inter text-center font-semibold col-span-1 lg:col-span-4 row-span-1 mb-2 lg:mb-0">
               Technology Stack
             </div>
 
@@ -1555,7 +1555,7 @@
               <div>
                 <img src="/tech-stack__rust-icon.svg" alt="Rust" class="w-[28px] h-[28px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">Rust</div>
+              <div class="text-black font-inter font-medium">Rust</div>
             </div>
 
             <!-- SvelteKit -->
@@ -1563,7 +1563,7 @@
               <div>
                 <img src="/tech-stack__sveltekit-icon.svg" alt="SvelteKit" class="w-[32px] h-[32px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">SvelteKit</div>
+              <div class="text-black font-inter font-medium">SvelteKit</div>
             </div>
 
             <!-- Vercel -->
@@ -1571,7 +1571,7 @@
               <div>
                 <img src="/tech-stack__vercel-icon.svg" alt="Vercel" class="w-[30px] h-[30px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">Vercel</div>
+              <div class="text-black font-inter font-medium">Vercel</div>
             </div>
 
             <!-- Formspark -->
@@ -1579,7 +1579,7 @@
               <div>
                 <img src="/tech-stack__formspark-icon.svg" alt="Formspark" class="w-[32px] h-[32px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">Formspark</div>
+              <div class="text-black font-inter font-medium">Formspark</div>
             </div>
 
             <!-- Row 3 Tech Cards -->
@@ -1588,7 +1588,7 @@
               <div>
                 <img src="/tech-stack__wasm-icon.svg" alt="WebAssembly" class="w-[34px] h-[34px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">WebAssembly</div>
+              <div class="text-black font-inter font-medium">WebAssembly</div>
             </div>
 
             <!-- Turnstile -->
@@ -1596,7 +1596,7 @@
               <div>
                 <img src="/tech-stack__turnstile-icon.svg" alt="Turnstile" class="w-[32px] h-[32px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">Turnstile</div>
+              <div class="text-black font-inter font-medium">Turnstile</div>
             </div>
 
             <!-- TypeScript -->
@@ -1604,7 +1604,7 @@
               <div>
                 <img src="/tech-stack__typescript-icon.svg" alt="TypeScript" class="w-[30px] h-[30px]" />
               </div>
-              <div class="text-[#000000] font-inter font-medium">TypeScript</div>
+              <div class="text-black font-inter font-medium">TypeScript</div>
             </div>
           </div>
         </div>
@@ -1612,7 +1612,7 @@
     </div>
   </main>
 
-  <footer class="w-full bg-[#111111] flex justify-center">
+  <footer class="w-full bg-bg-dark flex justify-center">
     <Footer />
   </footer>
 </div>
