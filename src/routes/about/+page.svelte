@@ -23,13 +23,12 @@
               about
             </h1>
             <p class="text-text-body font-inter font-light text-base lg:text-lg text-center lg:text-left">
-              I'm a software engineer and AI<br />
-              enthusiast based in Texas.
+              Software engineer based in Texas.
             </p>
             <p class="text-black text-sm lg:text-base font-inter font-extralight max-w-full lg:max-w-[280px] text-center lg:text-left">
               I've been working with and building software systems for most of my
               life. Currently I am focused on making AI applications — blending
-              creativity, efficiency, and elegance.
+              art, gaming, and speed.
             </p>
           </div>
 
@@ -44,9 +43,10 @@
     <!-- Content Section -->
     <div class="w-full bg-bg-light flex justify-center items-center flex-grow py-[40px] lg:py-[80px]">
       <section class="w-full max-w-[1440px] px-[5%] lg:px-[180px]">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-x-[16px] lg:gap-x-[27px] gap-y-[32px] lg:gap-y-[76px] px-4 lg:px-0">
-          <!-- Experience Column -->
-          <div class="flex flex-col gap-6">
+        <!-- Row 1: Experience + Expertise -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 px-4 lg:px-0 mb-[40px] lg:mb-[64px]">
+          <!-- Experience Card -->
+          <div class="flex flex-col gap-5 bg-white border border-border-default rounded-2xl p-6 lg:p-8">
             <h2 class="text-text-body text-[20px] lg:text-[28px] font-inter font-bold tracking-[-0.56px]">
               Experience
             </h2>
@@ -60,8 +60,8 @@
               models, and deploying them with modern web architectures.
             </div>
           </div>
-          <!-- Expertise Column -->
-          <div class="flex flex-col gap-6 lg:justify-self-center">
+          <!-- Expertise Card -->
+          <div class="flex flex-col gap-5 bg-white border border-border-default rounded-2xl p-6 lg:p-8">
             <h2 class="text-text-body text-[20px] lg:text-[28px] font-inter font-bold tracking-[-0.56px]">
               Expertise
             </h2>
@@ -77,58 +77,102 @@
               <li>Server Deployment & Virtualization</li>
             </ul>
           </div>
-          <!-- Recent Projects Column -->
-          <div class="flex flex-col gap-6">
+        </div>
+
+        <!-- Row 2: Recent Projects (full width) -->
+        <div class="px-4 lg:px-0">
+          <div class="flex items-baseline justify-between mb-6 lg:mb-8">
             <h2 class="text-text-body text-[20px] lg:text-[28px] font-inter font-bold tracking-[-0.56px]">
               Recent Projects
             </h2>
-            <div class="text-text-heading flex flex-col gap-8">
-              <div>
-                <h3 class="text-lg font-inter font-semibold mb-1">
-                  <a
-                    href="https://vec2art.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-text-heading hover:text-[#4D4D4D] transition-colors duration-200 hover:underline"
-                  >
-                    vec2art SVG Converter
-                  </a>
-                </h3>
-                <p class="font-inter">
-                  Ultra-fast image vectorization tool that transforms raster images into expressive line-art SVGs in under 1.5 seconds. Built with Rust for performance, featuring GPU acceleration and WebAssembly for browser deployment.
+            <a
+              href="/work"
+              class="text-primary font-inter font-medium text-sm lg:text-base hover:underline transition-colors duration-200"
+            >
+              View all projects &rarr;
+            </a>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+            <!-- vec2art -->
+            <a
+              href="/work/vec2art"
+              class="group block bg-white border border-border-default rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-primary"
+            >
+              <div class="aspect-video overflow-hidden bg-bg-lighter">
+                <img
+                  src="/project-previews/vec2art.png"
+                  alt="vec2art SVG Converter"
+                  loading="lazy"
+                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+              <div class="p-4">
+                <h3 class="text-sm lg:text-base font-inter font-semibold text-text-heading mb-1">vec2art SVG Converter</h3>
+                <p class="text-xs lg:text-sm font-inter text-text-muted line-clamp-2">
+                  Ultra-fast image vectorization tool built with Rust, featuring GPU acceleration and WebAssembly.
                 </p>
               </div>
-
-              <div>
-                <h3 class="text-lg font-inter font-semibold mb-1">
-                  Chipotle AI Ordering System
-                </h3>
-                <p class="font-inter">
-                  Project lead and designer for an AI based ordering system that
-                  turns Chipotle ordering fully autonomous.
+            </a>
+            <!-- Chipotle AI -->
+            <a
+              href="/work/ai-menu-chatbot"
+              class="group block bg-white border border-border-default rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-primary"
+            >
+              <div class="aspect-video overflow-hidden bg-bg-lighter">
+                <img
+                  src="/project-previews/ai-menu-chatbot.png"
+                  alt="Chipotle AI Ordering System"
+                  loading="lazy"
+                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+              <div class="p-4">
+                <h3 class="text-sm lg:text-base font-inter font-semibold text-text-heading mb-1">Chipotle AI Ordering System</h3>
+                <p class="text-xs lg:text-sm font-inter text-text-muted line-clamp-2">
+                  AI-based ordering system that turns Chipotle ordering fully autonomous.
                 </p>
               </div>
-
-              <div>
-                <h3 class="text-lg font-inter font-semibold mb-1">
-                  Path of Exile Market Analyzer
-                </h3>
-                <p class="font-inter">
-                  In progress developing web app + newsletter that utilizes PoE's
-                  API backend to do market trend analysis and reports for users.
+            </a>
+            <!-- PoE Market Analyzer -->
+            <a
+              href="/work/poe-market-analyzer"
+              class="group block bg-white border border-border-default rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-primary"
+            >
+              <div class="aspect-video overflow-hidden bg-bg-lighter">
+                <img
+                  src="/project-previews/poe-market-analyzer.png"
+                  alt="Path of Exile Market Analyzer"
+                  loading="lazy"
+                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+              <div class="p-4">
+                <h3 class="text-sm lg:text-base font-inter font-semibold text-text-heading mb-1">PoE Market Analyzer</h3>
+                <p class="text-xs lg:text-sm font-inter text-text-muted line-clamp-2">
+                  Web app + newsletter utilizing PoE's API for market trend analysis and reports.
                 </p>
               </div>
-
-              <div>
-                <h3 class="text-lg font-inter font-semibold mb-1">
-                  E-Commerce Price Tracker + Scraper
-                </h3>
-                <p class="font-inter">
-                  In progress developing web companion that can target commerce
-                  sites to generate specific product trend analysis with seaborn.
+            </a>
+            <!-- E-Commerce Price Tracker -->
+            <a
+              href="/work/ecommerce-price-tracker"
+              class="group block bg-white border border-border-default rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-primary"
+            >
+              <div class="aspect-video overflow-hidden bg-bg-lighter">
+                <img
+                  src="/project-previews/ecommerce-price-tracker.png"
+                  alt="E-Commerce Price Tracker"
+                  loading="lazy"
+                  class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+              <div class="p-4">
+                <h3 class="text-sm lg:text-base font-inter font-semibold text-text-heading mb-1">E-Commerce Price Tracker</h3>
+                <p class="text-xs lg:text-sm font-inter text-text-muted line-clamp-2">
+                  Web companion targeting commerce sites for product trend analysis with seaborn.
                 </p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
