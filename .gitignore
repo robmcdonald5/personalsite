@@ -26,3 +26,7 @@ Thumbs.db
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Coding CLI
+.claude/*
+CLAUDE.md
