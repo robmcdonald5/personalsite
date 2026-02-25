@@ -1,4 +1,5 @@
 {
+  "installCommand": "npm install && source /rust/env 2>/dev/null; export PATH=\"/rust/bin:$HOME/.cargo/bin:$PATH\" && cargo install wasm-pack",
   "headers": [
     {
       "source": "/wasm-modules/(.*)",
