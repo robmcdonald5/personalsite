@@ -4,6 +4,7 @@ export interface CarouselItem {
 	language: string;
 	projectTitle: string;
 	projectLink?: string;
+	description?: string;
 	code: string;
 }
 

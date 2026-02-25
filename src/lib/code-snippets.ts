@@ -7,6 +7,7 @@ export const codeSnippets: CarouselItem[] = [
 		language: 'Rust',
 		projectTitle: 'GPU Compute Shaders',
 		projectLink: '#',
+		description: 'Non-maximum suppression in a GPU edge detection pipeline',
 		code: `@compute @workgroup_size(16, 16, 1)
 fn non_maximum_suppression(
     @builtin(global_invocation_id) global_id: vec3<u32>
@@ -31,6 +32,7 @@ fn non_maximum_suppression(
 		language: 'Rust',
 		projectTitle: 'Computer Vision',
 		projectLink: '#',
+		description: 'Structural similarity index for image quality comparison',
 		code: `pub fn calculate_ssim(
     img1: &GrayImage,
     img2: &GrayImage
@@ -54,6 +56,7 @@ fn non_maximum_suppression(
 		language: 'Python',
 		projectTitle: 'NLP Fuzzy Matching',
 		projectLink: '#',
+		description: 'Levenshtein-distance text correction for menu input',
 		code: `def correct_text(self, text: str) -> Tuple[str, List]:
     words = text.split()
     corrections = []
@@ -77,6 +80,7 @@ fn non_maximum_suppression(
 		language: 'TypeScript',
 		projectTitle: 'Frontend Optimization',
 		projectLink: '#',
+		description: 'Generic debounce with TypeScript generics',
 		code: `export function debounce<T extends (...args: any[]) => any>(
     func: T,
     wait: number,
@@ -103,6 +107,7 @@ fn non_maximum_suppression(
 		language: 'React',
 		projectTitle: 'Voice Interface',
 		projectLink: '#',
+		description: 'Web Speech API integration for voice interfaces',
 		code: `const handleMicClick = () => {
     if (!isRecording) {
         const SpeechRecognition =
@@ -129,6 +134,7 @@ fn non_maximum_suppression(
 		language: 'Rust',
 		projectTitle: 'Graphics Processing',
 		projectLink: '#',
+		description: 'SVG to raster conversion using resvg + tiny-skia',
 		code: `fn render_svg_to_image(
     svg_content: &str,
     dimensions: (u32, u32)
@@ -153,6 +159,7 @@ fn non_maximum_suppression(
 		language: 'Python',
 		projectTitle: 'Database Resilience',
 		projectLink: '#',
+		description: 'Retry-with-backoff MongoDB connection through SOCKS5',
 		code: `def connect(self):
     for attempt in range(3):
         try:
@@ -179,6 +186,7 @@ fn non_maximum_suppression(
 		language: 'TypeScript',
 		projectTitle: 'Performance Utils',
 		projectLink: '#',
+		description: 'Generic memoization with custom key generation',
 		code: `export function memoize<T extends (...args: any[]) => any>(
     func: T,
     keyGenerator?: (...args: Parameters<T>) => string
@@ -208,6 +216,7 @@ fn non_maximum_suppression(
 		language: 'Svelte',
 		projectTitle: 'Hardware Detection',
 		projectLink: '#',
+		description: 'WebGPU capability detection with Svelte 5 runes',
 		code: `import { onMount } from 'svelte';
 import { gpuService } from '$lib/gpu-service';
 
@@ -232,6 +241,7 @@ onMount(async () => {
 		language: 'Svelte',
 		projectTitle: 'UI Components',
 		projectLink: '#',
+		description: 'DOM portal for rendering outside the component tree',
 		code: `import { onMount, tick } from 'svelte';
 
 interface Props {
@@ -257,6 +267,7 @@ onMount(async () => {
 		language: 'Rust',
 		projectTitle: 'Image Processing',
 		projectLink: '#',
+		description: 'Sliding window pixel extraction for convolution',
 		code: `fn extract_window(
     img: &GrayImage,
     cx: usize, cy: usize,
@@ -285,6 +296,7 @@ onMount(async () => {
 		language: 'Rust',
 		projectTitle: 'Error Handling',
 		projectLink: '#',
+		description: 'Dimension validation with structured Rust error types',
 		code: `pub fn validate_dimensions(
     width: u32,
     height: u32,
@@ -311,6 +323,7 @@ onMount(async () => {
 		language: 'Python',
 		projectTitle: 'Intent Recognition',
 		projectLink: '#',
+		description: 'SpaCy + Sentence-BERT embedding pipeline for intent training',
 		code: `# Load SpaCy model and Sentence-BERT model
 nlp = spacy.load(config.SPACY_MODEL)
 sentence_model = SentenceTransformer(config.SENTENCE_MODEL)
@@ -334,6 +347,7 @@ pattern_embeddings = sentence_model.encode(all_patterns)`
 		language: 'Python',
 		projectTitle: 'NLP Analysis',
 		projectLink: '#',
+		description: 'Cosine + Jaccard similarity with dynamic weights',
 		code: `# Compute cosine similarity between input and patterns
 cosine_similarities = np.dot(pattern_embeddings, input_embedding) / (
     np.linalg.norm(pattern_embeddings, axis=1) *
@@ -360,6 +374,7 @@ weights = (config.SHORT_INPUT_WEIGHTS if input_length <= 3
 		language: 'Python',
 		projectTitle: 'Menu Processing',
 		projectLink: '#',
+		description: 'Edit-distance fuzzy matching against categorized vocabulary',
 		code: `def _find_closest_match(self, word, max_distance=2):
     if len(word) < 3:
         return word, '', -1
@@ -390,6 +405,7 @@ weights = (config.SHORT_INPUT_WEIGHTS if input_length <= 3
 		language: 'Python',
 		projectTitle: 'Menu NLP',
 		projectLink: '#',
+		description: 'spaCy PhraseMatcher for structured order extraction',
 		code: `def process_order_spacy(session_id, input_sentence):
     segments = segment_input(input_sentence)
     item_addons = defaultdict(
@@ -420,6 +436,7 @@ weights = (config.SHORT_INPUT_WEIGHTS if input_length <= 3
 		language: 'Python',
 		projectTitle: 'MongoDB ETL',
 		projectLink: '#',
+		description: 'MongoDB ETL normalizing menu items with name mapping',
 		code: `def fetch_menu_data():
     menu_item_collection = db.get_db()['MenuItem']
     all_items = list(menu_item_collection.find({}))

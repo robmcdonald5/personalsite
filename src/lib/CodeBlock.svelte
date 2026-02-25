@@ -642,13 +642,18 @@
 		</div>
 	</div>
 
-	<div class="code-footer h-8 flex items-center justify-center border-t border-[#2d2d30]">
+	<div class="code-footer h-10 flex flex-col items-center justify-center border-t border-[#2d2d30] py-1">
 		<a
 			href={snippet.projectLink || '#'}
 			class="text-[10px] text-gray-400 hover:text-gray-300 transition-colors hover:underline"
 		>
 			{snippet.projectTitle}
 		</a>
+		{#if snippet.description}
+			<span class="text-[8px] lg:text-[9px] text-gray-500 line-clamp-1 px-2 text-center">
+				{snippet.description}
+			</span>
+		{/if}
 	</div>
 </div>
 
