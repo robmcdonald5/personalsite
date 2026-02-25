@@ -64,10 +64,12 @@
 
   function setupCanvases(img: HTMLImageElement) {
     if (!originalCanvas || !canvas) return;
-    
-    // Set up original canvas
-    originalCanvas.width = Math.min(img.width, 300);
-    originalCanvas.height = Math.min(img.height, 300);
+
+    // Set up original canvas preserving aspect ratio
+    const maxDim = 300;
+    const scale = Math.min(maxDim / img.width, maxDim / img.height, 1);
+    originalCanvas.width = Math.round(img.width * scale);
+    originalCanvas.height = Math.round(img.height * scale);
     const originalCtx = originalCanvas.getContext('2d');
     if (originalCtx) {
       originalCtx.drawImage(img, 0, 0, originalCanvas.width, originalCanvas.height);

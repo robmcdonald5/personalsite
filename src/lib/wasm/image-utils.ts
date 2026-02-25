@@ -124,30 +124,30 @@ export class ImageUtils {
     if (maxSize <= 0) throw new Error('Thumbnail size must be positive');
     if (imageData.width <= 0 || imageData.height <= 0) throw new Error('Invalid image dimensions');
 
-    const dimensions = this.processor.get_thumbnail_dimensions(
-      imageData.width,
-      imageData.height,
-      maxSize
-    );
-
-    console.log('Raw WASM dimensions result:', dimensions);
-    
-    // Validate returned dimensions
-    if (!dimensions || dimensions.length < 2 || dimensions[0] <= 0 || dimensions[1] <= 0) {
-      throw new Error(`WASM returned invalid thumbnail dimensions: ${dimensions}`);
+    // Calculate dimensions preserving aspect ratio
+    const aspectRatio = imageData.width / imageData.height;
+    let newWidth: number, newHeight: number;
+    if (imageData.width > imageData.height) {
+      newWidth = maxSize;
+      newHeight = Math.max(1, Math.round(maxSize / aspectRatio));
+    } else {
+      newHeight = maxSize;
+      newWidth = Math.max(1, Math.round(maxSize * aspectRatio));
     }
 
-    const thumbnailData = this.processor.create_thumbnail(
+    // Use resize_image with explicit dimensions to guarantee data/dimension consistency
+    const resized = this.processor.resize_image(
       new Uint8Array(imageData.data),
       imageData.width,
       imageData.height,
-      maxSize
+      newWidth,
+      newHeight
     );
 
     return {
-      data: thumbnailData,
-      width: dimensions[0],
-      height: dimensions[1]
+      data: resized,
+      width: newWidth,
+      height: newHeight
     };
   }
 
