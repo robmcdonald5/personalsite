@@ -1,9 +1,9 @@
 <script lang="ts">
 </script>
 
-<section class="w-full max-w-[1440px] h-[240px] lg:h-[360px] flex justify-center items-center px-[5%] lg:px-[180px] bg-white">
-  <div class="text-center lg:text-left">
-    <span class="text-text-heading">
+<section class="w-full max-w-[1440px] h-[280px] lg:h-[400px] flex justify-center items-center px-[5%] lg:px-[180px] bg-white">
+  <div class="flex flex-col items-center lg:items-start">
+    <span class="text-text-heading text-center lg:text-left">
       <span class="text-[24px] lg:text-[56px] font-inter font-bold tracking-[-0.02em] leading-tight">
         Software engineer.<br />
       </span>
@@ -11,5 +11,9 @@
         I Build AI Powered Tools.
       </span>
     </span>
+    <p class="text-text-body text-sm lg:text-base font-inter font-light max-w-[600px] mt-4 lg:mt-6 text-center lg:text-left">
+      Software Engineer specializing in Python, Rust, and TypeScript. I build AI-powered
+      applications, computer vision tools, and full-stack web systems.
+    </p>
   </div>
 </section>
