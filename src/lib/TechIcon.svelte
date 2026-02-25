@@ -33,7 +33,10 @@
     react: "/tech-stack__react-icon.svg",
     supabase: "/tech-stack__supabase-icon.svg",
     tauri: "/tech-stack__tauri-icon.svg",
-    typescript: "/tech-stack__typescript-icon.svg"
+    typescript: "/tech-stack__typescript-icon.svg",
+    click: "/tech-stack__click-icon.svg",
+    textual: "/tech-stack__textual-icon.svg",
+    toml: "/tech-stack__toml-icon.svg"
   };
 
   // Modern Svelte 5 derived state

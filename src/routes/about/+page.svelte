@@ -153,23 +153,23 @@
                 </p>
               </div>
             </a>
-            <!-- E-Commerce Price Tracker -->
+            <!-- claudefig -->
             <a
-              href="/work/ecommerce-price-tracker"
+              href="/work/claudefig"
               class="group block bg-white border border-border-default rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-primary"
             >
               <div class="aspect-video overflow-hidden bg-bg-lighter">
                 <img
-                  src="/project-previews/ecommerce-price-tracker.png"
-                  alt="E-Commerce Price Tracker"
+                  src="/project-previews/claudefig.png"
+                  alt="claudefig"
                   loading="lazy"
                   class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
               <div class="p-4">
-                <h3 class="text-sm lg:text-base font-inter font-semibold text-text-heading mb-1">E-Commerce Price Tracker</h3>
+                <h3 class="text-sm lg:text-base font-inter font-semibold text-text-heading mb-1">claudefig</h3>
                 <p class="text-xs lg:text-sm font-inter text-text-muted line-clamp-2">
-                  Web companion targeting commerce sites for product trend analysis with seaborn.
+                  Universal config CLI/TUI for managing Claude Code project configurations.
                 </p>
               </div>
             </a>

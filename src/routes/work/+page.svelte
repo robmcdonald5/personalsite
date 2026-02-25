@@ -6,6 +6,14 @@
 	// Project data
 	const allProjects = [
 		{
+			id: 'claudefig',
+			name: 'claudefig',
+			href: '/work/claudefig',
+			categories: ['Python', 'Automation', 'Scripting'],
+			imageQuery: 'CLI and TUI configuration management tool',
+			previewImage: '/project-previews/claudefig.png'
+		},
+		{
 			id: 'ai-menu-chatbot',
 			name: 'Chipotle AI Menu',
 			href: '/work/ai-menu-chatbot',
