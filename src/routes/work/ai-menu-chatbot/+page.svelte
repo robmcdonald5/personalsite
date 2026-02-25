@@ -171,6 +171,37 @@
           </p>
         </div>
 
+        <!-- Project Overview -->
+        <div class="w-full flex justify-center mb-8 lg:mb-12 px-4 lg:px-0">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 w-full max-w-[850px]">
+            <!-- Problem Card -->
+            <div class="flex flex-col gap-2 bg-[#F9FAFB] rounded-xl p-5">
+              <span class="text-primary text-xs font-inter font-semibold uppercase tracking-wider">Problem</span>
+              <p class="text-text-heading text-sm font-inter">
+                Restaurant ordering relies on human servers or static menus. Customers can't
+                ask natural questions, correct mistakes conversationally, or build complex orders without friction.
+              </p>
+            </div>
+            <!-- Solution Card -->
+            <div class="flex flex-col gap-2 bg-[#F9FAFB] rounded-xl p-5">
+              <span class="text-primary text-xs font-inter font-semibold uppercase tracking-wider">Solution</span>
+              <p class="text-text-heading text-sm font-inter">
+                A conversational AI chatbot using BERT embeddings, spaCy NLP, and Levenshtein
+                fuzzy matching to understand free-text orders, correct typos, and progressively fill
+                item details through dialog.
+              </p>
+            </div>
+            <!-- Outcome Card -->
+            <div class="flex flex-col gap-2 bg-[#F9FAFB] rounded-xl p-5">
+              <span class="text-primary text-xs font-inter font-semibold uppercase tracking-wider">Outcome</span>
+              <p class="text-text-heading text-sm font-inter">
+                Deployed live react app through Heroku. Handles full order flows (add, modify
+                remove items) with voice input, real-time tracking, and MongoDB persistence. Zero per-query API costs.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <!-- Navigation Tabs -->
         <div class="w-full flex justify-center mb-6 lg:mb-8 px-4 lg:px-0">
           <div class="flex flex-wrap justify-center gap-2 lg:gap-8">

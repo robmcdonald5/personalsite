@@ -179,6 +179,37 @@
           </p>
         </div>
 
+        <!-- Project Overview -->
+        <div class="w-full flex justify-center mb-8 lg:mb-12 px-4 lg:px-0">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 w-full max-w-[850px]">
+            <!-- Problem Card -->
+            <div class="flex flex-col gap-2 bg-[#F9FAFB] rounded-xl p-5">
+              <span class="text-primary text-xs font-inter font-semibold uppercase tracking-wider">Problem</span>
+              <p class="text-text-heading text-sm font-inter">
+                Converting images to SVGs typically requires desktop software, cloud uploads, or
+                slow online tools. Privacy-conscious users have no fast, local option with artistic control.
+              </p>
+            </div>
+            <!-- Solution Card -->
+            <div class="flex flex-col gap-2 bg-[#F9FAFB] rounded-xl p-5">
+              <span class="text-primary text-xs font-inter font-semibold uppercase tracking-wider">Solution</span>
+              <p class="text-text-heading text-sm font-inter">
+                Rust compiled to WebAssembly runs entirely in the browser: four vectorization
+                algorithms (edge detection, stippling, centerline, superpixel) with SIMD
+                optimization and Web Worker parallelism.
+              </p>
+            </div>
+            <!-- Outcome Card -->
+            <div class="flex flex-col gap-2 bg-[#F9FAFB] rounded-xl p-5">
+              <span class="text-primary text-xs font-inter font-semibold uppercase tracking-wider">Outcome</span>
+              <p class="text-text-heading text-sm font-inter">
+                Live at vec2art.com. Processes 2048x2048 images in under 1.5 seconds with less than
+                40MB memory. Zero data leaves the browser: ensuring complete client-side privacy.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <!-- Navigation Tabs -->
         <div class="w-full flex justify-center mb-6 lg:mb-8 px-4 lg:px-0">
           <div class="flex flex-wrap justify-center gap-2 lg:gap-8">

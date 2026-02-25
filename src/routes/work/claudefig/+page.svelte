@@ -83,6 +83,36 @@
           </p>
         </div>
 
+        <!-- Project Overview -->
+        <div class="w-full flex justify-center mb-8 lg:mb-12 px-4 lg:px-0">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 w-full max-w-[850px]">
+            <!-- Problem Card -->
+            <div class="flex flex-col gap-2 bg-[#F9FAFB] rounded-xl p-5">
+              <span class="text-primary text-xs font-inter font-semibold uppercase tracking-wider">Problem</span>
+              <p class="text-text-heading text-sm font-inter">
+                Coding CLI tools lack a standard way to manage complex configurations across
+                environments. Settings are scattered, hard to share, and tedious to set up for new projects.
+              </p>
+            </div>
+            <!-- Solution Card -->
+            <div class="flex flex-col gap-2 bg-[#F9FAFB] rounded-xl p-5">
+              <span class="text-primary text-xs font-inter font-semibold uppercase tracking-wider">Solution</span>
+              <p class="text-text-heading text-sm font-inter">
+                A dual-interface tool with a CLI for automation and an interactive TUI for
+                exploration, with a preset system for sharing and reusing configurations.
+              </p>
+            </div>
+            <!-- Outcome Card -->
+            <div class="flex flex-col gap-2 bg-[#F9FAFB] rounded-xl p-5">
+              <span class="text-primary text-xs font-inter font-semibold uppercase tracking-wider">Outcome</span>
+              <p class="text-text-heading text-sm font-inter">
+                Published on PyPI. Supports file instances, preset import/export, project
+                initialization, and full config validation. All from the terminal.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <!-- Section Tabs -->
         <div class="w-full flex justify-center mb-6 lg:mb-8 px-4 lg:px-0">
           <div class="flex flex-wrap justify-center gap-2 lg:gap-4">
@@ -181,6 +211,7 @@
               <div>
                 <img src="/tech-stack__click-icon.svg" alt="Click" class="w-[40px] h-[40px]" />
               </div>
+              <div class="text-black font-inter font-medium">Click</div>
             </div>
 
             <!-- Textual -->
