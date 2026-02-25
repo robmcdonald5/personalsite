@@ -8,6 +8,11 @@ const __dirname = dirname(__filename);
 // Project configurations for screenshots
 const projects = [
   {
+    id: 'claudefig',
+    url: '/work/claudefig',
+    name: 'claudefig'
+  },
+  {
     id: 'ai-menu-chatbot',
     url: '/work/ai-menu-chatbot',
     name: 'Chipotle AI Menu'
@@ -87,7 +92,7 @@ async function generateWithPlaywright(outputDir) {
   
   try {
     const context = await browser.newContext({
-      viewport: { width: 1200, height: 800 },
+      viewport: { width: 1440, height: 900 },
       deviceScaleFactor: 1,
       ignoreHTTPSErrors: true
     });
@@ -235,7 +240,7 @@ async function screenshotWithRetry(context, baseUrl, project, outputDir, maxRetr
         path: outputPath,
         type: 'png',
         fullPage: false,
-        clip: { x: 0, y: headerHeight, width: 1200, height: 800 }
+        clip: { x: 120, y: headerHeight, width: 1200, height: 800 }
       });
       
       console.log(`✅ Generated: ${project.id}.png`);
