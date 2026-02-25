@@ -4,7 +4,8 @@
 </script>
 
 <svelte:head>
-  <title>About - Joshua McDonald</title>
+  <title>About - Joshua McDonald | Software Engineer</title>
+  <meta name="description" content="Software engineer based in Texas focused on AI, LLM-powered tools, and systems programming with Rust and WebGPU." />
 </svelte:head>
 
 <div class="flex flex-col min-h-screen w-full bg-white overflow-x-hidden">
@@ -26,9 +27,10 @@
               Software engineer based in Texas.
             </p>
             <p class="text-black text-sm lg:text-base font-inter font-extralight max-w-full lg:max-w-[280px] text-center lg:text-left">
-              I've been working with and building software systems for most of my
-              life. Currently I am focused on making AI applications — blending
-              art, gaming, and efficiency.
+              Right now I'm focused on AI — building LLM-powered tools, training
+              models, and pushing performance boundaries with Rust and WebGPU.
+              I'm drawn to the intersection of creative tools, real-time systems,
+              and machine learning.
             </p>
           </div>
 

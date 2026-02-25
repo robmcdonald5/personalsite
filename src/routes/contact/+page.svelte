@@ -71,6 +71,7 @@
 
 <svelte:head>
   <title>Contact - Joshua McDonald</title>
+  <meta name="description" content="Get in touch with Joshua McDonald — Software Engineer specializing in AI and full-stack development." />
 </svelte:head>
 
 <div class="flex flex-col min-h-screen w-full bg-white overflow-x-hidden">

@@ -5,6 +5,11 @@
   import Footer from '$lib/Footer.svelte';
 </script>
 
+<svelte:head>
+  <title>Joshua McDonald - Software Engineer | AI, Python, Rust, TypeScript</title>
+  <meta name="description" content="Software Engineer building AI-powered tools, computer vision applications, and full-stack web systems with Python, Rust, and TypeScript." />
+</svelte:head>
+
 <div class="flex flex-col min-h-screen w-full bg-white overflow-x-hidden">
   <header class="w-full bg-bg-dark flex justify-center">
     <Header />

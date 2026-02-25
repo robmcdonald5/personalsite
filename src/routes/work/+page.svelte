@@ -98,8 +98,8 @@
 </script>
 
 <svelte:head>
-	<title>Work - Joshua McDonald</title>
-	<meta name="description" content="Explore snippets of the work I've done over my development career." />
+	<title>Work - Joshua McDonald | Projects & Portfolio</title>
+	<meta name="description" content="Portfolio of AI-powered tools, computer vision applications, and full-stack web projects built with Python, Rust, TypeScript, and more." />
 </svelte:head>
 
 <div class="flex flex-col min-h-screen w-full bg-white overflow-x-hidden">
